@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "experiment_id": "EXP-YYYYMMDD-NNN-short-slug",
+  "timestamp_utc": "YYYY-MM-DDTHH:MM:SSZ",
+  "status": "completed|failed|aborted|blocked",
+  "observed": {},
+  "claims": [],
+  "hypotheses": [],
+  "artifacts": [],
+  "reproduction": {
+    "cwd": "",
+    "command": "",
+    "environment": ""
+  },
+  "cleanup": {
+    "owned_processes_stopped": null,
+    "gpu_idle_verified": null,
+    "notes": ""
+  }
+}
+

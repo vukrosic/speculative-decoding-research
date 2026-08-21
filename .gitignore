@@ -1,0 +1,47 @@
+# Large ML artifacts must never be committed. See AGENTS.md.
+*.bin
+*.ckpt
+*.gguf
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.npy
+*.npz
+*.arrow
+*.parquet
+*.sqlite
+*.db
+*.log
+*.trace
+*.prof
+*.nsys-rep
+*.qdrep
+*.core
+
+# Generated experiment output directories.
+artifacts/
+checkpoints/
+features/
+outputs/
+wandb/
+runs/
+cache/
+data/raw/
+data/processed/
+
+# Local environments and editor state.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+
+# Allow tiny, reviewed fixtures when explicitly negated in a nested .gitignore.
+
