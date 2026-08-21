@@ -53,6 +53,10 @@ An experiment may establish one level without establishing the next:
 4. Freeze evaluation and define the promotion gate before running anything.
 5. End with receipts and update the indexes, including failures.
 
+The exact MacBook checkout and the separate remote GPU project are recorded in
+[`docs/REPOSITORY-LOCATIONS.md`](docs/REPOSITORY-LOCATIONS.md). Keep them
+distinct.
+
 ## Current seeded knowledge
 
 - SmolLM2-135M DFlash2-style on-policy block-3 training and capacity scaling.
@@ -67,4 +71,3 @@ An experiment may establish one level without establishing the next:
 Git stores knowledge, metadata, compact receipts, and hashes. It does not store
 weights, GGUFs, feature corpora, datasets, environments, or large logs. See
 `AGENTS.md` and `.gitignore`.
-
