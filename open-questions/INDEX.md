@@ -12,6 +12,9 @@
    verification, correction, cache, and Python/runtime overhead?
 5. Can adaptive proposal length outperform fixed n=4/8/16 under the same
    quality contract?
+6. Can any intermediate draft depth beat the one-layer throughput incumbent
+   after exact guarded verification, or is contiguous-prefix acceptance the
+   actual limiting factor?
 
 ## Broader program
 
@@ -23,4 +26,3 @@
   break-even points?
 - What is the minimum receipt/evaluator suite required to call a runtime
   lossless?
-

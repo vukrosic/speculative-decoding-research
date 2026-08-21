@@ -27,3 +27,4 @@ passed.
 | [EXP-20260821-004](../experiments/cards/EXP-20260821-004-qwen-v30-quantization.md) | Does draft quantization improve serving? | Small approximate gain | Q8_0 +0.65% vs F16, still below target-only |
 | [EXP-20260821-005](../experiments/cards/EXP-20260821-005-qwen-v31-block17-alignment.md) | Do block-shape-aligned target states improve acceptance? | Negative bounded result | Accuracy rose; acceptance did not |
 | [EXP-20260821-006](../experiments/cards/EXP-20260821-006-smollm-1layer-vs-5layer.md) | Does five-layer capacity beat the one-layer drafter? | Acceptance positive, speed negative | 7.1566% vs 6.0045% acceptance, but 12.4785 vs 14.4277 tok/s; 180/180 exact |
+| [EXP-20260821-007](../experiments/cards/EXP-20260821-007-smollm-3layer-vs-1layer.md) | Can intermediate depth retain acceptance more cheaply? | Acceptance positive, speed still negative | 7.1566% vs 6.0045%, but 13.5385 vs 14.4526 tok/s; 180/180 exact |
