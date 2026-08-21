@@ -1,0 +1,5 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "status": "not-run",
+  "reason": "Preflight blocked before Arm D cache/rollback control; no process or device execution occurred."
+}

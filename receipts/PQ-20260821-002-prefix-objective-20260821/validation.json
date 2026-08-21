@@ -1,0 +1,7 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "status": "not_started",
+  "reason": "Fit did not start; validation n=4/8/16 is therefore not authorized.",
+  "proposal_lengths": [4, 8, 16],
+  "results": []
+}

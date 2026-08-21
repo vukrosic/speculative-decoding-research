@@ -1,0 +1,9 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "status": "clean-no-task-process-started",
+  "captured_utc": "2026-08-21T13:04:27Z",
+  "task_processes_started": [],
+  "gpu_final_preflight": "RTX 3060: 1 MiB/12288 MiB, 0% utilization, no compute processes",
+  "tmux_final": "no server running",
+  "cleanup_actions": "none required; no files/processes/device state changed"
+}

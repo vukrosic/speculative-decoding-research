@@ -1,0 +1,7 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "status": "not-run",
+  "reason": "Stopped before comparison because RTX 3060 slot and mandatory runtime identities were unavailable.",
+  "required": "Two clean singleton replays against EXP-20260820-001 six-prompt oracle",
+  "observed": "none"
+}

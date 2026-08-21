@@ -1,0 +1,64 @@
+{
+  "receipt_id": "PLAN-20260821-001-provenance-link-audit-20260821",
+  "date": "2026-08-21",
+  "status": "local_read_only_complete",
+  "scope": "Local queue/card/governance/planner/critic/literature/receipt-link audit only. No remote connection, GPU/device action, model/runtime invocation, build, inference, evaluation, training, patch, download, install, or held-out access.",
+  "audit_commands": [
+    "rg -n status|approval|blocked|terminal|receipt over PLAN-001 queue/card/governance/planner/critic/literature files",
+    "rg -n -o markdown links in selected control records",
+    "test -e each selected local link target",
+    "sha256sum selected terminal/preflight/reconciliation receipts"
+  ],
+  "link_results": {
+    "selected_links_checked": 31,
+    "broken_links": [],
+    "checked_targets": [
+      "queue/2026-08-21-PLAN-001-verifier-fidelity-probe.md",
+      "experiments/cards/PLAN-20260821-001-qwen-target-schedule-localizer.md",
+      "experiments/critique/PLAN-20260821-001-PRE-RUN.md",
+      "experiments/critique/PLAN-20260821-001-POST-BLOCK-20260821.md",
+      "experiments/critique/PLAN-20260821-001-REENTRY-CRITIQUE-20260821.md",
+      "experiments/critique/PLAN-20260821-001-EVALUATOR-ARMB-INVENTORY-CRITIQUE-20260821.md",
+      "experiments/critique/PLAN-20260821-001-CONTRACT-RECONCILIATION-CRITIQUE-20260821.md",
+      "experiments/planning/PLAN-20260821-001-CONTRACT-RECONCILIATION-VERDICT-20260821.md",
+      "governance/CEO-DECISION-2026-08-21-VERIFIER-PROBE.md",
+      "governance/PLAN-20260821-001-CONTRACT-MANIFEST.md",
+      "governance/PLAN-20260821-001-RECOVERY-PLAN.md",
+      "governance/REENTRY-CHECKLIST-PLAN-20260821-001.md",
+      "receipts/PLAN-20260821-001/evaluator-armb-layout-inventory-20260821.json",
+      "receipts/PLAN-20260821-001/evaluator-armb-contract-reconciliation-20260821.json",
+      "receipts/PLAN-20260821-001/final-bounded-disposition-20260821.json",
+      "receipts/PLAN-20260821-001/remote-preflight-20260821.json",
+      "receipts/PLAN-20260821-001/remote-preflight-supplement-20260821.json",
+      "receipts/PLAN-20260821-001/terminal.json",
+      "literature/HANDOFF-20260821-LIT-001.md",
+      "literature/VERDICT-20260821-PLAN001-RECONCILIATION.md"
+    ]
+  },
+  "hash_checks": {
+    "reconciliation_receipt": {
+      "path": "receipts/PLAN-20260821-001/evaluator-armb-contract-reconciliation-20260821.json",
+      "sha256": "1d0dc945cc25b7dc8ac990b44cacfbfd0fe08ec023df2a2a66ce5b9fe8193d58"
+    },
+    "final_disposition": {
+      "path": "receipts/PLAN-20260821-001/final-bounded-disposition-20260821.json",
+      "sha256": "5b8ae5a154dcd0b39653177dc6734b9e2cdb0e166f54c2902c68873f0549a586"
+    },
+    "local_terminal": {
+      "path": "receipts/PLAN-20260821-001/terminal.json",
+      "sha256": "2ffdf361bf88fae8698687da0c4d0af03f35945516eb6647cd8658ac355b6f2c"
+    },
+    "remote_preflight": {
+      "path": "receipts/PLAN-20260821-001/remote-preflight-20260821.json",
+      "sha256": "29dea185eedb3ab850766650966e4214a9550d3d43ae4f9e822435b66e5fcf76"
+    }
+  },
+  "findings": {
+    "current_block_consistent": "Queue, card, recovery plan, planner reconciliation verdict, reconciliation critique, literature reconciliation verdict, and final disposition all retain blocked/blocked-preflight and no-execution boundaries.",
+    "historical_approval_language": "CEO decision lines 121-161 contain a dated bounded approval amendment, while later lines 163-182 suspend it after blocked preflight and lines 223-238 state no approval amendment/runtime action is authorized. Card front matter and queue explicitly mark approval suspended/none active. The approval section is historical but should be treated as non-current unless explicitly annotated superseded.",
+    "stale_critic_status": "experiments/critique/PLAN-20260821-001-VERDICT-20260821-RECHECK.md front matter remains status/verdict ready-needs-approval and is cited by the historical CEO approval amendment; latest reconciliation planner/critic/literature records are blocked-preflight/BLOCK. This is a stale historical status, not execution authority, and should be marked superseded in a future control-plane maintenance pass.",
+    "terminal_gpu_context_difference": "Local terminal.json records nvidia-smi unavailable and GPU state unknown (aborted blocked-preflight); later remote-preflight-20260821.json records a free RTX 3060 slot and no compute process. These are distinct capture contexts and both must be preserved. Queue correctly says host/GPU availability is no longer the blocker, while evaluator/Arm-B contract remains blocking; free slot does not authorize execution.",
+    "receipt_state": "Reconciliation and final disposition hashes match the queue/planner/critic/recovery references inspected. No experiment result or negative comparison is implied by any terminal receipt."
+  },
+  "terminal_disposition": "Audit complete. No broken local links found in the selected control plane. Preserve stale approval/recheck language as historical, keep PLAN-001 BLOCKED-PREFLIGHT, and require explicit future supersession annotation plus new CEO amendment before any runtime action."
+}

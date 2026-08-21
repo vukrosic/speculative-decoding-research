@@ -1,0 +1,80 @@
+{
+  "experiment": "PQ-20260821-004-confidence-gated-20260821",
+  "captured_utc": "2026-08-21",
+  "status": "read-only-source-inventory-complete-no-build-no-run",
+  "scope": "Pinned remote llama.cpp/DFlash source inspection for an existing confidence/statistic-based adaptive draft-length selector or scheduler. No build, binary invocation, model load, inference, evaluation, patch, download, install, or GPU access.",
+  "remote": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "project": "/workspace/smollm-eagle3-prototype",
+    "source_root": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22",
+    "pinned_commit": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+    "commit_subject": "support DFlash2",
+    "remote_guide": "/etc/vast-agents-guide.md (read)",
+    "working_tree_status": [
+      "M common/speculative.cpp",
+      "M src/llama-graph.cpp",
+      "M tests/CMakeLists.txt",
+      "M tools/server/server-context.cpp"
+    ],
+    "working_tree_diff_stat": "common/speculative.cpp 36 lines; src/llama-graph.cpp 35 lines; tests/CMakeLists.txt 1 line; tools/server/server-context.cpp 149 lines",
+    "working_tree_caveat": "The inventory hashes current files, while the pinned git commit is recorded separately. Diff keyword inspection found only V22 verification/rollback logging in speculative.cpp, not an adaptive length scheduler."
+  },
+  "inspection": {
+    "commands": [
+      "git rev-parse HEAD; git status --short --untracked-files=no; git log -1",
+      "grep -RInE over C++ headers/sources for confidence, entropy, uncertainty, adaptive, scheduler, draft-length, n_max, acceptance, threshold, variance, stddev, statistic",
+      "nl -ba/sed preserved speculative.cpp, common.h, arg.cpp, dflash.cpp sections",
+      "git diff --stat/--numstat and diff keyword inspection",
+      "sha256sum selected source files"
+    ],
+    "source_hashes": {
+      "common/speculative.cpp": "31d5b692df9fe2e215d1ddd1c75eef2fc1b03572b8e2c74c99d1024c3d944399",
+      "common/speculative.h": "fdea45dc903b6b13a23081f9495020e6dc65065874ef99d8c581c5197f8d09a8",
+      "common/common.h": "3e20d6b4ada8bd761ccf720894377ab5665a333aeabe38c8ac5bfa9c4a04e5a6",
+      "common/arg.cpp": "0978d69731fe7a68422716bd11651e16ac10b4f5fe77e99316257cf6d7ab932b",
+      "src/models/dflash.cpp": "3b31b1a6b888ec37013a4d6275fdaf1fdeb6a9e3ca25b933ab136acdbcd58c49",
+      "common/sampling.cpp": "67170da839541b58cadb183a6bb4361406b5fc8c929c9eb65311115fdaf07843",
+      "src/llama-sampler.cpp": "ade0e3fee8ae823ee1fe0c527e5c3fbe66189b0201ce42327cd6940f83883026",
+      "common/ngram-map.cpp": "e216b3a607204e75d1c9a2e9c61473b5d3abdc95c794d55c6e62ced7f7f1aed7",
+      "common/ngram-map.h": "39decafa216df72bc77783c4d3ca659cc19e587d661e9149b8d0c2a3dff4fbe2"
+    }
+  },
+  "findings": {
+    "dflash2": {
+      "source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/speculative.cpp",
+      "lines": "1231-1304",
+      "behavior": "The is_dflash2 branch decodes a block sized from params.n_max, follows selector_top_k lattice predecessor scores, and loops every block position. It does not inspect params.p_min or a confidence/statistic signal; only result.size() < params.n_min clears the result after the block.",
+      "length_control": "n_block_tokens = n_draft + 1 for DFlash2 (line 1195); params.n_max is configured/clamped, not adapted from confidence or acceptance statistics.",
+      "disposition": "No existing confidence/statistic-based adaptive draft-length selector found for DFlash2."
+    },
+    "probability_threshold_for_other_draft_paths": {
+      "source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/speculative.cpp",
+      "lines": ["809-825", "1335-1360", "1724-1743"],
+      "config_source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/common.h:323-330",
+      "behavior": "Standard/Eagle-style and non-DSpark DFlash draft paths stop adding tokens when the sampled top probability is below params.p_min. p_min defaults to 0.0, and the CLI flag is --spec-draft-p-min. This is a per-token probability early-stop, not a DFlash2 adaptive scheduler.",
+      "exact_scope": "The DFlash2 branch is earlier and continues to its fixed block loop; these p_min checks do not apply to it."
+    },
+    "dspark_confidence_head": {
+      "model_source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/src/models/dflash.cpp:283-389",
+      "runtime_source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/speculative.cpp:1306-1333",
+      "behavior": "DSpark builds a sigmoid per-position confidence head (conf_proj over hidden/Markov features), exposes it through nextn embeddings, and truncates at the first confidence below params.p_min. This is an existing confidence-gated length mechanism, but it is explicitly the draft-dspark type, not draft-dflash/DFlash2.",
+      "disposition": "Relevant precedent only; not evidence that PLAN/PQ DFlash2 has an adaptive selector."
+    },
+    "fixed_n_max_and_statistics": {
+      "n_max_source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/speculative.cpp:2372-2405",
+      "n_max_behavior": "common_speculative_n_max returns configured spec->draft.n_max (or fixed n-gram sizes); dynamic assignments found are CLI parsing, model block-size clamp, and MTP-layer clamp only.",
+      "ngram_stats_source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/speculative.cpp:1917-1926,2033-2079",
+      "ngram_behavior": "ngram-mod records draft length and acceptance fraction; five low-acceptance rounds reset the n-gram map. It does not adapt DFlash2 n_max or schedule draft length.",
+      "sampler_source": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/src/llama-sampler.cpp:3718-3869",
+      "sampler_behavior": "adaptive-p adapts token sampling around a probability target using EMA decay; it is not a speculative draft-length selector."
+    }
+  },
+  "explicit_absence": [
+    "No DFlash2 confidence/entropy/uncertainty threshold that changes n_max or block length.",
+    "No acceptance-rate feedback loop that increases/decreases DFlash2 draft length.",
+    "No scheduler/orchestrator artifact selecting a draft length from rolling statistics.",
+    "No preserved threshold policy, calibration receipt, or evaluator proving such a selector for the pinned DFlash2 runtime.",
+    "No GPU/build/run action was used to resolve absence."
+  ],
+  "terminal_disposition": "Source inventory complete. Existing adaptive length mechanisms are p_min early-stop for non-DFlash2 paths and DSpark's confidence head; pinned DFlash2 itself uses fixed configured n_max/block size. Stop with no reserved run receipts created."
+}

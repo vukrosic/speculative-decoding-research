@@ -1,0 +1,8 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "status": "not_started",
+  "reason": "Hard preflight stop: no executable approved prefix objective implementation exists in frozen trainer/wrapper artifacts; no GPU process launched.",
+  "looks": [800, 1600, 2400, 3200, 4000],
+  "results": [],
+  "errors": ["objective implementation identity mismatch / unavailable"]
+}

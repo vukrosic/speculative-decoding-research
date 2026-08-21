@@ -1,0 +1,53 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "captured_utc": "2026-08-21T13:04:27Z",
+  "status": "read-only-preflight-complete-fit-not-started",
+  "host_session": "ssh -p 35738 root@125.240.239.50; /workspace/smollm-eagle3-prototype",
+  "host": "9719ca4634c7",
+  "os": "Ubuntu 24.04.4 LTS",
+  "kernel": "Linux 5.15.0-187-generic x86_64",
+  "cpu": "Intel Xeon E5-2630 v4 @ 2.20GHz; 20 logical CPUs",
+  "ram": "15 GiB total; 14 GiB available at preflight",
+  "gpu": {
+    "model": "NVIDIA GeForce RTX 3060",
+    "uuid": "GPU-44e288c1-4695-3faf-7c51-983d3a12f382",
+    "vram_total_mib": 12288,
+    "vram_used_mib": 1,
+    "utilization_percent": 0,
+    "temperature_c": 56,
+    "driver": "580.173.02",
+    "cuda_reported_by_driver": "13.0",
+    "compute_processes": [],
+    "slot": "free; nvidia-smi reported no running processes"
+  },
+  "runtime": {
+    "python": "3.12.13 (/workspace/vllm-venv/bin/python)",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0; cuda_available=true; device_count=1",
+    "numpy": "2.3.5",
+    "compiler": "gcc/g++ 13.3.0",
+    "nvcc": "12.8 V12.8.93",
+    "runtime_source_commit": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+    "runtime_source_worktree": ["M common/speculative.cpp", "M src/llama-graph.cpp", "M tests/CMakeLists.txt", "M tools/server/server-context.cpp"],
+    "validation_server": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac/build-v21-cuda/bin/llama-server",
+    "validation_server_sha256": "78ccd846f70b6d632eb290c33be0b02f818c91b21fb0c126926c901cca5eb0d6",
+    "evaluator_sha256": "477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4",
+    "thread_device_split": "wrapper specifies one process, --parallel 1, --n-gpu-layers all; no server launched in preflight"
+  },
+  "process_baseline": {
+    "tmux": "no server running",
+    "llama_vllm_train_benchmark_processes": "none",
+    "platform_services": "ssh reverse forward, Jupyter, supervisor/portal/tensorboard only",
+    "cleanup_required": "none; no task-owned process started"
+  },
+  "commands": [
+    "date/hostname/uname/lscpu/free",
+    "nvidia-smi full and query forms",
+    "ps process baseline; tmux list-sessions",
+    "/workspace/vllm-venv/bin/python version and torch/numpy identity",
+    "gcc/g++/nvcc version",
+    "git rev-parse/status for pinned runtime source",
+    "find/sha256sum validation binary and frozen runner/data artifacts"
+  ],
+  "preflight_disposition": "GPU/resource/identity baseline is clean; fit is blocked solely by missing executable frozen objective implementation."
+}

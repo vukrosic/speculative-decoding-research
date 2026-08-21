@@ -1,0 +1,115 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "captured_at_utc": "2026-08-21T11:15:22Z",
+  "status": "read-only-preflight-complete-experiment-blocked",
+  "scope": "CEO-authorized metadata/process/GPU preflight only; no Arm A/B/D execution",
+  "session": {
+    "ssh": "ssh -p 35738 root@125.240.239.50 -L 8080:localhost:8080",
+    "host": "9719ca4634c7",
+    "project": "/workspace/smollm-eagle3-prototype",
+    "instance_container_id": "48085227",
+    "workspace_is_volume": false
+  },
+  "host_identity": {
+    "os": "Ubuntu 24.04.4 LTS (Noble Numbat)",
+    "kernel": "Linux 5.15.0-187-generic #197-Ubuntu SMP Fri Jul 17 19:17:01 UTC 2026",
+    "architecture": "x86_64",
+    "cpu": "Intel Xeon CPU E5-2630 v4 @ 2.20GHz",
+    "cpu_logical": 20,
+    "cpu_threads_per_core": 2,
+    "ram_total_bytes": 15828254720,
+    "ram_observed_free_h": "2.9Gi",
+    "ram_observed_used_h": "1.5Gi",
+    "disk_observed": "60.6GB/64.4GB (94.1%)"
+  },
+  "gpu": {
+    "model": "NVIDIA GeForce RTX 3060",
+    "vram_total_mib": 12288,
+    "vram_used_mib": 1,
+    "utilization_percent": 0,
+    "persistence_mode": "On",
+    "compute_capability": "8.6",
+    "driver": "580.173.02",
+    "driver_cuda_max": "13.0",
+    "nvidia_smi_command": "nvidia-smi",
+    "nvidia_smi_observed": "GPU 0, 1MiB/12288MiB, 0% GPU utilization, no running compute processes",
+    "process_ownership": "No user/model compute process; only instance management/Jupyter/TensorBoard services observed",
+    "slot_free_at_capture": true
+  },
+  "toolchain": {
+    "nvcc": "12.8.93 (/usr/local/cuda/bin/nvcc)",
+    "gcc": "13.3.0 (/usr/bin/gcc)",
+    "gxx": "13.3.0 (/usr/bin/g++)",
+    "cmake": "3.28.3",
+    "python_system": "3.12.3",
+    "python_main": "torch 2.11.0+cu128, torch CUDA 12.8 (from vast-capabilities; system python torch import unavailable)",
+    "cuda_home": "/usr/local/cuda",
+    "runtime_backend": "ggml-cpu;ggml-cuda; GGML_CUDA=ON, GGML_CUDA_FA=ON, GGML_CUDA_FORCE_CUBLAS=OFF, GGML_CUDA_FORCE_MMQ=OFF",
+    "cmake_build_type": "Release",
+    "cmake_generator": "Unix Makefiles",
+    "runtime_build_cxx": "/usr/bin/c++",
+    "runtime_build_c": "/usr/bin/cc",
+    "runtime_build_cuda": "/usr/local/cuda/bin/nvcc"
+  },
+  "runtime": {
+    "source_lineage": "llama.cpp DFlash PR 27342",
+    "source_commit": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+    "runtime_repo_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac",
+    "binary_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac/build-v21-cuda/bin/llama-server",
+    "binary_sha256": "78ccd846f70b6d632eb290c33be0b02f818c91b21fb0c126926c901cca5eb0d6",
+    "build_cache": ".../build-v21-cuda/CMakeCache.txt",
+    "speculators_repo_commit": "a5ee077f68b8f4813df7509a5c230d651d8063ac",
+    "threads": {"historical_server_log": 10, "current_preflight_process": "not applicable; no server launched"},
+    "device_split": {"gpu_layers": "all", "draft_gpu_layers": "all", "parallel": 1, "explicit_split_mode": "not recorded", "device_split_identity": "unknown"}
+  },
+  "frozen_target_and_prompts": {
+    "target_file": "Qwen3.8-27B-UD-IQ1_S.gguf",
+    "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "target_revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+    "prompt_manifest_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/config/prompts_v20.jsonl",
+    "prompt_manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+    "prompt_count": 6,
+    "prompt_ids": ["code_python_debug", "code_rust_parser", "math_modular", "logic_schedule", "technical_explain", "structured_extract"],
+    "context_tokens": 4096,
+    "seed": 42,
+    "decoding_flags": {"temperature": 0.0, "top_k": 1, "prompt_cache": false, "max_completion_tokens": 64, "gpu_layers": "all", "parallel_sequences": 1},
+    "tokenizer": {"identity": "target GGUF tokenizer/template used by historical server; exact tokenizer artifact/hash not separately recorded", "sha256": "unknown"},
+    "evaluator": {
+      "historical_client_path": ".../qwen38-27b-iq1s-dflash2-v21-20260820/scripts/benchmark_client_v21.py",
+      "historical_client_sha256": "477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4",
+      "historical_finalize_path": ".../scripts/finalize_receipt_v21.py",
+      "historical_finalize_sha256": "84101a5f11f44ccee00f75cf594eb7b42925caf408507cd6cafa8c7a11f79a60",
+      "strict_token_evaluator_contract": "historical six-prompt token/content/finish comparison; no new evaluation run",
+      "pinned_evaluator_for_PLAN001": "unknown until coordinator maps this receipt to the state-contract logger"
+    }
+  },
+  "block_shape": {
+    "historical_dflash_shape": {"block_size": 8, "draft_n_max": 7, "sample_from_anchor": true, "n_extract": 5, "mask_token_id": 248070},
+    "deployment_shaped_target_only_arm_b": "not mechanically inspected in a new run; exact target-only positions/mask/cache layout remain unknown",
+    "source": "historical dflash2-r0-server.log and terminal-negative-exactness-v21.json"
+  },
+  "cleanup_baseline": {
+    "experiment_processes": "none",
+    "tmux": "no server running",
+    "nvidia_compute_apps": "none",
+    "services_left_running": ["Jupyter", "supervisord", "TensorBoard", "instance portal", "syncthing", "management tunnels"],
+    "task_owned_processes_started": 0,
+    "cleanup_action": "none required; no task process launched"
+  },
+  "commands": [
+    "ssh -o BatchMode=yes -o ConnectTimeout=15 -p 35738 root@125.240.239.50 -L 8080:localhost:8080 '<read-only host/GPU/process/project probes>'",
+    "nvidia-smi; nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv",
+    "vast-capabilities metrics,packages",
+    "nvcc --version; gcc --version; g++ --version; cmake --version",
+    "git -C <speculators> rev-parse HEAD; git -C <llama runtime> rev-parse HEAD",
+    "sha256sum <llama-server>; sha256sum <prompt manifest>; sha256sum <evaluator scripts>",
+    "read-only JSON/grep/find metadata inspection; no model/evaluator command invoked"
+  ],
+  "blockers": [
+    "Exact tokenizer artifact/hash is not separately recorded.",
+    "PLAN-20260821 state-contract evaluator identity is not separately pinned (historical client/finalizer hashes are recorded).",
+    "Arm B target-only deployment-shaped positions/mask/cache layout has not been mechanically inspected; inspection would require the prohibited experiment/inference execution."
+  ],
+  "terminal_disposition": "STOPPED after read-only preflight; GPU slot is free, but do not run verifier experiment. Return metadata blocker and require a new approved execution decision if missing identities are resolved.",
+  "prohibitions_respected": {"inference": false, "evaluation": false, "training": false, "downloads": false, "installs": false, "patches": false, "heldout_access": false, "publication": false, "spending": false}
+}

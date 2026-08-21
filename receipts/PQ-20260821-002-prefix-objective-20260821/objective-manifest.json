@@ -1,0 +1,23 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "captured_utc": "2026-08-21T13:04:27Z",
+  "status": "preflight-blocked-before-fit",
+  "approval_manifest_sha256": "e2a8597438b9b1a327b418ebdd24f6ba31e6a9fbef4d2d3e3f2e87309d777adf",
+  "causal_change": "Replace v27 position-weighted CE with L_new=L_ce+L_prefix, lambda=1; FP32 log_softmax, r=max(true-label log-probability, log(1e-8)), cumulative log prefix sums, no exponentiation/probability products.",
+  "frozen_lineage": {
+    "parent_checkpoint_sha256": "d3caaa631eb7b3ab6bb10c63f7e1efe2de461a7f651ed0235fdaf5ca3c3faad0",
+    "v23b_manifest_sha256": "3004d4fae84bb2df0de5c47089c2d86345a2b7c66ca4cf66f7ee3aee9439c97d",
+    "v23f_label_sha256": "bedc0561f5aca18d38b9839cf87bb36892de18f70c6d4e6a50a92f2b158b0d7b",
+    "trainer_sha256": "13480e24cfe3188a526afbf69bf20f94300107273953ab90d414696391053859",
+    "curve_trainer_sha256": "f0bbb3f4e8217e7e5003dec305107ceccf951165afc70c67a1924ea37474f857",
+    "wrapper_sha256": "fa8fd20de9c6c17cbf78ce325741c3d27649681ebfac3e033bf69f696fdb067c"
+  },
+  "looks": [800, 1600, 2400, 3200, 4000],
+  "selection": "highest validation n=4 accepted/cycle; tie-break accepted/proposed, mean contiguous-prefix survival, validation L_new, earliest step",
+  "implementation_gate": {
+    "required": "An executable implementation of the approved formula while preserving frozen trainer/wrapper identities and no repository/runtime patch",
+    "observed": "Remote frozen v23f/v27 tree contains no L_prefix, log_epsilon, cumulative-log, or prefix-survival objective implementation; grep found only manifest prose and unrelated prefix-window generation.",
+    "blocker": "No existing approved objective implementation is available. Creating a new remote script/patch or replacing the frozen trainer would violate the no-patch/trainer-identity boundary.",
+    "run_authorized": false
+  }
+}

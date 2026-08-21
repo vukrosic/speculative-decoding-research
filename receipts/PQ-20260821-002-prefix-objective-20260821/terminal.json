@@ -1,0 +1,10 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "status": "blocked",
+  "terminal_disposition": "Stopped before fitting on objective implementation identity mismatch. The frozen remote trainer/wrapper tree has no executable direct FP32 cumulative-log prefix-survival objective; adding a script/patch or changing the frozen wrapper is outside the approved boundary.",
+  "preflight_receipts": ["objective-manifest.json", "environment.json", "data-manifest.json"],
+  "not_run_receipts": ["fit.json", "validation.json"],
+  "cleanup_receipt": "cleanup.json",
+  "final_gpu_process_state": "free RTX 3060; no task process",
+  "next_authority_required": "fresh CEO-approved objective implementation artifact or explicit authorization for an ephemeral implementation preserving all frozen identities"
+}

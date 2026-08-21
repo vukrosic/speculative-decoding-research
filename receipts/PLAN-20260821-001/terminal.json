@@ -1,0 +1,20 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "status": "aborted",
+  "disposition": "blocked-preflight",
+  "started_execution": false,
+  "scope_acknowledged_to_coordinator": true,
+  "commands": [
+    {"command": "nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu,persistence_mode --format=csv,noheader,nounits", "result": "command not found; RTX 3060 slot cannot be confirmed free"},
+    {"command": "uname -a; sw_vers; sysctl -n hw.model hw.ncpu hw.memsize", "result": "read-only host identity captured in environment.json"},
+    {"command": "command -v git cmake make clang gcc nvcc llama-server llama-cli", "result": "local macOS tools only; pinned llama.cpp DFlash build unavailable"}
+  ],
+  "milestones": ["scope acknowledgement sent", "required documents read", "read-only preflight attempted", "stopped before comparison"],
+  "errors": ["nvidia-smi unavailable", "mandatory GPU slot status unknown", "pinned runtime/build/compiler/CUDA/driver/backend/thread/device identities unavailable", "tokenizer/evaluator/prompt manifest/seed/flags/block shape unavailable"],
+  "receipts": ["environment.json", "terminal.json"],
+  "cleanup": {"task_processes_started": 0, "cleanup_required": false},
+  "final_device_process_state": "unknown GPU state; no experiment process launched",
+  "heldout_access": false,
+  "downloads_installs_runtime_patches_training_publication_spending": false,
+  "next_action": "Coordinator must provide an approved execution host or preserved complete identities and re-run preflight; do not infer or guess missing values."
+}

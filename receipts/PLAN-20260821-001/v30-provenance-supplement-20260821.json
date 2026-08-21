@@ -1,0 +1,92 @@
+{
+  "status": "read-only-inventory-complete-no-v30-experiment",
+  "captured_utc": "2026-08-21",
+  "host_session": "ssh -p 35738 root@125.240.239.50; /workspace/smollm-eagle3-prototype",
+  "scope": "Existing EXP-20260821-004/v30 provenance only; no model, inference, evaluation, download, install, training, patch, or held-out access invoked.",
+  "v30": {
+    "directory": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v30-quant-20260821",
+    "summary": {
+      "path": ".../v30-quant-20260821/receipts/quantized-deployment-summary.json",
+      "sha256": "f17f4fb55ba82771f5ecfbab554021bcb9f8bb9c123766908a15cb8eebd18c06"
+    },
+    "source_v27_parent": {
+      "checkpoint_pt": ".../v27-20260820/checkpoints/compact-dflash16-v27-gamma8-ls002-curve-from-v23f/intermediate/step-4000.pt",
+      "checkpoint_sha256": "d3caaa631eb7b3ab6bb10c63f7e1efe2de461a7f651ed0235fdaf5ca3c3faad0",
+      "export_receipt": ".../v27-20260820/receipts/export-v27-gamma8-ls002-curve-step-4000.json",
+      "export_receipt_sha256": "11875f65094c946b79017166299532f51e4163da8bfb68c79f65371d6fe2c081",
+      "f16_gguf": {
+        "path": ".../v27-20260820/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-f16.gguf",
+        "bytes": 105399616,
+        "sha256": "8e3edd04ecacd949da675dcdbe0263689fa820ee729e4376137ed816a4b0be31"
+      }
+    },
+    "quantized_artifacts": [
+      {"form": "curve Q4_K_M", "path": ".../v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-q4km.gguf", "bytes": 38583616, "sha256": "2a7828cfb7fa3aece704a7df4a36004341ec99ae99ab8bfe6e5262fe28430a63"},
+      {"form": "curve Q8_0", "path": ".../v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-q8.gguf", "bytes": 61162816, "sha256": "f71a21453e2fc379585045d22ee55c51add979e529882a17cf0ccb9cecf4e4f4"},
+      {"form": "epoch04 Q4_K_M", "path": ".../v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-epoch04-q4km.gguf", "bytes": 38583616, "sha256": "51aa17b093c3a26c42753387179ee085a8ed92da03d4545f350afc6226dc62a0"},
+      {"form": "epoch04 Q8_0", "path": ".../v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-epoch04-q8.gguf", "bytes": 61162816, "sha256": "ecf11d67eeec3779f2aaba50f9e8e929ffe76f6ea61f3fbc495dfac8bc9e151b"}
+    ]
+  },
+  "frozen_screen": {
+    "prompt_manifest": {
+      "path": ".../qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/validation-acceptance-screen-prompts-v23.jsonl",
+      "bytes": 7460,
+      "lines": 12,
+      "sha256": "30668abcb12a25a8c6b69f8f54bcf5f8942df3b800c996a52ba28d4e9af1f914",
+      "ids": ["v23-explanation-00005", "v23-math-00019", "v23-structured-00021", "v23-reasoning-00080", "v23-explanation-00095", "v23-coding-00126", "v23-math-00127", "v23-instruction-00160", "v23-reasoning-00170", "v23-structured-00201", "v23-instruction-00316", "v23-coding-00438"]
+    },
+    "contract": {
+      "path": ".../qwen38-27b-iq1s-dflash2-train-v23-20260820/config/benchmark-contract-compact-dflash16-v23.json",
+      "sha256": "42cf6a40304e278c8c4f4a01ecd612191cef55d22ae6d182b277a134bf416c39",
+      "seed": 42,
+      "context_tokens": 4096,
+      "max_completion_tokens": 64,
+      "temperature": 0.0,
+      "top_k": 1,
+      "prompt_cache": false,
+      "parallel_sequences": 1,
+      "draft_lengths": [4, 8, 16]
+    }
+  },
+  "evaluator_logger": {
+    "benchmark_client": {"path": ".../qwen38-27b-iq1s-dflash2-v21-20260820/scripts/benchmark_client_v21.py", "sha256": "477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4", "implementation": "stdlib-only urllib/json/hashlib/statistics/time; no third-party imports"},
+    "finalizer": {"path": ".../qwen38-27b-iq1s-dflash2-v21-20260820/scripts/finalize_receipt_v21.py", "sha256": "84101a5f11f44ccee00f75cf594eb7b42925caf408507cd6cafa8c7a11f79a60"},
+    "validation_wrapper": {"path": ".../v27-20260820/scripts/run_qwen_v27_validation_screen.sh", "sha256": "ea27524aad12b198f6a19c8c861c8a267542bac4e1b0f611a81c5f3f68037590"},
+    "target_only_wrapper": {"path": ".../v27-20260820/scripts/run_qwen_v27_target_only_validation_screen.sh", "sha256": "6fd5a465aa356434bf919450f6684b79eaf1d7d115f70a31e14ab88bc579ebb3"},
+    "python": "Python 3.12.13 (/workspace/vllm-venv)",
+    "pip_freeze_sha256": "17ebfa105a2eb097d16c116b1b5049b3809eeff57d08da5368531b10fc662cd8",
+    "relevant_dependency_versions": {"requests": "2.34.2", "httpx": "0.28.1", "numpy": "2.3.5", "urllib3": "2.7.0"},
+    "runtime": {"commit": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4", "llama_server_sha256": "78ccd846f70b6d632eb290c33be0b02f818c91b21fb0c126926c901cca5eb0d6"}
+  },
+  "historical_commands_flags": {
+    "quantization": "Logs record llama_quantize input -> output, Q4_K_M or Q8_0, using 4 threads; quant logs identify runtime 0.1.2-dev build 10498 commit 5ecbe1ac and GNU 13.3.0.",
+    "validation": "Wrapper invokes llama-server -m TARGET -md DRAFT --spec-type draft-dflash --spec-draft-n-max 4|8|16 --spec-draft-ngl all --host 127.0.0.1 --port 8096 --ctx-size 4096 --parallel 1 --n-gpu-layers all --no-context-shift --no-cache-prompt --reasoning off --metrics --perf; benchmark_client_v21.py uses --mode dflash2 --base-url http://127.0.0.1:8096 --contract CONTRACT --prompts PROMPTS --output RECEIPT --repetition 0 --wait-seconds 300.",
+    "target_only": "Wrapper invokes llama-server -m TARGET --host 127.0.0.1 --port 8096 --ctx-size 4096 --parallel 1 --n-gpu-layers all --no-context-shift --no-cache-prompt --reasoning off --metrics --perf; client --mode target with same contract/prompts/output/repetition/wait flags.",
+    "server_log_observed": {"n_threads": 10, "n_slots": 1, "block_size": 17, "mask_token_id": 248070, "n_extract": 1, "sample_from_anchor": false}
+  },
+  "baseline_and_cleanup": {
+    "target_only_baseline_receipt": {"path": ".../v27-20260820/receipts/validation-v27-target-only.json", "sha256": "dcc02c27442d89cebca65e3c659489aa58c3eec547099f9b640d9a8b7b4cd6f5", "requests": 12, "target_only": true, "heldout_used": false},
+    "v30_receipts": [
+      {"path": ".../v27-20260820/receipts/validation-v30-curve-q4km-n4.json", "sha256": "f62ac8885be326dfbaa5e8cbf60b95e83e378a7e7c308a8d6729b4cef1ec949d"},
+      {"path": ".../v27-20260820/receipts/validation-v30-curve-q8-n4.json", "sha256": "39e4803d3ec77cd5fd3593bf2fa239abf9829e11300fc837bc24a4b1a447ddd4"},
+      {"path": ".../v27-20260820/receipts/validation-v30-curve-q8-r2-n4.json", "sha256": "c66df9d4b6a41daa0d1ea643afc78e8bdd2e99bba46067a27e843c67b1bb529d"},
+      {"path": ".../v27-20260820/receipts/validation-v30-curve-q8-r3-n4.json", "sha256": "cf5eee3389ef2d9dfb50deb84b7d0abcccbe5c429d514634c32aa7c535767a06"},
+      {"path": ".../v27-20260820/receipts/validation-v30-q4km-n4.json", "sha256": "3cd35efa37cf9d8c927fd0acd7b4dfd6074424851bf07041eecb54730a1bd235"},
+      {"path": ".../v27-20260820/receipts/validation-v30-q8-n4.json", "sha256": "c23e5f259b7b749ffadcb6feccab4ce969b045c6fac9f3c9820d491b409556b9"}
+    ],
+    "cleanup_device_evidence": {
+      "live_preflight": "nvidia-smi: RTX 3060, 12288 MiB total, 1 MiB used, 0% utilization; no compute-app rows. ps shows only platform services, no llama/vllm/benchmark/quantize process; tmux reports no server.",
+      "target_stop": {"path": ".../v27-20260820/state/validation-v27-target-only.stop", "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+      "target_gpu_log": {"path": ".../v27-20260820/logs/validation-v27-target-only-gpu.csv", "sha256": "b0f89ac1cc893e88b1ed7f8a3541ec7935a8ec2f9d986abcda0e330f89cb629b"},
+      "last_v30_gpu_log": {"path": ".../v27-20260820/logs/validation-v30-curve-q8-r3-n4-gpu.csv", "sha256": "939447f7e62f4b83cb5ceaec4ded1043ad9818216fb9478e4beccc9d8f37b6ec"},
+      "explicit_cleanup_receipt": false
+    }
+  },
+  "unavailable_fields": [
+    "No EXP-20260821-004-named directory or standalone v30 provenance receipt was found; v30 artifacts live under v30-quant-20260821 and validation receipts remain in the v27 directory.",
+    "No shell command transcript records the exact llama-quantize executable invocation; only its input/output/type/thread arguments are preserved in quant logs.",
+    "No standalone cleanup/device receipt was found for v30; cleanup is evidenced indirectly by stop-file, GPU CSV hashes, and current idle nvidia-smi/ps/tmux baseline.",
+    "No separate dependency lockfile is present; pip-freeze hash and interpreter/package versions are recorded instead."
+  ],
+  "terminal_disposition": "Inventory complete; stop. No GPU experiment approval implied."
+}

@@ -1,0 +1,23 @@
+{
+  "experiment": "EXP-20260821-004-RERUN",
+  "captured_utc": "2026-08-21T11:51:56Z",
+  "status": "preflight_passed",
+  "host_session": "ssh -p 35738 root@125.240.239.50 -L 8080:localhost:8080",
+  "host": "9719ca4634c7",
+  "project": "/workspace/smollm-eagle3-prototype",
+  "gpu": {"index": 0, "model": "NVIDIA GeForce RTX 3060", "vram_mib": 12288, "used_mib": 1, "utilization_pct": 0, "driver": "580.173.02", "compute_apps": []},
+  "process_baseline": "No llama/vllm/benchmark_client/quantize process observed; compute-app query empty.",
+  "disk": "overlay 60G 57G 3.6G 95% /",
+  "target": {"path": ".../qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf", "sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887"},
+  "drafters": {
+    "f16": {"path": ".../v27-20260820/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-f16.gguf", "sha256": "8e3edd04ecacd949da675dcdbe0263689fa820ee729e4376137ed816a4b0be31"},
+    "q4km": {"path": ".../v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-q4km.gguf", "sha256": "2a7828cfb7fa3aece704a7df4a36004341ec99ae99ab8bfe6e5262fe28430a63"},
+    "q8": {"path": ".../v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-q8.gguf", "sha256": "f71a21453e2fc379585045d22ee55c51add979e529882a17cf0ccb9cecf4e4f4"}
+  },
+  "runtime": {"commit": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4", "llama_server_sha256": "78ccd846f70b6d632eb290c33be0b02f818c91b21fb0c126926c901cca5eb0d6"},
+  "evaluator": {"benchmark_client_sha256": "477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4", "validation_wrapper_sha256": "ea27524aad12b198f6a19c8c861c8a267542bac4e1b0f611a81c5f3f68037590", "target_only_wrapper_sha256": "6fd5a465aa356434bf919450f6684b79eaf1d7d115f70a31e14ab88bc579ebb3"},
+  "prompts": {"sha256": "30668abcb12a25a8c6b69f8f54bcf5f8942df3b800c996a52ba28d4e9af1f914", "count": 12},
+  "contract": {"sha256": "42cf6a40304e278c8c4f4a01ecd612191cef55d22ae6d182b277a134bf416c39", "proposal_length": 4, "max_completion_tokens": 64, "context_tokens": 4096, "seed": 42, "temperature": 0.0, "top_k": 1, "prompt_cache": false, "parallel": 1, "warmups_per_server": 1},
+  "preflight_command": "read-only sha256sum/nvidia-smi/ps/git/python/df inventory over pinned paths; no model execution",
+  "hard_stop": null
+}

@@ -1,0 +1,101 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "captured_utc": "2026-08-21",
+  "status": "read-only-inventory-complete-no-execution",
+  "scope": "Preserved runtime/source/receipt inventory for the missing evaluator tuple and exact Arm-B target-only deployment layout. No model load, llama invocation, inference, evaluation, training, download, install, patch, held-out access, or GPU action was performed.",
+  "host_session": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "project": "/workspace/smollm-eagle3-prototype",
+    "remote_guide_read": "/etc/vast-agents-guide.md",
+    "gpu_action": "none"
+  },
+  "inspection_commands": [
+    "find experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820 -type f (source, log, receipt names only)",
+    "grep/sed preserved test-v22-block-equivalence.cpp, speculative.cpp, dflash.cpp, benchmark_contract_v22.json, and historical logs/receipts",
+    "sha256sum preserved source, config, log, and receipt artifacts",
+    "python3 JSON parsing of preserved receipts only"
+  ],
+  "evaluator_tuple": {
+    "required_fields": [
+      "committed prefix token IDs at every divergence",
+      "proposed token IDs",
+      "target token IDs",
+      "correction token",
+      "cache before/after transaction with serialized schema and contents",
+      "mask and position IDs as serialized tensors",
+      "deterministic replay identifier",
+      "pinned evaluator source/dependency commit and output-token accounting in one receipt"
+    ],
+    "preserved_partial_evidence": [
+      {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/tests/test-v22-block-equivalence.cpp",
+        "sha256": "636e9fb4a9b1c16d8f433fdfac9f1eaa320d19d70b012945c2bd9178656aef92",
+        "fields": ["prompt prefill shape", "row logits", "argmax/max-logit/top5 summaries", "selected layer input tensors", "intermediate vectors", "memory sequence min/max before/after", "batch token count", "full-logit and selected-layer diffs"]
+      },
+      {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/finalize_diagnosis_v22.py",
+        "sha256": "54b48fc99364807a23e6064c0503b5ff599157af9b38cce5541ed7aedb4a29d5",
+        "fields": ["q_len=2/7 summaries", "negative position/noncausal/cache controls", "historical exactness summary"]
+      },
+      {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/trace_one_prompt_v22.py",
+        "sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+        "fields": ["prompt/rendered-prompt hashes", "raw response token IDs", "timing fields"]
+      },
+      {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/receipts/terminal-diagnosis-v22.json",
+        "sha256": "080fe7cf3337c7b7ed1fe67ef321f1651afbe049099dbc36de074dd0d1c38f06",
+        "fields": ["high-level frozen-contract interpretation", "observed/cleanup/preservation summary"]
+      }
+    ],
+    "finding": "No preserved artifact contains the complete required tuple in one pinned evaluator receipt. The partial components above cannot be promoted into the PLAN-001 evaluator identity by inference.",
+    "unknowns": [
+      "No committed-prefix/proposed/target/correction transaction tuple at each divergence",
+      "No serialized target mask tensor or cache tensor contents/schema",
+      "No deterministic replay ID bound to all tuple fields",
+      "No single evaluator commit/dependency hash covering this state contract"
+    ]
+  },
+  "arm_b_layout": {
+    "finding": "A separate target-only deployment-shaped Arm-B receipt is absent. Preserved v22 block-equivalence source/receipts document a historical target-only diagnostic block shape, but do not mechanically prove that it is PLAN-001 Arm-B.",
+    "source": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/tests/test-v22-block-equivalence.cpp",
+      "sha256": "636e9fb4a9b1c16d8f433fdfac9f1eaa320d19d70b012945c2bd9178656aef92",
+      "context": {"n_ctx": 4096, "n_seq_max": 1, "n_rs_seq": 7, "n_batch": 512, "n_ubatch": 512, "n_outputs_max": 8, "n_outputs_max_per_seq": 8},
+      "prefill": "169 prompt tokens; positions 0..164 then 165..168; seq_id 0",
+      "historical_calls": {
+        "singleton_source": {"tokens": [[248069], [271]], "positions": [[169], [170]], "output_all": true, "source_memory_before": [168, 168], "source_memory_after": [171, 171]},
+        "block2": {"tokens": [248069, 271], "positions": [169, 170], "batch_tokens": 2, "memory_before": [168, 168], "memory_after": [170, 170]},
+        "block7_tail_a": {"tokens": [248069, 271, 11, 12, 13, 14, 15], "positions": [169, 170, 171, 172, 173, 174, 175], "batch_tokens": 7, "memory_before": [168, 168], "memory_after": [175, 175]}
+      },
+      "controls": {
+        "default_mask": "causal attention remains enabled for block2/block7",
+        "negative_noncausal_mask": "explicit llama_set_causal_attn(false)",
+        "negative_position_plus_one": "block positions shifted by +1",
+        "negative_cache_last_prompt_token": "llama_memory_seq_rm(seq=0, p0=168, p1=-1), then prompt_tokens.back()+1 at position 168",
+        "split_flash": "LLAMA_V22_SPLIT_FLASH_QUERIES activates the historical split-flash diagnostic path"
+      }
+    },
+    "historical_receipts": [
+      {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/receipts/block-equivalence-cuda-v22.json", "sha256": "2b9435e0aa58854ce743bcaad6f419e9580d3cc076fa2817e06da9d39a592670"},
+      {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/receipts/block-equivalence-cuda-split-flash-controls-v22.json", "sha256": "ec572fbffdfd6cb7de8864de31b2c923319df7bb3a19f701a4aec2bb91f3346f"},
+      {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/receipts/dflash2-split-flash-nmax1-six-prompts-v22.json", "sha256": "445f313e8b3e81a3eab32eacef076ae68f3082c8902a3cb1c6f2a7f814a836f5", "caveat": "historical speculative receipt, not target-only Arm-B proof"}
+    ],
+    "runtime_metadata": {
+      "log": {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/logs/dflash2-debug-server.log", "sha256": "d129e47c91925a0280f9cf2834ffd4ae7825aede74f82f30c0449a1b030bc2d4"},
+      "observed": {"n_max": 7, "block_size": 8, "mask_token_id": 248070, "n_extract": 5, "sample_from_anchor": true, "selector_top_k": 16, "target_layer_ids": [6, 20, 34, 48, 62], "dflash_causal_metadata": false, "target_log_causal_attention": 1},
+      "source": [
+        {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/common/speculative.cpp", "sha256": "31d5b692df9fe2e215d1ddd1c75eef2fc1b03572b8e2c74c99d1024c3d944399", "evidence": "DFlash2 runtime builds n_block_tokens=n_max+1, first token dp.id_last then mask_token_id slots, draft positions n..n+n_max, logits disabled; draft context explicitly non-causal"},
+        {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/src/models/dflash.cpp", "sha256": "3b31b1a6b888ec37013a4d6275fdaf1fdeb6a9e3ca25b933ab136acdbcd58c49", "evidence": "preserved DFlash model metadata/anchor implementation; does not establish a PLAN-001 target-only Arm-B mapping"}
+      ]
+    },
+    "unknowns": [
+      "Exact deployment-shaped Arm-B target-only positions/mask/cache schedule is not preserved as a standalone receipt",
+      "Historical v22 source block shape is diagnostic evidence only; no exact PLAN-001 deployment equivalence is established",
+      "Full serialized mask values, KV/cache contents, anchor/n_extract state transition, and state/logit transaction fields are absent",
+      "Singleton memory-after differs between source description [171,171] and parsed historical receipt [170,170]; this must be resolved by an authorized recheck, not inference"
+    ]
+  },
+  "terminal_disposition": "Inventory terminalized. Evidence and hashes recorded; unresolved evaluator tuple and exact Arm-B deployment layout remain a hard blocker. No further action is authorized in this receipt.",
+  "errors": ["An initial sha256sum probe used a non-existent runtime path; find resolved the preserved checkout path. No model or experiment command was invoked."]
+}

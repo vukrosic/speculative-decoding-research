@@ -1,0 +1,12 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "captured_utc": "2026-08-21T13:04:27Z",
+  "status": "read-only-data-gate-pass-fit-not-started",
+  "target": {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf", "sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887", "layer": 62},
+  "parent": {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/checkpoints/compact-dflash16-v27-gamma8-ls002-curve-from-v23f/intermediate/step-4000.pt", "sha256": "d3caaa631eb7b3ab6bb10c63f7e1efe2de461a7f651ed0235fdaf5ca3c3faad0"},
+  "features": {"manifest_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/feature-groups-quality-v23b/manifest.json", "manifest_sha256": "3004d4fae84bb2df0de5c47089c2d86345a2b7c66ca4cf66f7ee3aee9439c97d", "feature_dir": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/shards/features-compact-v23b", "aggregate_hash": "unavailable; accepted caveat"},
+  "labels": {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/token-labels-v23f.jsonl", "sha256": "bedc0561f5aca18d38b9839cf87bb36892de18f70c6d4e6a50a92f2b158b0d7b", "records": 10452, "train_validation_records": "9944/508", "heldout": "571 windows sealed; not opened or accessed"},
+  "output_head": {"path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/artifacts/target-output-weight-iq1s-v23f.f16", "sha256": "8df6c677988e82b920d895fb761081ae93ed1ee73220dae3120f941a064471a7"},
+  "data_policy": {"mask": "frozen label manifest valid-position mask; EOS active then later positions zero", "no_synthetic_eos": true, "no_new_trajectories": true, "heldout_access": false},
+  "data_disposition": "Hashes and split metadata match approval packet; no data loader or model code executed."
+}

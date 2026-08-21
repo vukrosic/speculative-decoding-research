@@ -1,0 +1,85 @@
+{
+  "receipt_id": "PQ-20260821-002-objective-implementation-inventory-20260821",
+  "timestamp_local": "2026-08-21",
+  "status": "read_only_complete_no_artifact_found",
+  "authorization_boundary": "Inventory preserved files only; no fitting, inference, evaluation, build, patch, download, install, held-out access, GPU/model process, or scope expansion.",
+  "remote": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "project": "/workspace/smollm-eagle3-prototype",
+    "hostname": "9719ca4634c7",
+    "project_git": "NO_GIT",
+    "python": "/usr/bin/python3 Python 3.12.3",
+    "commands": [
+      "find . -type f with prefix/survival/objective/log_softmax names, excluding checkpoints/heldout/manifests/shards/pycache",
+      "grep -RIn for log_epsilon|L_prefix|prefix_loss|cumulative-log|prefix-survival, excluding payload and already-inspected v23/v27 trees",
+      "stat -c %s and sha256sum for preserved candidate files",
+      "git -C <runtime> rev-parse HEAD and read-only sed/grep source inspection"
+    ]
+  },
+  "candidates": [
+    {
+      "path": "experiments/qwen38-27b-iq1s-dflash2-autoresearch-v31-margin-20260821/scripts/train_kd_gamma8_ls002.py",
+      "bytes": 11760,
+      "sha256": "6977c466cac94afeee426cd86f57208c5b23d7a1b06b36e8a1d2bcbdfc5251ca",
+      "tree_identity": "project has no git metadata; preserved v31 directory",
+      "interpreter_dependencies": "#!/usr/bin/env python3; numpy, torch, torch.nn.functional, train_compact_dflash16_token_ce_v23f",
+      "finding": "Unrelated hard-CE plus target-logit KD; torch.log_softmax at line 99, no log_epsilon, cumulative prefix sum, L_prefix, or prefix-survival objective."
+    },
+    {
+      "path": "experiments/qwen38-27b-iq1s-dflash2-autoresearch-v31-margin-20260821/scripts/train_kd_gamma8_ls002_alpha005.py",
+      "bytes": 11760,
+      "sha256": "11df0f60570c083403c6623849af821338a9d70a6b28581a2c9c416e28ecb69d",
+      "tree_identity": "project has no git metadata; preserved v31 directory",
+      "interpreter_dependencies": "#!/usr/bin/env python3; numpy, torch, torch.nn.functional, train_compact_dflash16_token_ce_v23f",
+      "finding": "Unrelated hard-CE plus target-logit KD alpha variant; torch.log_softmax at line 99, no PQ-002 prefix objective tuple."
+    },
+    {
+      "path": "experiments/qwen38-27b-iq1s-dflash2-autoresearch-v31-margin-20260821/scripts/train_mixedls_early4_gamma8.py",
+      "bytes": 11523,
+      "sha256": "8e63de1836727fd89b68b32fe497a39c58184c3ae6dd14441ea2b028034bb3ac",
+      "tree_identity": "project has no git metadata; preserved v31 directory",
+      "interpreter_dependencies": "#!/usr/bin/env python3; numpy, torch, torch.nn.functional, train_compact_dflash16_token_ce_v23f",
+      "finding": "Unrelated CE with label smoothing; F.log_softmax at line 77, no log_epsilon, cumulative prefix sum, L_prefix, or prefix-survival objective."
+    },
+    {
+      "path": "experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac/tools/perplexity/perplexity.cpp",
+      "bytes": 82239,
+      "sha256": "b9958b81bb2c77a1f42dadeef6ddaf5abbe68d7d3bc46f509608e463f8575b6f",
+      "tree_identity": "llama.cpp HEAD 5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+      "interpreter_dependencies": "C++ llama.cpp tool; compiler/build not invoked",
+      "finding": "Generic inference perplexity helper computes token log_softmax and NLL aggregates; no training objective, direct true-label clamp, cumulative prefix loss, or L_prefix."
+    },
+    {
+      "path": "experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac/tools/imatrix/imatrix.cpp",
+      "bytes": 44010,
+      "sha256": "a56c35fe501a2b4dc4b10d55dcf0468e22b8bfd0e82987f0cec8121201d2bf5a",
+      "tree_identity": "llama.cpp HEAD 5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+      "interpreter_dependencies": "C++ llama.cpp tool; compiler/build not invoked",
+      "finding": "Generic inference importance-matrix helper computes token log_softmax/NLL statistics; not PQ-002 objective."
+    },
+    {
+      "path": "experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac/src/llama-sampler.cpp",
+      "bytes": 151735,
+      "sha256": "ade0e3fee8ae823ee1fe0c527e5c3fbe66189b0201ce42327cd6940f83883026",
+      "tree_identity": "llama.cpp HEAD 5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+      "interpreter_dependencies": "C++ runtime sampler; compiler/build not invoked",
+      "finding": "Runtime sampling log-softmax/probability helpers only; no objective implementation or cumulative prefix survival."
+    },
+    {
+      "path": "experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/tools/perplexity/perplexity.cpp",
+      "bytes": 82239,
+      "sha256": "b9958b81bb2c77a1f42dadeef6ddaf5abbe68d7d3bc46f509608e463f8575b6f",
+      "tree_identity": "runtime directory has no .git; byte/hash-identical to pinned 5ecbe1ac perplexity helper",
+      "interpreter_dependencies": "C++ llama.cpp tool; compiler/build not invoked",
+      "finding": "Same generic perplexity helper, not PQ-002 objective."
+    }
+  ],
+  "absence_checks": {
+    "exact_patterns": ["log_epsilon", "L_prefix", "prefix_loss", "cumulative-log", "prefix-survival"],
+    "scope": "experiments excluding checkpoints, heldout, manifests, shards, generation, __pycache__, and already-inspected v23/v27 trainer trees",
+    "result": "zero matches"
+  },
+  "required_tuple": ["FP32 log_softmax", "log_epsilon=log(1e-8)", "direct true-label clamp", "cumulative-log prefix sums", "L_prefix", "lambda=1", "mask/EOS handling", "FP32 reductions and finite gates"],
+  "terminal_finding": "No preserved implementation artifact outside the already-inspected v23f/v27 trainer/wrapper tree implements the complete frozen PQ-002 objective tuple. The listed log_softmax code is generic runtime/perplexity/KD support only. Objective implementation card remains NEEDS-CEO-AMENDMENT; fitting remains unauthorized and was not attempted.",
+  "next_safe_action": "Obtain a CEO amendment naming an approved implementation artifact or authorize a separately scoped implementation task; do not fit from these candidates."
+}

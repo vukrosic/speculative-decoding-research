@@ -1,0 +1,90 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "captured_at_utc": "2026-08-21",
+  "status": "read-only-supplement-complete-no-experiment",
+  "host_session": "ssh -p 35738 root@125.240.239.50; project /workspace/smollm-eagle3-prototype",
+  "commands": [
+    "find/grep preserved experiment files for tokenizer/evaluator/block metadata (read-only)",
+    "sha256sum selected historical scripts, receipts, logs, and C++ source",
+    "python3 minimal GGUF-header/metadata parser reading only frozen target GGUF metadata (no llama binary/model load/inference)",
+    "sed/grep preserved test-v22-block-equivalence.cpp, finalize_diagnosis_v22.py, and terminal-diagnosis-v22.json"
+  ],
+  "tokenizer": {
+    "finding": "Tokenizer is embedded in the frozen target GGUF; no separate tokenizer artifact exists under the Qwen experiment paths.",
+    "target_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf",
+    "target_bytes": 6192222208,
+    "target_sha256_from_frozen_receipt": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "gguf_header": {"magic": "GGUF", "version": 3, "tensor_count": 851, "metadata_kv_count": 50},
+    "embedded_metadata": {
+      "tokenizer.ggml.model": "gpt2",
+      "tokenizer.ggml.pre": "qwen35",
+      "tokenizer.ggml.tokens_count": 248320,
+      "tokenizer.ggml.merges_count": 247587,
+      "tokenizer.ggml.eos_token_id": 248046,
+      "tokenizer.ggml.padding_token_id": 248055,
+      "tokenizer.ggml.bos_token_id": 248044,
+      "tokenizer.ggml.mask_token_id": 248070,
+      "tokenizer.chat_template": "embedded; full template not copied into receipt"
+    },
+    "independent_historical_log": {
+      "path": ".../qwen38-27b-iq1s-dflash2-diag-v22-20260820/logs/dflash2-debug-server.log",
+      "sha256": "d129e47c91925a0280f9cf2834ffd4ae7825aede74f82f30c0449a1b030bc2d4",
+      "same_metadata_observed": true
+    },
+    "resolved": "Tokenizer identity is target-GGUF embedded gpt2/qwen35 metadata, bound to target SHA-256 above; no separate tokenizer-file hash is available."
+  },
+  "state_contract_evaluator": {
+    "finding": "No existing artifact is a complete PLAN-001 state-contract evaluator. Existing artifacts provide partial components.",
+    "partial_components": [
+      {
+        "role": "state/logit/cache capture source",
+        "path": ".../qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/tests/test-v22-block-equivalence.cpp",
+        "sha256": "636e9fb4a9b1c16d8f433fdfac9f1eaa320d19d70b012945c2bd9178656aef92",
+        "observed_fields": ["row logits/top-1", "selected layer input tensors", "memory sequence min/max before/after", "batch token count"]
+      },
+      {
+        "role": "historical diagnostic finalizer",
+        "path": ".../qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/finalize_diagnosis_v22.py",
+        "sha256": "54b48fc99364807a23e6064c0503b5ff599157af9b38cce5541ed7aedb4a29d5",
+        "observed_fields": ["q_len=2/7 summaries", "negative position/mask/cache controls", "historical exactness summary"]
+      },
+      {
+        "role": "historical HTTP raw receipt collector",
+        "path": ".../qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/trace_one_prompt_v22.py",
+        "sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+        "observed_fields": ["prompt manifest hash", "rendered prompt hash", "raw response tokens/timings"]
+      }
+    ],
+    "historical_receipt": {
+      "path": ".../qwen38-27b-iq1s-dflash2-diag-v22-20260820/receipts/terminal-diagnosis-v22.json",
+      "sha256": "080fe7cf3337c7b7ed1fe67ef321f1651afbe049099dbc36de074dd0d1c38f06"
+    },
+    "unresolved": [
+      "No artifact records the full PLAN-001 contract tuple at every divergence: committed prefix, proposed/target token IDs, correction token, cache before/after rollback transaction, deterministic replay ID, and evaluator commit in one pinned evaluator.",
+      "Therefore evaluator identity remains unresolved for PLAN-001; historical partial components must not be promoted by inference."
+    ]
+  },
+  "arm_b_shape_state_layout": {
+    "source_path": ".../qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/tests/test-v22-block-equivalence.cpp",
+    "source_sha256": "636e9fb4a9b1c16d8f433fdfac9f1eaa320d19d70b012945c2bd9178656aef92",
+    "historical_source_contract": {
+      "context": {"n_ctx": 4096, "n_seq_max": 1, "n_rs_seq": 7, "n_batch": 512, "n_ubatch": 512, "n_outputs_max": 8, "n_outputs_max_per_seq": 8},
+      "prompt_prefill": "169 tokens; decode positions 0..164 then 165..168; seq_id 0",
+      "singleton": {"calls": [{"tokens": [248069], "positions": [169], "output_all": true}, {"tokens": [271], "positions": [170], "output_all": true}], "memory_before": [168, 168], "memory_after": [171, 171]},
+      "block2": {"tokens": [248069, 271], "positions": [169, 170], "batch_tokens": 2, "memory_before": [168, 168], "memory_after": [170, 170]},
+      "block7_tail": {"tokens": [248069, 271, 11, 12, 13, 14, 15], "positions": [169, 170, 171, 172, 173, 174, 175], "batch_tokens": 7, "memory_before": [168, 168], "memory_after": [175, 175]},
+      "mask": "default causal attention remains enabled for block2/block7; negative_noncausal_mask explicitly calls llama_set_causal_attn(false)",
+      "cache_negative": "negative_cache_last_prompt_token removes seq 0 positions [168, infinity), then decodes prompt_tokens.back()+1 at position 168 before block",
+      "position_negative": "negative_position_plus_one shifts block positions by +1",
+      "runtime_env": "LLAMA_V22_SPLIT_FLASH_QUERIES enables historical singleton-shaped flash query split; this is a diagnostic historical source path, not a new execution"
+    },
+    "historical_receipts": [
+      {"path": ".../receipts/block-equivalence-cuda-v22.json", "sha256": "2b9435e0aa58854ce743bcaad6f419e9580d3cc076fa2817e06da9d39a592670", "comparisons": ["block2", "block7_tail_a", "block7_tail_b", "negative_position_plus_one", "negative_noncausal_mask", "negative_cache_last_prompt_token"]},
+      {"path": ".../receipts/block-equivalence-cuda-split-flash-controls-v22.json", "sha256": "ec572fbffdfd6cb7de8864de31b2c923319df7bb3a19f701a4aec2bb91f3346f", "comparisons": ["same shapes under split-flash controls"]},
+      {"path": ".../receipts/terminal-diagnosis-v22.json", "sha256": "080fe7cf3337c7b7ed1fe67ef321f1651afbe049099dbc36de074dd0d1c38f06", "summary": "positions/memory aligned at q_len=2; negative position/noncausal/cache controls detected"}
+    ],
+    "resolved_fields": ["historical block widths 2 and 7", "absolute positions", "seq_id", "cache extents before/after", "default-causal vs negative noncausal mask", "rollback perturbation"],
+    "unresolved_fields": ["Whether this historical test block is exactly the pinned PLAN-001 Arm-B deployment-shaped schedule emitted by the runtime; no separate target-only Arm-B receipt exists", "full serialized mask tensor values and cache contents are not preserved in compact receipts", "no new execution permitted to mechanically inspect them"]
+  },
+  "terminal_disposition": "Read-only inspection complete. No model code, llama binary, inference, evaluator, training, download, install, patch, or held-out access invoked. Stop with exact remaining unresolved evaluator/schedule fields."
+}

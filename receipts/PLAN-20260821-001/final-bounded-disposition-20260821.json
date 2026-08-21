@@ -1,0 +1,42 @@
+{
+  "receipt_id": "PLAN-20260821-001-final-bounded-disposition-20260821",
+  "date": "2026-08-21",
+  "status": "terminal_no_new_evidence",
+  "scope": "Local documentation only. Existing PLAN-001 reconciliation receipt was read; no remote connection, search, GPU/device action, model/runtime invocation, build, inference, evaluation, patch, download, install, or held-out access occurred.",
+  "last_receipt": {
+    "path": "receipts/PLAN-20260821-001/evaluator-armb-contract-reconciliation-20260821.json",
+    "sha256": "1d0dc945cc25b7dc8ac990b44cacfbfd0fe08ec023df2a2a66ce5b9fe8193d58"
+  },
+  "unchanged_unknown_fields": {
+    "evaluator": [
+      "complete evaluator/logger path and dependency hash",
+      "rendered-prompt/replay ID bound to every record",
+      "committed prefix, proposed IDs, target IDs, first-divergence transaction",
+      "correction token semantic binding and accept/commit decision per divergence",
+      "exact sampler/RNG tuple binding",
+      "state shape/dtype as a complete per-record contract",
+      "serialized mask schema/hash and position tensor hash",
+      "serialized cache schema/state hashes before and after rollback",
+      "single receipt with exact target-only oracle output and output-token accounting"
+    ],
+    "arm_b": [
+      "exact PLAN-001 deployment-shaped width and batch schedule",
+      "exact absolute positions and sequence IDs for Arm B",
+      "serialized causal-mask schema/hash",
+      "serialized cache extents/state hashes and full KV contents",
+      "anchor/n_extract transition tied to the exact Arm-B schedule",
+      "source/config/command hash proving historical v22 mapping is PLAN-001 Arm B"
+    ]
+  },
+  "memory_after_discrepancy": {
+    "source_description": [171, 171],
+    "parsed_historical_receipt": [170, 170],
+    "status": "UNRESOLVED; no inference or recheck authorized"
+  },
+  "terminal_state": {
+    "processes": "No process launched by this disposition",
+    "device": "No device/GPU action",
+    "plan_status": "PLAN-001 comparison remains blocked",
+    "next_safe_action": "Require an explicitly approved source/introspection/evaluator-contract amendment before any further execution."
+  }
+}

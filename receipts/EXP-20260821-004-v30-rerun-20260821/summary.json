@@ -1,0 +1,18 @@
+{
+  "experiment": "EXP-20260821-004-RERUN",
+  "status": "completed_bounded_approximate_rerun",
+  "warmup_policy": "one warmup request per arm server session; excluded from timed aggregates",
+  "timed_repetitions": 3,
+  "prompt_count_per_repetition": 12,
+  "max_completion_tokens": 64,
+  "seed": 42,
+  "arms": {
+    "target_only": {"receipt": "target-only-baseline.json", "mean_tokens_per_second": 17.37577719790039, "stdev_tokens_per_second": 0.06671876004658432, "completion_tokens_each": [625, 625, 625], "target_content_matches_each": [12, 12, 12], "accepted_each": [0, 0, 0], "proposed_each": [0, 0, 0], "peak_vram_mib": 6365.0},
+    "f16": {"receipt": "f16.json", "artifact_sha256": "8e3edd04ecacd949da675dcdbe0263689fa820ee729e4376137ed816a4b0be31", "mean_tokens_per_second": 11.53059344155098, "stdev_tokens_per_second": 0.013690157615730945, "completion_tokens_each": [625, 625, 625], "target_content_matches_each": [7, 7, 7], "accepted_each": [102, 102, 102], "proposed_each": [1971, 1971, 1971], "peak_vram_mib": 8085.0},
+    "q4km": {"receipt": "q4km.json", "artifact_sha256": "2a7828cfb7fa3aece704a7df4a36004341ec99ae99ab8bfe6e5262fe28430a63", "mean_tokens_per_second": 11.574492296044443, "stdev_tokens_per_second": 0.01035404019778842, "completion_tokens_each": [625, 625, 625], "target_content_matches_each": [7, 7, 7], "accepted_each": [103, 103, 103], "proposed_each": [1967, 1967, 1967], "peak_vram_mib": 8015.0},
+    "q8": {"receipt": "q8.json", "artifact_sha256": "f71a21453e2fc379585045d22ee55c51add979e529882a17cf0ccb9cecf4e4f4", "mean_tokens_per_second": 11.557183820409293, "stdev_tokens_per_second": 0.014094619978621005, "completion_tokens_each": [625, 625, 625], "target_content_matches_each": [7, 7, 7], "accepted_each": [102, 102, 102], "proposed_each": [1971, 1971, 1971], "peak_vram_mib": 8033.0}
+  },
+  "interpretation": "Approximate serving-form screen only. Drafter exact target-content match is 7/12 for every repetition; exactness is diagnostic/failed. Do not claim losslessness, general quality, general exactness, or general speed improvement.",
+  "errors": ["Initial pre-execution launch typo in Q8 path caused command-not-found before any server/model process; corrected and no comparison was affected."],
+  "receipt_hashes": {"target_only": "44ec15bb2c751684155132658292b1d8e625e6df2ab8be785c354d1d2b95d778", "f16": "f906269ebd09bf365fefdd8bb5b015d0db0626fc967962977f40a1fc8c224cb5", "q4km": "3f59439857b803f9cbb689c08c848a1760a7e15d88adac4586247a7e6c17ed1d", "q8": "3fba36ad1f787c8f2580e350553536bf34ef4201b60770cf2b3890fd64e87141"}
+}

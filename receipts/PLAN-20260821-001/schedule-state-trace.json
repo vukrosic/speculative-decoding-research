@@ -1,0 +1,5 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "status": "not-run",
+  "reason": "Preflight blocked before Arm A/B comparison; block width/positions/mask/cache layout remain unknown."
+}

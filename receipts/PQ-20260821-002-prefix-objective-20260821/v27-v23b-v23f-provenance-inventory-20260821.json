@@ -1,0 +1,216 @@
+{
+  "experiment": "PQ-20260821-002-prefix-objective-20260821",
+  "captured_utc": "2026-08-21",
+  "status": "read-only-provenance-inventory-complete-no-training-no-inference",
+  "scope": "Existing remote artifacts only: v27 lineage/checkpoint, v23b feature-group manifest, v23f token-label manifest, trainer/config/optimizer/seed identity, and evaluator/baseline receipts. No held-out data was opened or used.",
+  "remote": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "project": "/workspace/smollm-eagle3-prototype",
+    "gpu_action": "none",
+    "execution_action": "no training, inference, evaluation, build, download, install, or patch"
+  },
+  "v27_lineage": {
+    "experiment_dir": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820",
+    "selected_lineage": "gamma8 + label_smoothing=0.02 + position_weight_gamma=8, curve snapshot from v23f parent epoch 3",
+    "parent_checkpoint": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/checkpoints/compact-dflash16-v23f-token-ce-full/epoch-03.pt",
+      "sha256": "58d21ea393171203a52fba4df431e1850216cb9ea948faf83190e1473abc8930",
+      "parent_epoch": 3
+    },
+    "v27_intermediate_checkpoint": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/checkpoints/compact-dflash16-v27-gamma8-ls002-curve-from-v23f/intermediate/step-4000.pt",
+      "sha256": "d3caaa631eb7b3ab6bb10c63f7e1efe2de461a7f651ed0235fdaf5ca3c3faad0",
+      "optimizer_step": 4000
+    },
+    "v27_export": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-f16.gguf",
+      "sha256": "8e3edd04ecacd949da675dcdbe0263689fa820ee729e4376137ed816a4b0be31",
+      "bytes": 105399616,
+      "export_receipt": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/receipts/export-v27-gamma8-ls002-curve-step-4000.json",
+      "export_receipt_sha256": "11875f65094c946b79017166299532f51e4163da8bfb68c79f65371d6fe2c081",
+      "block_size": 17,
+      "speculative_proposals": 16,
+      "target_layers": [62]
+    },
+    "v27_training_receipt": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/receipts/train-v27-gamma8-ls002-curve-from-v23f.json",
+      "sha256": "5640cdef79c546611ccda3d877067c0d22c033784a4d33d81001ac48f59cb404",
+      "train_records": 9944,
+      "validation_records": 508,
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "position_weight_gamma": 8.0,
+      "seed": 42,
+      "heldout_used": false,
+      "optimizer_state_restored": false,
+      "optimizer_state_reason": "v23f checkpoint stores model/config only; AdamW state was not serialized",
+      "sampler_state_restored": false,
+      "sampler_state_reason": "v23f checkpoint stores no sampler state; deterministic seed restarted sampler stream",
+      "feature_dir": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/shards/features-compact-v23b",
+      "label_manifest": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/token-labels-v23f.jsonl",
+      "label_manifest_sha256": "bedc0561f5aca18d38b9839cf87bb36892de18f70c6d4e6a50a92f2b158b0d7b",
+      "output_head": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/artifacts/target-output-weight-iq1s-v23f.f16",
+      "output_head_sha256": "8df6c677988e82b920d895fb761081ae93ed1ee73220dae3120f941a064471a7"
+    }
+  },
+  "feature_label_manifests": {
+    "v23b_feature_groups": {
+      "manifest": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/feature-groups-quality-v23b/manifest.json",
+        "sha256": "3004d4fae84bb2df0de5c47089c2d86345a2b7c66ca4cf66f7ee3aee9439c97d",
+        "schema_version": 2,
+        "groups": 4,
+        "train_validation_windows": 10452,
+        "heldout_windows_sealed": 571,
+        "heldout_features_extracted_before_selection": false,
+        "group_response_sha256": {
+          "group_000": "e621d2aa5f18a079f59f26ec82d6ed033cde1c5946fb23b76a81423171381b3e",
+          "group_001": "a32081cb52ab76e45a6a534fd7adb23460bcd7cf079e778f7f95ec58538c825d",
+          "group_002": "b4c06b0867b57c04620ed36cc7db920ca4b71eef31352895bbe836667d9504d5",
+          "group_003": "efec9b17a58e16bebc0644fea46723b02cf5f94fe6b07d37cbfa0224ac4fd97"
+        }
+      },
+      "window_plan_receipt": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/receipts/window-plan-quality-raw-final-v23b.json",
+        "sha256": "e185a9f8dc85d5ff571c86f1f11cc19ddd1e367d955b2c15ee98ead5f373e039",
+        "response_rows": 2000,
+        "accepted_responses": 1473,
+        "windows": 11023,
+        "successor_tokens": 16,
+        "source_disjoint_split": true,
+        "dedup_key": "rendered prompt hash plus exact completion prefix through all 16 successor tokens"
+      },
+      "grouping_script": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/scripts/group_feature_inputs_trainval_v23b.py",
+        "sha256": "c4135b36ceb561f386eca5f36353c13e1b9a85f419412662aac76193463c7c73",
+        "behavior": "Groups train/selection windows and seals heldout-test windows without including them in feature groups."
+      },
+      "feature_extractor": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/scripts/extract_features_compact_v23b.cpp",
+        "sha256": "603b6e4f503324c9f026b45c61757118afceba10958b3a4dd7c08b72a5c0b8fd"
+      }
+    },
+    "v23f_token_labels": {
+      "manifest": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/token-labels-v23f.jsonl",
+        "sha256": "bedc0561f5aca18d38b9839cf87bb36892de18f70c6d4e6a50a92f2b158b0d7b",
+        "records": 10452,
+        "unique_window_ids": 10452,
+        "unique_successor_hashes": 8478,
+        "split_category_counts": {
+          "train/coding": 1576,
+          "train/explanation": 1337,
+          "train/instruction": 2088,
+          "train/math": 2086,
+          "train/reasoning": 1471,
+          "train/structured": 1386,
+          "validation/coding": 80,
+          "validation/explanation": 70,
+          "validation/instruction": 88,
+          "validation/math": 112,
+          "validation/reasoning": 88,
+          "validation/structured": 70
+        }
+      },
+      "label_receipt": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/receipts/token-labels-v23f.json",
+        "sha256": "ac54ed4d68ba045cdf9eab66bd97c2ae55466c8f314f0e6d3ef783d97a1bce49",
+        "alignment_gate": "passed",
+        "purpose": "derived hard-label token CE interface; no new generation or windows"
+      },
+      "interface_receipt": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/receipts/token-label-interface-v23f.json",
+        "sha256": "95895a50827b84f8dfd6d428fc54b573b54b99416d6479fb4299da7de0c7bb53",
+        "alignment_gate": "passed",
+        "records_checked": 10452,
+        "output_head_shape": [248320, 5120],
+        "negative_control": "one-position cyclic label shift detected"
+      },
+      "label_preparation_script": {
+        "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/scripts/prepare_token_label_manifest_v23f.py",
+        "sha256": "702ccce3ac47ea4ddb17b4893ed5fe08242574204f503695c93130f231ec8d61"
+      }
+    }
+  },
+  "training_identity": {
+    "v23f_trainer": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/scripts/train_compact_dflash16_token_ce_v23f.py",
+      "sha256": "13480e24cfe3188a526afbf69bf20f94300107273953ab90d414696391053859",
+      "defaults_or_source": {"epochs": 3, "batch_size": 2, "learning_rate": 0.0003, "seed": 42, "optimizer": "torch.optim.AdamW", "betas": [0.9, 0.95], "weight_decay": 0.01, "gradient_clip_norm": 1.0, "objective": "hard_label_position_weighted_token_cross_entropy", "block_size": 17, "proposals": 16, "target_layers": [62], "target_logit_self_distillation": false}
+    },
+    "v23f_training_receipt": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/receipts/compact-dflash16-v23f-token-ce-full.json",
+      "sha256": "2f3bfe6373ac58c513842575d10197f955e660b7b33080cf308aa106b7a9be7b",
+      "train_records": 9944,
+      "validation_records": 508,
+      "seed": 42,
+      "parent_epoch_03_checkpoint_sha256": "58d21ea393171203a52fba4df431e1850216cb9ea948faf83190e1473abc8930"
+    },
+    "v27_curve_trainer": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/scripts/train_compact_dflash16_token_ce_v27_gamma8_ls002_curve.py",
+      "sha256": "f0bbb3f4e8217e7e5003dec305107ceccf951165afc70c67a1924ea37474f857",
+      "source_behavior": "Wraps v23f objective with gamma=8 and label_smoothing=0.02; snapshots additive checkpoints at optimizer steps 800,1600,2400,3200,4000."
+    },
+    "v27_curve_wrapper": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/scripts/run_qwen_v27_gamma8_ls002_curve_train.sh",
+      "sha256": "fa8fd20de9c6c17cbf78ce325741c3d27649681ebfac3e033bf69f696fdb067c",
+      "frozen_flags": "--feature-dir .../shards/features-compact-v23b --label-manifest .../manifests/token-labels-v23f.jsonl --output-head .../target-output-weight-iq1s-v23f.f16 --initial-checkpoint .../v23f-token-ce-full/epoch-03.pt --expected-parent-epoch 3 --epochs 1 --batch-size 2 --lr 1e-4 --seed 42"
+    },
+    "benchmark_contract": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/config/benchmark-contract-compact-dflash16-v23.json",
+      "sha256": "42cf6a40304e278c8c4f4a01ecd612191cef55d22ae6d182b277a134bf416c39",
+      "seed": 42,
+      "draft_lengths": [4, 8, 16],
+      "context_tokens": 4096,
+      "max_completion_tokens": 64,
+      "temperature": 0.0,
+      "top_k": 1,
+      "parallel_sequences": 1,
+      "prompt_cache": false,
+      "warmups_per_server": 1
+    }
+  },
+  "evaluator_and_baselines": {
+    "evaluator_client": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/scripts/benchmark_client_v21.py",
+      "sha256": "477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4"
+    },
+    "evaluator_finalizer": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/scripts/finalize_receipt_v21.py",
+      "sha256": "84101a5f11f44ccee00f75cf594eb7b42925caf408507cd6cafa8c7a11f79a60"
+    },
+    "target_only_baseline": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/receipts/validation-v27-target-only.json",
+      "sha256": "dcc02c27442d89cebca65e3c659489aa58c3eec547099f9b640d9a8b7b4cd6f5",
+      "mode": "target",
+      "requests": 12,
+      "completion_tokens": 625,
+      "prompt_manifest_sha256": "30668abcb12a25a8c6b69f8f54bcf5f8942df3b800c996a52ba28d4e9af1f914",
+      "contract_sha256": "42cf6a40304e278c8c4f4a01ecd612191cef55d22ae6d182b277a134bf416c39",
+      "draft_proposed_tokens": 0,
+      "draft_accepted_tokens": 0,
+      "heldout_used": false
+    },
+    "v27_dflash_baseline": {
+      "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/receipts/validation-v27-gamma8-ls002-curve-step-4000-n4.json",
+      "sha256": "00fefb3ff24bab1829c0ff71de3afa5b22de484f88ed98f42c70c09a08bffbb7",
+      "mode": "dflash2",
+      "requests": 12,
+      "completion_tokens": 625,
+      "prompt_manifest_sha256": "30668abcb12a25a8c6b69f8f54bcf5f8942df3b800c996a52ba28d4e9af1f914",
+      "contract_sha256": "42cf6a40304e278c8c4f4a01ecd612191cef55d22ae6d182b277a134bf416c39",
+      "draft_proposed_tokens": 1967,
+      "draft_accepted_tokens": 103,
+      "draft_acceptance_rate": 0.05236400610066091,
+      "heldout_used": false
+    }
+  },
+  "unknowns_and_caveats": [
+    "No single immutable source commit exists for the Python trainer scripts; exact working-file SHA-256 hashes are recorded instead.",
+    "The v23f parent checkpoint does not serialize AdamW optimizer state or sampler state; v27 continuation explicitly restarted the sampler with seed 42 and did not restore optimizer state.",
+    "The v23b feature directory has no single aggregate directory hash in the preserved receipts; the v23b manifest, window-plan receipt, group response hashes, and extractor script hash are recorded.",
+    "Baseline receipts establish existing evaluator outputs and frozen prompt/contract hashes; they do not prove any new PQ-002 prefix objective or training result.",
+    "Held-out manifests/data were not opened; only non-held-out metadata fields in preserved manifests/receipts were inspected."
+  ],
+  "terminal_disposition": "PQ-002 provenance inventory complete. All requested existing lineage, feature/label, training identity, evaluator, and baseline artifacts found and hashed. Stop; no experiment action authorized."
+}

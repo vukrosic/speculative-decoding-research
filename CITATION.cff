@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Speculative Decoding Research"
+message: "If this repository helps your work, please cite it."
+type: software
+version: "0.1.0"
+date-released: "2026-08-21"
+license: MIT
+authors:
+  - family-names: "Rosić"
+    given-names: "Vuk"
+keywords:
+  - speculative decoding
+  - DFlash
+  - DFlash2
+  - language model inference
+  - model serving

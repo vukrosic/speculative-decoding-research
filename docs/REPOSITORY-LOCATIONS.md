@@ -1,36 +1,26 @@
-# Repository locations
+# Repository locations (internal operations note)
 
-Keep these two locations distinct in every experiment card, command, receipt,
-and handoff.
+This file is intentionally generic. It is safe to keep in the public tree and
+does not contain hostnames, usernames, credentials, or personal filesystem
+paths.
 
-## Open Discovery research repository
+## Local research repository
 
-- Checkout:
-  `/Users/vukrosic/my-life/open-discovery-workspace/llm-inference-optimization/speculative-decoding-research`
-- Former checkout (moved; retained for historical references only):
-  `/Users/vukrosic/Documents/Codex/2026-08-20/connect-to-my-gpu-box-and/speculative-decoding-research`
-- GitHub remote:
-  [vukrosic/speculative-decoding-research](https://github.com/vukrosic/speculative-decoding-research)
-- Parent project: `/Users/vukrosic/my-life/open-discovery-workspace/llm-inference-optimization`
-- Purpose: compact research knowledge base, experiment cards, metadata,
-  prompts, indexes, daily notes, and small receipts.
-- Storage rule: do not store model weights, datasets, checkpoints, feature
-  tensors, build trees, environments, or large logs here.
+Use the checkout containing this file as `RESEARCH_REPO_ROOT`. Keep model
+weights, datasets, checkpoints, feature tensors, environments, and large logs
+outside Git; record a generic artifact URI or a redacted local reference in a
+receipt.
 
-## Remote GPU project
+## Remote execution project
 
-- Project checkout: `/workspace/smollm-eagle3-prototype`
-- Host: authorized remote RTX 3060 environment; connection details are not
-  stored in this repository.
-- Purpose: experiment execution, model/runtime artifacts, training data, and
-  large logs/checkpoints that are referenced from the MacBook repository by
-  immutable path/identity/hash.
-- Persistence: remote storage and host lifecycle must be reverified for each
-  authorized run.
+Use an authorized remote checkout as `REMOTE_PROJECT_ROOT`. Connection details
+belong in the operator's private environment, never in a public card, issue,
+receipt, or example. Record only the runtime version, hardware identity,
+artifact hashes, and a redacted command shape in public research notes.
 
 ## Naming convention
 
-Experiment cards and receipts live in the Open Discovery repository. Commands that run
-on the GPU must show the remote working directory explicitly and link back to
-the corresponding MacBook card. Never describe a remote artifact path as if it
-were a local checkout path.
+Experiment cards and compact receipts live in the research repository. A
+remote command must identify its working directory privately and link back to
+the corresponding experiment card. Never publish access details as part of a
+scientific result.

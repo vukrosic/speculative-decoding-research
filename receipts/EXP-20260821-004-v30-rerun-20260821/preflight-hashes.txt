@@ -1,0 +1,8 @@
+3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf
+8e3edd04ecacd949da675dcdbe0263689fa820ee729e4376137ed816a4b0be31  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v27-20260820/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-f16.gguf
+2a7828cfb7fa3aece704a7df4a36004341ec99ae99ab8bfe6e5262fe28430a63  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-q4km.gguf
+f71a21453e2fc379585045d22ee55c51add979e529882a17cf0ccb9cecf4e4f4  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-autoresearch-v30-quant-20260821/exports/qwen38-compact-dflash16-v27-gamma8-ls002-curve-step-4000-q8.gguf
+78ccd846f70b6d632eb290c33be0b02f818c91b21fb0c126926c901cca5eb0d6  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/runtime/llama-dflash2-pr27342-5ecbe1ac/build-v21-cuda/bin/llama-server
+477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/scripts/benchmark_client_v21.py
+30668abcb12a25a8c6b69f8f54bcf5f8942df3b800c996a52ba28d4e9af1f914  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/manifests/validation-acceptance-screen-prompts-v23.jsonl
+42cf6a40304e278c8c4f4a01ecd612191cef55d22ae6d182b277a134bf416c39  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-train-v23-20260820/config/benchmark-contract-compact-dflash16-v23.json

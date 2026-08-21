@@ -1,73 +1,88 @@
+![Speculative decoding mascot and verification pipeline](assets/speculative-decoding-hero.png)
+
 # Speculative Decoding Research
 
-A durable research repository for speculative decoding, DFlash and DFlash2,
-block diffusion, multi-token prediction, verification runtimes, drafter
-training, exactness, acceptance, quality, hardware behavior, and end-to-end
-serving performance.
+An open research kit for understanding and improving speculative decoding:
+drafting, verification, correction, cache/state behavior, training, exactness,
+acceptance, and end-to-end serving performance.
 
-This repository is designed for many years of experiments. It preserves what
-worked, what failed, what remains uncertain, and the evidence behind every
-claim. Large model/data artifacts are deliberately excluded from Git.
+The repository is useful at two levels:
 
-## North star
+- **Playground:** small examples and scripts that make it easy to try an idea.
+- **Lab archive:** experiments, literature notes, negative results, and compact
+  evidence for work that needs to be reproduced or compared later.
 
-Build reusable knowledge and systems for training, verifying, benchmarking,
-optimizing, and deploying speculative-generation methods across models,
-workloads, runtimes, and hardware.
+Start with [`QUICKSTART.md`](QUICKSTART.md). The first example has no external
+dependencies and demonstrates proposal, verification, rejection, correction,
+and accepted-prefix accounting.
 
-## Evidence ladder
-
-An experiment may establish one level without establishing the next:
-
-1. construction and finite-gradient correctness;
-2. teacher-forced loss and token accuracy;
-3. autoregressive draft acceptance;
-4. task/output quality;
-5. exact target-equivalence or a clearly declared approximate contract;
-6. matched end-to-end latency and throughput;
-7. generalization across workloads, hardware, and runtimes.
-
-## Repository map
+## What is here
 
 | Path | Purpose |
 |---|---|
-| `experiments/cards/` | One immutable, append-oriented card per experiment |
-| `results/INDEX.md` | Cross-experiment result table and current incumbents |
-| `failures/INDEX.md` | Negative results and failed assumptions |
-| `models/`, `drafters/` | Target and drafter metadata records |
-| `hardware/`, `runtimes/` | Reproducibility metadata |
-| `datasets/`, `benchmarks/` | Data and evaluation contracts |
-| `papers/` | Paper notes, implementation mappings, replication questions |
-| `daily/` | Chronological lab notebook |
-| `open-questions/` | Prioritized unknowns and proposed discriminating tests |
-| `receipts/` | Small machine-readable receipts and hashes only |
-| `templates/` | Required metadata templates |
-| `prompts/` | Prompts for agents running and documenting research |
-| `docs/` | Methodology, taxonomy, glossary, roadmap, and decisions |
+| `examples/` | Small runnable demonstrations and teaching examples |
+| `methods/` | Reusable method notes and implementations as they mature |
+| `experiments/` | Experiment cards, plans, and reviews |
+| `results/` | Cross-experiment summaries and current observations |
+| `failures/` | Negative results and failed assumptions |
+| `literature/`, `papers/` | Papers, source maps, and implementation notes |
+| `models/`, `drafters/`, `runtimes/`, `hardware/` | Reproduction metadata |
+| `receipts/` | Small machine-readable run records and hashes |
+| `docs/` | Methods, taxonomy, roadmap, and release notes |
+| `governance/` | Internal lab coordination and historical decisions |
 
-## Start here
+Large models, datasets, checkpoints, GGUF files, feature tensors, and profiler
+captures are intentionally kept outside Git. See [`AGENTS.md`](AGENTS.md).
 
-1. Read `AGENTS.md`.
-2. Read `docs/RESEARCH-METHOD.md` and `results/INDEX.md`.
-3. Create an experiment card from `templates/experiment-card.md`.
-4. Freeze evaluation and define the promotion gate before running anything.
-5. End with receipts and update the indexes, including failures.
+## Current research
 
-The exact MacBook checkout and the separate remote GPU project are recorded in
-[`docs/REPOSITORY-LOCATIONS.md`](docs/REPOSITORY-LOCATIONS.md). Keep them
-distinct.
+The first laboratory is Qwen3.8-27B with DFlash/DFlash2-style compact drafters,
+alongside SmolLM experiments used to study capacity and latency trade-offs.
+The current evidence shows that better teacher-forced metrics do not
+automatically produce better acceptance or end-to-end speed. The repository
+preserves that negative result instead of presenting an optimistic benchmark.
 
-## Current seeded knowledge
+The latest Qwen export-format screen is summarized in
+[`literature/HANDOFF-20260821-V30-RESULT.md`](literature/HANDOFF-20260821-V30-RESULT.md).
+It is an approximate, screen-scoped result—not a general speed, quality, or
+losslessness claim. The detailed internal decision and raw operational receipts
+remain in the lab archive and are subject to the release boundary.
 
-- SmolLM2-135M DFlash2-style on-policy block-3 training and capacity scaling.
-- Qwen3.8-27B IQ1_S DFlash2 runtime exactness failures.
-- Qwen compact 47.2M-drafter objective, capacity, proposal-length, quantization,
-  and block-shape-alignment studies.
-- The central recurring lesson: better teacher-forced metrics have repeatedly
-  failed to guarantee better acceptance or serving speed.
+## Evidence vocabulary
 
-## Artifact policy
+Reports keep these observations separate:
 
-Git stores knowledge, metadata, compact receipts, and hashes. It does not store
-weights, GGUFs, feature corpora, datasets, environments, or large logs. See
-`AGENTS.md` and `.gitignore`.
+1. construction and finite-gradient checks;
+2. teacher-forced loss and token accuracy;
+3. autoregressive draft acceptance;
+4. output quality;
+5. token/state exactness under a declared contract;
+6. matched end-to-end latency and throughput;
+7. generalization across models, workloads, hardware, and runtimes.
+
+A result at one level does not imply the next level.
+
+## Contributing
+
+For a quick idea, add an example or experiment folder and record the command
+and what happened. For a serious comparison, also record the model/runtime
+identities, prompts or data split, baseline, and a compact receipt. Existing
+templates under `templates/` are guides rather than a barrier to
+experimentation.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) and
+[`docs/RELEASE-BOUNDARY.md`](docs/RELEASE-BOUNDARY.md) before preparing a
+public release. The curated file list is in
+[`PUBLIC-RELEASE-MANIFEST.md`](PUBLIC-RELEASE-MANIFEST.md).
+
+## Status
+
+This is a pre-1.0 research repository. APIs, scripts, and experiment formats
+may change. Scientific claims should be read with their linked scope and
+receipt, especially where a result is approximate, validation-only,
+confounded, underpowered, or blocked.
+
+## License and citation
+
+Code and documentation are released under the [MIT License](LICENSE). To cite
+the repository, use [`CITATION.cff`](CITATION.cff).

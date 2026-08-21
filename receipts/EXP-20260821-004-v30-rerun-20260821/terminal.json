@@ -1,0 +1,16 @@
+{
+  "experiment": "EXP-20260821-004-RERUN",
+  "terminal_disposition": "COMPLETED — bounded approximate rerun finished; exactness failed diagnostically as pre-registered; cleanup passed.",
+  "scope_observed": "Existing target and F16/Q4_K_M/Q8_0 drafter artifacts only, fixed target/runtime/evaluator/prompts/contract, one RTX 3060, one serving process at a time, no held-out data.",
+  "commands": [
+    "SSH preflight: sha256sum pinned artifacts; nvidia-smi GPU/process queries; ps process baseline; git rev-parse runtime; Python version.",
+    "Per arm: llama-server with fixed target, optional existing draft, --spec-type draft-dflash --spec-draft-n-max 4 --spec-draft-ngl all, --ctx-size 4096 --parallel 1 --n-gpu-layers all --no-context-shift --no-cache-prompt --reasoning off --metrics --perf.",
+    "Pinned benchmark_client_v21.py imported by the approved inline orchestrator: one warmup request then repetitions 1,2,3 over the frozen 12-prompt manifest; output-token accounting asserted for every repetition."
+  ],
+  "error_log": [{"path": "launch-error.log", "sha256": "c0523b5c6d179d21510aa133eeaa3e37bf0252c04fd07b08be8725ad23fa5842", "detail": "Pre-execution Q8 path typo produced command-not-found; no server or model process had started. Corrected before approved sequence; no result artifact was affected."}],
+  "artifact_receipts": {"environment": "environment.json", "target_only": "target-only-baseline.json", "f16": "f16.json", "q4km": "q4km.json", "q8": "q8.json", "summary": "summary.json", "cleanup": "cleanup.json"},
+  "remote_hashes": "preflight-hashes.txt",
+  "cleanup": "cleanup.json",
+  "final_state": "RTX 3060 idle at 1 MiB used/0% utilization; no task-owned inference process remains.",
+  "claims_boundary": "Report only approximate arm-separated acceptance, target-content matches, output-token accounting, timing, and VRAM. No lossless, general exactness, quality, or general speed claim is supported."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "cleanup_passed",
+  "remote_receipt_dir": "/workspace/smollm-eagle3-prototype/receipts/EXP-20260821-004-v30-rerun-20260821",
+  "task_owned_cleanup": "Each arm server was terminated and waited before the next arm; GPU monitor was terminated and waited after each arm.",
+  "final_gpu_state": {"path": "final-gpu-state.txt", "sha256": "b9793737f4caacef43a1e08be1f8dff888830bc1cb3f662213256f966dbe5afb", "observed": "RTX 3060, 12288 MiB total, 1 MiB used, 0% utilization"},
+  "final_process_state": {"path": "final-process-state.txt", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "observed": "empty llama/vllm/benchmark_client/quantize process listing"},
+  "per_arm_gpu_logs": {"target_only": "f97e9a433d8815375892d49c6e0cded1b927575470db1980dfb8bcb567b91798", "f16": "abf156321e1017fd539e1fa855f2852a9ca03cf18cfc8abb030ac48d29be26e8", "q4km": "23213c7d7ec5bb0552135daec65a8d8900a775c1ba0428d55ccdb548b53f75e1", "q8": "0008178ed25db8a140b4dd0574e98630795e35d2c1e9e158a76bc54762c806a5"},
+  "cleanup_errors": []
+}

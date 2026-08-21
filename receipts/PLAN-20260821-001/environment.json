@@ -1,0 +1,18 @@
+{
+  "experiment": "PLAN-20260821-001",
+  "captured_at_utc": "2026-08-21T09:25:32Z",
+  "status": "blocked-preflight",
+  "scope": "Arm A target-only singleton vs Arm B deployment-shaped target-only block; Arm D cache/rollback negative control",
+  "runtime_lineage": "5ecbe1ac",
+  "target": {"name": "Qwen3.8-27B-UD-IQ1_S.gguf", "sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887", "quantization": "IQ1_S"},
+  "host": {"os": "macOS 26.5 (25F71)", "kernel": "Darwin 25.5.0", "arch": "arm64", "cpu": "Mac16,1", "cpu_cores": 10, "ram_bytes": 17179869184},
+  "gpu": {"required": "RTX 3060 12 GB", "slot_free": "unknown", "probe": "nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu,persistence_mode --format=csv,noheader,nounits", "probe_result": "command not found"},
+  "runtime": {"binary_path": "unknown", "binary_hash": "unknown", "source_commit": "5ecbe1ac lineage only; build unavailable", "compiler": "unknown", "cuda": "unknown", "driver": "unknown", "backend": "unknown", "threads": "unknown", "device_split": "unknown"},
+  "tokenizer": {"identity": "unknown", "sha256": "unknown"},
+  "evaluator": {"identity": "unknown", "commit_or_hash": "unknown"},
+  "prompts": {"source": "EXP-20260820-001", "count": 6, "ids_order_manifest_hash": "unknown"},
+  "decoding": {"mode": "strict greedy", "seed": "unknown", "flags": "unknown", "context_limit": 4096},
+  "block_shape": {"width": "unknown", "positions": "unknown", "mask": "unknown", "cache_layout": "unknown"},
+  "preflight_decision": "STOP before comparison: mandatory GPU slot and runtime/build identities unavailable; no execution started.",
+  "no_download_install_patch_training_heldout": true
+}

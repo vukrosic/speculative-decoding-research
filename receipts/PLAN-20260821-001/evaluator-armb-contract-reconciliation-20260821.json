@@ -1,0 +1,171 @@
+{
+  "receipt_id": "PLAN-20260821-001-evaluator-armb-contract-reconciliation-20260821",
+  "captured_local_date": "2026-08-21",
+  "status": "read_only_reconciled_blocked",
+  "scope": "Reconciled preserved v20-v22/LIT-001 evidence into the PLAN-001 evaluator tuple and Arm-B deployment-shaped mapping. No SSH, GPU/model process, build, inference, evaluation, training, patch, download, install, or held-out access.",
+  "inspection_commands": [
+    "rg --files llm-inference-optimization/speculative-decoding-research",
+    "rg -n -i 'evaluator|Arm-B|171|170|prefix|diverg|cache|mask|logit|state|sampler|RNG|dependency|commit|position|seq_id|shape|dtype|replay' across preserved PLAN-001/LIT-001 docs and receipts",
+    "sed -n on preserved evaluator-armb-layout-inventory-20260821.json, remote-preflight-supplement-20260821.json, and governance contract",
+    "sha256sum and stat on all cited local evidence files",
+    "python3 -m json.tool on this receipt after writing"
+  ],
+  "source_evidence": [
+    {
+      "path": "receipts/PLAN-20260821-001/evaluator-armb-layout-inventory-20260821.json",
+      "bytes": 8602,
+      "sha256": "bb1d4a6dd6bf3567454992d526219fdb2b393c1084f33ab6afaacd1bf98c623e"
+    },
+    {
+      "path": "receipts/PLAN-20260821-001/remote-preflight-supplement-20260821.json",
+      "bytes": 7367,
+      "sha256": "4b8d28607ca7db2777bce88470b282e244e299dc97ac7dc3003a8d571c1a9b2f"
+    },
+    {
+      "path": "governance/PLAN-20260821-001-CONTRACT-MANIFEST.md",
+      "bytes": 4651,
+      "sha256": "c2b206772db00c915a019792941d0176d5dae49d9e5e50680cd9fc601d4ca17c"
+    },
+    {
+      "path": "literature/PLAN-20260821-001-MINIMAL-MANIFEST.md",
+      "bytes": 4074,
+      "sha256": "f79e8d8dfd280431eed55777f5e59ed96ace0b41356657318e09f3576b70df94"
+    },
+    {
+      "path": "experiments/planning/PLAN-20260821-001-EVALUATOR-ARMB-INVENTORY-VERDICT-20260821.md",
+      "bytes": 3252,
+      "sha256": "d594cc9653dda9c75708d8fdaae95ce460f20f2b9c25bdce297a4b00eed8199f"
+    },
+    {
+      "path": "experiments/critique/PLAN-20260821-001-EVALUATOR-ARMB-INVENTORY-CRITIQUE-20260821.md",
+      "bytes": 1396,
+      "sha256": "5eb255d6b4cf86df879061ee33bc3b6ab0dac455d71b1d0afa536d1bc546b5f9"
+    },
+    {
+      "path": "literature/HANDOFF-20260821-LIT-001.md",
+      "bytes": 2126,
+      "sha256": "ae867e2b1b7d1a6b769919c3d1be5decab910d1dd15efeb69c8bb68282dcc205"
+    },
+    {
+      "path": "literature/VERDICT-20260821-EVALUATOR-ARMB-INVENTORY.md",
+      "bytes": 2580,
+      "sha256": "338fbfe4698a2308311937e658d9573ef564e7aaec9b652dac6cc25a031004b0"
+    }
+  ],
+  "frozen_identities": {
+    "runtime_lineage": "llama.cpp DFlash PR lineage 5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+    "runtime_binary_sha256": "78ccd846f70b6d632eb290c33be0b02f818c91b21fb0c126926c901cca5eb0d6",
+    "target_gguf_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "prompt_manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+    "prompt_scope": "six frozen prompts; strict greedy; seed 42 is recorded in the contract, but no replay ID is bound to the evaluator tuple"
+  },
+  "evaluator_tuple": {
+    "prompt_and_replay": {
+      "prompt_manifest_hash": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+      "rendered_prompt_hash_per_record": "UNKNOWN",
+      "deterministic_replay_id": "UNKNOWN",
+      "evidence": "trace_one_prompt_v22.py SHA256 6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e records prompt/rendered hashes and raw responses but is not a complete PLAN-001 replay contract."
+    },
+    "committed_prefix_token_ids": "UNKNOWN per divergence",
+    "proposed_token_ids": "UNKNOWN per divergence",
+    "target_token_ids": "UNKNOWN per divergence",
+    "first_divergence": "UNKNOWN; no preserved transaction row identifies first divergence",
+    "correction_token": "UNKNOWN",
+    "acceptance_and_commit_decision": "UNKNOWN",
+    "sampler_and_rng": {
+      "historical_contract": {"temperature": 0.0, "top_k": 1, "seed": 42, "prompt_cache": false},
+      "tuple_bound_sampler_config_hash": "UNKNOWN",
+      "tuple_bound_rng_replay": "UNKNOWN"
+    },
+    "logits": {
+      "historical_fields": "row logits, argmax/max-logit/top5 summaries, full-logit and selected-layer diffs",
+      "exact_per_divergence_target_logit_summary": "UNKNOWN",
+      "shape": "UNKNOWN",
+      "dtype": "UNKNOWN"
+    },
+    "state": {
+      "historical_fields": "selected-layer input tensors, intermediate vectors, memory sequence min/max before/after, batch token count",
+      "shape": "UNKNOWN",
+      "dtype": "UNKNOWN",
+      "sequence_ids": "historical seq_id=0 in v22 fixture; exact PLAN-001 tuple binding UNKNOWN"
+    },
+    "mask_and_positions": {
+      "historical_positions": "v22 fixture positions 169..175; exact per-record PLAN-001 serialization UNKNOWN",
+      "historical_mask_behavior": "default causal attention enabled; negative control explicitly calls llama_set_causal_attn(false)",
+      "serialized_mask_schema": "UNKNOWN",
+      "serialized_mask_sha256": "UNKNOWN",
+      "absolute_position_tensor_sha256": "UNKNOWN"
+    },
+    "cache_before_after": {
+      "historical_extents": "v22 reports memory before [168,168], block2 after [170,170], block7-tail after [175,175]",
+      "serialized_cache_schema": "UNKNOWN",
+      "serialized_cache_state_hash_before": "UNKNOWN",
+      "serialized_cache_state_hash_after": "UNKNOWN",
+      "rollback_transaction": "UNKNOWN per divergence"
+    },
+    "evaluator_logger_and_dependencies": {
+      "complete_evaluator_path": "UNKNOWN",
+      "partial_source_paths": [
+        {"path": "remote:/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/tests/test-v22-block-equivalence.cpp", "sha256": "636e9fb4a9b1c16d8f433fdfac9f1eaa320d19d70b012945c2bd9178656aef92"},
+        {"path": "remote:/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/finalize_diagnosis_v22.py", "sha256": "54b48fc99364807a23e6064c0503b5ff599157af9b38cce5541ed7aedb4a29d5"},
+        {"path": "remote:/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/trace_one_prompt_v22.py", "sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e"}
+      ],
+      "dependency_hash_covering_complete_tuple": "UNKNOWN",
+      "output_token_accounting": "UNKNOWN as a complete per-cycle evaluator field"
+    },
+    "tuple_disposition": "BLOCKED: no single preserved evaluator/logger receipt binds all required fields; historical components must remain partial evidence."
+  },
+  "arm_b_deployment_shaped_mapping": {
+    "mapping_disposition": "UNKNOWN as exact PLAN-001 deployment schedule; historical v22 block-equivalence is reference only.",
+    "width": {
+      "historical": {"n_max": 7, "block_size": 8, "n_block_tokens": "n_max+1"},
+      "exact_plan001_arm_b_width": "UNKNOWN"
+    },
+    "positions": {
+      "historical_prefill": "169 prompt tokens; positions 0..164 then 165..168",
+      "historical_block2": [169, 170],
+      "historical_block7_tail": [169, 170, 171, 172, 173, 174, 175],
+      "exact_plan001_arm_b_positions": "UNKNOWN"
+    },
+    "sequence_ids": {
+      "historical": "seq_id=0; n_seq_max=1",
+      "exact_plan001_arm_b_sequence_ids": "UNKNOWN"
+    },
+    "mask": {
+      "historical_schema": "default causal attention; negative noncausal control exists",
+      "mask_token_id": 248070,
+      "serialized_mask_sha256": "UNKNOWN",
+      "exact_plan001_arm_b_mask": "UNKNOWN"
+    },
+    "cache_extents_and_state_hashes": {
+      "historical_singleton": {"before": [168, 168], "source_after": [171, 171], "parsed_receipt_after": [170, 170]},
+      "historical_block2": {"before": [168, 168], "after": [170, 170]},
+      "historical_block7_tail": {"before": [168, 168], "after": [175, 175]},
+      "serialized_state_hash_before": "UNKNOWN",
+      "serialized_state_hash_after": "UNKNOWN",
+      "full_kv_cache_contents": "UNKNOWN"
+    },
+    "anchor_and_extract": {
+      "historical": {"n_extract": 5, "sample_from_anchor": true, "target_layer_ids": [6, 20, 34, 48, 62]},
+      "exact_plan001_arm_b_transition": "UNKNOWN"
+    },
+    "source_and_config_tie": {
+      "historical_test_source_sha256": "636e9fb4a9b1c16d8f433fdfac9f1eaa320d19d70b012945c2bd9178656aef92",
+      "historical_speculative_source_sha256": "31d5b692df9fe2e215d1ddd1c75eef2fc1b03572b8e2c74c99d1024c3d944399",
+      "historical_model_source_sha256": "3b31b1a6b888ec37013a4d6275fdaf1fdeb6a9e3ca25b933ab136acdbcd58c49",
+      "historical_log_sha256": "d129e47c91925a0280f9cf2834ffd4ae7825aede74f82f30c0449a1b030bc2d4",
+      "exact_plan001_arm_b_source_config_tie": "UNKNOWN"
+    }
+  },
+  "memory_after_discrepancy": {
+    "source_description": [171, 171],
+    "parsed_historical_receipt": [170, 170],
+    "status": "UNRESOLVED UNKNOWN; do not infer or reconcile without an authorized recheck"
+  },
+  "terminal_state": {
+    "process_state": "No process launched by this inventory",
+    "device_state": "No GPU/device action performed; unchanged/unknown from this local-only task",
+    "stop_reason": "Evaluator tuple and exact deployment-shaped Arm-B mapping remain unknown; PLAN-001 comparison gate stays blocked",
+    "next_safe_action": "Require a new approved source/introspection/evaluator-contract task and CEO amendment before any Arm A/B/D execution."
+  }
+}
