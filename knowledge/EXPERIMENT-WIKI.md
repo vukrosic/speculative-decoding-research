@@ -454,3 +454,8 @@ tracer. Preserve `0c98f7d` summary/terminal as stale contradictory history;
 the apparent 6/6 and 4/6 are invalid exactness evidence. No rerun or split-ON.
 Reopen only with a literal launch command enforcing the tracer, and bind all
 747 rendered hashes/IDs through `/completion` before any new gate.
+
+Raw-contract audit receipts `a1fcc5cc…` (JSON) / `2f2a5d67…` (note) confirm
+every final-run JSON used benchmark/completion with pre-rendered 531-token
+prompts; no `/apply-template`, `/tokenize`, or tracer evidence exists. Outputs
+are valid only for the 531-token tuple, not 747 exactness. No rerun/GPU work.

@@ -436,3 +436,7 @@ supersede the prior result: final raw prompts are 531 no-xhigh, not 747
 tracer. Keep `0c98f7d` as stale contradictory history; apparent 6/6 and 4/6
 are invalid exactness evidence. No rerun/split-ON. Reopen requires literal
 launch/tracer enforcement plus all 747 hashes/IDs through `/completion`.
+
+Raw-contract audit `a1fcc5cc…` / `2f2a5d67…`: all final JSONs are benchmark
+completion with pre-rendered 531-token prompts; no apply-template, tokenize,
+or tracer evidence. Valid only for the old tuple; no rerun/GPU.

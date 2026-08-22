@@ -600,3 +600,8 @@ Preserve `0c98f7d` summary/terminal as stale contradictory history; apparent
 6/6 and 4/6 exactness are invalid evidence. No rerun or split-ON is queued.
 Reopen only with literal launch/tracer enforcement and all 747 rendered
 hashes/IDs bound through `/completion`.
+
+Raw-contract audit `a1fcc5cc…` / `2f2a5d67…` confirms final JSONs used the
+benchmark/completion pre-rendered 531-token path, with no apply-template,
+tokenize, or tracer evidence. Keep candidate closed for 747 exactness; no
+rerun/GPU work is queued.

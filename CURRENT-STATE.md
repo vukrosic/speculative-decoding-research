@@ -400,3 +400,8 @@ violation, not a valid 747 result. Preserve `0c98f7d` as stale contradictory
 history; apparent 6/6 and 4/6 exactness are invalid. No rerun or split-ON.
 Reopen only with literal launch/tracer enforcement and 747 hashes/IDs bound
 through `/completion`.
+
+Raw-contract audit `a1fcc5cc…` / `2f2a5d67…` confirms final JSONs are
+benchmark/completion generations with pre-rendered 531-token prompts; no
+apply-template/tokenize/tracer evidence. They cannot support 747 exactness.
+No rerun or GPU work.

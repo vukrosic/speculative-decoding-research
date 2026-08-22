@@ -1,0 +1,36 @@
+{
+  "receipt_id": "EXP-20260822-021-raw-contract-audit-20260822",
+  "status": "CORRECTION_531_TOKEN_BENCHMARK_PACKET",
+  "scope": "Read-only audit of every final-run target/Q4 JSON and log; no rerun or GPU.",
+  "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "route_finding": {
+    "apply_template_evidence": "NONE",
+    "benchmark_evidence": "All JSON requests contain a pre-rendered prompt string plus return_tokens=true; responses contain llama-server generation_settings and target/dflash modes. Logs contain generation tokens/counters, not /apply-template or /tokenize calls.",
+    "route": "benchmark/completion generation path; not trace_one_prompt_v22 /apply-template capture",
+    "prompt_contract": "531-token rendering (133,86,79,75,60,98), not the frozen 747-token capture contract"
+  },
+  "rendered_prompt_sha256_by_id": {
+    "code_python_debug": "bf39f3f64b63e805ecc8d1759fd18ce3b380be5b24b5e8bb911e63573b9516f5",
+    "code_rust_parser": "a0eea244d2132e16982354de789484e8c577852c674ce262507506ea3f04eb34",
+    "math_modular": "4e9ce589c83b6e503b649bd44e7906d3a214ec28dfbc07694f0a0ba8fb3b47c3",
+    "logic_schedule": "f8f27bd8709895cbe3c783a9f2fd92f99b09f02b3fac925c5835c9e3b80fce41",
+    "technical_explain": "bdfb7fc160ecb78576b82f36cf36f101b75ffeb7558abda0ae3f1f29e1af08d7",
+    "structured_extract": "81dff6d57b4f57bd82bb71c2eaba949b2b65fb5a13a8edbd6a051802d5524dde"
+  },
+  "prompt_tokens_by_id": {"code_python_debug": 133, "code_rust_parser": 86, "math_modular": 79, "logic_schedule": 75, "technical_explain": 60, "structured_extract": 98},
+  "file_sha256": {
+    "target-code_python_debug.json": "579ed53a43d1affa6485717dd0183f21c97117fe6edd3761d4d5675aa2ddcb7e",
+    "target-code_rust_parser.json": "9d35a1816d02f8248418f837108bae41cb12dd1866f985d72c5499d8ec4d42d5",
+    "target-logic_schedule.json": "8284908f3a22b93504f419595963ddb395fc45a79bf41c2b09114ce0553a66b3",
+    "target-math_modular.json": "6a03f85612b332f27e72e8b566114e2dfcdd3ced8b09568b9ab1ac8e6240a58c",
+    "target-structured_extract.json": "3ded25c28967cdf0ae5b539093fb70f5476e2c90e1681699ccdc35925d5c225e",
+    "target-technical_explain.json": "a86743883ab080e97280f5a58a48607998b117c9edee4262e106b9712f2096b8",
+    "q4-off-code_python_debug.json": "79c1bb23702a84e580c8b1e9f44025ba20c188efdd898c7c649f91b9a6e516d1",
+    "q4-off-code_rust_parser.json": "4d37d9da52a80a0adf4e15c526940ace16299f8dd8ff31afc1776a3738f4968d",
+    "q4-off-logic_schedule.json": "97a52b1deeb805b4baad74142976fdbbded710e4edada2a3fb771eca1f2869f0",
+    "q4-off-math_modular.json": "d79a8240cd572ee7ca373cc7b09a0c1e69ab97e5943522915c60c62bddf944a8",
+    "q4-off-structured_extract.json": "6d6b16b4cde973dad62741c4064ccc350680e6583ca042865d2e76ff2824b8de",
+    "q4-off-technical_explain.json": "d9ab0c958747d109295fe852480b000af780f1b07ead2d0f6f2646a8c708acbd"
+  },
+  "correction": "These files are valid benchmark/completion outputs for the 531-token tuple, but are not evidence for the 747-token target-only/split-OFF gate. Do not merge them with capture-r2 hashes or claim a 747-tracer exactness result."
+}
