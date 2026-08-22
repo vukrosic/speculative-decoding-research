@@ -323,3 +323,8 @@ rerun, or split-ON launch is allowed.
 Post-EXP021 ranking is recovery-first and docs-only: external rendering/Arm-B
 contract intake is highest information; optional phase measurement is diagnostic;
 causal GPU work is deferred. Source recheck is `NO-CANDIDATE`.
+
+Read-only recovery explains +36 historical tokens via the xhigh reasoning
+preamble in one preserved `code_python_debug` render. Inventory finds 12
+artifacts all for that prompt/hash; six-row/current rendered bytes, token IDs,
+argv, and template identity remain UNKNOWN. No GPU/rerun; external bundle only.

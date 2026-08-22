@@ -396,6 +396,12 @@ tokenizer/template, and literal-argv bundle explaining or superseding the
 offset, then a fresh exact target oracle; no GPU/rerun/split-ON/retuning before
 that gate.
 
+Receipt `67a6b5b3...` now explains the historical +36-token drift as the
+explicit v22 xhigh reasoning preamble (historical rendered hash
+`a83e3752...`). Current rendered bytes and controlling flag remain UNKNOWN.
+The smallest next action is read-only current client/server contract inspection
+and one current rendered-prompt hash receipt; no GPU/rerun/split-ON/retuning.
+
 Final artifact lookup is terminal no-found (`f4bf8b4b…`): only one historical
 rendered hash `a83e3752…`; six rendered/token-ID artifacts, tokenizer/template,
 old argv, special-token policy, and exact +36 mapping are absent. Reopen only
@@ -422,3 +428,8 @@ Recovery ranking is docs-only: external rendering/evaluator/Arm-B bundle is
 the smallest next action; current-library phase measurement is optional
 diagnostic; causal GPU candidates remain deferred. Source recheck is
 `NO-CANDIDATE`; preserve EXP021 terminal and PQ019 cache-positive boundaries.
+
+Read-only recovery explains the +36 offset via the xhigh reasoning preamble;
+inventory `17d01aad…` has 12 code_python_debug artifacts sharing `a83e3752…`,
+not a six-row bundle. Current render/token/argv identity remains UNKNOWN;
+external bundle required, with no GPU/rerun queued.

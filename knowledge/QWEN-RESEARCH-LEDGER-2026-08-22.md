@@ -356,3 +356,8 @@ provenance recovery can reopen work; no GPU/rerun/guessed state changes.
 Recovery ranking remains docs-only: external rendering/evaluator/Arm-B bundle
 first, optional current-library phase measurement second, causal GPU deferred.
 Preserve EXP021 terminal and PQ019 narrow-positive boundaries.
+
+Current-state recovery receipt `67a6b5b3…` attributes +36 historical tokens to
+the xhigh reasoning preamble. Historical inventory `17d01aad…` contains 12
+rendered artifacts, all code_python_debug/hash `a83e3752…`; no six-row/token-ID/
+argv bundle. Current rendering stays UNKNOWN; no GPU/rerun.

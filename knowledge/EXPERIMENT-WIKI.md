@@ -329,3 +329,8 @@ axis, split-ON launch, GPU rerun, or guessed state/mask/rollback change remains.
 Recovery is docs-only: external rendering/evaluator/Arm-B contract intake first;
 optional current-library phase measurement second; causal GPU work deferred.
 Source recheck is `NO-CANDIDATE`; PQ019 remains a narrow cache-serving result.
+
+Current-state recovery explains +36 historical tokens via the xhigh reasoning
+preamble in one preserved `code_python_debug` render. Inventory `17d01aad…`
+finds 12 artifacts all for that prompt/hash `a83e3752…`; no six-row bundle,
+token IDs, argv, or current rendered bytes exist. External bundle only; no GPU.

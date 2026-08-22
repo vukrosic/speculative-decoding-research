@@ -195,3 +195,12 @@ external rendering oracle (all six rendered bytes/token IDs, tokenizer/template,
 historical argv and +36 mapping) plus a same-build exactness-passing baseline;
 otherwise keep EXP021 terminal and do not guess state/mask/rollback/scheduler
 behavior.
+
+### Current-state recovery update
+
+Read-only recovery receipt `67a6b5b3…` explains the historical +36-token
+offset: the preserved `code_python_debug` render inserts an xhigh reasoning
+preamble. Inventory receipt `17d01aad…` finds 12 historical rendered files,
+all for `code_python_debug`, sharing hash `a83e3752…`; no five-prompt artifacts,
+six-row bundle, token IDs, or historical argv exist. Current six-row rendering
+remains UNKNOWN. No model/GPU/rerun; external bundle remains required.
