@@ -296,3 +296,10 @@ and active library to `65b8a862…`; server and implementation hashes stayed
 intact, with no processes left. Therefore no target phase trace exists. This
 preserves the independent-v23 6/12 negative and PQ019 narrow cache-positive
 result without promoting either to a general claim.
+
+## Candidate review disposition
+
+Planner PASS identifies one CEO-approval-gated measurement: the current-library
+EXP020 phase trace compares target-only and Q4 n=1 with frozen inputs, margin
+override disabled, and phase counters. It is diagnostic only and has not run;
+no other executable source-backed Qwen intervention remains.

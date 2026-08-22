@@ -289,3 +289,20 @@ and current library `65b8a862…` were restored and verified; server/impl hashes
 stayed intact, no processes remained, and no phase trace is available. Keep
 the EXP020 independent-v23 6/12 negative and PQ019 cache-positive result as
 bounded evidence; no new run or general claim is queued.
+
+## Candidate review disposition — same-library phase trace
+
+Planner PASS leaves one CEO-approval-gated measurement candidate:
+`experiments/planning/runtime-qwen-exp020-current-library-phase-trace-20260822.md`.
+It compares target-only and Q4 n=1 phase/state intervals through restored
+library `65b8a862…`, with margin override disabled and frozen inputs. It has not
+run and cannot promote speed, exactness, or verifier correctness. All other
+source-level improvement candidates remain blocked.
+The exact-d07 phase trace recovery is terminal-blocked, but a same-library
+measurement variant is now source-backed: use the current instrumented server
+and `65b8a862...` for both target-only and Q4 n=1, with `PQ020_LOW_MARGIN_TOP2`
+unset. The packet
+[`runtime-qwen-exp020-current-library-phase-trace-20260822`](../planning/runtime-qwen-exp020-current-library-phase-trace-20260822.md)
+is `PASS-NEEDS-CEO-APPROVAL`, one process per arm, no semantic change, strict
+hash/output/event/resource/cleanup gates, and measurement-only interpretation.
+It may identify the bottleneck but cannot promote speed or exactness.

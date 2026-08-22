@@ -267,3 +267,11 @@ from required `d07ed8b4…`; no model or GPU trace ran. Source `c1b1f6f0…`,
 library `65b8a862…`, server, and implementation were restored/verified. The
 phase trace is unavailable; prior EXP020 6/12 independent-v23 and PQ019 cache
 results remain bounded and unchanged.
+
+### Current candidate review
+
+The only admissible next measurement is the planner-PASS, CEO-approval-gated
+same-library EXP020 phase trace: target-only versus Q4 n=1 through restored
+`65b8a862…`, margin override disabled, identical frozen inputs. It has not run
+and is diagnostic only; no speed, exactness, verifier, or source intervention
+claim is authorized. All other source-level improvement ideas remain blocked.

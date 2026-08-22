@@ -258,3 +258,12 @@ unavailable. Source was restored to `c1b1f6f0…`, current library to
 export, speed, acceptance, or held-out work started; GPU/process state was
 idle. Preserve the EXP020 independent-v23 6/12 negative and PQ019 narrow
 cache-positive result as the current evidence boundary.
+
+## Current candidate review — same-library phase trace (2026-08-22)
+
+Planner/runtime review found one conditional, measurement-only candidate:
+[`runtime-qwen-exp020-current-library-phase-trace-20260822.md`](../experiments/planning/runtime-qwen-exp020-current-library-phase-trace-20260822.md).
+It compares sequential target-only and Q4 n=1 phase intervals through restored
+library `65b8a862…`, with margin override disabled and frozen inputs. CEO
+approval is required and it has not run; it cannot claim speed, exactness, or
+verifier improvement. No other executable source-backed intervention remains.
