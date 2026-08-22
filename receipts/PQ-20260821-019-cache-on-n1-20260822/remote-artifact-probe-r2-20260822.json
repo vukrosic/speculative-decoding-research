@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "remote_artifact_presence_probe",
+  "timestamp_utc": "2026-08-21T23:21:26Z",
+  "host": "9719ca4634c7",
+  "remote_root": "/workspace/smollm-eagle3-prototype",
+  "scope": {
+    "operation": "read_only",
+    "max_depth": 7,
+    "filename_patterns": [
+      "*plan*001*",
+      "*arm*b*",
+      "*replay*",
+      "*logger*",
+      "*evaluator*",
+      "*verifier*"
+    ]
+  },
+  "command": "cd /workspace/smollm-eagle3-prototype && date -u +%Y-%m-%dT%H:%M:%SZ && hostname && nvidia-smi --query-gpu=memory.used,utilization.gpu,temperature.gpu --format=csv,noheader,nounits && find experiments -maxdepth 7 -type f (patterns above) -print | sort && pgrep -af (task patterns)",
+  "candidate_paths": [],
+  "gpu": {
+    "memory_used_mib": 1,
+    "utilization_percent": 0,
+    "temperature_c": 55
+  },
+  "task_processes": [],
+  "inspection_shell_excluded": true,
+  "remote_mutation": false,
+  "model_load": false,
+  "inference": false,
+  "training": false,
+  "heldout_access": false,
+  "interpretation": "No exact PLAN-001/Arm-B/replay/logger/evaluator/verifier candidate appeared in the scoped remote tree. The RTX 3060 is idle and task-clean. The missing source-backed deployment contract remains the active recovery gate.",
+  "next_gate": "External artifact supply or separately authorized source-backed regeneration; no guessed runtime or GPU run."
+}

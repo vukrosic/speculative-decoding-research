@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "documentation_update",
+  "timestamp_utc": "2026-08-21T23:18:37Z",
+  "scope": "Qwen speculative-decoding experiment wiki",
+  "changed_variable": "none_documentation_only",
+  "remote_mutation": false,
+  "gpu_run": false,
+  "model_load": false,
+  "heldout_access": false,
+  "link_audit": {
+    "markdown_links_checked": 34,
+    "missing_links": 0
+  },
+  "files": [
+    {
+      "path": "knowledge/EXPERIMENT-WIKI.md",
+      "sha256": "f9dd688aa951c434b510c065b0451dee77ebfd42f160a997a412f87b24eba5bc"
+    },
+    {
+      "path": "knowledge/README.md",
+      "sha256": "d0fe2b74b4c73ffc8cabfdf572dc399c5c3f6ef077649fa91497cbbf3a103845"
+    },
+    {
+      "path": "README.md",
+      "sha256": "28d095aee8f1a603ebc32764d0cc1e02d1d254ea3454030ca7ea7142b112bd6a"
+    },
+    {
+      "path": "daily/2026-08-22.md",
+      "sha256": "96978154a7b48cbf552df3b8a9dfab2bf82e30a19bdda07eeb0c90f8622ce6cc"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "e919098e6310d6c21f7ff5b1daa3be7dff30c28fcbb934bc2acd9fab16270e27"
+    }
+  ],
+  "claim_boundary": "The wiki consolidates prior evidence; it adds no new scientific result and does not convert cache reuse into a speculative-decoding speed claim.",
+  "next_gate": "An exact source-backed PLAN-001/PQ-008 deployment verifier/state bundle, followed by fresh planner/critic/literature review."
+}

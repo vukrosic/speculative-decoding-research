@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "kind": "remote_artifact_content_probe",
+  "timestamp_utc": "2026-08-21T23:26:49Z",
+  "host": "9719ca4634c7",
+  "remote_root": "/workspace/smollm-eagle3-prototype",
+  "scope": {
+    "operation": "read_only",
+    "roots": ["experiments", "scripts", "config", "runtime", "tools"],
+    "broad_text_file_limit": "<2 MiB",
+    "narrow_exclusions": ["logs", "build", "receipts"],
+    "patterns": [
+      "PLAN-001", "Arm-B", "arm_b", "replay_id", "serialized_mask",
+      "complete_evaluator_path", "source_config_tie", "memory_after",
+      "rollback_transaction"
+    ]
+  },
+  "broad_probe": {
+    "text_files_scanned": 21493,
+    "matches": "historical validation logs, build dependency files, and existing runtime speculative.cpp files only",
+    "new_deployment_candidate": false
+  },
+  "narrow_probe": {
+    "source_config_planning_matches": [],
+    "new_deployment_candidate": false
+  },
+  "gpu": {
+    "memory_used_mib": 1,
+    "utilization_percent": 0,
+    "temperature_c": 56
+  },
+  "task_processes": [],
+  "inspection_shell_excluded": true,
+  "remote_mutation": false,
+  "model_load": false,
+  "inference": false,
+  "training": false,
+  "heldout_access": false,
+  "interpretation": "Content-level search found no new source/config/planning artifact that binds the exact PLAN-001 Arm-B verifier/evaluator/state contract. Historical files do not close the gap.",
+  "next_gate": "External artifact supply or separately authorized source-backed regeneration; no guessed Arm-B mapping or GPU run."
+}

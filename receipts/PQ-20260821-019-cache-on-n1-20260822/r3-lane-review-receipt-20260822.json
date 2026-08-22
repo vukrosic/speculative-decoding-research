@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "lane_review_reconciliation",
+  "timestamp_utc": "2026-08-22",
+  "scope": "r3 remote content probe and next-Qwen-action disposition",
+  "execution": {
+    "gpu_run": false,
+    "remote_mutation": false,
+    "model_load": false,
+    "heldout_access": false
+  },
+  "source_probe": {
+    "path": "receipts/PQ-20260821-019-cache-on-n1-20260822/remote-content-probe-r3-20260822.json",
+    "sha256": "63768b01fde9b591fd39f719d8f3148831bb4a4d85342068c91ba6d7654385ab"
+  },
+  "lane_reviews": [
+    {
+      "lane": "critic",
+      "path": "experiments/critique/PQ-20260822-REMOTE-CONTENT-PROBE-R3-CRITIQUE.md",
+      "sha256": "5f39474f3328ce823ac77917b8c19b480736d21d4870d19e9574063549deb6ab",
+      "decision": "PASS scope-bounded negative recovery; no source-backed GPU path in scoped checkout"
+    },
+    {
+      "lane": "runtime",
+      "path": "experiments/planning/runtime-qwen-r3-capability-reconciliation-20260822.md",
+      "sha256": "8e292d03cde39afce9f05f696524145f2072c8a5f6c1303e461f23f1a10ca5a5",
+      "decision": "No executable one-variable acceptance/speed axis without exact Arm-B/evaluator/state bundle"
+    },
+    {
+      "lane": "literature",
+      "path": "literature/VERDICT-20260822-PQ008-R3-RECOVERY-CLOSED.md",
+      "sha256": "211c6766596ef97a7c84e00cb200a72a9e5d451236007fa185407228717b532d",
+      "decision": "Scoped artifact recovery closed; reopen only with authoritative bundle or separately authorized regeneration"
+    },
+    {
+      "lane": "planner",
+      "path": "experiments/planning/PQ-20260822-NEXT-EXECUTABLE-AUDIT.md",
+      "sha256": "91409d0c7b9c114f3d8eaabd893138520f02dcb444a20e4a116195ee8c6e2bba",
+      "decision": "TERMINAL-NO-NEW-GPU-CANDIDATE; queue unchanged"
+    }
+  ],
+  "consensus": "No new GPU intervention is admissible from the scoped checkout. Preserve PQ-019 as local cache evidence and wait for an exact source-backed PLAN-001/PQ-008 deployment/evaluator/state bundle.",
+  "required_reopen_fields": [
+    "Arm-B schedule/positions/sequence IDs",
+    "serialized mask and KV/cache before-after-rollback state",
+    "anchor/n_extract and source/config tie",
+    "evaluator/logger/finalizer/replay/RNG/dependency identities",
+    "prompt/rendered/token-prefix hashes and exactness oracle",
+    "resolved [171,171] versus [170,170] memory conflict"
+  ]
+}
