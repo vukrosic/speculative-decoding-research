@@ -1035,3 +1035,36 @@ candidate can be drafted from marker timing alone. The smallest reopen is a
 source-only intake of both exact files with full bytes and matching SHA-256,
 then the same read-only map. This audit used no SSH, download, build, model
 load, GPU, rerun, or source mutation; the phase pair remains descriptive-only.
+
+### EXP020 source-intake recovery packet — ready, not executed (2026-08-22)
+
+The local source-map audit found only hash references for the pinned current
+source files, so a bounded read-only remote intake packet was prepared:
+[`runtime-qwen-exp020-source-intake-20260822`](../planning/runtime-qwen-exp020-source-intake-20260822.md).
+It binds the already-authorized host/project/task-root, requires a metadata/hash
+preflight, then (only after exact size/hash gates) captures the full bytes of
+`common/speculative.cpp` (`6a24e473...`, 112,689 B) and
+`tools/server/server-context.cpp` (`c060c9f5...`, 223,748 B) into additive local
+receipts for a CPU-only marker index. Hash-only inspection can establish
+identity but cannot bind marker operations; full bytes are mandatory.
+
+The packet is **not executed**. It forbids source mutation, build, model/server
+launch, GPU use, timing, any unrelated download/install/data access, and holdout
+access; the only scoped transfer described is the exact pinned source bytes,
+which also remains unexecuted.
+Any missing path, hash/size mismatch, truncated capture, source/branch semantic
+UNKNOWN, process/GPU/resource anomaly, or unexpected remote path terminalizes
+the intake as `NO_CANDIDATE_SOURCE_GAP`. A passing intake would only permit a
+new read-only source map; it would not authorize a patch or experiment. No
+remote connection or source transfer has occurred from this queue entry.
+
+### EXP020 source-intake amended conditional gates — not executed
+
+The hardened planner packet is SHA
+`74b0244707b2bb093f93d3da36485672e9f795fdb3a6d2454ffd50101319c909`.
+The scoped gate reconciliation receipt
+[`source-intake-gate-reconciliation-20260822.md`](../../receipts/EXP-20260822-020-qwen-singleton-correction/source-intake-gate-reconciliation-20260822.md)
+records the critic/literature conditional PASS, exact `336437`-byte
+source-only cap, standing no-download decision, and **no SSH/execution**
+boundary. It supersedes the prose detail above without changing the
+`NO_CANDIDATE / SOURCE GAP` or no-patch/no-rerun status.
