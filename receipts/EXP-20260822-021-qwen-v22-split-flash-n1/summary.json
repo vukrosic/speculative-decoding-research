@@ -1,0 +1,8 @@
+{
+  "status":"hard_stop_before_split_on",
+  "target_oracle":{"warmups":2,"timed_repetitions":3,"prompts":6,"completion_tokens":227,"tok_s":[16.0559131652,16.0593077735,16.0534317693]},
+  "q4_split_off":{"warmups":2,"timed_repetitions":3,"accepted":104,"proposed":118,"tok_s":[18.1364859777,17.6286615605,17.8508739874],"output_match":false},
+  "mismatch":{"prompt_id":"code_python_debug","target_message_sha256":"0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c","candidate_message_sha256":"1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646","target_tokens":64,"candidate_tokens":64,"target_finish":"length","candidate_finish":"length"},
+  "q4_split_on":"NOT_RUN_BY_HARD_STOP",
+  "exactness_boundary":"No candidate timing or exactness claim authorized after output mismatch."
+}

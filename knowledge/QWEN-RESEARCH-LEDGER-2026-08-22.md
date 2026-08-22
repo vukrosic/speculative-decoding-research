@@ -418,3 +418,15 @@ and critic final authorize execution on the explicit 747-token tracer path.
 Target-only is running, then Q4 split-OFF, then split-ON only after six-of-six
 exactness. The 531-token benchmark path is excluded. No numeric outcome or
 timing/acceptance claim yet; one-process and hard-stop boundaries persist.
+
+Terminal result: corrected tracer target-only six-of-six stable; Q4 `n=1`
+split-OFF mismatched `code_python_debug` and `logic_schedule` at 64 tokens
+with `length` termination. Split-ON/timing did not run. Preserve raw receipts
+and the no-causal-claim boundary: this is evaluator/runtime negative for the
+tested tuple, not a split-flash causal result.
+
+Final-run detail: target-only 6/6 stable, 747 prompt tokens; Q4 split-OFF
+rendered hashes matched but only 4/6 exact. First mismatches were token 50
+(`code_python_debug`, accepted 30/33) and token 37 (`logic_schedule`, accepted
+27/35), both capped at 64 tokens. Split-ON/timing were not run and cleanup was
+clean. Record as control failure only, with no split-flash claim.

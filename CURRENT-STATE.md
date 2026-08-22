@@ -380,3 +380,16 @@ tracer path is explicit and must not mix with the 531-token benchmark path.
 Target-only is running, followed by split-OFF and conditional split-ON only
 after six-of-six exactness. No numeric result yet; one process and hard-stop
 gates remain in force.
+
+Terminal corrected-tracer screen: target-only was stable six-of-six; Q4
+split-OFF mismatched `code_python_debug` and `logic_schedule`, both at 64
+tokens/`length`. Split-ON and timing were not run. Raw/summary/stop/cleanup
+receipts are preserved; no causal split-flash, acceptance, speed, or general
+claim is supported. Treat this as a tuple-bound evaluator/runtime negative.
+
+Final-run accounting: target-only 6/6 stable at 747 prompt tokens. Q4
+split-OFF rendered hashes all matched but exact outputs were 4/6; first
+divergences were `code_python_debug` token 50 (accepted 30/33) and
+`logic_schedule` token 37 (accepted 27/35), both at the 64-token limit.
+Split-ON/timing were not run; GPU/process cleanup was clean. Classify this as
+a split-OFF control failure, not split-flash evidence.

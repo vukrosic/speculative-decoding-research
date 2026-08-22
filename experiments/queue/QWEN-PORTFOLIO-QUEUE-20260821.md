@@ -560,3 +560,22 @@ after both are six-of-six exact, one process at a time. The 531-token
 benchmark path is excluded. No numeric result yet; any mismatch or
 cleanup/identity drift stops later arms, and no timing/acceptance/split-flash
 claim is available.
+
+### Corrected-tracer terminal update (supersedes in-progress wording)
+
+The target-only oracle completed stable 6/6, but same-build split-OFF failed
+`code_python_debug` and `logic_schedule` at the 64-token cap. Split-ON and
+timing were not run. Preserve all raw hashes/counts/finish reasons and cleanup;
+the sequence is terminal, not in progress. No blind retry, cap/template change,
+or split-ON launch is allowed. The smallest next action is read-only
+per-prompt divergence accounting (first token/character, rendered/token
+contract, cap, finish reason) for the two failures versus the four exact rows.
+Only a source-backed contract repair can reopen a new packet; otherwise retire
+this candidate and rank another hypothesis. No GPU rerun is queued.
+
+Final-run summary binds the terminal negative: target-only 6/6 stable at 747
+prompt tokens; Q4 split-OFF rendered hashes all matched, but exact outputs were
+4/6. First divergences: `code_python_debug` token 50 (accepted 30/33) and
+`logic_schedule` token 37 (accepted 27/35); both reached the 64-token limit.
+Split-ON/timing were not run and GPU/process cleanup was clean. Classify this
+as a split-OFF control failure, not a split-flash result.

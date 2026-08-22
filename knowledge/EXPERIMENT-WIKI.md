@@ -423,3 +423,24 @@ oracle, then same-build Q4 split-OFF, then split-ON only if both are six-of-six
 exact. One GPU process at a time; any mismatch/token drift/identity or cleanup
 failure stops later arms. No numeric result is available yet, and no timing,
 acceptance, or split-flash claim is made before gates pass.
+
+## EXP021 corrected-tracer exactness screen: terminal negative (2026-08-22)
+
+The authorized corrected-tracer run completed target-only six-of-six stable,
+then Q4 `n=1` split-OFF. Split-OFF diverged on `code_python_debug` and
+`logic_schedule`; each target and Q4 output reached 64 tokens with `length`
+termination. Raw, summary, stop, terminal, and cleanup receipts are preserved
+under `receipts/EXP-20260822-021-qwen-v22-split-flash-n1/`.
+
+Per the exactness-first gate, split-ON was not launched and no candidate
+timing, acceptance, speed, or causal split-flash claim is valid. This is a
+corrected-tracer evaluator/runtime negative for the tested tuple, not evidence
+that split-flash itself caused either mismatch. Preserve the 747-token
+contract and do not mix the 531-token benchmark path.
+
+Final-run accounting refines the negative: target-only was stable 6/6 at 747
+prompt tokens; Q4 split-OFF rendered hashes all matched, but only 4/6 outputs
+were exact. First divergences were token 50 for `code_python_debug` (accepted
+30/33) and token 37 for `logic_schedule` (accepted 27/35); both reached the
+64-token limit. Split-ON and timing were not run; GPU/process cleanup was
+clean. This is a split-OFF control failure, not a split-flash result.
