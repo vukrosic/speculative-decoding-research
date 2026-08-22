@@ -336,3 +336,22 @@ authorization, not no-model preflight. No endpoint/model/GPU/rerun.
 `/tokenize` preflight `8d0c8f0c…` is verified; amended packet `21f4bc87…`
 permits one CPU-only six-row `/apply-template`→`/tokenize` capture. No
 completion/generation, GPU, drafter, or split-ON; retain hard-stop `0ae0c510…`.
+
+Capture-r2 passes the authorized six-row CPU-only render/tokenize gate.
+Receipts: `capture-r2.json` SHA `cdab75d7…`; metadata receipt SHA
+`ccc5f3da…`; manifest SHA `77a9b570…`. Ordered rows are
+`code_python_debug`, `code_rust_parser`, `math_modular`, `logic_schedule`,
+`technical_explain`, `structured_extract`, with rendered bytes/tokens
+`752/169, 589/122, 592/115, 572/111, 523/96, 640/134` (747 total).
+All rows use `add_special=false`, `parse_special=true`, `with_pieces=true` and
+carry rendered/token-prefix hashes. This closes the observed +36-token drift
+as a metadata fact. Identity caveat: r2 used original `5c43b943…` tracer/server;
+EXP021 used `b17850bc…` benchmark path and 531-token contract. Do not combine
+them. No completion/generation, GPU, split-flash, acceptance, speed, or general
+claim; cleanup and GPU idle passed.
+
+Repaired Stage-0 packet SHA `1a9e3f78…` plus alignment receipt `4a736a15…`
+freeze the recovery boundary: r2's six rows/747 tokens are valid for old
+`5c43…` only. The `b178…` EXP021 candidate must first match all six bytes,
+IDs/pieces/counts and identity/argv linkage. Until that CPU-only equivalence
+gate passes, no target-only, split-OFF, split-ON, GPU, or timing run is allowed.

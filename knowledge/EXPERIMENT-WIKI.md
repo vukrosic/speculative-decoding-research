@@ -344,3 +344,35 @@ Source-verified `/tokenize` preflight `8d0c8f0c…` confirms IDs can be recovere
 after `/apply-template` on a loaded target. Amended packet `21f4bc87…`
 authorizes one CPU-only six-row render+tokenize capture only: no generation,
 GPU, drafter, or split-ON. Preserve hard-stop `0ae0c510…`.
+
+## EXP021 capture-r2: six-row render/tokenize provenance closed (2026-08-22)
+
+Capture-r2 passed as metadata-only evidence. Authoritative files are
+`receipts/EXP-20260822-021-readonly-render-capture-20260822/capture-r2.json`
+(SHA-256 `cdab75d710a9de052bb3b1a2c51f964032e6697115e7dd1611e7ffdc1cdc45d7`)
+and `capture-r2-receipt.json` (SHA-256
+`ccc5f3da5f80c51d2537e22fe2bcb381dbe38e55c53e45b3be75afd8b36d4870`).
+The six ordered rows are `code_python_debug`, `code_rust_parser`,
+`math_modular`, `logic_schedule`, `technical_explain`, and `structured_extract`.
+Rendered bytes/tokens are respectively `752/169`, `589/122`, `592/115`,
+`572/111`, `523/96`, and `640/134` (747 total). Each row records rendered
+prompt and token-prefix hashes; tokenizer flags are uniformly
+`add_special=false`, `parse_special=true`, `with_pieces=true`.
+
+The capture used the original CPU tracer/server identity (`llama-server` SHA
+`5c43b9437a362d5a3cd29725ae61b0edca24a7fb27a3b92c426f29c1a6dc03ac`, CUDA
+disabled), not the EXP021 benchmark binary (`b17850bc…`) that produced the
+older 531-token path. Do not mix these contracts. The full six-row capture
+closes the +36-token historical drift as an observable rendering/tokenizer
+fact, but does not repair or reinterpret the EXP021 split-OFF mismatch. It
+made zero completion/generation/drafter/verifier/timing requests; server
+termination, GPU idle, and cleanup were verified. No split-flash, acceptance,
+speed, or general-losslessness claim is authorized.
+
+The repaired Stage-0 packet (`PQ-20260822-021-EXACTNESS-REOPEN-R2`, SHA
+`1a9e3f78…`) and alignment receipt (`4a736a15…`) make the next boundary
+explicit: r2 validates six rows/747 tokens only on the old `5c43…` tracer.
+Before any target-only, split-OFF, or split-ON GPU arm, the `b178…` EXP021
+candidate must reproduce all six rendered bytes, token IDs/pieces, counts,
+argv/linkage, and source/build identities. This is a no-run gate; a Stage-0
+mismatch terminalizes the packet. No split-flash result is implied.

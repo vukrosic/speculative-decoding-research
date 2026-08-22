@@ -369,3 +369,29 @@ authorization for CPU-only six-row capture; no endpoint/model/GPU call now.
 Preflight `8d0c8f0c…` verifies `/tokenize`; amended packet `21f4bc87…`
 authorizes only CPU six-row render+tokenize metadata capture. Generation/GPU/
 split-ON remain excluded; hard-stop `0ae0c510…` is retained.
+
+### EXP021 capture-r2 closure
+
+The six-row `/apply-template`→`/tokenize` capture passed on CPU only. Full
+capture SHA is `cdab75d710a9de052bb3b1a2c51f964032e6697115e7dd1611e7ffdc1cdc45d7`;
+metadata receipt SHA is `ccc5f3da5f80c51d2537e22fe2bcb381dbe38e55c53e45b3be75afd8b36d4870`;
+manifest SHA `77a9b570…`. Ordered IDs and rendered bytes/token counts:
+`code_python_debug 752/169`, `code_rust_parser 589/122`, `math_modular
+592/115`, `logic_schedule 572/111`, `technical_explain 523/96`,
+`structured_extract 640/134` (747 total). All tokenizer calls used
+`add_special=false`, `parse_special=true`, `with_pieces=true`; row render and
+token-prefix hashes are preserved in the receipt.
+
+This closes the +36-token historical drift as a captured rendering fact, not a
+serving result. Identity is bounded: r2 used the original `5c43b943…` tracer /
+CPU server, whereas EXP021's benchmark path is `b17850bc…` and 531 tokens;
+these must not be mixed. Request counts were six apply-template, six tokenize,
+zero completion/generation/drafter/verifier/timing; server cleanup and GPU idle
+passed. The earlier EXP021 split-OFF negative is preserved; no split-flash,
+acceptance, speed, or general claim.
+
+Repaired exactness-first packet `1a9e3f78…` and alignment receipt `4a736a15…`
+clarify that capture-r2 is an old-`5c43…` six-row/747-token reference only.
+The EXP021 `b178…` candidate must pass Stage-0 equality for rendered bytes,
+token IDs/pieces/counts, argv/linkage, and source/build identities before any
+GPU arm. This remains no-run; no split-flash result is asserted.

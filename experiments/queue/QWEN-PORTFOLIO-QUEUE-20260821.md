@@ -469,3 +469,43 @@ row and stop on schema, identity, resource, placement, or cleanup failure.
 
 Amended packet `21f4bc87…` authorizes this CPU-only six-row continuation only;
 hard-stop `0ae0c510…` remains preserved. No split-ON or generation is queued.
+
+### EXP021 exactness-first reopen-r2
+
+Completed render/tokenize capture-r2 supplies six rendered hashes and token IDs
+(full receipt SHA `cdab75d7...`, summary `66c397d9...`, 747 total prompt
+tokens). Planner packet
+[`PQ-20260822-021-EXACTNESS-REOPEN-R2`](../planning/PQ-20260822-021-EXACTNESS-REOPEN-R2.md)
+now requires Stage 0 CPU-only equivalence: b178 `/apply-template` → `/tokenize`
+must match all six r2 rendered bytes, IDs, pieces, counts, argv, linkage, and
+source/build identities. Only after six-of-six equality may the three GPU arms
+run: target-only, same-build split-OFF, then split-ON. One GPU process at a
+time; timing is conditional and diagnostic. Any Stage 0 mismatch terminalizes
+the packet before target oracle or split arm. CEO approval remains required;
+no run is authorized.
+
+### Capture-r2 evidence and identity boundary (2026-08-22)
+
+The authorized metadata capture completed: six `/apply-template` calls plus
+six `/tokenize` calls, zero completion/generation/drafter/verifier/timing.
+Rows are ordered `code_python_debug`, `code_rust_parser`, `math_modular`,
+`logic_schedule`, `technical_explain`, `structured_extract`; bytes/tokens are
+`752/169, 589/122, 592/115, 572/111, 523/96, 640/134` (747 total). Every
+tokenize payload is `add_special=false`, `parse_special=true`,
+`with_pieces=true`; full row hashes are in `capture-r2.json` SHA
+`cdab75d7…` and metadata receipt SHA `ccc5f3da…` (manifest `77a9b570…`).
+Cleanup terminated the server and verified GPU idle.
+
+This closes the +36-token historical drift as render/tokenizer provenance only.
+Critic identity caveat: r2 used original `5c43b943…` tracer/server, while
+EXP021 used benchmark binary `b17850bc…` and the 531-token path. Keep these
+contracts separate; r2 does not repair the prior split-OFF mismatch. The
+split-flash screen remains pending critic/literature/CEO authorization; there
+is no split-flash, acceptance, speed, or general-losslessness result.
+
+Repaired Stage-0 packet SHA `1a9e3f78…` and alignment receipt `4a736a15…`
+reconcile the next action. Capture-r2 is a six-row/747-token reference on old
+`5c43…`; the `b178…` EXP021 candidate must match all rendered bytes,
+IDs/pieces/counts, argv/linkage, and source/build identities before any GPU
+arm. Keep the packet no-run until this CPU-only equivalence gate passes; no
+split-flash result is available or implied.
