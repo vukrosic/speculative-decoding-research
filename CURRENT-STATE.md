@@ -452,3 +452,8 @@ literature `d8cc9594…` mark partial provenance PASS, causal repair
 BLOCKED/terminal. No DWARF/debug map or token transaction trace; reopen
 requires exact BuildID-matched debug/linker map plus token/logit/commit/rollback
 evidence. No GPU, rerun, or patch.
+
+Search receipt `b94030f…` (planner `f43d01f…`, queue `aad39d7…`, literature
+`17195aba…`) found exact b178 unstripped ELF only; no b178 DWARF/.map/core or
+token trace. Historical `080fe7cf…` attn_pregate-3 is non-b178 hypothesis
+(`983a51ee…`/`f4919bb6…`). No candidate/repair/rerun/GPU.

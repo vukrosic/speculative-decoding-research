@@ -718,6 +718,30 @@ split-flash itself. Do not run/time split-ON. Reopen requires immutable
 first-divergence/evaluator bundle plus fresh target oracle and six-of-six
 same-contract split-OFF exactness; stale 531 receipts remain separate.
 
+Recovery packet `3da871a4...` is narrowed to a bounded BuildID/debug/linker/
+token provenance search (`PQ-20260822-021-BUILDID-DEBUG-TOKEN-SEARCH`): exact
+b178 Build ID/SHA, debug/DWARF/linker sections, named symbols/offsets, and
+token-divergence receipts only within pinned checkout/receipts. No broad search,
+build, model/GPU/rerun, or external fetch. Missing artifacts are `NOT_FOUND`.
+This cannot reopen EXP021; only an exact BuildID-matched causal artifact plus
+fresh critic/lit review could authorize a new one-variable packet.
+
+Lookup identities are now fully bound before data-preflight action: b178
+`b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79`, target
+`3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887`, Q4
+`18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594`, v22
+contract `a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326`,
+and Stage0 code/render hash `a83e3752525d65118444f963b32a5dfba1b85730bf0723a4f99ca3a90eae1132`.
+Data-preflight may execute only this bounded read-only lookup against these
+identities; no build/model/GPU/rerun.
+
+Debug-artifact search `b94030f...` found no exact b178 debug/token trace.
+Historical terminal-diagnosis-v22 `080fe7cf...` reports first tensor drift at
+`attn_pregate-3` with positions/memory aligned, but this is another provenance
+lane and remains hypothesis-only. No relabeling or source-backed one-variable
+repair is admissible; preserve terminal no-build/model/GPU/rerun/split-ON/timing
+boundaries.
+
 Mapping `9d16cbcf…` / `48920f0f…` is read-only and partial: symbols/offsets
 bound, `addr2line` has no DWARF lines, split-off hunks unreachable, duplicate
 marker origin/rollback UNKNOWN. No repair/rerun/GPU queued pending review.
@@ -734,3 +758,8 @@ literature `d8cc9594…` terminalize causal repair while retaining partial
 provenance PASS. No DWARF/debug map or token transaction trace; reopen only
 with exact BuildID-matched debug/linker map plus token/logit/commit/rollback.
 No GPU/rerun/patch queued.
+
+Search `b94030f…` found exact b178 unstripped ELF only—no DWARF/.map/core or
+token trace. Historical `080fe7cf…` attn_pregate-3 (`983a51ee…`/`f4919bb6…`)
+is not b178 and hypothesis-only. Planner/queue/lit `f43d01f…`/`aad39d7…`/
+`17195aba…` preserve no-candidate/no-rerun/GPU boundary.

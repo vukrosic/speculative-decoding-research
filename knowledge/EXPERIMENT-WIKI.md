@@ -527,3 +527,10 @@ Postreview planner/critic/literature (`e10285cb…`/`a25db317…`, `40a8174b…`
 BLOCKED/terminal. No DWARF/debug map or token transaction trace exists. Reopen
 only with exact BuildID-matched debug/linker map plus token/logit/commit/rollback
 evidence; no GPU, rerun, or patch.
+
+Debug-artifact search/reconciliation (`b94030f…`, planner `f43d01f…`, queue
+`aad39d7…`, literature `17195aba…`) found the exact b178 unstripped ELF but no
+b178 DWARF, `.map`, core, or token transaction trace. Historical diagnosis
+`080fe7cf…` (`attn_pregate-3`) is not b178 and remains hypothesis-only
+(copied under `983a51ee…`/`f4919bb6…`). No candidate, causal repair, rerun, or
+GPU.

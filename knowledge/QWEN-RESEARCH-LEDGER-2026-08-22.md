@@ -482,3 +482,8 @@ Mapping postreview planner `e10285cb…`/queue `a25db317…`, critic `40a8174b�
 literature `d8cc9594…`: provenance partial PASS; causal repair BLOCKED/
 terminal. No DWARF/debug map or transaction trace. Reopen only with exact
 BuildID-matched debug/linker map and token/logit/commit/rollback evidence.
+
+Search/reconciliation `b94030f…` with planner `f43d01f…`/queue `aad39d7…` and
+literature `17195aba…`: b178 unstripped ELF found, no b178 DWARF/.map/core/
+token trace. Historical `080fe7cf…` attn_pregate-3 is non-b178 hypothesis;
+preserve identity boundary, no candidate/rerun/GPU.
