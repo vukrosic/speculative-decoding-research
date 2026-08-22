@@ -445,3 +445,8 @@ Launch audit `4f897f40…`: executor argv mechanism UNKNOWN; raw route is
 531/no-xhigh. Fail-closed design requires six apply-template + six tokenize
 assertions (hash/ID/count/747 total) before completion. Documentation-only; no
 wrapper or rerun, and split-ON/speed prohibited.
+
+Wrapper SHA `01f937e5…`, tests `6828fb70…`, packet `ddf7e99a…`; live identity
+receipt `c398d7f1…` and capture `322ab37f…` pass contract-v22 `a69610f9…`
+against b178/Stage0 six-of-six/747. Six apply + six tokenize, zero completion/
+GPU/timing; cleanup and idle verified. CPU identity only; no completion/GPU arm.

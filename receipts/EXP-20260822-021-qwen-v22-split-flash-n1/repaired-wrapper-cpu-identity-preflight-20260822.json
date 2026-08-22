@@ -1,0 +1,54 @@
+{
+  "receipt_id": "EXP-20260822-021-repaired-wrapper-cpu-identity-preflight-20260822",
+  "status": "PREPARED_NOT_EXECUTED_CEO_APPROVAL_REQUIRED",
+  "scope": "CPU-only identity/render contract check design; no server/model launch, no completion, no GPU, no remote mutation.",
+  "server": {
+    "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin/llama-server",
+    "sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "bytes": 17912,
+    "build_id": "22ecf3ead16a84cc758ca779e8ef1669d301112b",
+    "runpath": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin:",
+    "resolved_libraries": {
+      "libllama-server-impl.so": "605d798efb9931132a709bbc1ba4fe6ac939be677214094ab9e6f2dbe2342230",
+      "libllama-common.so.0": "19fdf005f12174498f7445858f8735bdd97369f55540e4204b7baa1cc9a67796",
+      "libllama.so.0": "fdb0bc83664b850ecb4db747aa5e1319dfa3d2c2d18697a1ab8395471b8b1420",
+      "libggml-cuda.so.0": "75d78338cb9759e24baf1664f74152383cc2ba9c9e0bb479f2333e20cb80cfe2"
+    }
+  },
+  "source_and_workload": {
+    "tracer_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/scripts/trace_one_prompt_v22.py",
+    "tracer_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+    "target_gguf": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf",
+    "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "manifest": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/config/prompts_v20.jsonl",
+    "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+    "contract_to_freeze_before_launch": "4be899bfe57fb32aea59dadae4c4eefccb558a7302688f8607a850b8dc3d4662",
+    "contract_alternate_observed": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326",
+    "contract_gap": "Stage0 receipt does not bind a contract path; CEO/executor must select exactly one and record it before launch."
+  },
+  "literal_server_argv": [
+    "<server>", "-m", "<target_gguf>", "--host", "127.0.0.1", "--port", "8094", "--ctx-size", "4096", "--parallel", "1", "--n-gpu-layers", "0", "--no-context-shift", "--metrics", "--perf", "-lv", "3"
+  ],
+  "environment": {"CUDA_VISIBLE_DEVICES": "", "server_count": 1, "completion_allowed": false},
+  "literal_check_sequence": [
+    "Verify server hash/bytes/BuildID/RUNPATH and resolved libraries before launch",
+    "Launch one server CPU-only with argv above; do not send /completion",
+    "For six frozen manifest rows in order, POST raw messages to /apply-template",
+    "POST each returned rendered prompt to /tokenize with add_special=false, parse_special=true, with_pieces=true",
+    "Assert every rendered byte/hash, token ID array/prefix hash, piece list, and count against Stage0 packet",
+    "Assert row counts [169,122,115,111,96,134], total 747, and Stage0 manifest/target identities",
+    "Terminate server and verify no process/GPU activity; write receipt",
+    "Only a separately approved next phase may send /completion"
+  ],
+  "stage0_expected": {
+    "packet_sha256": "8f74cf645ae0705cac55444de81f4d3cd75bf683f9ec914d576e3cb13d5580a5",
+    "ordered_ids": ["code_python_debug", "code_rust_parser", "math_modular", "logic_schedule", "technical_explain", "structured_extract"],
+    "rendered_bytes": [752, 589, 592, 572, 523, 640],
+    "token_counts": [169, 122, 115, 111, 96, 134],
+    "total_tokens": 747,
+    "rendered_sha256": ["a83e3752525d65118444f963b32a5dfba1b85730bf0723a4f99ca3a90eae1132", "97aabb92cf7ae2c0b9985d56fae7404e4bf375ed160150803ed2a1508be2d03e", "a374606b5747cbd3d280dadca46203546a129ab73efdd2dbbdec8f361d66a7ac", "27400339c219f6bf93d52d7f484144d5059566d330517e2bc3ae6bf2ebf58e65", "ab472707921ff69d98228c2466d9aeeb435f09416dc31c3ed41cb48070566d9c", "cc5d2c6dffd905173c90aaaab15839c73c15b1416d3eea76cbd2b539cef0d602"],
+    "token_prefix_sha256": ["87f9fa5664710fab7bd871d37e8c9d53fbe47146ade04fd9471a5c1433e69d26", "f835e05c6acf0092e94eb7313e8924067f1ae9bc4b13dc992f74008ae90f8690", "b8edc72c437174786964d536b46236c049f8dc752f1d7e9a468b2f73aeb579f1", "2778bd3199e6a997c1c3b446e83050ee3d2b36ab611cd10392f2961702d402a1", "bd7f17e5b655c56cce475eeecc8c78ebb4ee8603adce2412b11107d6c1d6bce7", "03eb6c19034e7101d70f9fa1913103685a95f3d3e1a3fda28aea1b6dfd6a9e8e"]
+  },
+  "hard_stops": ["wrong server/library hash", "contract not explicitly frozen", "any row hash/count/ID mismatch", "total != 747", "any /completion request", "GPU/process/resource/cleanup failure"],
+  "execution": "NOT_RUN; await CEO approval"
+}

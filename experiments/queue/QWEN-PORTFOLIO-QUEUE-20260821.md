@@ -585,6 +585,19 @@ with 747-token hashes/IDs matching Stage 0 and bound argv/endpoint/payload
 hashes. No rerun, split-ON, or interpretation as a verifier result until that
 repair passes.
 
+### Fail-closed tracer recovery packet
+
+Planner packet
+[`PQ-20260822-021-FAIL-CLOSED-TRACER-RECOVERY`](../planning/PQ-20260822-021-FAIL-CLOSED-TRACER-RECOVERY.md)
+defines the smallest safe recovery after the 531/747 launch violation. It
+binds b178, tracer `6d2349a1...`, Stage0 six-row hashes/IDs/counts, and an
+exact `/apply-template` → `/tokenize` → `/completion` flow. Any render/token,
+identity, order, or payload mismatch must issue zero completion calls. Static
+mock tests include byte/ID/piece/count/order mutations and rejection of
+`benchmark_client_v21`. Design/tests only; no model/GPU launch. Future
+target-only and split-OFF runs require signed fail-closed receipt, critic/lit
+review, and CEO approval; split-ON remains conditional on six-of-six exactness.
+
 Final-run summary binds the terminal negative: target-only 6/6 stable at 747
 prompt tokens; Q4 split-OFF rendered hashes all matched, but exact outputs were
 4/6. First divergences: `code_python_debug` token 50 (accepted 30/33) and
@@ -610,3 +623,28 @@ Launch-contract audit `4f897f40…` confirms raw 531/no-xhigh route and UNKNOWN
 executor argv. Keep recovery fail-closed: six apply-template + six tokenize
 hash/ID/count/total-747 assertions before any completion; wrong route stops at
 zero generation. No wrapper/rerun; split-ON and speed remain prohibited.
+
+Fail-closed packet amendment records critic/literature requirements: v22
+contract `benchmark_contract_v22.json` (1,125 bytes, SHA `a69610f9...`),
+capture-r2 and Stage0 candidate/receipt paths and SHAs, canonical server/client
+argv, empty `CUDA_VISIBLE_DEVICES`, resolved library linkage, and ordered
+request/response hashes. A separate live six-row `/apply-template` →
+`/tokenize` identity check must equal all 747-token Stage0 rows before any
+completion, target oracle, or GPU arm. No launch yet.
+
+Live v22 CPU identity gate passed (capture `322ab37f...`, summary
+`c398d7f1...`, contract `a69610f9...`, 6/6 exact, 747 tokens, zero completion/
+GPU). The next bounded step is target-only oracle through the fail-closed
+tracer, then stop for review. Freeze canonical argv/env, target GGUF, GPU
+layers all, ctx 4096, parallel 1, n_predict 64, greedy seed 42, cache off,
+one warmup plus three reps, one GPU process, and full output/resource/cleanup
+receipts. Split-OFF is excluded until target-only stability is reviewed; no
+launch yet.
+
+### Repaired-wrapper CPU identity gate: PASS
+
+Implementation `01f937e5…`, tests `6828fb70…`, packet `ddf7e99a…`; live receipt
+`c398d7f1…` and capture `322ab37f…` bind explicit contract v22 `a69610f9…`,
+b178, and Stage0 six-of-six/747. Six apply-template + six tokenize passed all
+hash/ID/count assertions; zero completion/GPU/timing, cleanup and idle passed.
+Queue remains CPU-identity-only; completion and GPU arms need separate approval.

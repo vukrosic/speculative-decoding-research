@@ -1,0 +1,61 @@
+{
+  "experiment_id": "EXP-20260822-021-live-identity-v22",
+  "status": "pass_six_of_six_cpu_live_identity_gate",
+  "packet_sha256": "ddf7e99 (CEO packet identifier)",
+  "started_utc": "2026-08-22T11:39:55Z",
+  "ready_utc": "2026-08-22T11:40:00Z",
+  "finished_utc": "2026-08-22T11:41:04Z",
+  "contract": {
+    "path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/config/benchmark_contract_v22.json",
+    "sha256": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326",
+    "bytes": 1125,
+    "v21_mixed": false
+  },
+  "capture": {
+    "path": "receipts/EXP-20260822-021-readonly-render-capture-20260822/live-identity-v22.json",
+    "sha256": "322ab37fee94c319fdafbc7a7f956cced73f468d806cd1f0542fafae6c066320",
+    "rows": 6,
+    "total_tokens": 747,
+    "status": "pass"
+  },
+  "reference": {
+    "stage0_capture_sha256": "cdab75d710a9de052bb3b1a2c51f964032e6697115e7dd1611e7ffdc1cdc45d7",
+    "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+    "tracer_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+    "candidate_server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "candidate_server_bytes": 17912,
+    "runpath": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin:"
+  },
+  "server_argv": [
+    "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin/llama-server",
+    "-m", "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf",
+    "--host", "127.0.0.1", "--port", "8094", "--ctx-size", "4096", "--parallel", "1", "--n-gpu-layers", "0", "--no-context-shift", "--metrics", "--perf", "-lv", "3"
+  ],
+  "environment": {"CUDA_VISIBLE_DEVICES": ""},
+  "client_argv": ["/workspace/vllm-venv/bin/python", "-"],
+  "endpoint_calls": {"apply_template": 6, "tokenize": 6, "completion": 0, "benchmark_client_v21": 0, "generation": 0, "drafter": 0, "verifier": 0, "timing": 0},
+  "tokenize_flags": {"add_special": false, "parse_special": true, "with_pieces": true},
+  "equality": {
+    "ordered_rows": "PASS_6_OF_6",
+    "rendered_bytes_hashes": "PASS_ALL_6",
+    "token_ids": "PASS_ALL_6",
+    "token_pieces": "PASS_ALL_6",
+    "token_counts": "PASS_ALL_6",
+    "apply_payload_hashes": "PASS_ALL_6",
+    "tokenize_payload_hashes": "PASS_ALL_6",
+    "total_tokens": 747
+  },
+  "remote": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "hostname": "9719ca4634c7",
+    "server_pid": 269299,
+    "gpu_pre_post": "NVIDIA GeForce RTX 3060, driver 580.173.02, 1 MiB, 0%, no compute apps",
+    "memory_post": "15890 MiB total, 2899 MiB used, 2968 MiB free, 12991 MiB available",
+    "disk_post": "overlay 60G total, 59G used, 1.5G available, 98%",
+    "server_log_sha256": "01a8299ca6fb17dd9d9caf1ce25f1a6c0cf4bbc373750bcb00e66803465962f2",
+    "server_log_bytes": 1464
+  },
+  "cleanup": {"server_terminated": true, "remaining_llama_server": false, "gpu_idle_verified": true},
+  "disposition": "Live identity gate passed. Stop before completion, target oracle, benchmark, split-flash, timing, or GPU work; those require separate CEO authorization."
+}

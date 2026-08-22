@@ -410,3 +410,9 @@ Launch audit `4f897f40…` leaves executor argv UNKNOWN and confirms raw
 531/no-xhigh route. Fail-closed recovery requires six apply-template + six
 Stage0-tokenize hash/ID/count checks and total 747 before any completion;
 wrong route yields zero generation. No wrapper, rerun, split-ON, or speed.
+
+Repaired wrapper `01f937e5…` with tests `6828fb70…` and packet `ddf7e99a…`
+passed live v22 CPU identity. Receipt `c398d7f1…` binds capture `322ab37f…`,
+contract v22 `a69610f9…`, b178, and Stage0 six-of-six/747. Six apply + six
+tokenize passed; zero completion/GPU/timing, cleanup and GPU idle passed.
+Completion/GPU work remains separately unauthorized.

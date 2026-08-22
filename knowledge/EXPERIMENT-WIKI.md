@@ -466,3 +466,14 @@ Recovery is fail-closed: six `/apply-template` + six Stage0-flagged
 `/tokenize` calls must pass all hash/ID/count and total-747 assertions before
 any `/completion`; wrong route hard-stops with zero generation. No wrapper was
 written/executed or rerun performed. Split-ON/speed remain prohibited.
+
+## Repaired wrapper and live v22 CPU identity gate (2026-08-22)
+
+Wrapper implementation SHA `01f937e5…`, tests SHA `6828fb70…`, and planner
+packet `ddf7e99a…` are receipt-backed. Live v22 CPU identity receipt
+`c398d7f1…` binds capture `322ab37f…`, explicit contract v22 `a69610f9…`,
+b178, and Stage0 six-of-six/747. Six apply-template + six tokenize calls
+passed ordered-row, rendered-byte/hash, token-ID/piece/count, and payload-hash
+assertions (169/122/115/111/96/134). Completion/generation/benchmark/GPU/
+timing calls were zero; cleanup and GPU idle passed. CPU identity only;
+completion/GPU arms remain separately gated.
