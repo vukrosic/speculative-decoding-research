@@ -117,15 +117,46 @@ mechanism.
 
 ## Results
 
-### Observed
+### Observed — trace localization
 
-Pending. Trace-only recovery is the first active phase.
+The preserved target-only and instrumented Q4 traces share an exact 42-token
+prefix. The first divergence is output token 43 (zero-based index 42): target
+token `90563` versus Q4 token `471`. Q4 accepted token `471` as the draft in
+cycle 25 (sampled predecessor `460` at position 174; accepted draft at 175;
+correction token `16`; no rollback). Seven one-token rejection/rollback cycles
+precede this accepted-draft divergence. The target token `90563` is neither
+the sampled predecessor, accepted draft, nor correction token. This localizes
+the mismatch to an accepted-draft decision after the shared prefix, while
+remaining a state-path hypothesis rather than proof of a single cause.
+
+Receipts: `receipts/EXP-20260822-020-qwen-singleton-correction/
+token-divergence-analysis.{json,md}`. Parser SHA-256 is
+`a7e53cf4c2e63dc9359f12db9ea0682d66ee8398a84d3ed406e5f96a46c7e5ff` and
+analysis JSON SHA-256 is
+`a6df8676dea3875a130110b0363f8d9130fbef732911fbdedf738a77e531559d`.
+
+### Observed — bounded `n_rs` causal axis
+
+The one-prompt two-arm diagnostic then forced target-only `n_rs_seq=1` and Q4
+n=1 `n_rs_seq=0`, retaining the frozen artifacts and full-checkpoint Q4 path.
+Target-only still produced the target hash
+`0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c` at
+`18.7416124147` diagnostic tok/s. Q4 still produced divergent hash
+`1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646` at
+`16.3178374758` diagnostic tok/s. Both emitted 64 tokens. Therefore changing
+the recurrent snapshot count/layout alone, or merely matching the target-only
+layout while retaining speculative verification, is falsified as the sole
+cause. These timings are diagnostic, not promotion evidence.
+
+Receipt: `receipts/EXP-20260822-020-qwen-singleton-correction/n-rs-axis-r1/`.
 
 ### Interpretation / hypotheses
 
-The deterministic punctuation/backtick divergence is consistent with
-shape-dependent quantized target logits at a speculative block boundary. It is
-not yet proof; the trace and singleton replay are the falsifiers.
+The first mismatch is now localized to an accepted draft after seven prior
+rejection cycles. The `n_rs` axis rejects snapshot count/layout as a sufficient
+single-variable fix; the remaining candidate mechanisms include rollback
+checkpoint contents, target block-vs-singleton numerical state, or another
+verifier state transition. No correction runtime has been promoted.
 
 ## Artifacts and receipts
 
@@ -140,4 +171,3 @@ not yet proof; the trace and singleton replay are the falsifiers.
 Historical PLAN-001 remains terminally blocked and is not being reconstructed
 as if its missing bytes existed. This card defines a new source-backed current-
 runtime experiment with a new identity.
-

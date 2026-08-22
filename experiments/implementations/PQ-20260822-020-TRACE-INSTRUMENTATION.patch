@@ -1,0 +1,144 @@
+diff --git a/common/speculative.cpp b/common/speculative.cpp
+index 76cf1f0..3dc3210 100644
+--- a/common/speculative.cpp
++++ b/common/speculative.cpp
+@@ -15,6 +15,7 @@
+ #include <algorithm>
+ #include <cassert>
+ #include <chrono>
++#include <cstdlib>
+ #include <cinttypes>
+ #include <cstring>
+ #include <iomanip>
+@@ -31,6 +32,11 @@
+ #define SPEC_VOCAB_MAX_SIZE_DIFFERENCE  128
+ #define SPEC_VOCAB_CHECK_START_TOKEN_ID 5
+ 
++static bool pq020_trace_enabled() {
++    const char * value = std::getenv("PQ020_TRACE");
++    return value != nullptr && value[0] != '\0' && std::strcmp(value, "0") != 0;
++}
++
+ const std::map<std::string, common_speculative_type> common_speculative_type_from_name_map = {
+     {"none",          COMMON_SPECULATIVE_TYPE_NONE},
+     {"draft-simple",  COMMON_SPECULATIVE_TYPE_DRAFT_SIMPLE},
+@@ -1701,6 +1707,12 @@
+ 
+                 result.push_back(id);
+ 
++                if (pq020_trace_enabled()) {
++                    const llama_token predecessor = result.size() > 1 ? result[result.size() - 2] : dp.id_last;
++                    SPC_INF("PQ020_DRAFT seq=%d block_i=%d token=%d predecessor=%d n_past=%d abs_pos=%d result_size=%zu\n",
++                            seq_id, i, id, predecessor, dp.n_past, dp.n_past + i + 1, result.size());
++                }
++
+                 if (params.n_max <= (int) result.size()) {
+                     drafting[seq_id] = false;
+                     n_drafting--;
+diff --git a/tools/server/server-context.cpp b/tools/server/server-context.cpp
+index a034b98..7eeeb63 100644
+--- a/tools/server/server-context.cpp
++++ b/tools/server/server-context.cpp
+@@ -18,6 +18,8 @@
+ #include "mtmd-helper.h"
+ 
+ #include <algorithm>
++#include <cstdlib>
+ #include <cstddef>
+ #include <cinttypes>
++#include <cstring>
+ #include <exception>
+@@ -39,6 +41,11 @@ using json = nlohmann::ordered_json;
+ 
+ constexpr int HTTP_POLLING_SECONDS = 1;
+ 
++static bool pq020_trace_enabled() {
++    const char * value = std::getenv("PQ020_TRACE");
++    return value != nullptr && value[0] != '\0' && std::strcmp(value, "0") != 0;
++}
++
+ static common_speculative_output_limits server_output_limits(const common_params & params) {
+     if (params.embedding ||
+             (params.pooling_type != LLAMA_POOLING_TYPE_UNSPECIFIED && params.pooling_type != LLAMA_POOLING_TYPE_NONE)) {
+@@ -475,6 +481,17 @@ struct server_slot {
+             SLT_DBG(*this, "slot decode token, id=%d, n_ctx = %d, n_tokens = %d, truncated = %d\n",
+                     sampled, n_ctx, prompt.n_tokens(), truncated);
+         } else {
++            if (pq020_trace_enabled()) {
++                SLT_INF(*this, "PQ020_VERIFY_BATCH_BEGIN sampled=%d prompt_n=%d pos0=%d draft_n=%zu first_batch_index=%d\n",
++                        sampled, prompt.n_tokens(), prompt.tokens.pos_next(), spec_draft.size(), batch.size());
++                SLT_INF(*this, "PQ020_VERIFY_BATCH_ROW ord=0 role=sampled batch_index=%d token=%d pos=%d seq=%d\n",
++                        batch.size(), sampled, prompt.tokens.pos_next(), id);
++                for (size_t i = 0; i < spec_draft.size(); ++i) {
++                    SLT_INF(*this, "PQ020_VERIFY_BATCH_ROW ord=%zu role=draft batch_index=%d token=%d pos=%d seq=%d\n",
++                            i + 1, batch.size() + (int32_t) i + 1, spec_draft[i], prompt.tokens.pos_next() + (int32_t) i + 1, id);
++                }
++            }
++
+             SLT_DBG(*this, "generate_draft: id=%d, #tokens=%zu, #draft=%zu, pos_next=%d\n",
+                     sampled, prompt.tokens.size(), spec_draft.size(), prompt.tokens.pos_next());
+ 
+@@ -3817,6 +3834,31 @@ void server_context::post_decode(int32_t n_batch_tokens, int32_t off, llama_batc
+ 
+             GGML_ASSERT(n_draft > 0);
+ 
++            if (pq020_trace_enabled()) {
++                auto * mem_tgt = llama_get_memory(ctx_tgt);
++                auto * mem_dft = ctx_dft ? llama_get_memory(ctx_dft) : nullptr;
++                SLT_INF(slot, "PQ020_VERIFY_BEGIN prompt_n=%d pos_next=%d n_draft=%zu off=%d view_n=%d seq_rm_type=%d rs_limit=%d tgt_pos_min=%d tgt_pos_max=%d dft_pos_min=%d dft_pos_max=%d\n",
++                        slot.prompt.n_tokens(), slot.prompt.tokens.pos_next(), n_draft, off, n_batch_tokens,
++                        (int) ctx_tgt_seq_rm_type, llama_n_rs_seq(ctx_tgt),
++                        llama_memory_seq_pos_min(mem_tgt, slot.id), llama_memory_seq_pos_max(mem_tgt, slot.id),
++                        mem_dft ? llama_memory_seq_pos_min(mem_dft, slot.id) : -1,
++                        mem_dft ? llama_memory_seq_pos_max(mem_dft, slot.id) : -1);
++                for (size_t ord = 0; ord < slot.spec_i_batch.size(); ++ord) {
++                    const int32_t global_i = slot.spec_i_batch[ord];
++                    const int32_t local_i  = global_i - off;
++                    const llama_token token = batch_view.token ? batch_view.token[local_i] : LLAMA_TOKEN_NULL;
++                    const llama_pos pos = batch_view.pos ? batch_view.pos[local_i] : -1;
++                    const int32_t n_seq = batch_view.n_seq_id ? batch_view.n_seq_id[local_i] : 0;
++                    const llama_seq_id seq0 = n_seq > 0 && batch_view.seq_id ? batch_view.seq_id[local_i][0] : -1;
++                    const int32_t logits = batch_view.logits ? batch_view.logits[local_i] : -1;
++                    SLT_INF(slot, "PQ020_VERIFY_ROW ord=%zu global_i=%d local_i=%d token=%d pos=%d n_seq=%d seq0=%d logits=%d\n",
++                            ord, global_i, local_i, token, pos, n_seq, seq0, logits);
++                }
++                for (size_t ord = 0; ord < slot.spec_draft.size(); ++ord) {
++                    SLT_INF(slot, "PQ020_DRAFT_VECTOR ord=%zu token=%d\n", ord, slot.spec_draft[ord]);
++                }
++            }
++
+             // verify and try to accept the draft
+             {
+                 common_sampler_ptr smpl_save(common_sampler_clone(slot.smpl.get()));
+@@ -3839,6 +3881,15 @@ void server_context::post_decode(int32_t n_batch_tokens, int32_t off, llama_batc
+                     ctx_tgt_seq_rm_type == COMMON_CONTEXT_SEQ_RM_TYPE_FULL ||
+                     (ctx_tgt_seq_rm_type == COMMON_CONTEXT_SEQ_RM_TYPE_RS && n_rollback > llama_n_rs_seq(ctx_tgt));
+ 
++                if (pq020_trace_enabled()) {
++                    SLT_INF(slot, "PQ020_VERIFY_RESULT accepted_size=%zu accepted_draft=%zu n_draft=%zu n_rollback=%u can_rollback=%d use_ckpt=%d\n",
++                            accepted.size(), accepted.size() - 1, n_draft, n_rollback, can_rollback, use_ckpt_tgt);
++                    for (size_t ord = 0; ord < accepted.size(); ++ord) {
++                        SLT_INF(slot, "PQ020_ACCEPTED_VECTOR ord=%zu role=%s token=%d\n",
++                                ord, ord + 1 == accepted.size() ? "correction" : "accepted_draft", accepted[ord]);
++                    }
++                }
++
+                 // check for partial draft acceptance
+                 if (n_rollback > 0) {
+                     if (use_ckpt_tgt) {
+@@ -3910,6 +3969,15 @@ void server_context::post_decode(int32_t n_batch_tokens, int32_t off, llama_batc
+             SLT_DBG(slot, "add accepted tokens: sampled=%d, ids.size=%zu, n_draft=%zu\n", slot.sampled, ids.size(), n_draft);
+ 
+             slot.mem.seq_rm(slot.id, slot.prompt.tokens.pos_next(), -1);
++            if (pq020_trace_enabled()) {
++                auto * mem_tgt = llama_get_memory(ctx_tgt);
++                auto * mem_dft = ctx_dft ? llama_get_memory(ctx_dft) : nullptr;
++                SLT_INF(slot, "PQ020_MEMORY_AFTER pos_next=%d tgt_pos_min=%d tgt_pos_max=%d dft_pos_min=%d dft_pos_max=%d\n",
++                        slot.prompt.tokens.pos_next(),
++                        llama_memory_seq_pos_min(mem_tgt, slot.id), llama_memory_seq_pos_max(mem_tgt, slot.id),
++                        mem_dft ? llama_memory_seq_pos_min(mem_dft, slot.id) : -1,
++                        mem_dft ? llama_memory_seq_pos_max(mem_dft, slot.id) : -1);
++            }
+ 
+             for (size_t i = 0; i < ids.size(); ++i) {
+                 completion_token_output result;

@@ -1,0 +1,17 @@
+2026-08-22T06:35:08Z
+9719ca4634c7
+NVIDIA GeForce RTX 3060, 12288 MiB, 1 MiB, 0 %, 55, 580.173.02
+Filesystem       1B-blocks        Used  Available Use% Mounted on
+overlay        64424509440 62651879424 1772630016  98% /
+shm             7516192768   806682624 6709510144  11% /dev/shm
+fcbf4b9d5847f19ad2391af0109b3d0d067de19d0448bb96acc1a1011af20d41  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/llama-server
+03c6f8777d10033598adde9888b008bd74082000eca7a579692e4b3c729b43bb  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/libllama-common.so.0.1.2
+fd5a9bf6ac5237f0c8821bc66a75e81c7c1b1a24b4ac487a496d4fbe4386a066  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/libllama-server-impl.so
+05bc54a210601550730e024c3820fa89cd1f4382792ccf457faf3853f55f6c43  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/source/common/common.cpp
+3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf
+18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/models/Qwen3.8-27B-DFlash2-Q4_K_M.gguf
+477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/scripts/benchmark_client_v21.py
+374eea10112daeac6cd6d9499230abd6ac68cfebf7804c14e96bb71a7223b7d5  /dev/shm/pq020-rs-axis-20260822T0635Z/code-python-debug-v20-one.jsonl
+3f444c000f67e5e3bf43ac05d7372c57e726d1bde9e851ebe8cb7c2cb600aa31  /dev/shm/pq020-rs-axis-20260822T0635Z/benchmark-contract-n-rs-axis-r1.json
+LLAMA_BUILD_UI:BOOL=OFF
+LLAMA_USE_PREBUILT_UI:BOOL=OFF

@@ -1,0 +1,47 @@
+{
+  "status": "completed_n_rs_axis_diagnostic",
+  "evidence_class": "two-arm one-prompt recurrent-state causal diagnostic; timing is not promotion evidence",
+  "target_n_rs_1": {
+    "output_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+    "summary": {
+      "accepted_per_position": {},
+      "accepted_tokens_per_verification": null,
+      "aggregate_request_tokens_per_second": 18.741612414652565,
+      "completion_tokens": 64,
+      "completion_tokens_per_verification": null,
+      "draft_acceptance_rate": null,
+      "draft_accepted_tokens": 0,
+      "draft_proposed_tokens": 0,
+      "draft_verification_steps": 0,
+      "median_request_ms": 3414.86093,
+      "non_spec_target_decode_calls": 66,
+      "requests": 1,
+      "wall_ms": 3414.86093
+    },
+    "server_log_sha256": "7b09c1d55626de4b33c9644f321035d681dc0209df02f73c72227a9c1048a434"
+  },
+  "q4_n1_n_rs_0": {
+    "output_sha256": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646",
+    "summary": {
+      "accepted_per_position": {
+        "0": 26
+      },
+      "accepted_tokens_per_verification": 0.8387096774193549,
+      "aggregate_request_tokens_per_second": 16.317837475814486,
+      "completion_tokens": 64,
+      "completion_tokens_per_verification": 2.064516129032258,
+      "draft_acceptance_rate": 0.8387096774193549,
+      "draft_accepted_tokens": 26,
+      "draft_proposed_tokens": 31,
+      "draft_verification_steps": 31,
+      "median_request_ms": 3922.088334,
+      "non_spec_target_decode_calls": 40,
+      "requests": 1,
+      "wall_ms": 3922.088334
+    },
+    "server_log_sha256": "3ac580709b8b668f6e75795f0d6b6d49b0e2b25e4e44de6936e9b02cb7b599ab"
+  },
+  "heldout_used": false,
+  "runtime_or_source_edit": true,
+  "edit_class": "strict environment override of target recurrent-state snapshot count only"
+}

@@ -1,0 +1,40 @@
+{
+  "status": "completed_instrumented_diagnostic",
+  "evidence_class": "instrumented one-prompt diagnostic; timing is not promotion evidence",
+  "q4_output_sha256": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646",
+  "q4_summary": {
+    "accepted_per_position": {
+      "0": 28
+    },
+    "accepted_tokens_per_verification": 0.8,
+    "aggregate_request_tokens_per_second": 19.689812114644226,
+    "completion_tokens": 64,
+    "completion_tokens_per_verification": 1.8285714285714285,
+    "draft_acceptance_rate": 0.8,
+    "draft_accepted_tokens": 28,
+    "draft_proposed_tokens": 35,
+    "draft_verification_steps": 35,
+    "median_request_ms": 3250.41192,
+    "non_spec_target_decode_calls": 38,
+    "requests": 1,
+    "wall_ms": 3250.41192
+  },
+  "event_counts": {
+    "draft_vector_rows": 35,
+    "verify_batch_begins": 35,
+    "verify_batch_sample_rows": 35,
+    "verify_batch_draft_rows": 35,
+    "verify_begins": 35,
+    "verify_results": 35,
+    "memory_afters": 35,
+    "zero_accepts": 7,
+    "accepted_vector_rows": 63
+  },
+  "q4_server_log_sha256": "a96c18030ba65cbc2f8f47b06a8af823081697a16780fa72243054a7c9291c11",
+  "q4_instrumentation_log_sha256": "091e1b341a13cd75e11c9d210bcf857d35944c24362032c8ea96a938bdb3ee5c",
+  "heldout_used": false,
+  "runtime_or_source_edit": true,
+  "edit_class": "environment-gated trace logging only",
+  "generic_draft_marker_observed": false,
+  "generic_draft_marker_disposition": "non-blocking because the server-side draft vector and exact verification batch rows recorded every proposal"
+}

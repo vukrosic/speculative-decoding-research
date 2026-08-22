@@ -31,14 +31,31 @@ tokens on both arms and `208/236` accepted/proposed. Output hashes agree for
 deterministic mismatch across three repetitions, with 64 tokens on each arm.
 
 This is a narrow promising lead, not a promoted result. EXP-020 is
-`active-diagnostic`; its trace and singleton correction have not produced a
-measured result in this record, and no trace result may be inferred. Promotion
+`active-diagnostic`; the activation note intentionally contained no trace
+result. The completed trace and bounded causal result are recorded below;
+promotion
 still requires exact token-ID equality, rejected-boundary localization, fresh
 matched throughput, and complete cleanup. Reopening or extending the GPU lane
 requires the exact source-backed Arm-B/evaluator/state bundle or a separately
 authorized source-backed regeneration with positions/sequence IDs,
 mask/cache/anchor/rollback semantics, evaluator/logger/replay/dependency
 identity, resolved split, and the `[171,171]`/`[170,170]` conflict resolved.
+
+The completed EXP-020 trace now localizes the first divergence: target-only and
+Q4 share an exact 42-token prefix, then differ at output token 43 (`90563`
+target versus accepted Q4 draft `471`). The accepted draft is in verifier
+cycle 25, after seven one-token rejection/rollback cycles; it is not the
+cycle correction token. The machine analysis and parser hashes are recorded
+in `receipts/EXP-20260822-020-qwen-singleton-correction/`.
+
+A bounded recurrent-state diagnostic then forced target-only `n_rs_seq=1` and
+Q4 n=1 `n_rs_seq=0`. Target-only retained hash `0f76b6ae…` at `18.7416124147`
+diagnostic tok/s; Q4 retained divergent hash `1d5020bf…` at `16.3178374758`
+diagnostic tok/s. Both produced 64 tokens. Snapshot count/layout and matching
+the target-only recurrent-state layout are therefore falsified as the sole
+cause. This narrows the next hypothesis to checkpoint contents, block-vs-
+singleton numerical state, or another verifier transition; no correction or
+speed result is promoted.
 
 ## Best supported observations
 

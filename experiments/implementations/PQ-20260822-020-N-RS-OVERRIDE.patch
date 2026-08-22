@@ -1,0 +1,32 @@
+diff --git a/common/common.cpp b/common/common.cpp
+index d476c23..1111111 100644
+--- a/common/common.cpp
++++ b/common/common.cpp
+@@ -10,6 +10,7 @@
+ #include "unicode.h"
+ 
+ #include <algorithm>
++#include <cstdlib>
+ #include <cinttypes>
+ #include <climits>
+ #include <cmath>
+@@ -1697,6 +1698,19 @@ struct llama_context_params common_context_params_to_llama(const common_params &
+     cparams.n_ctx             = params.n_ctx;
+     cparams.n_seq_max         = params.n_parallel;
+     cparams.n_rs_seq          = params.speculative.need_n_rs_seq();
++
++    // EXP-20260822-020: controlled diagnostic/correction boundary. The default
++    // path is byte-for-byte unchanged unless the task-owned environment value
++    // is explicitly set to one of the only two admitted states.
++    if (const char * value = std::getenv("PQ020_FORCE_N_RS_SEQ")) {
++        if (std::strcmp(value, "0") == 0) {
++            cparams.n_rs_seq = 0;
++        } else if (std::strcmp(value, "1") == 0) {
++            cparams.n_rs_seq = 1;
++        } else {
++            throw std::runtime_error("PQ020_FORCE_N_RS_SEQ must be exactly 0 or 1");
++        }
++    }
+     cparams.n_outputs_max     = std::max(params.n_outputs_max, 0);
+     cparams.n_outputs_max_per_seq = std::max(params.n_outputs_max_per_seq, 0);
+     cparams.n_batch           = params.n_batch;

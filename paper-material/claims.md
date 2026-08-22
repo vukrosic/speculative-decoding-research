@@ -16,12 +16,24 @@
 
 ## C002 — verifier/state fidelity is the current correctness bottleneck
 
-- Status: `hypothesis`
-- Claim: the remaining deterministic output difference arises at a rejected
-  speculative boundary because block-shaped target verification is numerically
-  different from singleton target decoding.
-- Supporting evidence: only `code_python_debug` differs across target and Q4;
-  the difference repeats across all three runs while 5/6 prompts agree.
-- Limitation: no first-divergence token/state trace yet.
-- Falsifier: unchanged-runtime trace plus singleton correction replay.
+- Status: `localized-hypothesis`
+- Claim: the remaining deterministic output difference is caused by an
+  accepted-draft decision after prior rollback activity, with block-shaped
+  target verification not behaviorally matching clean singleton decoding.
+- Supporting evidence: exact 42-token prefix; first divergence at output token
+  43 (`90563` target vs accepted Q4 draft `471` in cycle 25); seven prior
+  rejection/rollback cycles; the target token is not the correction token.
+- Limitation: this localizes the decision but does not identify the precise
+  state transition or prove block-shape numerics are the sole cause.
+- Falsifier: a state/checkpoint intervention that restores the target token
+  without changing other runtime behavior.
 
+## C003 — recurrent snapshot count/layout is not the sole cause
+
+- Status: `falsified-as-sole-cause`
+- Claim: forcing target-only `n_rs_seq=1` and Q4 `n_rs_seq=0` should restore
+  the target output if recurrent snapshot count/layout alone causes the drift.
+- Evidence: target-only retained hash `0f76b6ae…` at `18.7416124147`
+  diagnostic tok/s; Q4 retained divergent hash `1d5020bf…` at
+  `16.3178374758`; both emitted 64 tokens.
+- Limitation: one prompt and one repetition; timings are diagnostic only.

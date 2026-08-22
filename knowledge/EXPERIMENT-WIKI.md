@@ -122,9 +122,9 @@ completion tokens and Q4 accepted `208/236` proposals. Only 5/6 unique prompt
 output hashes agree (10/12 duplicated rows); `code_python_debug` is the sole
 deterministic mismatch across three repetitions, with 64 tokens on each arm.
 
-This is a useful lead, not a result to promote: strict token-ID equality,
-rejected-boundary localization, and the current trace outcome are still
-pending. The card explicitly forbids inventing a speed or correctness result
+This is a useful lead, not a result to promote: strict token-ID equality and
+correction-runtime promotion remain pending. The card explicitly forbids
+inventing a speed or correctness result
 before those gates close. The GPU lane can reopen only with the exact
 source-backed runtime/evaluator/state contract (or separately authorized
 source-backed regeneration), including Arm-B positions/sequence IDs,
@@ -135,6 +135,19 @@ memory conflict.
 - [EXP-020 card](../experiments/cards/EXP-20260822-020-qwen-singleton-correction.md)
 - [Trace contract](../receipts/EXP-20260822-020-qwen-singleton-correction/benchmark-contract-q4-n1-code-python-trace.json)
 - [Paper-material claim boundary](../paper-material/claims.md)
+
+The trace phase subsequently localized the first mismatch after an exact
+42-token prefix: target token `90563` versus accepted Q4 draft token `471` at
+output token 43. The accepted draft occurs in cycle 25; seven one-token
+rejection/rollback cycles precede it. A bounded `n_rs` causal run then forced
+target-only `n_rs_seq=1` and Q4 `n_rs_seq=0`: target-only retained hash
+`0f76b6ae…` at `18.7416124147` diagnostic tok/s, while Q4 retained divergent
+hash `1d5020bf…` at `16.3178374758` diagnostic tok/s. The snapshot
+count/layout axis is therefore falsified as the sole cause. Both arms emitted
+64 tokens, and these timings are diagnostic only.
+
+- [Token-divergence analysis](../receipts/EXP-20260822-020-qwen-singleton-correction/token-divergence-analysis.md)
+- [n_rs-axis receipt](../receipts/EXP-20260822-020-qwen-singleton-correction/n-rs-axis-r1/summary.json)
 
 ### PQ-008 — verifier/state recovery
 

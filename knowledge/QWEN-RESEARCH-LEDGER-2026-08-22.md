@@ -138,6 +138,26 @@ source-backed regeneration, with positions/sequence IDs, serialized
 mask/cache/anchor/rollback semantics, evaluator/logger/replay/dependency
 identities, resolved split, and the `[171,171]`/`[170,170]` conflict recorded.
 
+## EXP-020 trace localization and `n_rs` causal result (2026-08-22)
+
+The instrumented target/Q4 traces share an exact 42-token prefix. The first
+divergence is output token 43: target token `90563` versus Q4 accepted draft
+token `471` in verifier cycle 25. Seven one-token rejection/rollback cycles
+precede this accepted-draft decision. Q4's cycle correction token was `16`,
+so the target token is not explained by the correction row. This localizes the
+failure to an accepted-draft decision after prior rollback activity; it does
+not by itself prove which state transition causes it.
+
+The bounded one-prompt `n_rs` axis forced target-only `n_rs_seq=1` and Q4 n=1
+`n_rs_seq=0` with frozen artifacts. Target-only retained hash `0f76b6ae…` at
+`18.7416124147` diagnostic tok/s; Q4 retained divergent hash `1d5020bf…` at
+`16.3178374758` diagnostic tok/s. Both emitted 64 tokens. Thus recurrent
+snapshot count/layout, including matching the target-only layout, is falsified
+as the sole cause. These timings are diagnostic and not a serving promotion.
+
+Receipts: [`token-divergence-analysis.md`](../receipts/EXP-20260822-020-qwen-singleton-correction/token-divergence-analysis.md),
+[`n-rs summary`](../receipts/EXP-20260822-020-qwen-singleton-correction/n-rs-axis-r1/summary.json).
+
 ## Post-PQ019 executable audit and recovery (2026-08-22)
 
 The planner, critic, literature, and runtime lanes independently re-audited the

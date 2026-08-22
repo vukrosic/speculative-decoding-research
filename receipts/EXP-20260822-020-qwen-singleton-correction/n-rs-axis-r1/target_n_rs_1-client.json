@@ -1,0 +1,72 @@
+{
+  "contract_sha256": "3f444c000f67e5e3bf43ac05d7372c57e726d1bde9e851ebe8cb7c2cb600aa31",
+  "created_utc": "2026-08-22T06:35:36.086296+00:00",
+  "experiment": "EXP-20260822-020-qwen-n-rs-state-axis-r1",
+  "metrics_delta": {
+    "llamacpp:n_busy_slots_per_decode": 1.0,
+    "llamacpp:n_decode_total": 66.0,
+    "llamacpp:n_tokens_max": 196.0,
+    "llamacpp:predicted_tokens_seconds": 22.6489,
+    "llamacpp:prompt_seconds_total": 0.623398,
+    "llamacpp:prompt_tokens_cached_total": 0.0,
+    "llamacpp:prompt_tokens_seconds": 213.347,
+    "llamacpp:prompt_tokens_total": 133.0,
+    "llamacpp:requests_deferred": 0.0,
+    "llamacpp:requests_processing": 0.0,
+    "llamacpp:spec_decode_num_accepted_tokens_total": 0.0,
+    "llamacpp:spec_decode_num_draft_tokens_total": 0.0,
+    "llamacpp:spec_decode_num_drafts_total": 0.0,
+    "llamacpp:tokens_predicted_seconds_total": 2.78159,
+    "llamacpp:tokens_predicted_total": 64.0
+  },
+  "mode": "target",
+  "prompt_manifest_sha256": "374eea10112daeac6cd6d9499230abd6ac68cfebf7804c14e96bb71a7223b7d5",
+  "repetition": 1,
+  "runs": [
+    {
+      "assistant_message": {
+        "content": "The function is broken because it doesn't handle the case where `x` is not found. The current code returns `lo` even when the element isn't found, which is incorrect. The function should return `-1` if the element is not found.\n\nHere's the corrected function:\n\n```python\ndef",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+      "category": "coding",
+      "completion_tokens": 64,
+      "content_sha256": "048e3c0ac85c9dffeffd5965cb5df16902853da074a32332c3e6a3625ef6e8ca",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "code_python_debug",
+      "prompt_tokens": 133,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2781.59,
+        "predicted_n": 64,
+        "predicted_per_second": 22.64891662682135,
+        "predicted_per_token_ms": 44.15222222222222,
+        "prompt_ms": 625.233,
+        "prompt_n": 133,
+        "prompt_per_second": 212.72069772388855,
+        "prompt_per_token_ms": 4.701
+      },
+      "wall_ms": 3414.86093
+    }
+  ],
+  "summary": {
+    "accepted_per_position": {},
+    "accepted_tokens_per_verification": null,
+    "aggregate_request_tokens_per_second": 18.741612414652565,
+    "completion_tokens": 64,
+    "completion_tokens_per_verification": null,
+    "draft_acceptance_rate": null,
+    "draft_accepted_tokens": 0,
+    "draft_proposed_tokens": 0,
+    "draft_verification_steps": 0,
+    "median_request_ms": 3414.86093,
+    "non_spec_target_decode_calls": 66,
+    "requests": 1,
+    "wall_ms": 3414.86093
+  }
+}

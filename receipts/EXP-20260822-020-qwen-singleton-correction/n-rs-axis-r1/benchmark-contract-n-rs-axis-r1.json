@@ -1,0 +1,62 @@
+{
+  "experiment": "EXP-20260822-020-qwen-n-rs-state-axis-r1",
+  "scope": "two-arm one-prompt causal diagnostic: target-only with n_rs_seq=1 and Q4 DFlash n=1 with n_rs_seq=0; timings are diagnostic only",
+  "parent_experiment": "EXP-20260822-020-qwen-singleton-correction-instrumented-trace",
+  "prompt_manifest": "code-python-debug-v20-one.jsonl",
+  "prompt_manifest_sha256": "374eea10112daeac6cd6d9499230abd6ac68cfebf7804c14e96bb71a7223b7d5",
+  "prompt_ids": [
+    "code_python_debug"
+  ],
+  "target_file": "experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf",
+  "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+  "draft_file": "experiments/qwen38-27b-iq1s-dflash2-v21-20260820/models/Qwen3.8-27B-DFlash2-Q4_K_M.gguf",
+  "draft_sha256": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+  "llama_cpp_revision": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+  "task_runtime": {
+    "task_root": "/workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z",
+    "llama_server_sha256": "fcbf4b9d5847f19ad2391af0109b3d0d067de19d0448bb96acc1a1011af20d41",
+    "libllama_common_sha256": "03c6f8777d10033598adde9888b008bd74082000eca7a579692e4b3c729b43bb",
+    "libllama_server_impl_sha256": "fd5a9bf6ac5237f0c8821bc66a75e81c7c1b1a24b4ac487a496d4fbe4386a066",
+    "source_common_sha256": "05bc54a210601550730e024c3820fa89cd1f4382792ccf457faf3853f55f6c43",
+    "n_rs_override_patch_sha256": "1a7e8b60ef744646bd09f4979d62eb50e4ed0f34f7225b7dc94e37510fc5b138",
+    "source_speculative_sha256": "6a24e473529b70367598f6718f33ecc6ab9a14701469469415afef90ed7869e0",
+    "source_server_context_sha256": "c060c9f5b5c9aa41cbb04204973c07c7ba6ba5fb518fc4ee38d62367ea0fb6a2",
+    "default_behavior_changed": false,
+    "override_values_admitted": [
+      0,
+      1
+    ]
+  },
+  "arms": [
+    {
+      "name": "target_n_rs_1",
+      "mode": "target",
+      "PQ020_FORCE_N_RS_SEQ": 1,
+      "purpose": "test whether recurrent snapshot layout alone reproduces the speculative output"
+    },
+    {
+      "name": "q4_n1_n_rs_0",
+      "mode": "dflash2",
+      "PQ020_FORCE_N_RS_SEQ": 0,
+      "purpose": "test full-checkpoint speculative verification with the target-only recurrent-state layout"
+    }
+  ],
+  "context_tokens": 4096,
+  "max_completion_tokens": 64,
+  "temperature": 0.0,
+  "top_k": 1,
+  "seed": 42,
+  "parallel_sequences": 1,
+  "gpu_layers": "all",
+  "draft_gpu_layers": "all",
+  "draft_tokens_max": 1,
+  "prompt_cache": false,
+  "repetitions": 1,
+  "warmups_per_server": 0,
+  "reference_outputs": {
+    "default_target_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+    "default_q4_n1_sha256": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646"
+  },
+  "correctness_gate": "Each arm must emit 64 completion tokens with length finish and preserve exact artifact, process, and GPU accounting. Output hashes are observations, not pre-forced expectations.",
+  "stop_gate": "Stop on any identity, context-parameter, source, prompt, process, GPU, output-accounting, server, checkpoint, or cleanup failure. No second retry or unrelated runtime edit."
+}

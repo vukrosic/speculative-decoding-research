@@ -1,0 +1,25 @@
+diff --git a/tools/server/server-context.cpp b/tools/server/server-context.cpp
+--- a/tools/server/server-context.cpp
++++ b/tools/server/server-context.cpp
+@@ -3837,8 +3837,8 @@ void server_context::post_decode(int32_t n_batch_tokens, int32_t off, llama_batc
+             GGML_ASSERT(n_draft > 0);
+ 
+             if (pq020_trace_enabled()) {
+-                const auto * mem_tgt = llama_get_memory(ctx_tgt);
+-                const auto * mem_dft = ctx_dft ? llama_get_memory(ctx_dft) : nullptr;
++                auto * mem_tgt = llama_get_memory(ctx_tgt);
++                auto * mem_dft = ctx_dft ? llama_get_memory(ctx_dft) : nullptr;
+                 SLT_INF(slot, "PQ020_VERIFY_BEGIN prompt_n=%d pos_next=%d n_draft=%zu off=%d view_n=%d seq_rm_type=%d rs_limit=%d tgt_pos_min=%d tgt_pos_max=%d dft_pos_min=%d dft_pos_max=%d\n",
+                         slot.prompt.n_tokens(), slot.prompt.tokens.pos_next(), n_draft, off, n_batch_tokens,
+                         (int) ctx_tgt_seq_rm_type, llama_n_rs_seq(ctx_tgt),
+@@ -3962,8 +3962,8 @@ void server_context::post_decode(int32_t n_batch_tokens, int32_t off, llama_batc
+ 
+             slot.mem.seq_rm(slot.id, slot.prompt.tokens.pos_next(), -1);
+             if (pq020_trace_enabled()) {
+-                const auto * mem_tgt = llama_get_memory(ctx_tgt);
+-                const auto * mem_dft = ctx_dft ? llama_get_memory(ctx_dft) : nullptr;
++                auto * mem_tgt = llama_get_memory(ctx_tgt);
++                auto * mem_dft = ctx_dft ? llama_get_memory(ctx_dft) : nullptr;
+                 SLT_INF(slot, "PQ020_MEMORY_AFTER pos_next=%d tgt_pos_min=%d tgt_pos_max=%d dft_pos_min=%d dft_pos_max=%d\n",
+                         slot.prompt.tokens.pos_next(),
+                         llama_memory_seq_pos_min(mem_tgt, slot.id), llama_memory_seq_pos_max(mem_tgt, slot.id),
