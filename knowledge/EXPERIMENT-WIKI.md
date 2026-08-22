@@ -292,3 +292,11 @@ Literal configure/build provenance is now closed by `preseed-argv-receipt.md`:
 exact UI preseed copy, CUDA-86 configure with both UI flags OFF, and named
 `llama-server -j2` build all returned 0. UNKNOWN cwd/environment fields remain
 explicitly UNKNOWN. This is build-only provenance; exactness remains pending.
+
+### EXP021 exactness result — terminal negative
+
+Target-only was stable across six prompts (227 tokens/run; 16.0559/16.0593/
+16.0534 tok/s). Same-build Q4 split-OFF failed exactness on `code_python_debug`
+(target `0f76b6ae…` vs Q4 `1d5020bf…`, both 64 tokens/`length`; 104/118
+accepted). Split-ON was not launched. No candidate timing, acceptance, or
+general speed claim is authorized; raw 28-file receipts and cleanup are kept.

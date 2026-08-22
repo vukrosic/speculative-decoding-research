@@ -357,3 +357,17 @@ exactness-first pending; the prior UI hard stops remain preserved.
 Literal preseed argv is receipt-backed (`preseed-argv-receipt.md`): exact UI
 copy, CUDA-86/UI-OFF configure, and named `llama-server -j2` build returned 0.
 This closes build provenance only; exactness-first execution remains queued.
+
+EXP021 exactness is now terminal-negative: target-only was stable, but
+same-build split-flash-OFF diverged on `code_python_debug`
+(`0f76b6ae...` target vs `1d5020bf...` Q4, both 64 tokens), so split-flash-ON
+was not run. No speed or acceptance result exists. Reopen only with a
+mechanically bound verifier-state/operation-shape artifact or a new
+one-variable patch plus exact block/logit receipt; do not rerun, retune, widen
+n, or infer a split-flash benefit from historical block2 evidence.
+
+Receipt closure: target-only six-prompt control was 227 tokens/run at
+16.0559/16.0593/16.0534 tok/s; Q4 split-OFF was 104/118 accepted and failed
+`code_python_debug` exactness (`0f76b6ae…` target vs `1d5020bf…` Q4). Split-ON
+was not launched. No candidate timing, acceptance, or general speed claim is
+admissible; preserve the 28-file raw receipt set and cleanup state.

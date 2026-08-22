@@ -325,3 +325,10 @@ pending and prior build failures remain preserved.
 exact UI preseed, CUDA-86/UI-OFF configure, and named server `-j2` build
 returning 0. Build provenance is closed; no inference result is claimed and
 exactness remains pending.
+
+### EXP021 terminal exactness stop
+
+Six-prompt target-only control was stable at 227 tokens/run. Q4 split-OFF
+failed on `code_python_debug` (target `0f76b6ae…`, Q4 `1d5020bf…`; both 64
+tokens/`length`, 104/118 accepted), so split-ON was not run. This is a
+terminal exactness negative for the screen, not a speed or acceptance result.

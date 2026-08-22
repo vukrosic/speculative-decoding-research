@@ -111,8 +111,8 @@ general speed claim.
 
 ## Decision
 
-- Promotion decision: not applicable; planner/critic/literature conditional
-  pass, CEO execution gate pending live v22 preflight.
+- Promotion decision: terminal negative for this exactness-first screen; the
+  split-OFF mismatch prevented split-ON launch and invalidates candidate timing.
 - What this does not establish: Arm-B fidelity, general acceptance, quality,
   exactness beyond the declared six-prompt gate, or general serving speed.
 
@@ -124,8 +124,8 @@ literal commands, per-arm outputs, evaluator results, and final cleanup state.
 
 ## Failures and amendments
 
-2026-08-22: Initial source candidate and two build hard stops recorded; the
-fresh preseed build completed build-only; no inference result exists.
+2026-08-22: Initial source candidate, build hard stops, build-only success, and
+split-OFF exactness mismatch recorded; split-ON was not launched.
 
 ### Provenance closure
 
@@ -136,3 +136,17 @@ and prebuilt-UI OFF, and built the named `llama-server` target with `-j2`;
 configure/build both returned 0. No cwd or task-specific environment is
 inferred where the receipt marks it UNKNOWN. This closes build provenance only;
 the six-prompt exactness run remains pending.
+
+### Exactness-first result (terminal negative)
+
+The target-only oracle was stable on all six public prompts: 227 completion
+tokens/run, timed `16.0559131652`, `16.0593077735`, `16.0534317693` tok/s.
+Same-build Q4 n=1 split-OFF reached 104/118 accepted and timed
+`18.1364859777`, `17.6286615605`, `17.8508739874` tok/s, but failed the
+exactness gate on `code_python_debug`: target SHA
+`0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c` versus Q4
+SHA `1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646`, both
+64 tokens with `length` finish. Split-ON was not launched by the hard stop;
+there is no candidate timing, acceptance, or general speed claim. The raw
+28-file receipt set, summary, cleanup, terminal, and `SHA256SUMS.txt` remain
+under `receipts/EXP-20260822-021-qwen-v22-split-flash-n1/`.

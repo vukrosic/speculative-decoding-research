@@ -293,3 +293,8 @@ No network/model/GPU execution occurred; exactness and timing remain pending.
 Literal argv provenance now closes the preseed build: exact UI copy, CUDA-86/UI
 OFF configuration, and named `llama-server -j2` build returned 0. No inference
 claim follows; six-prompt exactness remains pending.
+
+EXP021 exactness is now terminal-negative: stable six-prompt target-only
+control, but same-build Q4 split-OFF mismatched `code_python_debug` (64 tokens,
+`length`, 104/118 accepted). Split-ON was not launched. No candidate timing,
+acceptance, or general speed claim is valid; raw receipts and cleanup remain.
