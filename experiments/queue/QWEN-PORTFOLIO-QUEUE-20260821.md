@@ -573,9 +573,30 @@ contract, cap, finish reason) for the two failures versus the four exact rows.
 Only a source-backed contract repair can reopen a new packet; otherwise retire
 this candidate and rank another hypothesis. No GPU rerun is queued.
 
+### EXP021 launch-contract violation
+
+Receipt `b3c1e8db...` proves the final-run rendered bodies used the 531-token
+no-xhigh path, not the frozen 747-token r2 contract. Thus the apparent target
+6/6 and split-OFF 4/6 observations are preserved but invalid as exactness or
+verifier evidence. EXP021 is terminal for this launch. Reopen requires the
+literal launch command plus source-backed tracer-enforcement receipt proving
+`/apply-template` output is passed unchanged to `/completion` for all six rows,
+with 747-token hashes/IDs matching Stage 0 and bound argv/endpoint/payload
+hashes. No rerun, split-ON, or interpretation as a verifier result until that
+repair passes.
+
 Final-run summary binds the terminal negative: target-only 6/6 stable at 747
 prompt tokens; Q4 split-OFF rendered hashes all matched, but exact outputs were
 4/6. First divergences: `code_python_debug` token 50 (accepted 30/33) and
 `logic_schedule` token 37 (accepted 27/35); both reached the 64-token limit.
 Split-ON/timing were not run and GPU/process cleanup was clean. Classify this
 as a split-OFF control failure, not a split-flash result.
+
+### Superseding contract-violation packet
+
+Planner terminal `9ea4c80a…`, queue `70d65736…`, and data receipt `b3c1e8db…`
+show copied final raw requests were 531 no-xhigh, not the required 747 tracer.
+Preserve `0c98f7d` summary/terminal as stale contradictory history; apparent
+6/6 and 4/6 exactness are invalid evidence. No rerun or split-ON is queued.
+Reopen only with literal launch/tracer enforcement and all 747 rendered
+hashes/IDs bound through `/completion`.

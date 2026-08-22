@@ -444,3 +444,13 @@ were exact. First divergences were token 50 for `code_python_debug` (accepted
 30/33) and token 37 for `logic_schedule` (accepted 27/35); both reached the
 64-token limit. Split-ON and timing were not run; GPU/process cleanup was
 clean. This is a split-OFF control failure, not a split-flash result.
+
+### Superseding contract-violation correction
+
+Planner terminal packet `9ea4c80a…`, queue `70d65736…`, and data receipt
+`b3c1e8db…` supersede the apparent final-run result: copied raw requests are
+531-token no-xhigh prompts (`133/86/79/75/60/98`), not the required 747-token
+tracer. Preserve `0c98f7d` summary/terminal as stale contradictory history;
+the apparent 6/6 and 4/6 are invalid exactness evidence. No rerun or split-ON.
+Reopen only with a literal launch command enforcing the tracer, and bind all
+747 rendered hashes/IDs through `/completion` before any new gate.

@@ -430,3 +430,9 @@ rendered hashes matched but only 4/6 exact. First mismatches were token 50
 (`code_python_debug`, accepted 30/33) and token 37 (`logic_schedule`, accepted
 27/35), both capped at 64 tokens. Split-ON/timing were not run and cleanup was
 clean. Record as control failure only, with no split-flash claim.
+
+Planner terminal `9ea4c80a…`, queue `70d65736…`, and receipt `b3c1e8db…`
+supersede the prior result: final raw prompts are 531 no-xhigh, not 747
+tracer. Keep `0c98f7d` as stale contradictory history; apparent 6/6 and 4/6
+are invalid exactness evidence. No rerun/split-ON. Reopen requires literal
+launch/tracer enforcement plus all 747 hashes/IDs through `/completion`.

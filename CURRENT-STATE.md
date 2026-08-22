@@ -393,3 +393,10 @@ divergences were `code_python_debug` token 50 (accepted 30/33) and
 `logic_schedule` token 37 (accepted 27/35), both at the 64-token limit.
 Split-ON/timing were not run; GPU/process cleanup was clean. Classify this as
 a split-OFF control failure, not split-flash evidence.
+
+Superseding planner packet `9ea4c80a…`, queue `70d65736…`, and receipt
+`b3c1e8db…` classify the copied final raw run as a 531-token no-xhigh contract
+violation, not a valid 747 result. Preserve `0c98f7d` as stale contradictory
+history; apparent 6/6 and 4/6 exactness are invalid. No rerun or split-ON.
+Reopen only with literal launch/tracer enforcement and 747 hashes/IDs bound
+through `/completion`.

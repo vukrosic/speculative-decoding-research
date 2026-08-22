@@ -1,0 +1,25 @@
+{
+  "receipt_id": "EXP-20260822-021-final-first-divergence-reconciliation-20260822",
+  "status": "FAIL_EXACTNESS_GATE_AND_PROMPT_ALIGNMENT",
+  "scope": "Read-only reconciliation of copied target-only and split-OFF final raw receipts; no rerun, model launch, or GPU use.",
+  "raw_dir": "receipts/EXP-20260822-021-qwen-v22-split-flash-n1/final-run-raw",
+  "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "prompt_alignment": {
+    "required_capture_contract_total_tokens": 747,
+    "final_raw_total_prompt_tokens": 531,
+    "per_row_final_prompt_tokens": {"code_python_debug": 133, "code_rust_parser": 86, "math_modular": 79, "logic_schedule": 75, "technical_explain": 60, "structured_extract": 98},
+    "all_target_q4_rendered_prompt_hashes_equal": true,
+    "final_prompt_hashes_match_747_capture": false,
+    "finding": "Final raw receipts are the older 531-token rendering, not the captured 747-token tracer contract; therefore they cannot satisfy the requested 747-tracer gate."
+  },
+  "rows": {
+    "code_python_debug": {"target": {"prompt_n": 133, "out_n": 64, "output_sha256": "91abce60c9da40a599671b03ccc87782b0b60912f86cf79ef2cf14e8083437b1", "token_sha256": "c580af5460c3700d358f434f27b1bdd3baaf27b69e45e568029c56acebbdcdbe", "finish": "limit"}, "q4_off": {"prompt_n": 133, "out_n": 64, "output_sha256": "42e519dbb160c4c0cd4f31d1a750c23a6f4774231730ae1bdc0efe737fe2c76b", "token_sha256": "ba4d63e951fbda92062a2382415bdec2efcf856c13fd4dfa8eb7855d6ac68e9d", "finish": "limit", "draft_n": 33, "draft_accepted": 30}, "first_token_divergence_zero_based": 50, "target_token": 1049, "q4_token": 1510, "common_prefix_tokens": 50},
+    "code_rust_parser": {"target_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "q4_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "target_token_sha256": "201a8bab084b2a57aa2f6a8ceb51b3609f4c5a297d952bf51dbf4cd321e16151", "q4_token_sha256": "201a8bab084b2a57aa2f6a8ceb51b3609f4c5a297d952bf51dbf4cd321e16151", "out_n": 1, "finish": "eos", "exact": true},
+    "math_modular": {"target_output_sha256": "be53f843c7165c56e979c62c4f4c7c413afc61c84ab7d882b0c5454905ddcff1", "q4_output_sha256": "be53f843c7165c56e979c62c4f4c7c413afc61c84ab7d882b0c5454905ddcff1", "target_token_sha256": "13d381b3ceca886d4487e5b6b9ae55d71f4db4651695295d058e8de45b6f8676", "q4_token_sha256": "13d381b3ceca886d4487e5b6b9ae55d71f4db4651695295d058e8de45b6f8676", "out_n": 64, "finish": "limit", "exact": true},
+    "logic_schedule": {"target": {"prompt_n": 75, "out_n": 64, "output_sha256": "0ee9b27a9c10d74aa75b67d55bf9aac27290d49c748b080dca7df0731075d816", "token_sha256": "1d3cae73dabeb79937de567dc3285768330e2e08c973b1f0a5d8b0c53b662d6c", "finish": "limit"}, "q4_off": {"prompt_n": 75, "out_n": 64, "output_sha256": "e064e98464db2937c71d0aa91a9d1f849bc5a9e4e9509bb9a2be439d67b30c8a", "token_sha256": "f8ec738e9af250bbaac453f8de2dd1fce79989d088f4b1cd2dd39da2ccdafeca", "finish": "limit", "draft_n": 35, "draft_accepted": 27}, "first_token_divergence_zero_based": 37, "target_token": 159029, "q4_token": 92217, "common_prefix_tokens": 37},
+    "technical_explain": {"target_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "q4_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "target_token_sha256": "201a8bab084b2a57aa2f6a8ceb51b3609f4c5a297d952bf51dbf4cd321e16151", "q4_token_sha256": "201a8bab084b2a57aa2f6a8ceb51b3609f4c5a297d952bf51dbf4cd321e16151", "out_n": 1, "finish": "eos", "exact": true},
+    "structured_extract": {"target_output_sha256": "d3a3528541608baa0040af4d5ec72296945d2a23a37d5f83f726a92143ee78f0", "q4_output_sha256": "d3a3528541608baa0040af4d5ec72296945d2a23a37d5f83f726a92143ee78f0", "target_token_sha256": "76264f3a797ddfaf12cfa051038a7474ee5c62b0937966ef8bc55a88186b2da2", "q4_token_sha256": "76264f3a797ddfaf12cfa051038a7474ee5c62b0937966ef8bc55a88186b2da2", "out_n": 33, "finish": "eos", "exact": true}
+  },
+  "aggregate": {"target_q4_exact_rows": 4, "target_q4_mismatch_rows": ["code_python_debug", "logic_schedule"], "target_runs_preserved": 6, "target_stability_claim": "single preserved target-only receipt per row; no repeated target run available", "split_off_acceptance": "blocked"},
+  "disposition": "Do not attribute these mismatches to split-flash alone: the final raw packet uses 531-token prompts, while the required 747-token capture contract is absent from these requests. No split-ON or speed conclusion is admissible."
+}
