@@ -167,6 +167,18 @@ general token-ID exactness, losslessness, or serving-speed guarantee.
 - [Correctness smoke summary](../receipts/EXP-20260822-020-qwen-singleton-correction/low-margin-top2-smoke-r1/summary.json)
 - [Corrected speed-gate summary](../receipts/EXP-20260822-020-qwen-singleton-correction/corrected-speed-gate-r1/summary.json)
 
+The independent v23 screen froze the same `0.08` policy and used 12 separate
+public validation prompts. Target-only reproduced 12/12 hashes and 625
+tokens; corrected Q4 matched 6/12, with mismatches in coding, explanation,
+instruction, and reasoning rows. No override events fired. Corrected Q4 was
+`19.954249` tok/s versus target `17.659459` (`+12.994677%` diagnostic only),
+but the failed projection gate makes this a negative generalization result.
+The six-prompt calibrated `+12.496004%` result remains local and is not
+promoted or generalized; no retuning or prompt exceptions are allowed.
+
+- [Independent-v23 analysis](../experiments/analysis/PQ-20260822-020-INDEPENDENT-V23-SCREEN.md)
+- [Independent-v23 raw summary](../receipts/EXP-20260822-020-qwen-singleton-correction/independent-v23-screen-r1/raw-remote/summary.json)
+
 ### PQ-008 — verifier/state recovery
 
 The historical source reconciliation recovered target-only oracle hashes,

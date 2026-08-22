@@ -163,7 +163,7 @@ jq -e --arg prompt_sha "$prompt_sha" --arg contract_sha "$contract_sha" --arg ou
 ' "$run_dir/q4-client.json" >/dev/null
 
 grep -F 'PQ020_' "$run_dir/q4-server.log" > "$run_dir/q4-instrumentation.log"
-draft_events=$(grep -c 'PQ020_DRAFT seq=' "$run_dir/q4-instrumentation.log")
+draft_events=$(grep -c 'PQ020_DRAFT_VECTOR ' "$run_dir/q4-instrumentation.log")
 verify_begins=$(grep -c 'PQ020_VERIFY_BEGIN ' "$run_dir/q4-instrumentation.log")
 verify_results=$(grep -c 'PQ020_VERIFY_RESULT ' "$run_dir/q4-instrumentation.log")
 memory_afters=$(grep -c 'PQ020_MEMORY_AFTER ' "$run_dir/q4-instrumentation.log")

@@ -185,6 +185,26 @@ Receipts: `receipts/EXP-20260822-020-qwen-singleton-correction/
 sampler-margin-six-r1/`, `low-margin-top2-smoke-r1/`, and
 `corrected-speed-gate-r1/`.
 
+### Observed — independent v23 screen
+
+The frozen `0.08` policy was then evaluated without retuning or
+prompt-specific exceptions on 12 separate public v23 validation prompts. The
+target oracle reproduced all 12/12 hashes and 625 completion tokens. Corrected
+Q4 matched only 6/12 projections; mismatches were `v23-coding-00126`,
+`v23-explanation-00005`, `v23-explanation-00095`, `v23-instruction-00160`,
+`v23-instruction-00316`, and `v23-reasoning-00170`. No override events fired.
+
+Corrected Q4 measured `19.954249` versus target-only `17.659459` tok/s
+(`+12.994677%` diagnostic only), with 625 tokens on each arm. Because the
+projection gate failed, this is a negative generalization result, not a
+promotion or general speed claim. The six-prompt calibrated result remains
+separate: `+12.496004%` with all six hashes matching. Do not retune `0.08` or
+add exceptions on these screens.
+
+Receipt summary SHA-256:
+`bb65c097f20f36f063f46ca3f3730a229f4a954decc43705b05b9d0b8dbd97c8`.
+Analysis: `experiments/analysis/PQ-20260822-020-INDEPENDENT-V23-SCREEN.md`.
+
 ### Interpretation / hypotheses
 
 The first mismatch is now localized to an accepted draft after seven prior

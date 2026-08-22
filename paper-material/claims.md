@@ -59,3 +59,14 @@
   divergent `code_python_debug` has `0.0684490204`.
 - Disposition: use no broad threshold rule; preserve the negative and require
   independent calibration before any generalization.
+
+## C006 — independent v23 screen falsifies generalization
+
+- Status: `falsified-generalization`
+- Claim: the six-prompt calibrated `0.08` correction generalizes to separate
+  public v23 validation prompts without retuning or exceptions.
+- Evidence: target-only matched 12/12 hashes and 625 tokens; corrected Q4
+  matched 6/12, with no override events. Diagnostic timing was `19.954249`
+  versus `17.659459` tok/s (`+12.994677%`).
+- Disposition: do not promote or retune; preserve the six-prompt result as a
+  local calibrated observation only.

@@ -1,0 +1,402 @@
+{
+  "contract_sha256": "3b0735504fd8153ef32f1d667cf80a44817bb44d8de0a025e138a35395023854",
+  "created_utc": "2026-08-22T07:47:55.987424+00:00",
+  "experiment": "EXP-20260822-020-qwen-independent-v23-screen-r1",
+  "metrics_delta": {
+    "llamacpp:n_busy_slots_per_decode": 1.0,
+    "llamacpp:n_decode_total": 649.0,
+    "llamacpp:n_tokens_max": 189.0,
+    "llamacpp:predicted_tokens_seconds": 22.8244,
+    "llamacpp:prompt_seconds_total": 5.37691,
+    "llamacpp:prompt_tokens_cached_total": 0.0,
+    "llamacpp:prompt_tokens_seconds": 225.036,
+    "llamacpp:prompt_tokens_total": 1210.0,
+    "llamacpp:requests_deferred": 0.0,
+    "llamacpp:requests_processing": 0.0,
+    "llamacpp:spec_decode_num_accepted_tokens_total": 0.0,
+    "llamacpp:spec_decode_num_draft_tokens_total": 0.0,
+    "llamacpp:spec_decode_num_drafts_total": 0.0,
+    "llamacpp:tokens_predicted_seconds_total": 26.8573,
+    "llamacpp:tokens_predicted_total": 625.0
+  },
+  "mode": "target",
+  "prompt_manifest_sha256": "30668abcb12a25a8c6b69f8f54bcf5f8942df3b800c996a52ba28d4e9af1f914",
+  "repetition": 1,
+  "runs": [
+    {
+      "assistant_message": {
+        "content": "",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "category": "coding",
+      "completion_tokens": 1,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "target",
+      "prompt_id": "v23-coding-00438",
+      "prompt_tokens": 94,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 0.001,
+        "predicted_n": 1,
+        "predicted_per_second": 0.0,
+        "predicted_per_token_ms": 0.0,
+        "prompt_ms": 552.64,
+        "prompt_n": 94,
+        "prompt_per_second": 170.0926462072959,
+        "prompt_per_token_ms": 5.879148936170212
+      },
+      "wall_ms": 560.593169
+    },
+    {
+      "assistant_message": {
+        "content": "Here is the transformation:\n\n```markdown\n- [ ] item-387\n- [ ] item-400\n- [ ] item-413\n- [ ] item-426\n- [ ] item-439\n- [ ] item-452\n-",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "ca5dd0ac7db204271911d71ef455739d29c88a9de77b801cd7033279162cf7aa",
+      "category": "instruction",
+      "completion_tokens": 64,
+      "content_sha256": "169b328ffeeed69df953c49eda6a69e1d0bc0f75defa8316c3ae89f13c25d979",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-instruction-00316",
+      "prompt_tokens": 126,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2764.065,
+        "predicted_n": 64,
+        "predicted_per_second": 22.792517542098324,
+        "predicted_per_token_ms": 43.87404761904762,
+        "prompt_ms": 492.87,
+        "prompt_n": 126,
+        "prompt_per_second": 255.64550489987215,
+        "prompt_per_token_ms": 3.9116666666666666
+      },
+      "wall_ms": 3509.096206
+    },
+    {
+      "assistant_message": {
+        "content": "",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "category": "structured",
+      "completion_tokens": 1,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "target",
+      "prompt_id": "v23-structured-00201",
+      "prompt_tokens": 116,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 0.001,
+        "predicted_n": 1,
+        "predicted_per_second": 0.0,
+        "predicted_per_token_ms": 0.0,
+        "prompt_ms": 487.58,
+        "prompt_n": 116,
+        "prompt_per_second": 237.9096763608023,
+        "prompt_per_token_ms": 4.203275862068965
+      },
+      "wall_ms": 745.432461
+    },
+    {
+      "assistant_message": {
+        "content": "Let's denote the five slots as positions 1 through 5. We are arranging Ari (A), Bo (B), Chen (C), Dia (D), and Eli (E) into these slots.\n\n**Constraints:**\n1. **A is before B**: A < B (position-wise).\n2",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "b707b41c99bd4084bfe33c1a097618cd36036e507e7970d8cc8d5ac3415c5a96",
+      "category": "reasoning",
+      "completion_tokens": 64,
+      "content_sha256": "2097f2d4dbc0e1747aa0eb1f62b1b769b100d115dd40cd1bf7de92f183d363c5",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-reasoning-00170",
+      "prompt_tokens": 96,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2758.939,
+        "predicted_n": 64,
+        "predicted_per_second": 22.834865141998428,
+        "predicted_per_token_ms": 43.79268253968254,
+        "prompt_ms": 440.898,
+        "prompt_n": 96,
+        "prompt_per_second": 217.73743586952082,
+        "prompt_per_token_ms": 4.5926875
+      },
+      "wall_ms": 3451.442781
+    },
+    {
+      "assistant_message": {
+        "content": "item-726\nitem-739\nitem-752\nitem-765\nitem-778\nitem-791\nitem-804\nitem-817\n\nSum: 726 + 739 + 752",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "9e0d855eb86e74383fe73e2d29579691e5a8f6d3b7e0862dbf80a3e63b3bda2b",
+      "category": "instruction",
+      "completion_tokens": 64,
+      "content_sha256": "73f0f711373539dc4bc13598bf09c89a66bea79bb2eac9690700d19f441c6470",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-instruction-00160",
+      "prompt_tokens": 126,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2763.756,
+        "predicted_n": 64,
+        "predicted_per_second": 22.795065845175913,
+        "predicted_per_token_ms": 43.869142857142855,
+        "prompt_ms": 489.294,
+        "prompt_n": 126,
+        "prompt_per_second": 257.51388735606815,
+        "prompt_per_token_ms": 3.883285714285714
+      },
+      "wall_ms": 3512.138509
+    },
+    {
+      "assistant_message": {
+        "content": "Solving for integer $x$:\n$$ 73x + 74 = 658 $$\n$$ 73x = 658 - 74 $$\n$$ 73x = 584 $$\n$$ x = \\frac{584}{73",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4ab6ba5fcf43126bf8d15d836698f64240d15b1ba7772c653ee37003bcc36c4a",
+      "category": "math",
+      "completion_tokens": 64,
+      "content_sha256": "36dd4a51c2376149573c7e41978a8dfb3bdd36f33df3cef02fcaab4e81137c60",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-math-00127",
+      "prompt_tokens": 83,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2761.075,
+        "predicted_n": 64,
+        "predicted_per_second": 22.81719982253289,
+        "predicted_per_token_ms": 43.826587301587296,
+        "prompt_ms": 422.073,
+        "prompt_n": 83,
+        "prompt_per_second": 196.64844706958277,
+        "prompt_per_token_ms": 5.085216867469879
+      },
+      "wall_ms": 3437.236835
+    },
+    {
+      "assistant_message": {
+        "content": "```sql\n-- Variant 0126: Compact Nested Error Report\n-- Deterministic implementation: no randomness, no external state\n-- Rejects malformed values (NULL, empty, non-numeric, out-of-range)\n\nCREATE FUNCTION FormatNestedErrors(p_max_items INT)\nRETURNS INT\nDETER",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "8e301d635a1100b9cfcd599c90b9e24b6a7ddb6ca9d883b9a950f5e447811d4a",
+      "category": "coding",
+      "completion_tokens": 64,
+      "content_sha256": "48a4f0c3dac80bfdec37478c733b9f7bb850b89d508660c4b1a53aaa7a6cf9ba",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-coding-00126",
+      "prompt_tokens": 96,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2760.937,
+        "predicted_n": 64,
+        "predicted_per_second": 22.818340295341763,
+        "predicted_per_token_ms": 43.824396825396825,
+        "prompt_ms": 437.016,
+        "prompt_n": 96,
+        "prompt_per_second": 219.6715909714976,
+        "prompt_per_token_ms": 4.55225
+      },
+      "wall_ms": 3498.879363
+    },
+    {
+      "assistant_message": {
+        "content": "Beam search is a search strategy that expands multiple candidate states at each step, rather than just the single best state, to mitigate the risk of discarding a necessary path. It maintains a fixed-width window of top-K states (e.g., 5) at each step, pruning the rest. This balances computational cost and",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "c361a3c1d36818d41282262f600c1977284f863de5c6bf13d920dbf9b273123c",
+      "category": "explanation",
+      "completion_tokens": 64,
+      "content_sha256": "3c4beb3e3626f93eff5a7a60ef21f71a804faf4b5a498e28ac0d682abd7533b9",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-explanation-00095",
+      "prompt_tokens": 89,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2760.337,
+        "predicted_n": 64,
+        "predicted_per_second": 22.823300198490255,
+        "predicted_per_token_ms": 43.81487301587302,
+        "prompt_ms": 435.683,
+        "prompt_n": 89,
+        "prompt_per_second": 204.2769628376595,
+        "prompt_per_token_ms": 4.895314606741573
+      },
+      "wall_ms": 3450.50385
+    },
+    {
+      "assistant_message": {
+        "content": "**Valid orders:**\n\n1. **A, C, D, B, E**\n2. **C, D, A, B, E**\n3. **D, C, A, B, E**\n4. **D, C, B, A, E**\n\n**Justification",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "38ee9b3be8671ea9fef56594f5cf286d585642748afb78c026d92e9b95e82a86",
+      "category": "reasoning",
+      "completion_tokens": 64,
+      "content_sha256": "a6630a46d3688b796cccf6efbfce6217e210891bff24f395c8583dccf415bb82",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-reasoning-00080",
+      "prompt_tokens": 96,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2758.542,
+        "predicted_n": 64,
+        "predicted_per_second": 22.83815145827035,
+        "predicted_per_token_ms": 43.78638095238095,
+        "prompt_ms": 444.306,
+        "prompt_n": 96,
+        "prompt_per_second": 216.06730496549676,
+        "prompt_per_token_ms": 4.6281875
+      },
+      "wall_ms": 3470.829942
+    },
+    {
+      "assistant_message": {
+        "content": "{\"owner\":\"Team-V\",\"due\":\"2026-10-22\",\"priories\":[\"migration-59\",\"test-70\"],\"risks\":[\"flaky fixture 40\",\"undocumented flag\"}}",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "417e0e4bfbc3f85a2d7ac8550825faf38ff328dcd74d9b19fa3a93d7f796b327",
+      "category": "structured",
+      "completion_tokens": 47,
+      "content_sha256": "f7acb8cb21e4bed95d7df179342a713fe5205c216b3ce2f1b6e5267e02124d0a",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "target",
+      "prompt_id": "v23-structured-00021",
+      "prompt_tokens": 116,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2015.855,
+        "predicted_n": 47,
+        "predicted_per_second": 22.819101572285707,
+        "predicted_per_token_ms": 43.8229347826087,
+        "prompt_ms": 485.155,
+        "prompt_n": 116,
+        "prompt_per_second": 239.09884469911677,
+        "prompt_per_token_ms": 4.182370689655172
+      },
+      "wall_ms": 2822.411045
+    },
+    {
+      "assistant_message": {
+        "content": "45x + 48 = 678\n45x = 678 - 48\n45x = 630\nx = 630 / 45\nx = 14\n\nVerification:\n45(14) + 4",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4e1bf12b22c9f727be4b0f852be5f5143b63fcf414c3b97f815af98b4ba2eae6",
+      "category": "math",
+      "completion_tokens": 64,
+      "content_sha256": "86781053e6bf708674cb8a5cdf1add55735eaeaa305ecc8a9855b84f9373f927",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-math-00019",
+      "prompt_tokens": 83,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2756.655,
+        "predicted_n": 64,
+        "predicted_per_second": 22.853784749995917,
+        "predicted_per_token_ms": 43.75642857142857,
+        "prompt_ms": 418.088,
+        "prompt_n": 83,
+        "prompt_per_second": 198.5227990279558,
+        "prompt_per_token_ms": 5.037204819277108
+      },
+      "wall_ms": 3484.080492
+    },
+    {
+      "assistant_message": {
+        "content": "Early stopping is a technique that prevents a neural network from overfitting by halting training once it stops improving on a validation set. Instead of training to the maximum number of epochs, the model stops when performance plateaus, acting as a regularizer. For instance, if a model stops improving after epoch 50",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "71623ee6ebbd32686bb7c9c7625c1356665aa8a976d17d7b93bb6c204aa506fe",
+      "category": "explanation",
+      "completion_tokens": 64,
+      "content_sha256": "dcd200870681472799f930fc32d6171dae3f2b6236310a60a43fa3fa8fd71b09",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "v23-explanation-00005",
+      "prompt_tokens": 89,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2757.108,
+        "predicted_n": 64,
+        "predicted_per_second": 22.850029813848423,
+        "predicted_per_token_ms": 43.76361904761905,
+        "prompt_ms": 439.148,
+        "prompt_n": 89,
+        "prompt_per_second": 202.66516072030385,
+        "prompt_per_token_ms": 4.934247191011236
+      },
+      "wall_ms": 3449.152173
+    }
+  ],
+  "summary": {
+    "accepted_per_position": {},
+    "accepted_tokens_per_verification": null,
+    "aggregate_request_tokens_per_second": 17.659459424248677,
+    "completion_tokens": 625,
+    "completion_tokens_per_verification": null,
+    "draft_acceptance_rate": null,
+    "draft_accepted_tokens": 0,
+    "draft_proposed_tokens": 0,
+    "draft_verification_steps": 0,
+    "median_request_ms": 3450.9733155000004,
+    "non_spec_target_decode_calls": 649,
+    "requests": 12,
+    "wall_ms": 35391.796826
+  }
+}

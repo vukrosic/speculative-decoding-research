@@ -35,3 +35,11 @@
 - Guardrail: do not retune or broaden it on these same prompts; the `<0.1`
   rule is falsified by correct `logic_schedule` at `0.0897636414`. Independent
   calibration, token-ID evidence, and a fresh split are required for promotion.
+
+## D005 — independent-v23 failure blocks promotion
+
+- Status: `falsified-generalization`
+- Decision: do not promote the `0.08` policy beyond the six-prompt calibration
+  workload; do not retune it or add prompt-specific exceptions.
+- Reason: on 12 independent public v23 prompts, corrected Q4 matched only 6/12
+  target projections despite a clean 12/12 target oracle and no override events.

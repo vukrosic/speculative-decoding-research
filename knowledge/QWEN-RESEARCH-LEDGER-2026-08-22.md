@@ -161,6 +161,25 @@ or serving-speed evidence; threshold calibration and evaluation used the same
 six public prompts. The earlier default Q4 lead (`+12.892486%` on 5/6 hashes)
 remains preserved separately.
 
+## EXP-020 independent-v23 generalization screen (2026-08-22)
+
+The same frozen `PQ020_LOW_MARGIN_TOP2=0.08` policy was screened on 12
+separate public v23 validation prompts without retuning or prompt-specific
+exceptions. Target-only reproduced all 12/12 hashes and 625 completion
+tokens. Corrected Q4 matched only 6/12 projections; mismatches were
+`v23-coding-00126`, `v23-explanation-00005`, `v23-explanation-00095`,
+`v23-instruction-00160`, `v23-instruction-00316`, and
+`v23-reasoning-00170`. No override events fired.
+
+Corrected Q4 measured `19.954249` versus target `17.659459` tok/s
+(`+12.994677%` diagnostic only), with 625 tokens on each arm. The failed
+projection gate makes this a negative generalization result, not a promotion
+or general speed claim. The six-prompt calibrated `+12.496004%` result remains
+separate local evidence. No retuning or exceptions are allowed.
+
+Summary SHA-256: `bb65c097f20f36f063f46ca3f3730a229f4a954decc43705b05b9d0b8dbd97c8`.
+Analysis: [`PQ-20260822-020-INDEPENDENT-V23-SCREEN.md`](../experiments/analysis/PQ-20260822-020-INDEPENDENT-V23-SCREEN.md).
+
 ## EXP-020 trace localization and `n_rs` causal result (2026-08-22)
 
 The instrumented target/Q4 traces share an exact 42-token prefix. The first

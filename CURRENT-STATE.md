@@ -73,6 +73,16 @@ acceptance was `103/118` with one override per run, and every warmup/timed run
 matched all six target output hashes. This is a local exact-hash result for
 the frozen tuple, not a general losslessness, token-ID, or speed guarantee.
 
+An independent-v23 screen then froze the same `0.08` policy on 12 separate
+public validation prompts with no retuning or prompt exceptions. Target-only
+reproduced all 12/12 hashes and 625 tokens; corrected Q4 matched only 6/12:
+`v23-coding-00126`, `v23-explanation-00005`, `v23-explanation-00095`,
+`v23-instruction-00160`, `v23-instruction-00316`, and `v23-reasoning-00170`
+diverged. No override events fired. Corrected Q4 measured `19.954249` versus
+target `17.659459` tok/s (`+12.994677%` diagnostic only), but the failed
+projection gate falsifies generalization. Preserve the six-prompt calibrated
+lead as local evidence; do not promote, retune, or add exceptions.
+
 ## Best supported observations
 
 - SmolLM: the 10.13M two-layer block-3 DFlash2-style bridge remains the exact

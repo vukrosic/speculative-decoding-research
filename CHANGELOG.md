@@ -12,6 +12,16 @@
 - bounded the result to the exact six-public-prompt tuple and preserved the
   non-general exactness/token-ID claim boundary.
 
+## Research archive update — EXP-020 independent-v23 screen — 2026-08-22
+
+- preserved the no-retuning 12-prompt public-v23 screen;
+- recorded target-only 12/12 hashes and corrected Q4 only 6/12, with six named
+  mismatches and no override events;
+- recorded the diagnostic `19.954249` versus `17.659459` tok/s difference
+  (`+12.994677%`) without treating it as a speed promotion;
+- falsified generalization of the six-prompt calibrated policy and prohibited
+  retuning or prompt-specific exceptions.
+
 ## 0.1.0 — 2026-08-21
 
 Initial research-kit release surface:

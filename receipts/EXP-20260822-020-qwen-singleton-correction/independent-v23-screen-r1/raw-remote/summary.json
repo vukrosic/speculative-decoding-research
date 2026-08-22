@@ -1,0 +1,174 @@
+{
+  "status": "completed_negative",
+  "evidence_class": "no-retuning independent public-v23 output screen; timing diagnostic only",
+  "all_12_target_projections_match": false,
+  "matching_prompts": 6,
+  "mismatching_prompt_ids": [
+    "v23-coding-00126",
+    "v23-explanation-00005",
+    "v23-explanation-00095",
+    "v23-instruction-00160",
+    "v23-instruction-00316",
+    "v23-reasoning-00170"
+  ],
+  "per_prompt": [
+    {
+      "prompt_id": "v23-coding-00126",
+      "target_sha256": "8e301d635a1100b9cfcd599c90b9e24b6a7ddb6ca9d883b9a950f5e447811d4a",
+      "corrected_q4_sha256": "930f817cf12bdd41f2576447f4e9e15d0a0236dc4ad2f1231690267cb221333b",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": false
+    },
+    {
+      "prompt_id": "v23-coding-00438",
+      "target_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "corrected_q4_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "target_completion_tokens": 1,
+      "corrected_q4_completion_tokens": 1,
+      "target_finish_reason": "stop",
+      "corrected_q4_finish_reason": "stop",
+      "full_projection_match": true
+    },
+    {
+      "prompt_id": "v23-explanation-00005",
+      "target_sha256": "71623ee6ebbd32686bb7c9c7625c1356665aa8a976d17d7b93bb6c204aa506fe",
+      "corrected_q4_sha256": "ae1f31bd959e43c484b4e6dde44ce13f97a1bf9c4faf7a430a9a9d03a92bcc88",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": false
+    },
+    {
+      "prompt_id": "v23-explanation-00095",
+      "target_sha256": "c361a3c1d36818d41282262f600c1977284f863de5c6bf13d920dbf9b273123c",
+      "corrected_q4_sha256": "fabbee3df3a9bfe3271ab29ec0238edf1a0c13635f34eebcf713e8722b6f7d40",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": false
+    },
+    {
+      "prompt_id": "v23-instruction-00160",
+      "target_sha256": "9e0d855eb86e74383fe73e2d29579691e5a8f6d3b7e0862dbf80a3e63b3bda2b",
+      "corrected_q4_sha256": "13d8535508f501f9f843f536ce2011dbcbb1c5c0fd5b28633bc7c2e2cc31680c",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": false
+    },
+    {
+      "prompt_id": "v23-instruction-00316",
+      "target_sha256": "ca5dd0ac7db204271911d71ef455739d29c88a9de77b801cd7033279162cf7aa",
+      "corrected_q4_sha256": "8423bb64db32dc34fc8ad7959ac31820d3d801edbb92be00753c4a86dcb4935b",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": false
+    },
+    {
+      "prompt_id": "v23-math-00019",
+      "target_sha256": "4e1bf12b22c9f727be4b0f852be5f5143b63fcf414c3b97f815af98b4ba2eae6",
+      "corrected_q4_sha256": "4e1bf12b22c9f727be4b0f852be5f5143b63fcf414c3b97f815af98b4ba2eae6",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": true
+    },
+    {
+      "prompt_id": "v23-math-00127",
+      "target_sha256": "4ab6ba5fcf43126bf8d15d836698f64240d15b1ba7772c653ee37003bcc36c4a",
+      "corrected_q4_sha256": "4ab6ba5fcf43126bf8d15d836698f64240d15b1ba7772c653ee37003bcc36c4a",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": true
+    },
+    {
+      "prompt_id": "v23-reasoning-00080",
+      "target_sha256": "38ee9b3be8671ea9fef56594f5cf286d585642748afb78c026d92e9b95e82a86",
+      "corrected_q4_sha256": "38ee9b3be8671ea9fef56594f5cf286d585642748afb78c026d92e9b95e82a86",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": true
+    },
+    {
+      "prompt_id": "v23-reasoning-00170",
+      "target_sha256": "b707b41c99bd4084bfe33c1a097618cd36036e507e7970d8cc8d5ac3415c5a96",
+      "corrected_q4_sha256": "5148a52f655bff782f97e8eccc1169b6e99c10e0c6cdfe28f7f8d677c9f9d6b1",
+      "target_completion_tokens": 64,
+      "corrected_q4_completion_tokens": 64,
+      "target_finish_reason": "length",
+      "corrected_q4_finish_reason": "length",
+      "full_projection_match": false
+    },
+    {
+      "prompt_id": "v23-structured-00021",
+      "target_sha256": "417e0e4bfbc3f85a2d7ac8550825faf38ff328dcd74d9b19fa3a93d7f796b327",
+      "corrected_q4_sha256": "417e0e4bfbc3f85a2d7ac8550825faf38ff328dcd74d9b19fa3a93d7f796b327",
+      "target_completion_tokens": 47,
+      "corrected_q4_completion_tokens": 47,
+      "target_finish_reason": "stop",
+      "corrected_q4_finish_reason": "stop",
+      "full_projection_match": true
+    },
+    {
+      "prompt_id": "v23-structured-00201",
+      "target_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "corrected_q4_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "target_completion_tokens": 1,
+      "corrected_q4_completion_tokens": 1,
+      "target_finish_reason": "stop",
+      "corrected_q4_finish_reason": "stop",
+      "full_projection_match": true
+    }
+  ],
+  "target_summary": {
+    "accepted_per_position": {},
+    "accepted_tokens_per_verification": null,
+    "aggregate_request_tokens_per_second": 17.659459424248677,
+    "completion_tokens": 625,
+    "completion_tokens_per_verification": null,
+    "draft_acceptance_rate": null,
+    "draft_accepted_tokens": 0,
+    "draft_proposed_tokens": 0,
+    "draft_verification_steps": 0,
+    "median_request_ms": 3450.9733155000004,
+    "non_spec_target_decode_calls": 649,
+    "requests": 12,
+    "wall_ms": 35391.796826
+  },
+  "corrected_q4_summary": {
+    "accepted_per_position": {
+      "0": 277
+    },
+    "accepted_tokens_per_verification": 0.8393939393939394,
+    "aggregate_request_tokens_per_second": 19.954249089886037,
+    "completion_tokens": 625,
+    "completion_tokens_per_verification": 1.893939393939394,
+    "draft_acceptance_rate": 0.8393939393939394,
+    "draft_accepted_tokens": 277,
+    "draft_proposed_tokens": 330,
+    "draft_verification_steps": 330,
+    "median_request_ms": 2877.6194885,
+    "non_spec_target_decode_calls": 373,
+    "requests": 12,
+    "wall_ms": 31321.649699
+  },
+  "diagnostic_speed_change_percent": 12.994676736742704,
+  "override_events": 0,
+  "override_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "threshold_retuned": false,
+  "heldout_used": false,
+  "claim_boundary": "independent public validation only; not a held-out or general losslessness guarantee"
+}
