@@ -276,3 +276,14 @@ SHA `63768b01…`; note SHA `ff272da9…`.
 Disposition: content-level recovery is exhausted for the scoped checkout. No
 GPU run is authorized without external artifact supply or a separately
 authorized source-backed regeneration task.
+
+## EXP020 library identity recovery — hard stop
+
+The approved target-only instrumented trace did not load a model or start
+inference. Expected `libllama_common` was `d07ed8b4c22e…`; observed current
+library was `65b8a862607e…`. Server and implementation hashes matched, cleanup
+was clean, and no numeric trace result is claimed. The exact-source/hash gate
+requires a UI-off no-model rebuild, byte verification, trace-only scope, and
+restore/verification of the current library afterward. Receipts:
+`receipts/EXP-20260822-020-qwen-singleton-correction/benchmark-contract-target-only-instrumented-trace.json`
+and `target-instrumented-trace-hard-stop.json`.

@@ -251,3 +251,13 @@ boundary. Their consensus receipt is
 No new one-variable Qwen acceptance/speed run is admissible until the exact
 Arm-B/evaluator/state bundle is supplied or regenerated under a new
 authorization.
+
+### EXP020 library identity recovery (2026-08-22)
+
+The target-only phase diagnostic hard-stopped before model load because active
+`libllama_common` `65b8a862607e…` did not match required historical identity
+`d07ed8b4c22e…`; server and implementation hashes matched. This is a
+provenance/build mismatch, not a Qwen quality or speed result. Rebuild only
+from the pinned source/hash contract with no-model boundaries, verify the
+historical bytes, run trace-only control, then restore and verify the current
+library. Do not infer numeric trace outcomes until that gate passes.

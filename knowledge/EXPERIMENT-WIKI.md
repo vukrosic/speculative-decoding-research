@@ -237,3 +237,14 @@ guessed runtime flag.
 - [Failures index](../failures/INDEX.md)
 - [Experiment queue](../experiments/queue/QWEN-PORTFOLIO-QUEUE-20260821.md)
 - [Inference trace](../state/inference-traces.jsonl)
+
+## EXP020 library-identity recovery boundary — 2026-08-22
+
+The approved trace-only recovery stopped before model load: required
+`libllama_common` was `d07ed8b4c22e…`, while the active runtime exposed
+`65b8a862607e…`. Server and implementation hashes matched, but this mismatch
+is a hard provenance gate. Rebuild only from the pinned source/runtime contract
+with UI-off, no-model build; verify `d07ed8b4…`, run the matched target-only
+phase diagnostic, then restore and verify `65b8a862…`. No source mutation or
+held-out use occurred; GPU cleanup was clean. Receipts are the benchmark
+contract and hard-stop JSON under `receipts/EXP-20260822-020-qwen-singleton-correction/`.

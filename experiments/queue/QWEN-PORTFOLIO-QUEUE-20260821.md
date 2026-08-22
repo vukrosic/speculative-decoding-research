@@ -261,8 +261,24 @@ Runtime lane has since supplied a distinct source-backed measurement candidate:
 It replays one matched target-only public prompt through the existing EXP020
 instrumented binary/source and compares draft, verification, rollback, memory,
 and scheduler intervals with the preserved Q4 trace. Planner disposition is
-`PASS-NEEDS-CEO-APPROVAL`: one GPU process, no semantic/runtime change, strict
-target-hash/64-token/event-schema/resource/cleanup gates, and no speed or
-exactness promotion claim. This measurement-only candidate supersedes the
-blanket “no GPU action” wording for immediate ranking, while all improvement
-experiments remain blocked pending the Arm-B contract recovery.
+`PASS-NEEDS-CEO-APPROVAL`, but its target-only comparator is currently blocked
+by a library identity mismatch (`65b8a862` current versus `d07ed8b4` in the Q4
+trace). The smallest repair is the task-owned rebuild amendment in the packet:
+stage preserved `sampling.cpp` (`66b7975d`), rebuild with recorded UI-off flags,
+verify `d07ed8b4`, run no model during build, capture the target trace, then
+restore and verify `65b8a862`. One GPU process, no semantic/runtime change,
+strict source/build/library/output/event/resource/cleanup gates, and no speed
+or exactness promotion claim. Until CEO approval and all identity gates pass,
+the queue remains blocked; all improvement experiments remain blocked pending
+the Arm-B contract recovery.
+
+## EXP020 library-identity recovery receipt — 2026-08-22
+
+The approved target-only phase diagnostic hard-stopped before model load:
+expected `libllama_common` `d07ed8b4c22e…` versus observed current
+`65b8a862607e…`; server and implementation hashes matched. This is a
+provenance/build gate, not a numeric result. Continue only with the pinned
+UI-off no-model rebuild, exact byte verification, trace-only target control,
+and restore/verification of the current library. No retuning, held-out use,
+code change, or new speed claim is queued. See the benchmark contract and
+hard-stop receipts under `receipts/EXP-20260822-020-qwen-singleton-correction/`.
