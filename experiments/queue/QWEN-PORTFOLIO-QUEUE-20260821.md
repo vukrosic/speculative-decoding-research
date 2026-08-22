@@ -667,3 +667,23 @@ with 6/6 byte-identical outputs. Finish technical=eos, others=limit;
 cache_n=0; diagnostic tok/s 18.9016/18.6411/18.8415/18.8491. Cleanup
 `91d1a65f…`/GPU clean. No candidate arm; valid oracle only, not speed
 promotion; split-OFF remains gated.
+
+### Q4 split-OFF hard-stop
+
+Summary `94170d0a…` / terminal `9b24d3dc…`: valid v22 747 Stage0, split env
+unset. Warmup code_python_debug Q4 `6400f118…` differed from oracle
+`a382e0c0…`; 31/31 accepted, 64-token limit, 3007.86 ms. No remaining rows,
+timing, or split-ON; GPU/process clean. Classify baseline/evaluator mismatch,
+not split-flash or speed evidence.
+
+### Q4 split-OFF terminal negative
+
+First warmup under the valid 747-token contract failed `code_python_debug`
+(candidate `6400f118...` vs target `a382e0c0...`) despite 31/31
+proposed/accepted and a 64-token limit. Summary `94170d0a...`, terminal
+`9b24d3dc...`; no further rows, split-ON, or timing. Acceptance is not exact
+output. Read-only packet
+[`PQ-20260822-021-DIVERGENCE-RECONCILIATION`](../planning/PQ-20260822-021-DIVERGENCE-RECONCILIATION.md)
+now ranks first: bind first divergence, logits/IDs, rollback/verifier state,
+mask/position/cache, sampler/finish, and cap from preserved receipts. No rerun
+or cap/template change until a source-backed cause and reviewed packet exist.

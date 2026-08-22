@@ -488,3 +488,12 @@ others `limit`; `cache_n=0`. Diagnostic tok/s were 18.9016, 18.6411, 18.8415,
 18.8491. Cleanup receipt `91d1a65f…` confirms clean GPU/process state. No
 candidate arm ran; this validates the oracle only, not a speed promotion.
 Split-OFF remains gated.
+
+## EXP021 Q4 split-OFF hard-stop (2026-08-22)
+
+Summary SHA `94170d0a…`, terminal `9b24d3dc…`: valid v22 747-token Stage0
+contract, b178 + pinned Q4 drafter, split env explicitly unset. Warmup row
+`code_python_debug` differed immediately: Q4 SHA `6400f118…` vs target oracle
+`a382e0c0…`; 31/31 draft accepted, 64-token `limit`, 3007.86 ms. Hard-stop
+prevented remaining rows, timing, and split-ON. GPU/process cleanup passed.
+Classify as baseline/evaluator mismatch, not split-flash evidence or speed.

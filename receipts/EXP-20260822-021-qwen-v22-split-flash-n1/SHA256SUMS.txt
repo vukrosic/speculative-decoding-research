@@ -114,3 +114,13 @@ b46f383ff36165ff0648192257b94301609ed3363b336641579321c338baebf3  target-only-fi
 3d0f8d1a174814149b33724df4a2e21b8e345be5d65b3e49ca0fa34521d64429  target-only-final-raw/target-r2.json
 109f49108d86d5cda06bc48000ee3fcd7a9d5be33ce648fd527021c0dd8db382  target-only-final-raw/target-r3.json
 91d1a65f432ad4f77a6dca51b75838ef84de3b80be1e42c2f1c9b1789c559058  target-only-final-cleanup-20260822.json
+94170d0aac56655a4e9489c2b832341b3172a29af7c4d44b0dabce5e2a535bf0  q4-off-final-summary-20260822.json
+9b24d3dcf3fd5f45dbaab424ddf77f80a536a3b752e1d891a6b25d01fb80178c  q4-off-final-terminal-20260822.md
+5b5c43179bbfb9fc195268f6f23c73a45fc385a4b24f4f6205bb2863e98f140a  q4-off-final-raw/final-gpu.csv
+890c0c46937be924d16d46530d7c5cf84bb0425d437443f18c833f9541fb9313  q4-off-final-raw/final-procs.txt
+50c50819fa1e01cbe09c634fb137c2318b61c7299a548cd013440538fa794cd0  q4-off-final-raw/identity-sha256.txt
+2ed011cb7257d0c542cca3d84ddaff3e72b865e278455830321655ff07c86d6b  q4-off-final-raw/q4-off-r0.json
+db66609f5b011b38ff692771f91b2aeba2fa5f53b6667dac317e957a50725e7f  q4-off-final-raw/server.log
+8f74cf645ae0705cac55444de81f4d3cd75bf683f9ec914d576e3cb13d5580a5  q4-off-final-raw/stage0.json
+c75b78ca0d8aeaeaed0a2165feab67798ef92ecbc662045ecfd7bc3672b44a09  q4-off-final-raw/stop-reason.json
+b46f383ff36165ff0648192257b94301609ed3363b336641579321c338baebf3  q4-off-final-raw/target-r0.json

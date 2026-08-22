@@ -1,0 +1,22 @@
+{
+  "experiment": "EXP-20260822-021",
+  "arm": "q4_split_off_n1",
+  "status": "hard_stop_output_mismatch",
+  "server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+  "drafter_sha256": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+  "contract_sha256": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326",
+  "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "tracer_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+  "source_argv_helper_sha256": "8d04ee05abec6ada55df8de904ab6fe9d26d8b15312e86b3e0117edef2129a0b",
+  "cuda_visible_devices": "0",
+  "llama_v22_split_flash_queries": "UNSET",
+  "server_argv": ["llama-server", "-m", "Qwen3.8-27B-UD-IQ1_S.gguf", "-md", "Qwen3.8-27B-DFlash2-Q4_K_M.gguf", "--spec-type", "draft-dflash", "--spec-draft-n-max", "1", "--spec-draft-ngl", "all", "--host", "127.0.0.1", "--port", "8094", "--ctx-size", "4096", "--parallel", "1", "--n-gpu-layers", "all", "--no-context-shift", "--metrics", "--perf", "-lv", "3"],
+  "endpoint_sequence": ["/apply-template", "/tokenize", "/completion"],
+  "stage0_assertions": {"rows_passed_before_completion": 1, "total_contract_rows": 6, "prompt_tokens_total": 747},
+  "repetitions": {"warmup": 0, "timed_requested": [1, 2, 3, 4], "completed": [0]},
+  "hard_stop": {"repetition": 0, "id": "code_python_debug", "output_sha256": "6400f11885d9e71a331d1946f15b7218cfc1ee81948f0afc06f5db9476a9ee08", "oracle_output_sha256": "a382e0c0a624fe959b44c052f92a30de335240c5865499747f82b90e10775013", "accepted_draft": 31, "draft_proposed": 31, "predicted_tokens": 64, "finish": "limit", "wall_ms": 3007.863063},
+  "split_on_launched": false,
+  "timing_promotion": false,
+  "cleanup": {"gpu": "RTX 3060, 1 MiB used, 0%", "server_terminated": true, "experiment_process_absent": true},
+  "raw_receipts": "q4-off-final-raw/"
+}

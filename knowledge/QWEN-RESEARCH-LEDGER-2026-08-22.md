@@ -456,3 +456,8 @@ contract `a69610f9…`, b178/tracer/manifest pinned. Four reps × six rows passe
 747 assertions with 6/6 byte-identical outputs; technical=eos, others=limit,
 cache_n=0; diagnostic tok/s 18.9016/18.6411/18.8415/18.8491. Cleanup
 `91d1a65f…` and idle passed. Oracle only; split-OFF remains gated.
+
+Q4 split-OFF summary `94170d0a…` / terminal `9b24d3dc…` hard-stopped at
+warmup code_python_debug: `6400f118…` vs oracle `a382e0c0…`, 31/31 accepted,
+64-token limit, 3007.86 ms. Split env unset; no further rows/timing/split-ON.
+Cleanup/idle passed. Record baseline/evaluator mismatch only.

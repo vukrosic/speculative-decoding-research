@@ -423,3 +423,9 @@ assertions and were byte-identical 6/6; finish technical=eos, others=limit,
 cache_n=0. Diagnostic tok/s 18.9016/18.6411/18.8415/18.8491. Cleanup
 `91d1a65f…` and GPU/process state are clean. No candidate arm; oracle only,
 not speed promotion; split-OFF remains gated.
+
+Q4 split-OFF hard-stopped on warmup `code_python_debug`: summary
+`94170d0a…`, terminal `9b24d3dc…`; Q4 SHA `6400f118…` vs oracle
+`a382e0c0…`, 31/31 accepted, 64-token limit, 3007.86 ms. v22 747 Stage0
+passed for the first row; no further rows/timing/split-ON. GPU/process clean.
+This is baseline/evaluator mismatch, not split-flash evidence.
