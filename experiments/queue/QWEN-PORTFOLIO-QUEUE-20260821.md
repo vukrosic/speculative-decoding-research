@@ -541,3 +541,22 @@ next packet is ready for CEO handoff of the conditional sequence: target-only
 oracle → same-build split-OFF → split-ON, one GPU process at a time. Timing is
 gated on six-of-six exactness in target and split-OFF; any mismatch blocks
 split-ON. Stage 0 did not authorize a launch; no GPU run has started.
+
+Contract correction: the frozen r2 workload is the 747-token rendered
+contract, including the observed xhigh preamble. Do not use the phrase
+“reasoning off” and do not substitute the 531-token `benchmark_client_v21`
+`/v1/chat/completions` path. Any future arm must use tracer
+`6d2349a1...`: `/apply-template` → exact rendered prompt → `/completion`, with
+the tracer payload (`n_predict`, temperature 0, top-k 1, seed 42,
+stream=false, cache_prompt=false, return_tokens=true). Payload/endpoint/token
+drift hard-stops the sequence before arm comparison.
+
+### CEO-authorized execution in progress (2026-08-22)
+
+Packet `9d8c5add…`, live preflight `14ac6bf2…`, literature gate `d448cb6e…`,
+and critic final now authorize the explicit 747-token tracer path. The
+sequence is running target-only → same-build Q4 split-OFF → split-ON only
+after both are six-of-six exact, one process at a time. The 531-token
+benchmark path is excluded. No numeric result yet; any mismatch or
+cleanup/identity drift stops later arms, and no timing/acceptance/split-flash
+claim is available.

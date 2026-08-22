@@ -1,0 +1,76 @@
+{
+  "receipt_id": "EXP-20260822-021-stage0-live-handoff-preflight-20260822",
+  "status": "PASS_READONLY_HANDOFF_GATE",
+  "scope": "Read-only validation of Stage0 CPU-equivalence receipts and live remote idle/resources for the exactness sequence. No model launch, inference, GPU work, build, download, or mutation.",
+  "stage0_receipts": {
+    "candidate_packet": {
+      "path": "receipts/EXP-20260822-021-readonly-render-capture-20260822/stage0-b178-candidate.json",
+      "sha256": "8f74cf645ae0705cac55444de81f4d3cd75bf683f9ec914d576e3cb13d5580a5",
+      "bytes": 32013,
+      "status": "pass"
+    },
+    "stage0_receipt": {
+      "path": "receipts/EXP-20260822-021-readonly-render-capture-20260822/stage0-b178-receipt.json",
+      "sha256": "2e1d50b5b607bdfa2f77be42d57181a66d1bd57a01557d6e85975811ad63892a",
+      "status": "pass_six_of_six_cpu_equivalence"
+    },
+    "reference_capture": "cdab75d710a9de052bb3b1a2c51f964032e6697115e7dd1611e7ffdc1cdc45d7"
+  },
+  "stage0_validation": {
+    "ordered_ids": ["code_python_debug", "code_rust_parser", "math_modular", "logic_schedule", "technical_explain", "structured_extract"],
+    "rendered_bytes": [752, 589, 592, 572, 523, 640],
+    "token_counts": [169, 122, 115, 111, 96, 134],
+    "total_tokens": 747,
+    "manifest_equal": true,
+    "target_equal": true,
+    "rendered_hashes_equal_all_6": true,
+    "token_ids_equal_all_6": true,
+    "token_pieces_equal_all_6": true,
+    "payload_hashes_equal_all_6": true,
+    "flags": {"add_special": false, "parse_special": true, "with_pieces": true},
+    "overall": "PASS_6_OF_6"
+  },
+  "frozen_workload_identity": {
+    "target_gguf_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "q4_drafter_sha256": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+    "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+    "contract_v22_sha256": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326",
+    "contract_v21_planner_sha256": "4be899bfe57fb32aea59dadae4c4eefccb558a7302688f8607a850b8dc3d4662",
+    "contract_disposition": "Stage0 receipt does not bind a contract path; executor must select and record exactly one contract before target-only arm. Do not mix v21/v22 contracts."
+  },
+  "b178_linkage": {
+    "server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "server_bytes": 17912,
+    "server_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin/llama-server",
+    "runpath": "same build-v22-cuda-preseed-20260822T0925Z/bin",
+    "resolved_library_sha256": {
+      "libllama-server-impl.so": "605d798efb9931132a709bbc1ba4fe6ac939be677214094ab9e6f2dbe2342230",
+      "libllama-common.so.0": "19fdf005f12174498f7445858f8735bdd97369f55540e4204b7baa1cc9a67796",
+      "libllama.so.0": "fdb0bc83664b850ecb4db747aa5e1319dfa3d2c2d18697a1ab8395471b8b1420",
+      "libggml-cuda.so.0": "75d78338cb9759e24baf1664f74152383cc2ba9c9e0bb479f2333e20cb80cfe2"
+    }
+  },
+  "live_remote_readonly": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "hostname": "9719ca4634c7",
+    "observed_utc": "2026-08-22T11:19:33Z",
+    "gpu": "NVIDIA GeForce RTX 3060; driver 580.173.02; 1 MiB / 12288 MiB; 0% utilization",
+    "compute_apps": "none",
+    "stale_llama_server_or_client": "none observed",
+    "workspace_disk": "overlay 60G total, 59G used, 1.5G available, 98%",
+    "target_live_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "b178_live_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "manifest_bytes": 2623,
+    "manifest_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/config/prompts_v20.jsonl"
+  },
+  "handoff": {
+    "packet_prefix": "96820b66",
+    "packet_full_sha256": "NOT_PRESENT_LOCALLY; prefix retained from queue",
+    "ready_for_executor": true,
+    "required_sequence": ["target-only oracle", "same-build split-OFF control", "split-ON only if both are six-of-six exact"],
+    "stop_conditions": ["any target/split-OFF mismatch", "contract or identity drift", "GPU/storage/process risk", "cleanup failure"],
+    "gpu_used_by_preflight": false,
+    "model_launched_by_preflight": false,
+    "remote_mutation": false
+  }
+}

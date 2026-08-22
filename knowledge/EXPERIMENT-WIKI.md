@@ -411,3 +411,15 @@ no remaining server, GPU idle, and cleanup passed.
 This is provenance equivalence only. The receipt explicitly stops before
 target oracle, split-OFF, split-ON, timing, or GPU work; no split-flash or
 serving result is implied.
+
+## EXP021 CEO-authorized launch boundary (2026-08-22)
+
+Final packet `9d8c5add…`, live read-only preflight `14ac6bf2…`, literature gate
+`d448cb6e…`, and critic final authorize the bounded exactness sequence. The
+explicit 747-token tracer path is frozen: `/apply-template` then `/completion`
+through fresh b178 and resolved libraries; do not use the 531-token benchmark
+client or mix contracts. Execution is now running sequentially: target-only
+oracle, then same-build Q4 split-OFF, then split-ON only if both are six-of-six
+exact. One GPU process at a time; any mismatch/token drift/identity or cleanup
+failure stops later arms. No numeric result is available yet, and no timing,
+acceptance, or split-flash claim is made before gates pass.

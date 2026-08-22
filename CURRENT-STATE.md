@@ -373,3 +373,10 @@ sequence is target-only b178 oracle → same-build Q4 split-OFF → split-ON onl
 after six-of-six exact controls, one process at a time. Any instability,
 mismatch, identity/argv drift, resource or cleanup failure stops the sequence.
 No GPU, split-flash, acceptance, or timing result is present.
+
+CEO launch packet `9d8c5add…`, live preflight `14ac6bf2…`, literature gate
+`d448cb6e…`, and critic final have authorized the bounded run. The 747-token
+tracer path is explicit and must not mix with the 531-token benchmark path.
+Target-only is running, followed by split-OFF and conditional split-ON only
+after six-of-six exactness. No numeric result yet; one process and hard-stop
+gates remain in force.

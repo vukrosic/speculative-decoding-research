@@ -412,3 +412,9 @@ EXP021 conditionally ready only. CEO approval/live preflight are pending. The
 frozen sequence is target-only oracle, Q4 split-OFF control, then split-ON only
 if both are six-of-six exact; one process at a time, no timing before gates.
 No GPU outcome or split-flash claim is recorded.
+
+CEO packet `9d8c5add…`, live preflight `14ac6bf2…`, literature `d448cb6e…`,
+and critic final authorize execution on the explicit 747-token tracer path.
+Target-only is running, then Q4 split-OFF, then split-ON only after six-of-six
+exactness. The 531-token benchmark path is excluded. No numeric outcome or
+timing/acceptance claim yet; one-process and hard-stop boundaries persist.
