@@ -791,3 +791,6 @@ freeze the exact reopen checklist: Arm-B/rendering/evaluator 747 contract or
 exact b178 BuildID; rendered bytes/token IDs/tokenizer; immutable token/logit/
 accept/rollback/cache trace; literal argv/env/library hashes. No GPU/rerun;
 attn_pregate remains unbound hypothesis and split-OFF terminal.
+
+Remote idle closeout `7022e301…`/`9a027bb5…`: RTX3060 1 MiB/0%, no processes,
+1.5 GB free; stale PID markers only. Keep queue no-run until external intake.

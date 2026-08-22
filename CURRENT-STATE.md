@@ -472,3 +472,6 @@ External intake `c48ab5f…`/`c177ef7…`, literature `8c1e9e3…`: reopen requi
 Arm-B/rendering/evaluator 747 or exact b178 BuildID, rendered/tokenizer
 artifacts, immutable token/logit/accept/rollback/cache trace, and literal
 argv/env/library hashes. No GPU/rerun; attn_pregate unbound.
+
+Idle closeout `7022e301…`/`9a027bb5…`: RTX3060 1 MiB/0%, no processes,
+1.5 GB workspace free; stale PID markers only. No-run/external-intake boundary.

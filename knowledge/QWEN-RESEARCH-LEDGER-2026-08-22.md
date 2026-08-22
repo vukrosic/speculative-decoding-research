@@ -502,3 +502,6 @@ External intake `c48ab5f…`/`c177ef7…`, literature `8c1e9e3…` freezes exact
 reopen artifacts: Arm-B/rendering/evaluator 747 or b178 BuildID,
 rendered/tokenizer data, immutable token/logit/accept/rollback/cache trace,
 literal argv/env/library hashes. No GPU/rerun; attn_pregate unbound.
+
+Remote closeout `7022e301…`/`9a027bb5…`: RTX3060 1 MiB/0%, no processes,
+1.5 GB free; stale PID markers only. Preserve no-run/external-intake boundary.

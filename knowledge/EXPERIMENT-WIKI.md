@@ -552,3 +552,7 @@ External-intake manifest `c48ab5f…`, queue `c177ef7…`, and literature handof
 747 contract or exact b178 BuildID; rendered bytes/token IDs and tokenizer;
 immutable token/logit/accept/rollback/cache trace; literal argv/env/library
 hashes. No GPU/rerun; attn_pregate remains unbound.
+
+Remote idle closeout `7022e301…`/`9a027bb5…`: RTX3060 is 1 MiB, 0%, no active
+processes, and workspace free space is 1.5 GB. Only stale PID markers remain
+in historical snapshots. No-run and external-intake boundaries remain active.
