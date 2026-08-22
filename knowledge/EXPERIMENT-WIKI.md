@@ -506,3 +506,11 @@ vs Q4 248069; Q4 emits duplicate `</think>`, with 31/31 accepted, cache_n=0,
 64-token limit. Candidate branch is inactive. Localization receipt
 `3b66872b…` / note `0bc83dcc…` observes the duplicate but does not identify a
 causal rollback/mask/verifier root; no patch, rerun, split-ON, or timing.
+
+Literature terminal verdict `cc007b73…` closes this candidate branch under the
+valid 747 contract: split-OFF is a control failure, not a split-flash negative;
+split-ON must not be run, timed, or characterized. Reopen requires immutable
+token IDs/logits/decision/correction and rollback/cache state, literal
+argv/environment and BuildID/libraries, plus bound model/drafter/template/
+manifest/contract hashes; then fresh oracle and six-of-six split-OFF exactness.
+Preserve stale 531 receipts separately.

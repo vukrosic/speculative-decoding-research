@@ -435,3 +435,9 @@ Authoritative reconciliation `50e7832c…` supersedes contaminated 531 receipt
 duplicate `</think>`, 31/31 accepted, cache_n=0, 64/limit. Localization
 `3b66872b…` / `0bc83dcc…` is observational only; candidate branch inactive,
 no causal patch/rerun, split-ON, or timing.
+
+Literature verdict `cc007b73…` terminalizes this candidate branch for the
+747 packet—not as split-flash evidence. Split-ON/timing are prohibited.
+Reopen requires the immutable first-divergence/evaluator bundle, then fresh
+oracle plus six-of-six same-contract split-OFF exactness. Stale 531 data stays
+separate and invalid.

@@ -703,3 +703,8 @@ diverges at token 2 (target 760 vs Q4 248069), duplicate `</think>`, 31/31
 accepted, cache_n=0, 64/limit. Candidate branch inactive; localization
 `3b66872b…`/`0bc83dcc…` is observational, not causal. No patch, rerun,
 split-ON, or timing is queued.
+
+Literature verdict `cc007b73…` terminalizes this 747 candidate branch, not
+split-flash itself. Do not run/time split-ON. Reopen requires immutable
+first-divergence/evaluator bundle plus fresh target oracle and six-of-six
+same-contract split-OFF exactness; stale 531 receipts remain separate.

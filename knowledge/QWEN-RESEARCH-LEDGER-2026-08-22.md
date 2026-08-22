@@ -467,3 +467,9 @@ First valid divergence is token 2 (760 target vs 248069 Q4), duplicate
 `</think>`, 31/31 accepted, cache_n=0, 64/limit. Localization `3b66872b…` /
 `0bc83dcc…` observes but does not causally identify; no patch/rerun/split-ON/
 timing.
+
+Literature terminal `cc007b73…` marks the 747 candidate branch terminalized,
+not split-flash negative. No split-ON/timing. Reopen only with immutable
+token/logit/decision/rollback/cache, argv/build/library, and model/drafter/
+template/manifest/contract bundle, then fresh oracle + six-of-six split-OFF.
+Keep 531 receipts separate.
