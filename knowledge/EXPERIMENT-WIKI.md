@@ -556,3 +556,14 @@ hashes. No GPU/rerun; attn_pregate remains unbound.
 Remote idle closeout `7022e301…`/`9a027bb5…`: RTX3060 is 1 MiB, 0%, no active
 processes, and workspace free space is 1.5 GB. Only stale PID markers remain
 in historical snapshots. No-run and external-intake boundaries remain active.
+
+### Direct speed answer — postreview PQ019 reconciliation (2026-08-22)
+
+Planner `a7b3cc47…`, critic `780b42b8…`, and literature `dbcee4fd…` retain
+the narrow PQ019 result: Q4 n=1 cache-off measured `18.1638816661 tok/s`
+versus target-only `16.0895399687` (`+12.892486%` raw), while Q4 cache-on
+measured `21.7631385521 tok/s`; acceptance stayed `208/236`. This is a local
+repeated-prefix/cache diagnostic, not a causal speculative-decoding or general
+speedup claim. Rendered/token-prefix exactness is UNKNOWN, and the later valid
+747-token EXP021 split-OFF failure blocks promotion; keep speed, acceptance,
+and exactness separate and do not rerun on this evidence alone.

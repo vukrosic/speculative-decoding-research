@@ -770,6 +770,19 @@ full SHA/bytes/provenance, six-of-six equality, complete state/evaluator fields,
 and no UNKNOWN/CONFLICT/mixed runtime. Docs-only; no download, run, build,
 model/GPU, rerun, split-ON, or timing.
 
+### Speed-claim reconciliation (PQ019)
+
+Authoritative PQ019 timing shows raw serving throughput improvement under its
+own contract: target cache-off `16.08954 tok/s`; Q4 n=1 cache-off `18.16388`
+(`+12.89%` raw); Q4 cache-on `21.76314 tok/s`. Q4 acceptance was `208/236`
+and unchanged across cache arms. Therefore the answer is **yes, Q4 can be
+faster in this measured raw-throughput comparison**, and cache-on is faster in
+that same local contract. The admissible claim is only contract-local raw
+speed; it is not a general exactness or losslessness claim. EXP021's valid
+747-token split-OFF failure and missing exact verifier/evaluator causal bundle
+prevent promotion to a general speculative-decoding speedup. Keep acceptance,
+exactness, and serving speed reported separately; no new GPU run.
+
 Postreview planner/queue `e10285cb…`/`a25db317…`, critic `40a8174b…`, and
 literature `d8cc9594…` terminalize causal repair while retaining partial
 provenance PASS. No DWARF/debug map or token transaction trace; reopen only
@@ -794,3 +807,12 @@ attn_pregate remains unbound hypothesis and split-OFF terminal.
 
 Remote idle closeout `7022e301…`/`9a027bb5…`: RTX3060 1 MiB/0%, no processes,
 1.5 GB free; stale PID markers only. Keep queue no-run until external intake.
+
+### PQ019 speed answer — postreview boundary
+
+Planner `a7b3cc47…`, critic `780b42b8…`, and literature `dbcee4fd…` confirm
+Q4 n=1 cache-off `18.1638816661 tok/s` vs target-only `16.0895399687`
+(`+12.892486%` raw), with cache-on `21.7631385521 tok/s` and unchanged
+`208/236` acceptance. Keep this as a local repeated-prefix/cache diagnostic;
+rendered/token-prefix exactness is UNKNOWN and the valid 747-token EXP021
+split-OFF failure blocks causal/general promotion. No rerun from this result.

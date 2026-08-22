@@ -505,3 +505,13 @@ literal argv/env/library hashes. No GPU/rerun; attn_pregate unbound.
 
 Remote closeout `7022e301…`/`9a027bb5…`: RTX3060 1 MiB/0%, no processes,
 1.5 GB free; stale PID markers only. Preserve no-run/external-intake boundary.
+
+### PQ019 direct-speed reconciliation (postreview)
+
+Planner `a7b3cc47…`, critic `780b42b8…`, and literature `dbcee4fd…` reviewed
+the narrow raw timing: target-only cache-off `16.0895399687`, Q4 n=1 cache-off
+`18.1638816661` (`+12.892486%`), Q4 cache-on `21.7631385521`, with acceptance
+`208/236` unchanged. Evidence is local repeated-prefix/cache diagnostic only;
+rendered/token-prefix exactness is UNKNOWN. The valid 747-token EXP021
+split-OFF failure blocks general/causal speed promotion and no new run is
+authorized from this result.

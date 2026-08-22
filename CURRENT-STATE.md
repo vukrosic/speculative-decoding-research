@@ -475,3 +475,13 @@ argv/env/library hashes. No GPU/rerun; attn_pregate unbound.
 
 Idle closeout `7022e301…`/`9a027bb5…`: RTX3060 1 MiB/0%, no processes,
 1.5 GB workspace free; stale PID markers only. No-run/external-intake boundary.
+
+### Direct speed answer — PQ019 postreview (2026-08-22)
+
+Planner `a7b3cc47…`, critic `780b42b8…`, and literature `dbcee4fd…` confirm
+the raw local comparison: Q4 n=1 cache-off `18.1638816661 tok/s` vs
+target-only `16.0895399687` (`+12.892486%`), and Q4 cache-on
+`21.7631385521 tok/s`; acceptance remained `208/236`. Treat this only as a
+repeated-prefix/cache diagnostic. Rendered/token-prefix exactness is UNKNOWN;
+the valid 747-token EXP021 split-OFF failure prevents a promoted/general speed
+claim or causal interpretation.
