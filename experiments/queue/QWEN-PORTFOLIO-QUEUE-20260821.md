@@ -605,3 +605,8 @@ Raw-contract audit `a1fcc5cc…` / `2f2a5d67…` confirms final JSONs used the
 benchmark/completion pre-rendered 531-token path, with no apply-template,
 tokenize, or tracer evidence. Keep candidate closed for 747 exactness; no
 rerun/GPU work is queued.
+
+Launch-contract audit `4f897f40…` confirms raw 531/no-xhigh route and UNKNOWN
+executor argv. Keep recovery fail-closed: six apply-template + six tokenize
+hash/ID/count/total-747 assertions before any completion; wrong route stops at
+zero generation. No wrapper/rerun; split-ON and speed remain prohibited.

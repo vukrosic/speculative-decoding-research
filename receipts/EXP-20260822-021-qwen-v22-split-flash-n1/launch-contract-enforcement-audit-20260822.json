@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EXP-20260822-021-launch-contract-enforcement-audit-20260822",
+  "status": "BLOCKED_CONTRACT_VIOLATION",
+  "scope": "Read-only source/receipt audit; no server, model, GPU, rerun, or source mutation.",
+  "observed_route": {
+    "raw_files": "final-run-raw/target-*.json and q4-off-*.json",
+    "request_shape": "pre-rendered prompt string plus return_tokens=true, seed=42, temperature=0, top_k=1",
+    "response_shape": "llama-server completion response with generation_settings and target/dflash mode",
+    "prompt_totals": [133, 86, 79, 75, 60, 98],
+    "prompt_total": 531,
+    "endpoint_evidence": "No /apply-template or /tokenize evidence in raw JSON/logs",
+    "inferred_client_route": "/v1/chat/completions benchmark path, not tracer",
+    "certainty": "OBSERVED payload shape; literal executor script/argv not preserved"
+  },
+  "contradictory_claim": {
+    "terminal_receipt": "final-run-terminal-20260822.md claims /apply-template then /completion and 747 tokens",
+    "summary": "final-run-summary-20260822.json claims 747 total and stable rendered hashes",
+    "raw_evidence": "rendered hashes bf39f3f6/f8f27bd8 and counts 133/75 match 531 path, not Stage0 xhigh hashes a83e3752/27400339 and counts 169/111",
+    "verdict": "summary/terminal labels are not supported by authoritative raw payloads; planned 747 gate was not enforced"
+  },
+  "source_identity": {
+    "benchmark_client_v21_sha256": "477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4",
+    "tracer_v22_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+    "b178_server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "stage0_packet_sha256": "8f74cf645ae0705cac55444de81f4d3cd75bf683f9ec914d576e3cb13d5580a5",
+    "stage0_contract": {"total": 747, "per_row": [169, 122, 115, 111, 96, 134], "flags": {"add_special": false, "parse_special": true, "with_pieces": true}}
+  },
+  "fail_closed_wrapper_design": {
+    "pre_generation_order": [
+      "load six raw messages in frozen manifest order",
+      "POST each raw message to /apply-template",
+      "POST returned prompt to /tokenize with Stage0 flags",
+      "assert rendered SHA, rendered bytes, token IDs/prefix SHA, and count equal Stage0 packet for all six",
+      "assert total token count equals 747 and target/server/model/manifest/contract hashes equal registered identities",
+      "only then POST the unchanged rendered prompt to /completion"
+    ],
+    "hard_fail_conditions": ["any missing endpoint response", "any hash/count/ID mismatch", "total != 747", "wrong route", "wrong server or model hash", "any completion attempted before all six assertions pass"],
+    "required_receipt_fields": ["literal tracer argv/cwd", "tracer SHA", "server SHA/Build ID/RUNPATH/libraries", "target/drafter/manifest/contract SHA", "endpoint per request", "rendered bytes/hash", "token IDs/count/prefix hash", "completion request hash", "pre/post resources and cleanup"],
+    "implementation_status": "DESIGN_ONLY; no wrapper was written or executed"
+  },
+  "source_receipts": {
+    "launch_contract_critique_sha256": "894555697df323bb2e01aae758a1013ac9fb1eb952865ffdb53b707c22633165",
+    "literature_verdict_sha256": "5d8a9292c15a8251682a3120c93fe17ceca5806d4e6d1cb27305978214562783",
+    "raw_audit_sha256": "a1fcc5ccaa0b08f8ff01f75d407d6b2ccf86a49467732edbc6f45babe080725f"
+  },
+  "disposition": "Invalidate final-run packet as 747 evidence. Preserve as 531-path negative observation. No split-ON, speed, acceptance, or model conclusion is admissible."
+}

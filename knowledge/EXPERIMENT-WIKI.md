@@ -459,3 +459,10 @@ Raw-contract audit receipts `a1fcc5cc…` (JSON) / `2f2a5d67…` (note) confirm
 every final-run JSON used benchmark/completion with pre-rendered 531-token
 prompts; no `/apply-template`, `/tokenize`, or tracer evidence exists. Outputs
 are valid only for the 531-token tuple, not 747 exactness. No rerun/GPU work.
+
+Launch-contract audit `4f897f4039ed88f0a9cb2ea3020ed4ae5fae2fb14bb53b479b72429b28f65b92`
+confirms executor argv/selection is UNKNOWN and raw route is 531/no-xhigh.
+Recovery is fail-closed: six `/apply-template` + six Stage0-flagged
+`/tokenize` calls must pass all hash/ID/count and total-747 assertions before
+any `/completion`; wrong route hard-stops with zero generation. No wrapper was
+written/executed or rerun performed. Split-ON/speed remain prohibited.

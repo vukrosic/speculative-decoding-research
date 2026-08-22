@@ -440,3 +440,8 @@ launch/tracer enforcement plus all 747 hashes/IDs through `/completion`.
 Raw-contract audit `a1fcc5cc…` / `2f2a5d67…`: all final JSONs are benchmark
 completion with pre-rendered 531-token prompts; no apply-template, tokenize,
 or tracer evidence. Valid only for the old tuple; no rerun/GPU.
+
+Launch audit `4f897f40…`: executor argv mechanism UNKNOWN; raw route is
+531/no-xhigh. Fail-closed design requires six apply-template + six tokenize
+assertions (hash/ID/count/747 total) before completion. Documentation-only; no
+wrapper or rerun, and split-ON/speed prohibited.

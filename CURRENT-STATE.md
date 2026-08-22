@@ -405,3 +405,8 @@ Raw-contract audit `a1fcc5cc…` / `2f2a5d67…` confirms final JSONs are
 benchmark/completion generations with pre-rendered 531-token prompts; no
 apply-template/tokenize/tracer evidence. They cannot support 747 exactness.
 No rerun or GPU work.
+
+Launch audit `4f897f40…` leaves executor argv UNKNOWN and confirms raw
+531/no-xhigh route. Fail-closed recovery requires six apply-template + six
+Stage0-tokenize hash/ID/count checks and total 747 before any completion;
+wrong route yields zero generation. No wrapper, rerun, split-ON, or speed.
