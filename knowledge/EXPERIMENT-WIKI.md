@@ -534,3 +534,10 @@ b178 DWARF, `.map`, core, or token transaction trace. Historical diagnosis
 `080fe7cf…` (`attn_pregate-3`) is not b178 and remains hypothesis-only
 (copied under `983a51ee…`/`f4919bb6…`). No candidate, causal repair, rerun, or
 GPU.
+
+Q_len/attention source screen (`58b7fe15…`, runtime packet `d8aee23f…`) is
+NO-CANDIDATE. It does not validate the historical non-b178 `attn_pregate-3`
+hypothesis and yields no patch or GPU action. Reopening requires the exact
+Arm-B state/rollback bundle, 747-token rendering/template/token IDs, and
+immutable draft/target/logit/acceptance/transaction evidence; current
+split-OFF failure remains terminal.

@@ -487,3 +487,8 @@ Search/reconciliation `b94030f…` with planner `f43d01f…`/queue `aad39d7…` 
 literature `17195aba…`: b178 unstripped ELF found, no b178 DWARF/.map/core/
 token trace. Historical `080fe7cf…` attn_pregate-3 is non-b178 hypothesis;
 preserve identity boundary, no candidate/rerun/GPU.
+
+Q_len/attention screen `58b7fe15…` / `d8aee23f…` returns NO-CANDIDATE. The
+non-b178 attn_pregate hypothesis remains historical only. Missing reopen bundle:
+Arm-B state/rollback, 747 rendering/token IDs, immutable draft/target logits,
+acceptance and transaction trace. No patch/GPU; split-OFF terminal.

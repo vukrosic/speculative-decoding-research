@@ -753,6 +753,13 @@ gate 3592–3608), but DWARF is absent. No exact binary line proof or causal
 one-variable repair is admissible. Split-flash remains terminal: no patch,
 rerun, split-ON, or timing.
 
+q_len/attention screen `58b7fe15...` and runtime screen `d8aee23f...` yield no
+current source-backed candidate. Preserve split branch terminal; no q_len,
+attention, rollback, sampler, cap, runtime change, or GPU rerun. Smallest next
+action is external intake of an authoritative Arm-B/rendering/evaluator artifact
+binding the missing deployment state and 747-token contract. Without it, no
+one-variable repair or split-ON/timing packet is admissible.
+
 Postreview planner/queue `e10285cb…`/`a25db317…`, critic `40a8174b…`, and
 literature `d8cc9594…` terminalize causal repair while retaining partial
 provenance PASS. No DWARF/debug map or token transaction trace; reopen only
@@ -763,3 +770,8 @@ Search `b94030f…` found exact b178 unstripped ELF only—no DWARF/.map/core or
 token trace. Historical `080fe7cf…` attn_pregate-3 (`983a51ee…`/`f4919bb6…`)
 is not b178 and hypothesis-only. Planner/queue/lit `f43d01f…`/`aad39d7…`/
 `17195aba…` preserve no-candidate/no-rerun/GPU boundary.
+
+Q_len/attention screen `58b7fe15…` / runtime `d8aee23f…` is NO-CANDIDATE;
+attn_pregate remains non-b178 hypothesis. No patch/GPU queued. Reopen requires
+Arm-B state/rollback, 747 rendering/token IDs, and immutable token/logit/
+acceptance/transaction evidence; current split-OFF failure stays terminal.

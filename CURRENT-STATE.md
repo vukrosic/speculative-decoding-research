@@ -457,3 +457,8 @@ Search receipt `b94030f…` (planner `f43d01f…`, queue `aad39d7…`, literatur
 `17195aba…`) found exact b178 unstripped ELF only; no b178 DWARF/.map/core or
 token trace. Historical `080fe7cf…` attn_pregate-3 is non-b178 hypothesis
 (`983a51ee…`/`f4919bb6…`). No candidate/repair/rerun/GPU.
+
+Q_len/attention screen `58b7fe15…` / runtime `d8aee23f…` is NO-CANDIDATE;
+historical attn_pregate remains hypothesis-only. No patch/GPU. Reopen requires
+exact Arm-B state/rollback, 747 rendering/token IDs, and immutable token/logit/
+acceptance/transaction evidence; split-OFF remains terminal.
