@@ -314,3 +314,8 @@ Artifact lookup is terminal no-found: only one historical rendered hash
 `a83e3752…`; all six rendered bytes/token IDs, tokenizer/template artifacts,
 historical argv, special-token policy, and exact +36 mapping are absent. Runtime
 gets the model chat template dynamically. Reopen only with an external bundle.
+
+Post-EXP021 source/runtime audits are terminal `NO-CANDIDATE`: no independent
+GPU axis remains. Highest-value recovery is exact rendering/Arm-B provenance;
+until an external bundle supplies it, no state/mask/rollback/scheduler guess,
+rerun, or split-ON launch is allowed.

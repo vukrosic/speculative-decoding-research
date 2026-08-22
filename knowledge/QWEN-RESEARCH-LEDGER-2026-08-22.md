@@ -348,3 +348,7 @@ Rendering-artifact lookup `f4bf8b4b…` is terminal no-found: one historical has
 `a83e3752…` only; six rendered/token-ID artifacts, tokenizer/template, argv,
 special-token policy, and exact +36 mapping remain UNKNOWN. External bundle is
 required to reopen; no rerun.
+
+Post-EXP021 audit receipt `d68ffc7c…` is `NO-CANDIDATE`: all local source-level
+improvement axes are retired or blocked. Only external rendering/Arm-B
+provenance recovery can reopen work; no GPU/rerun/guessed state changes.

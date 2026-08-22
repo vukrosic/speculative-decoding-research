@@ -319,3 +319,7 @@ rendered hash (`a83e3752…`, code_python_debug) exists. Six rendered bytes/toke
 IDs, tokenizer/model-template artifacts, historical argv, special-token policy,
 and exact +36 mapping are absent. Runtime obtains the model chat template.
 Reopen only with an external authoritative bundle; no GPU/rerun.
+
+Post-EXP021 source/runtime audits conclude `NO-CANDIDATE`: the only admissible
+next action is external rendering/Arm-B provenance recovery. No local source
+axis, split-ON launch, GPU rerun, or guessed state/mask/rollback change remains.

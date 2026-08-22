@@ -186,3 +186,12 @@ prompt. Raw messages are preserved, but rendered bytes, token IDs, tokenizer/
 template artifact, and historical argv are absent. The constant offset is
 rendering/runtime drift, so historical 6/6 cannot be a current oracle. No GPU,
 rerun, or retuning is authorized.
+
+### Post-EXP021 source/runtime audit
+
+The source audit is terminal `NO-CANDIDATE` (receipt `d68ffc7c…`): no patch,
+build, model, GPU, SSH, download, or rerun is admissible. Reopen only with an
+external rendering oracle (all six rendered bytes/token IDs, tokenizer/template,
+historical argv and +36 mapping) plus a same-build exactness-passing baseline;
+otherwise keep EXP021 terminal and do not guess state/mask/rollback/scheduler
+behavior.
