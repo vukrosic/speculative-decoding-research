@@ -300,3 +300,10 @@ Target-only was stable across six prompts (227 tokens/run; 16.0559/16.0593/
 (target `0f76b6ae…` vs Q4 `1d5020bf…`, both 64 tokens/`length`; 104/118
 accepted). Split-ON was not launched. No candidate timing, acceptance, or
 general speed claim is authorized; raw 28-file receipts and cleanup are kept.
+
+Read-only reconciliation confirms shared contract/prompt/model/server tuple,
+nmax=1, block 8, n_extract=5, cache off; only `code_python_debug` differs at
+character 194 (`-1` backticks omitted), while five prompts match. Token index,
+seed/sampler/client argv are UNKNOWN. Historical v22 747 versus current 531
+prompt tokens proves rendering/runtime drift; its 6/6 is stale. Split-ON stays
+unrun and terminal; no rerun is authorized.

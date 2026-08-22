@@ -298,3 +298,9 @@ EXP021 exactness is now terminal-negative: stable six-prompt target-only
 control, but same-build Q4 split-OFF mismatched `code_python_debug` (64 tokens,
 `length`, 104/118 accepted). Split-ON was not launched. No candidate timing,
 acceptance, or general speed claim is valid; raw receipts and cleanup remain.
+
+Read-only mismatch reconciliation finds one concrete punctuation difference at
+character 194 in `code_python_debug`; five prompts match. Shared tuple fields
+are bound, but token index and seed/sampler/client argv remain UNKNOWN.
+Historical v22 prompt tokens 747 versus current 531 indicate rendering/runtime
+drift, so old 6/6 is stale. Split-ON remains unrun; no rerun.

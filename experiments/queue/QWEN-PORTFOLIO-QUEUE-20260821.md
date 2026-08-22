@@ -358,16 +358,25 @@ Literal preseed argv is receipt-backed (`preseed-argv-receipt.md`): exact UI
 copy, CUDA-86/UI-OFF configure, and named `llama-server -j2` build returned 0.
 This closes build provenance only; exactness-first execution remains queued.
 
-EXP021 exactness is now terminal-negative: target-only was stable, but
-same-build split-flash-OFF diverged on `code_python_debug`
-(`0f76b6ae...` target vs `1d5020bf...` Q4, both 64 tokens), so split-flash-ON
-was not run. No speed or acceptance result exists. Reopen only with a
-mechanically bound verifier-state/operation-shape artifact or a new
-one-variable patch plus exact block/logit receipt; do not rerun, retune, widen
-n, or infer a split-flash benefit from historical block2 evidence.
+EXP021 is terminal at a baseline-contract mismatch: target-only was stable,
+but split-flash-OFF diverged on `code_python_debug` (`0f76b6ae...` target vs
+`1d5020bf...` Q4, both 64 tokens; first decoded-text mismatch at character
+194), so split-flash-ON was not run. Five other prompt hashes matched. The
+historical v22 six-of-six receipt rendered 747 prompt tokens versus 531 now,
+showing chat-template/rendering/runtime drift despite equal manifest/contract
+hashes. No speed or acceptance result is valid. Smallest reopen is a read-only
+rendering/runtime reconciliation binding literal argv, rendered bytes/token
+IDs, tokenizer/template identity, and the token-count discrepancy; no split-ON
+rerun, retuning, or n widening before repair.
 
 Receipt closure: target-only six-prompt control was 227 tokens/run at
 16.0559/16.0593/16.0534 tok/s; Q4 split-OFF was 104/118 accepted and failed
 `code_python_debug` exactness (`0f76b6ae…` target vs `1d5020bf…` Q4). Split-ON
 was not launched. No candidate timing, acceptance, or general speed claim is
 admissible; preserve the 28-file raw receipt set and cleanup state.
+
+Read-only reconciliation binds shared tuple/cache/nmax/block/extract fields;
+only `code_python_debug` differs at character 194 and five prompts match.
+Historical 747 versus current 531 prompt tokens makes v22 6/6 stale; token
+index and seed/sampler/argv are UNKNOWN. Split-ON remains unrun/terminal; no
+rerun or retuning is queued.

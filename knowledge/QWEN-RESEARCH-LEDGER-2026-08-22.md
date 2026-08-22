@@ -332,3 +332,9 @@ Six-prompt target-only control was stable at 227 tokens/run. Q4 split-OFF
 failed on `code_python_debug` (target `0f76b6ae…`, Q4 `1d5020bf…`; both 64
 tokens/`length`, 104/118 accepted), so split-ON was not run. This is a
 terminal exactness negative for the screen, not a speed or acceptance result.
+
+Mismatch receipt: target/Q4 share contract, prompt/model/server, nmax=1,
+block=8, n_extract=5, cache off. Only code_python_debug differs at character
+194; five prompts match. Historical 747 versus current 531 prompt tokens marks
+render/runtime drift; token index and seed/sampler/argv remain UNKNOWN. Split-ON
+stays terminal/unrun; no rerun.

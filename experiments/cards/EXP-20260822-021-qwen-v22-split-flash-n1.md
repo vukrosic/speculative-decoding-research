@@ -150,3 +150,18 @@ SHA `1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646`, both
 there is no candidate timing, acceptance, or general speed claim. The raw
 28-file receipt set, summary, cleanup, terminal, and `SHA256SUMS.txt` remain
 under `receipts/EXP-20260822-021-qwen-v22-split-flash-n1/`.
+
+### Read-only mismatch reconciliation
+
+Receipt `mismatch-reconciliation-20260822.json` (SHA `f193e04c…`; note
+`be0970f9…`) confirms target/Q4 share contract `a69610f9…`, prompt manifest
+`77a9b570…`, target model, same server, nmax=1, block size 8, n_extract=5,
+cache_n=0, and prompt-cache off. Only `code_python_debug` differs, at
+character 194: target has backtick-wrapped `-1`, Q4 omits backticks; both are
+64 tokens/`length`. Five prompts match. Token index and exact seed/sampler/
+client argv remain UNKNOWN.
+
+Historical v22 6/6 is stale for this oracle: prompt-token total 747 versus
+current 531 (code-python 169 versus 133), indicating rendering/runtime drift;
+cause UNKNOWN. Split-ON remains unrun and terminal; no rerun or retuning is
+authorized.
