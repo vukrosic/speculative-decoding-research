@@ -87,9 +87,20 @@ target-only oracle and sequential unmodified `n=1` baseline. Historical v22
   source build graph. The frozen experiment manifest remains the six-prompt
   v20 SHA `77a9b570…`, v21 contract `4be899bf…`, target
   `3895b6ea…`, drafter `18a380ef…`, seed 42, cache off, and `n=1`.
-- A fresh `/workspace` preseed build is currently in progress at approximately
-  25%; no network, model load, GPU inference, or numeric result is available
-  yet. Treat all exactness/timing fields as pending.
+- A fresh `/workspace` preseed build was then completed successfully; no model
+  load, GPU inference, or numeric result is available yet. Treat all
+  exactness/timing fields as pending.
+
+### Build-only success (2026-08-22)
+
+The preseed build completed successfully with the exact old UI tree: 140 files,
+12,951,994 bytes, manifest SHA `e811817ad5b5f7b8280e9a414816af0764beda9465fcf8c0a882cbc66a6ba803`.
+Fresh `llama-server` SHA is `b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79`;
+Build ID `22ecf3ead16a84cc758ca779e8ef1669d301112b`; implementation/common/
+llama hashes are `605d798e…`/`19fdf005…`/`fdb0bc83…`. Configure/build used
+CUDA 86, server ON, UI OFF, prebuilt UI OFF, with no network lines. No model,
+server, GPU inference, exactness, or timing run has started; exactness remains
+pending.
 
 ### Interpretation / hypotheses
 

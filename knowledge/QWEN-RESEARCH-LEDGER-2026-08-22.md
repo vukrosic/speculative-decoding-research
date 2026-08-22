@@ -312,3 +312,11 @@ attempt stopped at 8% on UI download/noexec; UI-OFF/OFF retry stopped at 38%
 with `LLAMA_BUILD_APP=ON` and missing embedded assets. The source-backed
 preseed recipe/frozen manifest is pending execution; fresh `/workspace` build
 is approximately 25%. No inference or numeric outcome is claimed.
+
+### EXP021 build-only success
+
+Preseeded old UI assets (140 files, 12,951,994 bytes, manifest
+`e811817a…`) enabled a successful CUDA-86 server build: `b17850bc…`, Build ID
+`22ecf3ea…`, impl/common/llama `605d798e…`/`19fdf005…`/`fdb0bc83…`.
+No network, model, GPU, or inference ran; exactness-first screen remains
+pending and prior build failures remain preserved.

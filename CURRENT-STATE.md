@@ -284,3 +284,8 @@ retry hard stop at 38% because `LLAMA_BUILD_APP=ON` still required missing
 embedded assets. Pending: source-backed asset preseed with exact frozen
 manifest and a fresh `/workspace` build currently near 25%. No model, network,
 GPU inference, exactness, or timing result exists.
+
+The preseed build now succeeds build-only with manifest `e811817a…` (140 files,
+12,951,994 bytes), server `b17850bc…`, and Build ID `22ecf3ea…`.
+Implementation/common/llama hashes are `605d798e…`/`19fdf005…`/`fdb0bc83…`.
+No network/model/GPU execution occurred; exactness and timing remain pending.

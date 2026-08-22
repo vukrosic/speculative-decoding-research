@@ -337,3 +337,9 @@ flags OFF, and `LLAMA_BUILD_SERVER=ON` (no APP flag). This is separate
 from the later n=1 exactness run; any network attempt, source/binary drift,
 configure/build failure, or process/GPU activity hard-stops and preserves the
 receipt.
+
+The preseed build-only gate has now passed: server `b17850bc…`, Build ID
+`22ecf3ea…`, implementation/common/llama hashes
+`605d798e…`/`19fdf005…`/`fdb0bc83…`, exact UI manifest `e811817a…` (140 files,
+12,951,994 bytes). No network, model, GPU, or inference ran. Keep the queue
+exactness-first pending; the prior UI hard stops remain preserved.

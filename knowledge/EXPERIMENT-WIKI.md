@@ -278,3 +278,12 @@ left `LLAMA_BUILD_APP=ON`, hit missing embedded assets/permission denied at
 38%, and ran no model or GPU inference. A source-backed preseed recipe and
 frozen manifest are recorded in the EXP021 card. A fresh `/workspace` preseed
 build is around 25%, with no network/model/GPU or numeric result yet.
+
+### EXP021 preseed build success
+
+The exact old UI tree preseed completed a build-only run: 140 files,
+12,951,994 bytes, manifest SHA `e811817a…`; `llama-server` SHA `b17850bc…`,
+Build ID `22ecf3ea…`, implementation/common/llama hashes
+`605d798e…`/`19fdf005…`/`fdb0bc83…`. No network, model, server launch, GPU,
+exactness, or timing run occurred. Exactness-first execution remains pending;
+the two earlier UI hard stops remain historical evidence.
