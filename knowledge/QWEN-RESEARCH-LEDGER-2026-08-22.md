@@ -461,3 +461,9 @@ Q4 split-OFF summary `94170d0a…` / terminal `9b24d3dc…` hard-stopped at
 warmup code_python_debug: `6400f118…` vs oracle `a382e0c0…`, 31/31 accepted,
 64-token limit, 3007.86 ms. Split env unset; no further rows/timing/split-ON.
 Cleanup/idle passed. Record baseline/evaluator mismatch only.
+
+Authoritative 747 receipt `50e7832c…` supersedes contaminated 531 `d119ff45…`.
+First valid divergence is token 2 (760 target vs 248069 Q4), duplicate
+`</think>`, 31/31 accepted, cache_n=0, 64/limit. Localization `3b66872b…` /
+`0bc83dcc…` observes but does not causally identify; no patch/rerun/split-ON/
+timing.

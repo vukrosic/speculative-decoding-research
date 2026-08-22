@@ -497,3 +497,12 @@ contract, b178 + pinned Q4 drafter, split env explicitly unset. Warmup row
 `a382e0c0…`; 31/31 draft accepted, 64-token `limit`, 3007.86 ms. Hard-stop
 prevented remaining rows, timing, and split-ON. GPU/process cleanup passed.
 Classify as baseline/evaluator mismatch, not split-flash evidence or speed.
+
+### Authoritative 747 reconciliation
+
+Receipt `50e7832c…` supersedes contaminated 531 receipt `d119ff45…`. Valid
+747 Stage0 row `code_python_debug` diverges at generated token 2: target 760
+vs Q4 248069; Q4 emits duplicate `</think>`, with 31/31 accepted, cache_n=0,
+64-token limit. Candidate branch is inactive. Localization receipt
+`3b66872b…` / note `0bc83dcc…` observes the duplicate but does not identify a
+causal rollback/mask/verifier root; no patch, rerun, split-ON, or timing.

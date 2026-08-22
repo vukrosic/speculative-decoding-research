@@ -1,0 +1,24 @@
+{
+  "receipt_id": "EXP-20260822-021-q4-747-authoritative-reconciliation-20260822",
+  "status": "HARD_STOP_747_CONTRACT_OUTPUT_MISMATCH",
+  "scope": "Read-only correction using q4-off-final-raw Stage0-bound receipt; no rerun/GPU.",
+  "supersedes_as_contaminated": {
+    "receipt": "q4-first-row-reconciliation-20260822.json",
+    "receipt_sha256": "d119ff4587874cc23290fc8c9104f40be4ee416df398fd6303c41dd0d6f7b146",
+    "note_sha256": "d5b091ef13cf324d927ddcd03cc187f0f6b0a809e650c654c26e8e669302bff2",
+    "reason": "531-token benchmark-path contamination; not the 747 tracer contract"
+  },
+  "authoritative_inputs": {
+    "target_summary": {"path": "target-only-final-summary-20260822.json", "sha256": "NOT_REHASHED_HERE", "contract_sha256": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326", "output_sha256": "a382e0c0a624fe959b44c052f92a30de335240c5865499747f82b90e10775013"},
+    "target_row": {"path": "target-only-final-raw/target-r0.json", "sha256": "b46f383ff36165ff0648192257b94301609ed3363b336641579321c338baebf3"},
+    "q4_row": {"path": "q4-off-final-raw/q4-off-r0.json", "sha256": "2ed011cb7257d0c542cca3d84ddaff3e72b865e278455830321655ff07c86d6b", "completion_request_sha256": "d189a91de83f93634e7ee364c360a4c1b2d94c3df29a062877aacd7cb4e3c46c", "completion_response_sha256": "b686e757838d2bdd97314cda1832005d766fb75ae252a82dc575db90433b074b"},
+    "q4_summary": {"path": "q4-off-final-summary-20260822.json", "sha256": "94170d0aac56655a4e9489c2b832341b3172a29af7c4d44b0dabce5e2a535bf0"},
+    "q4_terminal": {"path": "q4-off-final-terminal-20260822.md", "sha256": "9b24d3dcf3fd5f45dbaab424ddf77f80a536a3b752e1d891a6b25d01fb80178c"}
+  },
+  "identity": {"server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79", "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887", "drafter_sha256": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594", "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514", "contract_sha256": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326", "tracer_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e", "cuda_visible_devices": "0", "split_queries": "UNSET"},
+  "stage0_row": {"id": "code_python_debug", "rendered_prompt_sha256": "a83e3752525d65118444f963b32a5dfba1b85730bf0723a4f99ca3a90eae1132", "token_count": 169, "cache_n": 0},
+  "target_oracle": {"output_sha256": "a382e0c0a624fe959b44c052f92a30de335240c5865499747f82b90e10775013", "tokens": 64, "finish": "limit", "first_tokens": [248069, 271, 760, 709, 369, 10287, 310, 1423], "completion_request_sha256": "d189a91de83f93634e7ee364c360a4c1b2d94c3df29a062877aacd7cb4e3c46c"},
+  "q4_split_off": {"output_sha256": "6400f11885d9e71a331d1946f15b7218cfc1ee81948f0afc06f5db9476a9ee08", "tokens": 64, "finish": "limit", "first_tokens": [248069, 271, 248069, 271, 727, 1423, 3442, 19490], "draft_proposed": 31, "draft_accepted": 31, "cache_n": 0, "duplicate_think": true},
+  "divergence": {"first_generated_token_zero_based": 2, "target_token": 760, "q4_token": 248069, "common_prefix_tokens": 2, "q4_content_prefix": "</think>\\n\\n</think>\\n\\ndef find_index", "target_content_prefix": "</think>\\n\\nThe function is intended to find the first index", "interpretation": "Q4 emits a duplicate </think> token sequence at the first divergence; exact rollback/mask/verifier cause is UNKNOWN."},
+  "disposition": "Authoritative 747-token Q4 control hard-stopped in warmup repetition 0. Split-ON and timing were not run. This is a valid exactness failure under the 747 contract, but not a proven root-cause diagnosis."
+}

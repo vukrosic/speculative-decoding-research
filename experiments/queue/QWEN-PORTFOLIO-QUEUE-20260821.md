@@ -687,3 +687,19 @@ output. Read-only packet
 now ranks first: bind first divergence, logits/IDs, rollback/verifier state,
 mask/position/cache, sampler/finish, and cap from preserved receipts. No rerun
 or cap/template change until a source-backed cause and reviewed packet exist.
+
+Authoritative 747 reconciliation `50e7832c...` plus implementation
+localization `3b66872b...` / note `0bc83dcc...` preserve the prompt/output
+boundary but do not bind a causal split-OFF repair to b178 v22. Historical or
+other-lane state/rollback evidence is hypothesis-only. No source-backed repair
+is admissible now; preserve no-rerun/split-ON/timing boundary. Reopen only with
+a same-build v22 source diff binding the localized state path to the failing
+row and a fresh critic/literature-reviewed packet.
+
+### Authoritative 747 Q4 reconciliation
+
+Receipt `50e7832c…` supersedes contaminated 531 `d119ff45…`. Valid Stage0 row
+diverges at token 2 (target 760 vs Q4 248069), duplicate `</think>`, 31/31
+accepted, cache_n=0, 64/limit. Candidate branch inactive; localization
+`3b66872b…`/`0bc83dcc…` is observational, not causal. No patch, rerun,
+split-ON, or timing is queued.

@@ -429,3 +429,9 @@ Q4 split-OFF hard-stopped on warmup `code_python_debug`: summary
 `a382e0c0…`, 31/31 accepted, 64-token limit, 3007.86 ms. v22 747 Stage0
 passed for the first row; no further rows/timing/split-ON. GPU/process clean.
 This is baseline/evaluator mismatch, not split-flash evidence.
+
+Authoritative reconciliation `50e7832c…` supersedes contaminated 531 receipt
+`d119ff45…`: valid 747 row diverges at token 2 (target 760 vs Q4 248069),
+duplicate `</think>`, 31/31 accepted, cache_n=0, 64/limit. Localization
+`3b66872b…` / `0bc83dcc…` is observational only; candidate branch inactive,
+no causal patch/rerun, split-ON, or timing.
