@@ -567,3 +567,14 @@ repeated-prefix/cache diagnostic, not a causal speculative-decoding or general
 speedup claim. Rendered/token-prefix exactness is UNKNOWN, and the later valid
 747-token EXP021 split-OFF failure blocks promotion; keep speed, acceptance,
 and exactness separate and do not rerun on this evidence alone.
+
+### CEO-cycle recovery audit — no new candidate (2026-08-22)
+
+Planner `bee058fe…`/`e12dba38…`, critic `d8e094f3…`, literature `f7d54622…`,
+data preflight `558a4d81…`, implementation audit `8c4e91c9…`/`fa9aaa33…`,
+and mask screen `3ac86da1…` converge on **NO-CANDIDATE**. Preserve PQ019 as a
+local raw cache/repeated-prefix diagnostic and EXP021 as a valid-747 split-OFF
+terminal control failure. Reopen only with the exact external Arm-B/rendering/
+evaluator contract, BuildID-matched debug/linker artifacts, rendered bytes/
+token IDs, immutable token/logit/accept/rollback/cache trace, and literal
+argv/environment/library hashes. No patch, GPU rerun, split-ON, or timing.

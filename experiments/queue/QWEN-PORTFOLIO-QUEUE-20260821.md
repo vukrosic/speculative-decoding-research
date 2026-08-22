@@ -816,3 +816,23 @@ Q4 n=1 cache-off `18.1638816661 tok/s` vs target-only `16.0895399687`
 `208/236` acceptance. Keep this as a local repeated-prefix/cache diagnostic;
 rendered/token-prefix exactness is UNKNOWN and the valid 747-token EXP021
 split-OFF failure blocks causal/general promotion. No rerun from this result.
+
+### CEO next-action ranking
+
+Planner packet
+[`PQ-20260822-CEO-NEXT-ACTION-RANKING`](../planning/PQ-20260822-CEO-NEXT-ACTION-RANKING.md)
+ranks external authoritative Arm-B/rendering/evaluator intake first, bounded
+b178 provenance search second, and PQ019 cache speed as a preserved local lead
+only. Current disposition is **BLOCKED on the external bundle**: no candidate
+supports a faster-and-correct claim. No GPU/rerun/split-ON/timing or source
+repair until intake passes and critic/literature review a new causal packet.
+
+### CEO-cycle recovery ranking — NO-CANDIDATE
+
+Planner `bee058fe…`/`e12dba38…`, critic `d8e094f3…`, literature `f7d54622…`,
+data preflight `558a4d81…`, implementation `8c4e91c9…`/`fa9aaa33…`, and mask
+screen `3ac86da1…` add no executable candidate. Keep PQ019 local speed and
+EXP021 valid-747 split-OFF failure as separate boundaries. Queue reopens only
+after the exact external Arm-B/rendering/evaluator, BuildID/debug, rendered/
+token-ID, immutable token/logit/accept/rollback/cache, and literal argv/env/
+library bundle arrives; no patch, GPU/rerun, split-ON, or timing.

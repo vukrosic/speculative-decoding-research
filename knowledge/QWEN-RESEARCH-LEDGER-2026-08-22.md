@@ -515,3 +515,14 @@ the narrow raw timing: target-only cache-off `16.0895399687`, Q4 n=1 cache-off
 rendered/token-prefix exactness is UNKNOWN. The valid 747-token EXP021
 split-OFF failure blocks general/causal speed promotion and no new run is
 authorized from this result.
+
+### CEO-cycle planner/critic/literature reconciliation
+
+Refs `bee058fe…`/`e12dba38…` (planner), `d8e094f3…` (critic), `f7d54622…`
+(literature), `558a4d81…` (data preflight), `8c4e91c9…`/`fa9aaa33…`
+(implementation), and `3ac86da1…` (mask) yield NO-CANDIDATE. Keep PQ019's
+raw cache/repeated-prefix speed diagnostic and EXP021's valid-747 split-OFF
+terminal boundary separate. Reopen requires the exact external rendering/
+Arm-B/evaluator contract, BuildID-matched debug/linker data, rendered bytes/
+token IDs, immutable token/logit/accept/rollback/cache trace, and literal
+argv/env/library hashes; no GPU/rerun/patch is authorized.

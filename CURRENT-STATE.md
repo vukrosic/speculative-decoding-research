@@ -485,3 +485,13 @@ target-only `16.0895399687` (`+12.892486%`), and Q4 cache-on
 repeated-prefix/cache diagnostic. Rendered/token-prefix exactness is UNKNOWN;
 the valid 747-token EXP021 split-OFF failure prevents a promoted/general speed
 claim or causal interpretation.
+
+### CEO-cycle recovery audit (2026-08-22)
+
+Planner `bee058fe…`/`e12dba38…`, critic `d8e094f3…`, literature `f7d54622…`,
+data preflight `558a4d81…`, implementation audit `8c4e91c9…`/`fa9aaa33…`, and
+mask screen `3ac86da1…` found no new source-backed candidate. PQ019 remains a
+local diagnostic; EXP021 remains terminal under the valid 747-token split-OFF
+control failure. Exact external Arm-B/rendering/evaluator, BuildID/debug,
+rendered/token-ID, and immutable token/logit/accept/rollback/cache bundle is
+required before reopening. No patch or GPU/rerun/split-ON/timing.
