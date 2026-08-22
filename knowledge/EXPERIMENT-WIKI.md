@@ -267,3 +267,14 @@ It compares sequential target-only and Q4 n=1 phase intervals through restored
 library `65b8a862…`, with margin override disabled and frozen inputs. CEO
 approval is required and it has not run; it cannot claim speed, exactness, or
 verifier improvement. No other executable source-backed intervention remains.
+
+## EXP021 v22 split-flash build checkpoint — 2026-08-22
+
+The malformed historical patch was semantically reconstructed only for a
+candidate-only diff (`graph.diff` SHA `2c7d45d6…`, `server.diff` SHA
+`94d41382…`; clean source hashes `751c7ce4…`/`43551af0…`). The first `/dev/shm`
+build hit the `noexec`/UI-download hard stop at 8%; the UI-OFF/OFF retry still
+left `LLAMA_BUILD_APP=ON`, hit missing embedded assets/permission denied at
+38%, and ran no model or GPU inference. A source-backed preseed recipe and
+frozen manifest are recorded in the EXP021 card. A fresh `/workspace` preseed
+build is around 25%, with no network/model/GPU or numeric result yet.

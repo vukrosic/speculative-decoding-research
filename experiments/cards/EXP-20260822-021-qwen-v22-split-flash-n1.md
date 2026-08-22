@@ -1,0 +1,117 @@
+---
+id: EXP-20260822-021-qwen-v22-split-flash-n1
+date: 2026-08-22
+status: preflight
+method: source-backed verifier-operation diagnostic
+exactness_contract: fresh target-only oracle plus six-prompt output/token/finish checks
+heldout_touched: false
+tags: [qwen, dflash2, verifier, flash-attention, n1, exactness-first]
+---
+
+# Question
+
+Does the preserved v22 singleton-shaped flash-query verifier branch preserve
+the frozen target outputs at draft width `n=1`, and if it does, does its
+per-query attention decomposition change end-to-end serving time?
+
+## Authorization and scope
+
+- Authorized action: one task-owned v22 build and one sequential off/on `n=1`
+  diagnostic on the existing RTX 3060, only after live identity preflight.
+- Explicit exclusions: `n>1`, held-out data, training, downloads/installs,
+  Arm-B reconstruction, threshold retuning, prompt exceptions, serving
+  promotion, and unrelated source edits.
+- Stop conditions: any source/build/model/contract/argv mismatch, target-only
+  output drift, candidate exactness failure, mask/position/cache error, OOM,
+  competing process, disk/GPU issue, or cleanup failure.
+- Artifact/storage budget: compact receipts and hashes only; large binaries and
+  logs remain on the remote task-owned path.
+
+## Frozen controls
+
+- Target checkpoint: Qwen3.8-27B UD-IQ1_S,
+  `3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887`.
+- Drafter: Qwen3.8-27B-DFlash2 Q4_K_M,
+  `18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594`.
+- Prompt manifest: six public v20 prompts,
+  `77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514`.
+- Contract: v21 source contract,
+  `4be899bfe57fb32aea59dadae4c4eefccb558a7302688f8607a850b8dc3d4662`.
+- Seed/settings: seed 42, temperature 0, top-k 1, context 4096, parallel 1,
+  cache off, all GPU layers, `draft_tokens_max=1`.
+- Runtime: v22 parent revision `5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4`;
+  exact v22 source/build identities must be captured before mutation.
+
+## Intended change
+
+Only `LLAMA_V22_SPLIT_FLASH_QUERIES=off` versus `on`: the preserved v22 branch
+splits each non-prompt query row into singleton flash-attention calls while
+preserving the materialized K/V cache and causal-mask rows. The tracing and
+selector perturbation portions of the historical patch are excluded.
+
+## Baseline
+
+The same v22 build with the split-flash branch disabled, followed by a fresh
+target-only oracle and sequential unmodified `n=1` baseline. Historical v22
+6/6 evidence is context only and is not reused as proof.
+
+## Preflight gates
+
+- [ ] exact v22 source tree, patch, compiler/CUDA/CMake, binary and model hashes
+- [ ] target-only oracle reproduces all six outputs, token counts, and finishes
+- [ ] baseline and candidate use the same build, prompt order, and environment
+- [ ] all six candidate outputs pass before timing is interpreted
+- [ ] per-run acceptance/output accounting and event/schema receipts
+- [ ] disk/GPU/process ownership and cleanup
+
+## Results
+
+### Observed checkpoint (2026-08-22)
+
+- Historical patch artifact was malformed; task-local semantic reconstruction
+  is recorded by `apply_v22.py` (candidate source SHA
+  `674941f7502b09a825e9641ff236d8c7ccad20209c7bfda99abb3e99db09f901`). The
+  candidate-only graph/server diff hashes are `2c7d45d6…` and `94d41382…`;
+  clean candidate source hashes are `751c7ce4…` and `43551af0…`.
+- First `/dev/shm` build used native CUDA detection and hard-stopped at 8%
+  when UI provisioning attempted a HuggingFace download; `/dev/shm` is
+  `noexec`, and no model/GPU inference started.
+- Retry used explicit `CMAKE_CUDA_ARCHITECTURES=86`,
+  `LLAMA_BUILD_UI=OFF`, and `LLAMA_USE_PREBUILT_UI=OFF`, but
+  `LLAMA_BUILD_APP=ON` still invoked `llama-ui-embed` and hard-stopped at 38%
+  with missing embedded assets/permission denied. No model/server/inference
+  ran.
+- The source-backed continuation is an asset-preseed recipe: provide the
+  exact `tools/ui/dist` manifest before configure, keep UI/download paths
+  disabled, and set the application/embed target off as required by the
+  source build graph. The frozen experiment manifest remains the six-prompt
+  v20 SHA `77a9b570…`, v21 contract `4be899bf…`, target
+  `3895b6ea…`, drafter `18a380ef…`, seed 42, cache off, and `n=1`.
+- A fresh `/workspace` preseed build is currently in progress at approximately
+  25%; no network, model load, GPU inference, or numeric result is available
+  yet. Treat all exactness/timing fields as pending.
+
+### Interpretation / hypotheses
+
+If all six outputs match, the branch is an exactness-preserving `n=1`
+diagnostic and timing can be compared descriptively. A mismatch terminalizes
+the candidate for this screen. No result supports `n>1`, losslessness, or a
+general speed claim.
+
+## Decision
+
+- Promotion decision: not applicable; planner/critic/literature conditional
+  pass, CEO execution gate pending live v22 preflight.
+- What this does not establish: Arm-B fidelity, general acceptance, quality,
+  exactness beyond the declared six-prompt gate, or general serving speed.
+
+## Artifacts and receipts
+
+Receipts will be stored under
+`receipts/EXP-20260822-021-qwen-v22-split-flash-n1/` with source/build hashes,
+literal commands, per-arm outputs, evaluator results, and final cleanup state.
+
+## Failures and amendments
+
+2026-08-22: Initial source candidate and two build hard stops recorded; the
+fresh preseed build remains pending. No inference result exists.

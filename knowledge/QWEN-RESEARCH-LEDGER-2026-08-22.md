@@ -303,3 +303,12 @@ Planner PASS identifies one CEO-approval-gated measurement: the current-library
 EXP020 phase trace compares target-only and Q4 n=1 with frozen inputs, margin
 override disabled, and phase counters. It is diagnostic only and has not run;
 no other executable source-backed Qwen intervention remains.
+
+## EXP021 v22 split-flash checkpoint
+
+Candidate-only hashes and both build hard stops are preserved in the EXP021
+card/receipts: malformed historical patch reconstructed; `/dev/shm` first
+attempt stopped at 8% on UI download/noexec; UI-OFF/OFF retry stopped at 38%
+with `LLAMA_BUILD_APP=ON` and missing embedded assets. The source-backed
+preseed recipe/frozen manifest is pending execution; fresh `/workspace` build
+is approximately 25%. No inference or numeric outcome is claimed.

@@ -298,6 +298,15 @@ It compares target-only and Q4 n=1 phase/state intervals through restored
 library `65b8a862…`, with margin override disabled and frozen inputs. It has not
 run and cannot promote speed, exactness, or verifier correctness. All other
 source-level improvement candidates remain blocked.
+
+## EXP021 v22 build checkpoint
+
+Observed hard stops: malformed historical patch reconstructed as candidate-only
+diff; first `/dev/shm` build stopped at 8% on UI download/noexec; UI-OFF/OFF
+retry stopped at 38% because `LLAMA_BUILD_APP=ON` still invoked missing UI
+assets. The source-backed preseed recipe/frozen six-prompt manifest is pending;
+fresh `/workspace` preseed build is around 25%. No model/GPU inference,
+exactness, timing, or promotion result exists.
 The exact-d07 phase trace recovery is terminal-blocked, but a same-library
 measurement variant is now source-backed: use the current instrumented server
 and `65b8a862...` for both target-only and Q4 n=1, with `PQ020_LOW_MARGIN_TOP2`
@@ -306,3 +315,25 @@ unset. The packet
 is `PASS-NEEDS-CEO-APPROVAL`, one process per arm, no semantic change, strict
 hash/output/event/resource/cleanup gates, and measurement-only interpretation.
 It may identify the bottleneck but cannot promote speed or exactness.
+
+Mask/source audit adds one independent candidate:
+[`PQ-20260822-V22-SPLIT-FLASH-N1-EXACTNESS-SCREEN`](../planning/PQ-20260822-V22-SPLIT-FLASH-N1-EXACTNESS-SCREEN.md).
+The preserved v22 singleton-shaped split-flash branch is source-backed and has
+bit-identical block2 logits plus a narrow six-prompt exact receipt. Planner
+disposition is `PASS-NEEDS-CEO-APPROVAL` for target-only, split-flash-off, and
+split-flash-on sequential n=1 arms under frozen v21 Q4 identities. Exactness
+is the gate; timing is conditional and diagnostic only. No run is queued or
+launched, and n=2–7/general claims remain out of scope.
+
+The EXP-021 build-only recovery is admissible under CEO direction: the first
+build stopped on a forbidden UI download because the cache used
+`LLAMA_BUILD_UI=OFF`/`LLAMA_USE_PREBUILT_UI=ON`. The exact source-backed
+no-network amendment is both flags OFF with `CMAKE_CUDA_ARCHITECTURES=86`,
+building only `llama-server` and launching no model/server. Source inspection
+now rejects the prior APP=OFF idea: server CMake still links llama-ui. The
+admissible retry is a fresh `/workspace` build with the old UI distribution
+preseeded (140 files, 12,951,994 bytes, manifest SHA `e811817a...`), both UI
+flags OFF, and `LLAMA_BUILD_SERVER=ON` (no APP flag). This is separate
+from the later n=1 exactness run; any network attempt, source/binary drift,
+configure/build failure, or process/GPU activity hard-stops and preserves the
+receipt.

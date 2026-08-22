@@ -275,3 +275,12 @@ same-library EXP020 phase trace: target-only versus Q4 n=1 through restored
 `65b8a862…`, margin override disabled, identical frozen inputs. It has not run
 and is diagnostic only; no speed, exactness, verifier, or source intervention
 claim is authorized. All other source-level improvement ideas remain blocked.
+
+### EXP021 v22 build checkpoint
+
+Observed: malformed historical patch reconstructed as candidate-only graph/
+server diffs; `/dev/shm` UI-download/noexec hard stop at 8%; explicit UI-OFF/OFF
+retry hard stop at 38% because `LLAMA_BUILD_APP=ON` still required missing
+embedded assets. Pending: source-backed asset preseed with exact frozen
+manifest and a fresh `/workspace` build currently near 25%. No model, network,
+GPU inference, exactness, or timing result exists.
