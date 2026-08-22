@@ -323,3 +323,9 @@ Reopen only with an external authoritative bundle; no GPU/rerun.
 Post-EXP021 source/runtime audits conclude `NO-CANDIDATE`: the only admissible
 next action is external rendering/Arm-B provenance recovery. No local source
 axis, split-ON launch, GPU rerun, or guessed state/mask/rollback change remains.
+
+## Post-EXP021 recovery ranking
+
+Recovery is docs-only: external rendering/evaluator/Arm-B contract intake first;
+optional current-library phase measurement second; causal GPU work deferred.
+Source recheck is `NO-CANDIDATE`; PQ019 remains a narrow cache-serving result.

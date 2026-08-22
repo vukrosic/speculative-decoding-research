@@ -352,3 +352,7 @@ required to reopen; no rerun.
 Post-EXP021 audit receipt `d68ffc7c…` is `NO-CANDIDATE`: all local source-level
 improvement axes are retired or blocked. Only external rendering/Arm-B
 provenance recovery can reopen work; no GPU/rerun/guessed state changes.
+
+Recovery ranking remains docs-only: external rendering/evaluator/Arm-B bundle
+first, optional current-library phase measurement second, causal GPU deferred.
+Preserve EXP021 terminal and PQ019 narrow-positive boundaries.

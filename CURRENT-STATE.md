@@ -319,3 +319,7 @@ Post-EXP021 source/runtime audits are terminal `NO-CANDIDATE`: no independent
 GPU axis remains. Highest-value recovery is exact rendering/Arm-B provenance;
 until an external bundle supplies it, no state/mask/rollback/scheduler guess,
 rerun, or split-ON launch is allowed.
+
+Post-EXP021 ranking is recovery-first and docs-only: external rendering/Arm-B
+contract intake is highest information; optional phase measurement is diagnostic;
+causal GPU work is deferred. Source recheck is `NO-CANDIDATE`.

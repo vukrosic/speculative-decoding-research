@@ -406,6 +406,19 @@ bundle (only one historical rendered hash). EXP021 is terminal no-found;
 reopen requires external bundle supply or separately authorized regeneration.
 No further local search, GPU run, split-ON launch, or rerun is queued.
 
+Post-EXP021 ranking is recorded in
+[`PQ-20260822-POST-EXP021-RECOVERY-RANKING`](../planning/PQ-20260822-POST-EXP021-RECOVERY-RANKING.md):
+docs-only external rendering-contract recovery is first; a current-library
+phase trace is measurement-only and optional; causal split-flash GPU work is
+deferred until a fresh exact target oracle and reviewed one-variable packet
+exist. Current disposition is `DOCS-ONLY-RECOVERY-FIRST`; no causal run is
+queued.
+
 Post-EXP021 source/runtime audit (`d68ffc7c…`/`c9068850…`) confirms no
 independent candidate. Queue remains terminal; reopen only via external exact
 rendering/Arm-B artifact intake, with no guessed state changes or rerun.
+
+Recovery ranking is docs-only: external rendering/evaluator/Arm-B bundle is
+the smallest next action; current-library phase measurement is optional
+diagnostic; causal GPU candidates remain deferred. Source recheck is
+`NO-CANDIDATE`; preserve EXP021 terminal and PQ019 cache-positive boundaries.
