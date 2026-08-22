@@ -289,3 +289,7 @@ The preseed build now succeeds build-only with manifest `e811817a…` (140 files
 12,951,994 bytes), server `b17850bc…`, and Build ID `22ecf3ea…`.
 Implementation/common/llama hashes are `605d798e…`/`19fdf005…`/`fdb0bc83…`.
 No network/model/GPU execution occurred; exactness and timing remain pending.
+
+Literal argv provenance now closes the preseed build: exact UI copy, CUDA-86/UI
+OFF configuration, and named `llama-server -j2` build returned 0. No inference
+claim follows; six-prompt exactness remains pending.

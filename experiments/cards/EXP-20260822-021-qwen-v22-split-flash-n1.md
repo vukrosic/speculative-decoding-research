@@ -125,4 +125,14 @@ literal commands, per-arm outputs, evaluator results, and final cleanup state.
 ## Failures and amendments
 
 2026-08-22: Initial source candidate and two build hard stops recorded; the
-fresh preseed build remains pending. No inference result exists.
+fresh preseed build completed build-only; no inference result exists.
+
+### Provenance closure
+
+Literal configure/build argv is preserved in
+`receipts/EXP-20260822-021-qwen-v22-split-flash-n1/preseed-argv-receipt.md`.
+The preseed copied the exact old `tools/ui/dist`, configured CUDA 86 with UI
+and prebuilt-UI OFF, and built the named `llama-server` target with `-j2`;
+configure/build both returned 0. No cwd or task-specific environment is
+inferred where the receipt marks it UNKNOWN. This closes build provenance only;
+the six-prompt exactness run remains pending.

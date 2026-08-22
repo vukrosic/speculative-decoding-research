@@ -320,3 +320,8 @@ Preseeded old UI assets (140 files, 12,951,994 bytes, manifest
 `22ecf3ea…`, impl/common/llama `605d798e…`/`19fdf005…`/`fdb0bc83…`.
 No network, model, GPU, or inference ran; exactness-first screen remains
 pending and prior build failures remain preserved.
+
+`preseed-argv-receipt.md` records literal commands (including UNKNOWN cwd),
+exact UI preseed, CUDA-86/UI-OFF configure, and named server `-j2` build
+returning 0. Build provenance is closed; no inference result is claimed and
+exactness remains pending.

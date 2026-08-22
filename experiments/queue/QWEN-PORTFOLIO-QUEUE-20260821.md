@@ -338,8 +338,22 @@ from the later n=1 exactness run; any network attempt, source/binary drift,
 configure/build failure, or process/GPU activity hard-stops and preserves the
 receipt.
 
+EXP021 preseed build-only gate now passes: fresh server binary SHA
+`b17850bc...`, Build ID `22ecf3ea...`, matching candidate source hashes and
+preseed manifest `e811817a...`; no model/server/inference or GPU process ran.
+The n=1 exactness run is now `PASS-FOR-CEO/EXECUTOR-HANDOFF` for three
+sequential arms (target-only, split-flash OFF, split-flash ON) using the fresh
+binary and resolved libraries, subject to immediate read-only RUNPATH and
+frozen-hash preflight. The `download.cpp` grep hit is only a compiled source
+filename; no actual network command occurred. A target-only hash/token
+mismatch blocks remaining arms; timing is conditional and diagnostic.
+
 The preseed build-only gate has now passed: server `b17850bc…`, Build ID
 `22ecf3ea…`, implementation/common/llama hashes
 `605d798e…`/`19fdf005…`/`fdb0bc83…`, exact UI manifest `e811817a…` (140 files,
 12,951,994 bytes). No network, model, GPU, or inference ran. Keep the queue
 exactness-first pending; the prior UI hard stops remain preserved.
+
+Literal preseed argv is receipt-backed (`preseed-argv-receipt.md`): exact UI
+copy, CUDA-86/UI-OFF configure, and named `llama-server -j2` build returned 0.
+This closes build provenance only; exactness-first execution remains queued.

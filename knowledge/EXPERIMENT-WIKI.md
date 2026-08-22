@@ -287,3 +287,8 @@ Build ID `22ecf3ea…`, implementation/common/llama hashes
 `605d798e…`/`19fdf005…`/`fdb0bc83…`. No network, model, server launch, GPU,
 exactness, or timing run occurred. Exactness-first execution remains pending;
 the two earlier UI hard stops remain historical evidence.
+
+Literal configure/build provenance is now closed by `preseed-argv-receipt.md`:
+exact UI preseed copy, CUDA-86 configure with both UI flags OFF, and named
+`llama-server -j2` build all returned 0. UNKNOWN cwd/environment fields remain
+explicitly UNKNOWN. This is build-only provenance; exactness remains pending.
