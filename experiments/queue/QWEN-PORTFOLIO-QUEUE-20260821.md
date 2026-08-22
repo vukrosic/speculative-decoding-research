@@ -827,6 +827,18 @@ only. Current disposition is **BLOCKED on the external bundle**: no candidate
 supports a faster-and-correct claim. No GPU/rerun/split-ON/timing or source
 repair until intake passes and critic/literature review a new causal packet.
 
+### PQ019 cache exactness + speed replication (no run)
+
+Planner packet
+[`PQ-20260822-019-CACHE-EXACTNESS-SPEED-REPLICATION`](../planning/PQ-20260822-019-CACHE-EXACTNESS-SPEED-REPLICATION.md)
+proposes one causal change only: Q4 DFlash n=1 `prompt_cache=false` versus
+`true` on the same 12-row/six-prompt public repeated-prefix workload (SHA
+`f911c7d3...`). Sequential one-GPU-process arms, one warmup + three reps.
+Require per-row content/reasoning/finish/output hash equality, acceptance and
+draft/verify counter equality, cache-off `cache_n=0`, cache-on `cache_n>0`, and
+matched wall/tok/s. Claim remains narrow cache-assisted serving; no target
+exactness/general losslessness. Pending critic/literature/CEO approval; no run.
+
 ### CEO-cycle recovery ranking — NO-CANDIDATE
 
 Planner `bee058fe…`/`e12dba38…`, critic `d8e094f3…`, literature `f7d54622…`,
@@ -836,3 +848,30 @@ EXP021 valid-747 split-OFF failure as separate boundaries. Queue reopens only
 after the exact external Arm-B/rendering/evaluator, BuildID/debug, rendered/
 token-ID, immutable token/logit/accept/rollback/cache, and literal argv/env/
 library bundle arrives; no patch, GPU/rerun, split-ON, or timing.
+
+### PQ019 cache follow-up disposition
+
+Target receipts `4b71c5de…`/`938d75c1…`; Q4 cache-off `f6bd2e2e…`/`28b273d8…`
+timed Q4 at `19.4047/19.5082/19.6797 tok/s` vs target `17.5969/17.6115/17.7689`.
+`code_python_debug` assistant output diverged (`67e4c067…` vs `6486247b…`),
+though reasoning/finish/token count and `31/31` acceptance matched; cache_n=0.
+Cache-on unlaunched. Queue as faster-but-not-correct control; no speed or
+exactness promotion pending planner/critic/literature next-step receipts.
+
+Target-only API baseline subsequently passed: summary
+`4b71c5de26f933fb6616ec46de4d7b00b084db0be6fa388440f42a89530f1514`, terminal
+`938d75c19eddd738be085f2850d35b35a47b86c10d0fcf6cdde22edbe4b3e0c2`; 2
+warmups + 3 reps × 12, stable API hashes, cache_n=0,
+17.5969/17.6115/17.7689 tok/s, cleanup clean. Baseline gate is closed; Q4
+n=1 cache-off→cache-on is conditionally CEO-authorizable after critic final +
+literature review, still narrow cache-assisted serving only. No launch yet.
+
+PQ019 Q4 cache-off hard-stopped before cache-on: summary
+`f6bd2e2e569b950031b987cc4c6703ea1e8bef043d0f864b00a1d5aed8b839f8`, terminal
+`28b273d8558b1d51267ddaa4406982da0fa71410c48a74f9376bf07da9adae40`; three
+reps `19.4047/19.5082/19.6797 tok/s` vs target baseline
+`17.5969/17.6115/17.7689`. `code_python_debug` output mismatch
+(`67e4c067...` vs `6486247b...`) despite matching reasoning/finish/tokens,
+31/31 accepted, cache_n=0. Raw speed/acceptance retained but non-promotable;
+cache-on/rerun/timing blocked. Rank source-backed divergence/recovery or
+external evaluator/Arm-B intake next; no blind cache retry.

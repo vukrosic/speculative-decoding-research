@@ -495,3 +495,12 @@ local diagnostic; EXP021 remains terminal under the valid 747-token split-OFF
 control failure. Exact external Arm-B/rendering/evaluator, BuildID/debug,
 rendered/token-ID, and immutable token/logit/accept/rollback/cache bundle is
 required before reopening. No patch or GPU/rerun/split-ON/timing.
+
+### PQ019 cache follow-up screen
+
+Receipts `4b71c5de…`/`938d75c1…` (target) and `f6bd2e2e…`/`28b273d8…`
+(Q4 cache-off) show Q4 `19.4047/19.5082/19.6797 tok/s` versus target
+`17.5969/17.6115/17.7689`. The first `code_python_debug` assistant output
+diverged (`67e4c067…` vs `6486247b…`), despite matching reasoning/finish/token
+count and `31/31` acceptance; `cache_n=0`. Cache-on was not run. This is
+faster-but-not-correct control evidence, not a promoted speed/exactness result.

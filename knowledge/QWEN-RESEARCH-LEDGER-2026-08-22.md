@@ -526,3 +526,12 @@ terminal boundary separate. Reopen requires the exact external rendering/
 Arm-B/evaluator contract, BuildID-matched debug/linker data, rendered bytes/
 token IDs, immutable token/logit/accept/rollback/cache trace, and literal
 argv/env/library hashes; no GPU/rerun/patch is authorized.
+
+### PQ019 cache screen — bounded negative
+
+Target receipts `4b71c5de…`/`938d75c1…`; Q4 cache-off `f6bd2e2e…`/`28b273d8…`:
+Q4 timed `19.4047/19.5082/19.6797 tok/s`, target `17.5969/17.6115/17.7689`.
+`code_python_debug` assistant hash mismatched (`67e4c067…` vs `6486247b…`),
+while reasoning/finish/token count and `31/31` acceptance matched; cache_n=0.
+Cache-on not launched. Retain as faster-but-not-correct control evidence;
+no promotion or exactness claim.

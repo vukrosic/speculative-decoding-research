@@ -578,3 +578,13 @@ terminal control failure. Reopen only with the exact external Arm-B/rendering/
 evaluator contract, BuildID-matched debug/linker artifacts, rendered bytes/
 token IDs, immutable token/logit/accept/rollback/cache trace, and literal
 argv/environment/library hashes. No patch, GPU rerun, split-ON, or timing.
+
+### PQ019 cache follow-up screen (2026-08-22)
+
+Target API baseline receipts `4b71c5de…`/`938d75c1…` and Q4 cache-off
+receipts `f6bd2e2e…`/`28b273d8…` completed a bounded screen. Q4 measured
+`19.4047/19.5082/19.6797 tok/s` versus target `17.5969/17.6115/17.7689`;
+`code_python_debug` diverged (`67e4c067…` vs `6486247b…`) while reasoning,
+finish, token count, and `31/31` acceptance matched; `cache_n=0`. Cache-on was
+not launched. Classify as faster-but-not-correct control evidence only; no
+speed or exactness promotion.
