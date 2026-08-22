@@ -477,3 +477,14 @@ passed ordered-row, rendered-byte/hash, token-ID/piece/count, and payload-hash
 assertions (169/122/115/111/96/134). Completion/generation/benchmark/GPU/
 timing calls were zero; cleanup and GPU idle passed. CPU identity only;
 completion/GPU arms remain separately gated.
+
+## EXP021 target-only final oracle (2026-08-22)
+
+Target-only is a valid v22 oracle. Summary SHA `d1a9ff6d…`, terminal note
+`7b1ce0c1…`; contract `a69610f9…`, b178/target/tracer/manifest pinned. Four
+repetitions across six rows passed all 747 Stage0 assertions; outputs were
+6/6 byte-identical across repetitions. Finish was `technical_explain=eos`, all
+others `limit`; `cache_n=0`. Diagnostic tok/s were 18.9016, 18.6411, 18.8415,
+18.8491. Cleanup receipt `91d1a65f…` confirms clean GPU/process state. No
+candidate arm ran; this validates the oracle only, not a speed promotion.
+Split-OFF remains gated.

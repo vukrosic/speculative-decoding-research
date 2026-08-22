@@ -1,0 +1,10 @@
+{
+  "status": "clean",
+  "remote_host": "125.240.239.50:35738",
+  "gpu": {"name": "NVIDIA GeForce RTX 3060", "memory_total_mib": 12288, "memory_used_mib": 1, "utilization_percent": 0},
+  "llama_server_process": "terminated",
+  "experiment_process": "absent_on_fresh_remote_check",
+  "raw_gpu_snapshot": "target-only-final-raw/final-gpu.csv",
+  "raw_process_snapshot": "target-only-final-raw/final-procs.txt",
+  "note": "The captured pgrep file includes its own inspection shell; a fresh remote pgrep after completion found no llama-server or experiment process."
+}

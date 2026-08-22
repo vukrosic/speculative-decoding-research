@@ -641,6 +641,16 @@ one warmup plus three reps, one GPU process, and full output/resource/cleanup
 receipts. Split-OFF is excluded until target-only stability is reviewed; no
 launch yet.
 
+Target-only oracle now passes valid v22 contract (summary `d1a9ff6d...`,
+terminal `7b1ce0c...`, four reps × six rows, 747 assertions, stable 6/6).
+Planner packet
+[`PQ-20260822-021-SPLIT-OFF-EXACTNESS-ONLY`](../planning/PQ-20260822-021-SPLIT-OFF-EXACTNESS-ONLY.md)
+is the next narrow arm: same-build Q4 split-OFF, n=1, exactness only through
+the fail-closed tracer. One GPU process, frozen identities, one warmup + four
+reps, full hashes/counters/resource/cleanup receipts. Split-ON, timing,
+acceptance promotion, and n>1 are explicitly deferred until six-of-six exact
+control and fresh review. No launch yet.
+
 ### Repaired-wrapper CPU identity gate: PASS
 
 Implementation `01f937e5…`, tests `6828fb70…`, packet `ddf7e99a…`; live receipt
@@ -648,3 +658,12 @@ Implementation `01f937e5…`, tests `6828fb70…`, packet `ddf7e99a…`; live re
 b178, and Stage0 six-of-six/747. Six apply-template + six tokenize passed all
 hash/ID/count assertions; zero completion/GPU/timing, cleanup and idle passed.
 Queue remains CPU-identity-only; completion and GPU arms need separate approval.
+
+### Target-only final oracle: PASS
+
+Summary `d1a9ff6d…` / terminal `7b1ce0c1…`: pinned v22 contract `a69610f9…`,
+b178 target/tracer/manifest; four reps × six rows passed all 747 assertions,
+with 6/6 byte-identical outputs. Finish technical=eos, others=limit;
+cache_n=0; diagnostic tok/s 18.9016/18.6411/18.8415/18.8491. Cleanup
+`91d1a65f…`/GPU clean. No candidate arm; valid oracle only, not speed
+promotion; split-OFF remains gated.

@@ -1,0 +1,30 @@
+{
+  "experiment": "EXP-20260822-021",
+  "arm": "target-only-final",
+  "status": "completed_target_oracle",
+  "server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+  "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+  "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "contract_sha256": "a69610f96d2786fb4c47bf7e595548e2313cf95c9aa332241a6a9bf7ba77f326",
+  "tracer_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+  "cuda_visible_devices": "0",
+  "endpoint_sequence": ["/apply-template", "/tokenize", "/completion"],
+  "stage0_assertions": {"rows": 6, "total_tokens": 747, "all_repetitions_passed": true, "repetitions": [0, 1, 2, 3]},
+  "repetitions": {"warmup": 0, "timed": [1, 2, 3]},
+  "predicted_tokens_per_rep": [321, 321, 321, 321],
+  "wall_ms_per_rep": [16982.732937, 17219.993866, 17036.848489, 17030.021786],
+  "predicted_tok_s_per_rep": [18.90155143, 18.64112162, 18.84151287, 18.84906573],
+  "output_sha256_by_id": {
+    "code_python_debug": "a382e0c0a624fe959b44c052f92a30de335240c5865499747f82b90e10775013",
+    "code_rust_parser": "ae512d995776a5a71fd6aab1df84707e3a9fdf09d305129f7772d13cb495320a",
+    "math_modular": "3ced8c4b9404cf7354a85f4c01c70790c18ed0aad21ab8decde3239035112c21",
+    "logic_schedule": "b71d7ab931eb97dd8d2d1ac377a14cb55dd8ef9ea8367c7471ddbcce290180ce",
+    "technical_explain": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "structured_extract": "b3657b805123030367397bedba85c88e690f153a7bf85e4cac209ebd849273c7"
+  },
+  "output_stability": "6/6 rows identical across four repetitions",
+  "finish": {"technical_explain": "eos", "other_rows": "limit"},
+  "cache_n": "0 for all rows",
+  "candidate_arms_run": [],
+  "raw_receipts": "target-only-final-raw/"
+}

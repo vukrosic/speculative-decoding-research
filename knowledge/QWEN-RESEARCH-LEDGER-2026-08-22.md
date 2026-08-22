@@ -450,3 +450,9 @@ Wrapper SHA `01f937e5…`, tests `6828fb70…`, packet `ddf7e99a…`; live ident
 receipt `c398d7f1…` and capture `322ab37f…` pass contract-v22 `a69610f9…`
 against b178/Stage0 six-of-six/747. Six apply + six tokenize, zero completion/
 GPU/timing; cleanup and idle verified. CPU identity only; no completion/GPU arm.
+
+Target-only oracle passes: summary `d1a9ff6d…`, terminal `7b1ce0c1…`; v22
+contract `a69610f9…`, b178/tracer/manifest pinned. Four reps × six rows passed
+747 assertions with 6/6 byte-identical outputs; technical=eos, others=limit,
+cache_n=0; diagnostic tok/s 18.9016/18.6411/18.8415/18.8491. Cleanup
+`91d1a65f…` and idle passed. Oracle only; split-OFF remains gated.

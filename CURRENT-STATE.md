@@ -416,3 +416,10 @@ passed live v22 CPU identity. Receipt `c398d7f1…` binds capture `322ab37f…`,
 contract v22 `a69610f9…`, b178, and Stage0 six-of-six/747. Six apply + six
 tokenize passed; zero completion/GPU/timing, cleanup and GPU idle passed.
 Completion/GPU work remains separately unauthorized.
+
+Target-only final oracle is valid: summary `d1a9ff6d…`, terminal `7b1ce0c1…`,
+v22 contract `a69610f9…`, b178 pinned. Four reps × six rows passed all 747
+assertions and were byte-identical 6/6; finish technical=eos, others=limit,
+cache_n=0. Diagnostic tok/s 18.9016/18.6411/18.8415/18.8491. Cleanup
+`91d1a65f…` and GPU/process state are clean. No candidate arm; oracle only,
+not speed promotion; split-OFF remains gated.
