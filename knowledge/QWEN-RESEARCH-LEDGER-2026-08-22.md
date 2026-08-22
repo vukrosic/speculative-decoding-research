@@ -492,3 +492,13 @@ Q_len/attention screen `58b7fe15…` / `d8aee23f…` returns NO-CANDIDATE. The
 non-b178 attn_pregate hypothesis remains historical only. Missing reopen bundle:
 Arm-B state/rollback, 747 rendering/token IDs, immutable draft/target logits,
 acceptance and transaction trace. No patch/GPU; split-OFF terminal.
+
+Final q_len reviews `fa22970b…`/`8e7b57d1…`, critic `2deb8fd9…`, literature
+`b35356fd…`: NO-CANDIDATE. External recovery must bind Arm-B/rendering/
+evaluator 747 contract or exact b178 token/logit/accept/rollback trace. No
+GPU/build/rerun.
+
+External intake `c48ab5f…`/`c177ef7…`, literature `8c1e9e3…` freezes exact
+reopen artifacts: Arm-B/rendering/evaluator 747 or b178 BuildID,
+rendered/tokenizer data, immutable token/logit/accept/rollback/cache trace,
+literal argv/env/library hashes. No GPU/rerun; attn_pregate unbound.

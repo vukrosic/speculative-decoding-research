@@ -760,6 +760,16 @@ action is external intake of an authoritative Arm-B/rendering/evaluator artifact
 binding the missing deployment state and 747-token contract. Without it, no
 one-variable repair or split-ON/timing packet is admissible.
 
+External recovery manifest
+[`PQ-20260822-021-EXTERNAL-INTAKE-MANIFEST`](../planning/PQ-20260822-021-EXTERNAL-INTAKE-MANIFEST.md)
+lists required current 747 rendered/token rows, tokenizer/template, literal
+argv, exact b178/d07 or matched-pair binaries, Arm-B positions/seq/masks/KV/cache
+rollback/anchor/n_extract, token logits/accept/commit/rollback/RNG, evaluator/
+logger/deps, and `[171,171]` vs `[170,170]` resolution. Intake is fail-closed:
+full SHA/bytes/provenance, six-of-six equality, complete state/evaluator fields,
+and no UNKNOWN/CONFLICT/mixed runtime. Docs-only; no download, run, build,
+model/GPU, rerun, split-ON, or timing.
+
 Postreview planner/queue `e10285cb…`/`a25db317…`, critic `40a8174b…`, and
 literature `d8cc9594…` terminalize causal repair while retaining partial
 provenance PASS. No DWARF/debug map or token transaction trace; reopen only
@@ -775,3 +785,9 @@ Q_len/attention screen `58b7fe15…` / runtime `d8aee23f…` is NO-CANDIDATE;
 attn_pregate remains non-b178 hypothesis. No patch/GPU queued. Reopen requires
 Arm-B state/rollback, 747 rendering/token IDs, and immutable token/logit/
 acceptance/transaction evidence; current split-OFF failure stays terminal.
+
+External-intake manifest `c48ab5f…`, queue `c177ef7…`, literature `8c1e9e3…`
+freeze the exact reopen checklist: Arm-B/rendering/evaluator 747 contract or
+exact b178 BuildID; rendered bytes/token IDs/tokenizer; immutable token/logit/
+accept/rollback/cache trace; literal argv/env/library hashes. No GPU/rerun;
+attn_pregate remains unbound hypothesis and split-OFF terminal.

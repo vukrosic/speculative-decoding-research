@@ -462,3 +462,13 @@ Q_len/attention screen `58b7fe15…` / runtime `d8aee23f…` is NO-CANDIDATE;
 historical attn_pregate remains hypothesis-only. No patch/GPU. Reopen requires
 exact Arm-B state/rollback, 747 rendering/token IDs, and immutable token/logit/
 acceptance/transaction evidence; split-OFF remains terminal.
+
+Final q_len reviews `fa22970b…`/`8e7b57d1…`, critic `2deb8fd9…`, literature
+`b35356fd…` keep NO-CANDIDATE. Reopen only with authoritative Arm-B/rendering/
+evaluator 747 contract or exact b178 token/logit/accept/rollback trace. No
+GPU/build/rerun.
+
+External intake `c48ab5f…`/`c177ef7…`, literature `8c1e9e3…`: reopen requires
+Arm-B/rendering/evaluator 747 or exact b178 BuildID, rendered/tokenizer
+artifacts, immutable token/logit/accept/rollback/cache trace, and literal
+argv/env/library hashes. No GPU/rerun; attn_pregate unbound.

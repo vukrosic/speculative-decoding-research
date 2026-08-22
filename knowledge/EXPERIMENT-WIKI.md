@@ -541,3 +541,14 @@ hypothesis and yields no patch or GPU action. Reopening requires the exact
 Arm-B state/rollback bundle, 747-token rendering/template/token IDs, and
 immutable draft/target/logit/acceptance/transaction evidence; current
 split-OFF failure remains terminal.
+
+Final q_len/no-candidate reviews (`fa22970b…`/`8e7b57d1…`, critic `2deb8fd9…`,
+literature `b35356fd…`) preserve this boundary. Reopen requires authoritative
+Arm-B/rendering/evaluator 747 contract or exact b178 token/logit/accept/rollback
+trace; no GPU, build, or rerun.
+
+External-intake manifest `c48ab5f…`, queue `c177ef7…`, and literature handoff
+`8c1e9e3…` freeze reopen requirements: authoritative Arm-B/rendering/evaluator
+747 contract or exact b178 BuildID; rendered bytes/token IDs and tokenizer;
+immutable token/logit/accept/rollback/cache trace; literal argv/env/library
+hashes. No GPU/rerun; attn_pregate remains unbound.
