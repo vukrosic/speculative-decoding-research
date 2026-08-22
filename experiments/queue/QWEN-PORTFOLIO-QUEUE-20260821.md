@@ -1058,6 +1058,27 @@ the intake as `NO_CANDIDATE_SOURCE_GAP`. A passing intake would only permit a
 new read-only source map; it would not authorize a patch or experiment. No
 remote connection or source transfer has occurred from this queue entry.
 
+### EXP020 remote-only source-semantics probe — ready, not executed (2026-08-22)
+
+Under the literal no-download boundary, the next recovery option is the
+snippet-only packet
+[`runtime-qwen-exp020-remote-source-semantics-probe-20260822`](../planning/runtime-qwen-exp020-remote-source-semantics-probe-20260822.md).
+It supersedes the full-byte source-transfer route for this no-download lane;
+the earlier transfer packet remains preserved as historical planning evidence.
+It uses one frozen SSH session with bounded timeout/liveness settings and no
+fallback. The remote command verifies only the two pinned source paths/hashes/
+sizes, records pre/post metadata, and emits `rg -n` marker hits plus bounded
+`nl -ba` context; it never `cat`s, copies, or writes source files. Remote stdout
+is capped at 65,536 bytes, with local stdout/stderr and partial terminal state
+preserved on every failure.
+
+This probe can improve marker-operation localization but cannot close full-source
+provenance, independently reproduce the complete source receipt, or authorize a
+patch/GPU run. Hard stops cover path/hash/stat drift, timeout/liveness/fallback,
+nonempty experiment process or GPU state, output-cap/truncation/stderr failure,
+any remote write/build/model/data/binary action, and ambiguous snippets. The
+packet is design-only; no SSH or remote transfer has occurred.
+
 ### EXP020 source-intake amended conditional gates — not executed
 
 The hardened planner packet is SHA
@@ -1068,3 +1089,30 @@ records the critic/literature conditional PASS, exact `336437`-byte
 source-only cap, standing no-download decision, and **no SSH/execution**
 boundary. It supersedes the prose detail above without changing the
 `NO_CANDIDATE / SOURCE GAP` or no-patch/no-rerun status.
+
+### EXP020 remote-only source-semantics probe — canonical packet, not executed
+
+The earlier marker-probe draft
+[`runtime-qwen-exp020-remote-marker-probe-20260822`](../planning/runtime-qwen-exp020-remote-marker-probe-20260822.md)
+(`73f3fa60e9c9b21e6c9c8dbc16e4a57a7644ce037ac6296a35b1b765ca688b6a`) is
+superseded and retained only as historical planning evidence. The canonical
+planner packet is
+[`runtime-qwen-exp020-remote-source-semantics-probe-20260822`](../planning/runtime-qwen-exp020-remote-source-semantics-probe-20260822.md)
+at current SHA
+`a3c936ebb8af2875a27624b2b97845a5bad60d89136eef48db7f7fbdc227dd16`;
+the reviewed packet body is `d79b9ca9ae2ec00f69c58d7d44a65260a46675fa1810b494b79e7d6dc7301e1f`.
+The final packet also incorporates the recheck repairs for self-safe process
+matching, pre/post GPU identity/row checks, and an aggregate marker-hit hard
+stop, then reconciles the final `gate_refs` in frontmatter. Final
+critic SHA `42427490ab4b8e430cd3d6e52c60052ab67f63ee072c765f9b3d1559c3da8f7f`
+and literature amendment SHA
+`2f8df83f158e8b9933020cf3a7b0491bdf8a01f207c3273d90b426e74ac03f8d` are
+conditional gates, not execution receipts. Reconciliation receipt:
+[`remote-source-semantics-final-gate-reconciliation-20260822.md`](../../receipts/EXP-20260822-020-qwen-singleton-correction/remote-source-semantics-final-gate-reconciliation-20260822.md).
+
+No SSH, source-derived egress, source transfer, remote mutation, build,
+model/server launch, GPU action, timing, generation, or rerun occurred. The
+standing `NO_CANDIDATE_SOURCE_GAP` remains. If separately authorized, only a
+single bounded snippet-only observation (65,536-byte output cap, no source
+file bytes) could be considered; it cannot establish full source provenance
+or authorize a patch, speed/exactness claim, or GPU run.
