@@ -282,3 +282,10 @@ UI-off no-model rebuild, exact byte verification, trace-only target control,
 and restore/verification of the current library. No retuning, held-out use,
 code change, or new speed claim is queued. See the benchmark contract and
 hard-stop receipts under `receipts/EXP-20260822-020-qwen-singleton-correction/`.
+
+Final recovery outcome: rebuilt `libllama_common` `1bbaf7b5…` failed the
+required `d07ed8b4…` identity gate before model/GPU load. Source `c1b1f6f0…`
+and current library `65b8a862…` were restored and verified; server/impl hashes
+stayed intact, no processes remained, and no phase trace is available. Keep
+the EXP020 independent-v23 6/12 negative and PQ019 cache-positive result as
+bounded evidence; no new run or general claim is queued.

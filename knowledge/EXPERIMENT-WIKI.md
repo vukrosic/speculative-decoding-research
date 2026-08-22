@@ -248,3 +248,13 @@ with UI-off, no-model build; verify `d07ed8b4…`, run the matched target-only
 phase diagnostic, then restore and verify `65b8a862…`. No source mutation or
 held-out use occurred; GPU cleanup was clean. Receipts are the benchmark
 contract and hard-stop JSON under `receipts/EXP-20260822-020-qwen-singleton-correction/`.
+
+### Recovery rebuild result (final)
+
+The task-owned rebuild produced `1bbaf7b5…`, not required `d07ed8b4…`; the
+hash gate failed before model/GPU execution, so the phase trace remains
+unavailable. Source was restored to `c1b1f6f0…`, current library to
+`65b8a862…`, and server/implementation identities remained intact. No fit,
+export, speed, acceptance, or held-out work started; GPU/process state was
+idle. Preserve the EXP020 independent-v23 6/12 negative and PQ019 narrow
+cache-positive result as the current evidence boundary.

@@ -287,3 +287,12 @@ requires a UI-off no-model rebuild, byte verification, trace-only scope, and
 restore/verification of the current library afterward. Receipts:
 `receipts/EXP-20260822-020-qwen-singleton-correction/benchmark-contract-target-only-instrumented-trace.json`
 and `target-instrumented-trace-hard-stop.json`.
+
+### Final library-recovery outcome
+
+The task-owned rebuild emitted `1bbaf7b5…`, failing the required `d07ed8b4…`
+identity gate before model/GPU use. The source was restored to `c1b1f6f0…`
+and active library to `65b8a862…`; server and implementation hashes stayed
+intact, with no processes left. Therefore no target phase trace exists. This
+preserves the independent-v23 6/12 negative and PQ019 narrow cache-positive
+result without promoting either to a general claim.

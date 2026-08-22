@@ -261,3 +261,9 @@ provenance/build mismatch, not a Qwen quality or speed result. Rebuild only
 from the pinned source/hash contract with no-model boundaries, verify the
 historical bytes, run trace-only control, then restore and verify the current
 library. Do not infer numeric trace outcomes until that gate passes.
+
+The final recovery receipt confirms the rebuild hash `1bbaf7b5…` still differs
+from required `d07ed8b4…`; no model or GPU trace ran. Source `c1b1f6f0…`,
+library `65b8a862…`, server, and implementation were restored/verified. The
+phase trace is unavailable; prior EXP020 6/12 independent-v23 and PQ019 cache
+results remain bounded and unchanged.
