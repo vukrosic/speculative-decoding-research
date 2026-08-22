@@ -513,3 +513,47 @@ Receipts `4b71c5de…`/`938d75c1…` (target) and `f6bd2e2e…`/`28b273d8…`
 diverged (`67e4c067…` vs `6486247b…`), despite matching reasoning/finish/token
 count and `31/31` acceptance; `cache_n=0`. Cache-on was not run. This is
 faster-but-not-correct control evidence, not a promoted speed/exactness result.
+
+### EXP020 current-65b8 phase pair — completed, descriptive only
+
+The earlier preflight blocker is superseded by the completed receipt at
+`receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/`;
+retain the preflight as historical evidence. Receipt hashes are summary
+`4e51b43710694f2895e4b783e01ee993e52f2cfb24d6195926161e1d57c7204b`, terminal
+`a6d2c9fe6227e852d04a7c9fdb56501f1ca30744eadc1e2378deac4e7f6fdfd0`, manifest
+`070950d2bca67fa7586b35e98029a5c1d589b346b44433a6508b488d3e61f9b2`, cleanup
+`92e16f04cf29c7bd0be4664efdb6c85bca4930b63e0b93a600fabdad151f79cb`.
+
+Both arms used server `fcbf4b9d…`, current `libllama-common` `65b8a862…`,
+implementation `fd5a9bf6…`, target `3895b6ea…`, Q4 drafter `18a380ef…`,
+client `477b271d…`, prompt `374eea10…`, cache-off, seed 42, temperature 0,
+top-k 1, context 4096, and cap 64 with low-margin/split-flash overrides unset.
+Target-only reproduced hash `0f76b6ae…` (64/`length`); Q4 produced divergent
+hash `1d5020bf…` (64/`length`), 35 proposed/28 accepted, `cache_n=0`, and
+`2823.176715 ms` diagnostic wall. Marker totals are warmup plus diagnostic
+(70/56/14/126), so no acceptance or speed interpretation is valid. Phase
+intervals remain descriptive with unknown residuals. Critic and literature
+verdict: descriptive phase PASS, improvement promotion TERMINAL; no speed,
+exactness, acceptance, verifier, causal, or generalization claim.
+
+### EXP020 offline request split and source gap
+
+Final CPU-only parser reconciliation uses `pq020_reconcile_requests.py` SHA
+`d8a49d5a0ac2666d500d28836caad207db0cee6c8cf48ffd76b3b8c32659fd96`; compact
+summary SHA is `eb934236a9ae90e4929e38edf34d5d6574194a0897c664c1f762b7854b67ef38`,
+joined JSON SHA is `42f8ffa3e34101fea2d1960afc3fbfd8cfc1b74e5a6d14c181eda5095e5bbeaa`.
+Schema is `pq020.request_cycle_joined.v1`. Q4 task IDs split warmup `1` and diagnostic
+`42` (35 cycles each); target diagnostic is task `70` with no speculative
+markers. Q4 diagnostic phase intervals are `1745.412/55.829/0.601 ms` for
+batch-to-verify, verify, and correction/rollback; warmup is `1853.610/58.786/
+0.605 ms`, with approximately `378.665 ms` draft generation over 35 calls.
+Per-request server timing is target `505.00/2772.97/3277.97 ms` and Q4
+`633.09/2184.52/2817.61 ms` (prompt/eval/total), not a speed comparison.
+Raw `spec common_specu` log durations are warmup
+`0.002/382.432/0.010 ms` and diagnostic `0.003/761.097/0.018 ms`.
+
+Source-map receipt `6d1aab16…` and literature verdict `e99d1c67…` classify
+the next source-map candidate **NO_CANDIDATE / SOURCE GAP**: only hash
+references for pinned `6a24e473…` and `c060c9f5…` exist. Reopen only with
+full matching source bytes; no patch/build/GPU/rerun or performance/correctness
+claim is authorized.

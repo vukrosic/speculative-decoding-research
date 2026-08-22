@@ -568,6 +568,88 @@ speedup claim. Rendered/token-prefix exactness is UNKNOWN, and the later valid
 747-token EXP021 split-OFF failure blocks promotion; keep speed, acceptance,
 and exactness separate and do not rerun on this evidence alone.
 
+## EXP020 current-65b8 matched phase pair — terminal descriptive diagnostic (2026-08-22)
+
+The completed pair supersedes the earlier preflight status
+`BLOCKED_PENDING_FRESH_CURRENT_65B8_TARGET_INSTRUMENTED_ORACLE`; that preflight
+remains historical provenance, not the current state. Authoritative receipt
+directory: `receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/`.
+Compact receipt hashes: summary `4e51b43710694f2895e4b783e01ee993e52f2cfb24d6195926161e1d57c7204b`,
+terminal `a6d2c9fe6227e852d04a7c9fdb56501f1ca30744eadc1e2378deac4e7f6fdfd0`,
+manifest `070950d2bca67fa7586b35e98029a5c1d589b346b44433a6508b488d3e61f9b2`,
+cleanup `92e16f04cf29c7bd0be4664efdb6c85bca4930b63e0b93a600fabdad151f79cb`.
+
+Runtime identity was server `fcbf4b9d5847f19ad2391af0109b3d0d067de19d0448bb96acc1a1011af20d41`,
+`libllama-common` `65b8a862607e2894f7ec87eb073a74d70e3501b3bbd6bec709dc2a1d8dafca56`,
+implementation `fd5a9bf6ac5237f0c8821bc66a75e81c7c1b1a24b4ac487a496d4fbe4386a066`,
+runner `1adb22e41338f57e11910505e149d6b73d50e3b5a33e4c5e76688a6455601843`,
+and parser `610f8466e64e7b9a1d30bbd07796485898ced38f5598be1b22109ca5c57dbc1b`.
+The frozen workload was target `3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887`,
+Q4 drafter `18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594`,
+client `477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4`,
+prompt `374eea10112daeac6cd6d9499230abd6ac68cfebf7804c14e96bb71a7223b7d5`,
+target contract `d8bf1e89052b8a4602763142cfc1e306e452fc1006363452934713bbfcdaf08b`,
+and Q4 contract `710f45034dafdda853a09f14c7398aa140ee21ffc6d172d05242c2018601532c`.
+
+Observed: target-only reproduced current oracle hash
+`0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c`, 64
+completion tokens, `length`, and diagnostic wall `3285.829014 ms` (prompt
+`504.999 ms`, predicted decode `2772.969 ms`). Q4 n=1 produced hash
+`1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646`, also 64
+tokens/`length`, with 35 proposed, 28 accepted, `cache_n=0`, and wall
+`2823.176715 ms`. The Q4 log totals across warmup plus diagnostic are 70
+proposed, 56 accepted, 14 rollback, and 126 accepted-vector rows; these are
+not diagnostic-request-only counters. Marker-derived intervals are target
+prefill `504.999 ms`, target decode `2772.969 ms`, Q4 prefill `633.091 ms`,
+verify-batch `3599.022 ms`, target verification `114.615 ms`, and
+correction/rollback `1.206 ms`; remaining phases are `unknown` or
+`not_applicable`, never zero.
+
+Interpretation: the critic and literature handoff classify this as **PASS for
+descriptive one-prompt phase evidence; TERMINAL for improvement promotion**.
+Separate clocks, warmup-inclusive marker scope, one request per arm, Q4 output
+divergence, and unknown phase residuals mean no speed, exactness, acceptance,
+verifier, losslessness, causal, or generalization claim is permitted. The
+startup `ctx_other` memory-fitting warning is recorded but is not a performance
+signal. Cleanup reports NVIDIA GeForce RTX 3060, 1 MiB used, 0% utilization,
+no task processes, and clean task-owned state. See the postrun critique and
+literature handoff for the full claim boundary.
+
+### Offline request split and source-map disposition (2026-08-22)
+
+CPU-only postrun reconciliation joined the preserved logs by `new prompt` →
+same-task `release`/`print_timing`: Q4 warmup task `1` and diagnostic task `42`
+each contain 35 verification cycles; target-only diagnostic task `70` has no
+speculative markers. Final reconciliation parser
+`pq020_reconcile_requests.py` is SHA-256
+`d8a49d5a0ac2666d500d28836caad207db0cee6c8cf48ffd76b3b8c32659fd96`; compact
+summary `pq020-request-cycle-joined-summary.json` is SHA-256
+`eb934236a9ae90e4929e38edf34d5d6574194a0897c664c1f762b7854b67ef38`, joined
+JSON SHA is `42f8ffa3e34101fea2d1960afc3fbfd8cfc1b74e5a6d14c181eda5095e5bbeaa`,
+schema `pq020.request_cycle_joined.v1`. Q4 diagnostic task 42 has
+`VERIFY_BATCH_BEGIN→VERIFY_BEGIN 1745.412 ms`,
+`VERIFY_BEGIN→VERIFY_RESULT 55.829 ms`, and
+`VERIFY_RESULT→MEMORY_AFTER 0.601 ms`; warmup is `1853.610/58.786/0.605 ms`.
+The derived draft-generation increment is approximately `378.665 ms` over 35
+draft calls. These are marker-derived descriptive intervals, not speed data.
+
+Per-request server timing fields remain separate from phase markers: target
+diagnostic prompt/eval/total are `505.00/2772.97/3277.97 ms`; Q4 diagnostic
+is `633.09/2184.52/2817.61 ms`, with 35 generated and 28 accepted drafts and
+69 graphs reused. Raw `spec common_specu` lines report warmup
+`dur(b,g,a)=0.002, 382.432, 0.010 ms` and diagnostic
+`0.003, 761.097, 0.018 ms`; these are log fields, not a promotion metric.
+
+Source-map receipt `source-map-audit-20260822.json` SHA-256
+`6d1aab16d3efbc1361542d5732163da9429e95b9d58489afb429da5debc3b4f8` and
+literature verdict `e99d1c676ff3028811495cf705e6c5dbeff28c1d5f7b875152964567ff9e40c3`
+close the local candidate as **NO_CANDIDATE / SOURCE GAP**. Only hash
+references—not exact bytes—exist for pinned `common/speculative.cpp`
+`6a24e473…` and `tools/server/server-context.cpp` `c060c9f5…`. Reopen only
+with an authoritative source-only receipt containing both full files and
+matching SHA-256s; no patch, build, GPU, rerun, speed, exactness, acceptance,
+verifier, causal, or generalization claim is promoted.
+
 ### Authoritative PQ019 API reconciliation
 
 Receipt `03b7d370…` / note `40332940…` finds four prompt-level mismatches:

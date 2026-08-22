@@ -1,0 +1,117 @@
+{
+  "schema": "pq020.request_cycle_joined.summary.v1",
+  "status": "completed_cpu_only_log_reconciliation",
+  "claim_boundary": "post-hoc request/cycle joins only; unknown and residual fields remain explicit; no speed, exactness, acceptance, or verifier claim",
+  "joined_artifact": {
+    "path": "pq020-request-cycle-joined.json",
+    "bytes": 1008897,
+    "sha256": "42f8ffa3e34101fea2d1960afc3fbfd8cfc1b74e5a6d14c181eda5095e5bbeaa",
+    "standalone_sha256_file": "pq020-request-cycle-joined.sha256"
+  },
+  "parser": {
+    "path": "pq020_reconcile_requests.py",
+    "sha256": "d8a49d5a0ac2666d500d28836caad207db0cee6c8cf48ffd76b3b8c32659fd96",
+    "segmentation": "new prompt starts a request; same-task release closes it; print_timing stays inside the request",
+    "cycle_join": "PQ020_VERIFY_BATCH_BEGIN through the next batch begin or request release"
+  },
+  "source_hashes": {
+    "target_log": "0a722d2b1f56c4373d2211fd140b0c4345bfa9e2016863f9cc9d09dbc39dc873",
+    "q4_log": "02ab78bc0b5047d9b045cd3913d431ca66a7a638dae7d9ded905a26db0a5a100",
+    "target_warmup_json": "9976178a157ee9345745908c5ae2d719a1e8c081640cde09cc4a04f62e3007b9",
+    "target_diagnostic_json": "5d353ba0d9d27505e89a38ed615a61fefbf800344ba03545b173d3e6dd2c57",
+    "q4_warmup_json": "ff2f4d527cf2e3aa9826572c21421cfab56a261cd9ae5e3abdf66254af68c09f",
+    "q4_diagnostic_json": "8167e285765628eac37aa90a5e47dae99f29838a312b8b21ce0e45f8b2a5b084"
+  },
+  "arms": [
+    {
+      "arm": "target",
+      "task_ids_observed_in_order": [1, 70],
+      "segments": 2,
+      "closed_by_release": true,
+      "same_task_boundary_evidence": true,
+      "requests": [
+        {
+          "label": "warmup",
+          "task_id": 1,
+          "client_sha256": "9976178a157ee9345745908c5ae2d719a1e8c081640cde09cc4a04f62e3007b9",
+          "assistant_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+          "cycles": 0,
+          "verify_batch_rows": 0,
+          "verify_rows": 0,
+          "accepted_vector_rows": 0,
+          "counters": {"draft_proposed": 0, "draft_accepted": 0, "rollback": 0, "accepted_vector_rows": 0},
+          "intervals_ms": {"new_prompt_to_first_event": 676.922, "new_prompt_to_release": 3458.548, "last_event_to_release": 0.2, "known_batch_to_verify_sum": "unknown", "known_target_verification_sum": "unknown", "known_correction_rollback_sum": "unknown", "known_memory_to_next_batch_residual_sum": "unknown", "draft_vector_construction": "unknown", "accepted_vector_commit": "unknown", "scheduler_http_other_residual": "unknown", "unattributed_request_residual": "unknown"},
+          "spec_common_specu_statistics": {"status": "not_emitted", "cumulative": "unknown", "per_request_increment": "unknown", "duration_g_increment_ms": "unknown"}
+        },
+        {
+          "label": "diagnostic",
+          "task_id": 70,
+          "client_sha256": "5d353ba0d9d27505e89a38ed615a61fefbf800344ba03545b173d3e6dd2c57",
+          "assistant_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+          "cycles": 0,
+          "verify_batch_rows": 0,
+          "verify_rows": 0,
+          "accepted_vector_rows": 0,
+          "counters": {"draft_proposed": 0, "draft_accepted": 0, "rollback": 0, "accepted_vector_rows": 0},
+          "intervals_ms": {"new_prompt_to_first_event": 504.855, "new_prompt_to_release": 3278.006, "last_event_to_release": 0.177, "known_batch_to_verify_sum": "unknown", "known_target_verification_sum": "unknown", "known_correction_rollback_sum": "unknown", "known_memory_to_next_batch_residual_sum": "unknown", "draft_vector_construction": "unknown", "accepted_vector_commit": "unknown", "scheduler_http_other_residual": "unknown", "unattributed_request_residual": "unknown"},
+          "spec_common_specu_statistics": {"status": "not_emitted", "cumulative": "unknown", "per_request_increment": "unknown", "duration_g_increment_ms": "unknown"}
+        }
+      ],
+      "spec_common_specu_reconciliation": {"lines_per_request": [0, 0], "diagnostic_duration_g_increment_ms": "unknown", "diagnostic_duration_g_increment_matches_378_665_ms": "not_applicable"}
+    },
+    {
+      "arm": "q4_n1",
+      "task_ids_observed_in_order": [1, 42],
+      "segments": 2,
+      "closed_by_release": true,
+      "same_task_boundary_evidence": true,
+      "requests": [
+        {
+          "label": "warmup",
+          "task_id": 1,
+          "client_sha256": "ff2f4d527cf2e3aa9826572c21421cfab56a261cd9ae5e3abdf66254af68c09f",
+          "assistant_sha256": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646",
+          "cycles": 35,
+          "verify_batch_rows": 70,
+          "verify_rows": 70,
+          "accepted_vector_rows": 63,
+          "counters": {"draft_proposed": 35, "draft_accepted": 28, "rollback": 7, "accepted_vector_rows": 63},
+          "intervals_ms": {"new_prompt_to_first_event": 1213.573, "new_prompt_to_release": 3513.26, "last_event_to_release": 0.078, "known_batch_to_verify_sum": 1853.61, "known_target_verification_sum": 58.786, "known_correction_rollback_sum": 0.605, "known_memory_to_next_batch_residual_sum": 372.47, "draft_vector_construction": "unknown", "accepted_vector_commit": "unknown", "scheduler_http_other_residual": "unknown", "unattributed_request_residual": "unknown"},
+          "spec_common_specu_statistics": {
+            "calls_bga": {"b": 1, "g": 35, "a": 35},
+            "generated_drafts": 35,
+            "accepted_drafts": 28,
+            "duration_bga_ms": {"b": 0.002, "g": 382.432, "a": 0.01},
+            "raw_line": "0.08.672.590 I spec common_specu: statistics     draft-dflash: #calls(b,g,a) =    1     35     35, #gen drafts =     35, #acc drafts =    28, #gen tokens =     35, #acc tokens =    28, #mean acc len = 1.80, #acc rate/pos = (0.800), dur(b,g,a) = 0.002, 382.432, 0.010 ms"
+          }
+        },
+        {
+          "label": "diagnostic",
+          "task_id": 42,
+          "client_sha256": "8167e285765628eac37aa90a5e47dae99f29838a312b8b21ce0e45f8b2a5b084",
+          "assistant_sha256": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646",
+          "cycles": 35,
+          "verify_batch_rows": 70,
+          "verify_rows": 70,
+          "accepted_vector_rows": 63,
+          "counters": {"draft_proposed": 35, "draft_accepted": 28, "rollback": 7, "accepted_vector_rows": 63},
+          "intervals_ms": {"new_prompt_to_first_event": 632.924, "new_prompt_to_release": 2817.687, "last_event_to_release": 0.059, "known_batch_to_verify_sum": 1745.412, "known_target_verification_sum": 55.829, "known_correction_rollback_sum": 0.601, "known_memory_to_next_batch_residual_sum": 371.668, "draft_vector_construction": "unknown", "accepted_vector_commit": "unknown", "scheduler_http_other_residual": "unknown", "unattributed_request_residual": "unknown"},
+          "spec_common_specu_statistics": {
+            "calls_bga_cumulative": {"b": 2, "g": 70, "a": 70},
+            "calls_bga_increment": {"b": 1, "g": 35, "a": 35},
+            "generated_drafts_cumulative": 70,
+            "accepted_drafts_cumulative": 56,
+            "generated_drafts_increment": 35,
+            "accepted_drafts_increment": 28,
+            "duration_bga_ms_cumulative": {"b": 0.003, "g": 761.097, "a": 0.018},
+            "duration_bga_ms_increment": {"b": 0.001, "g": 378.665, "a": 0.008},
+            "diagnostic_duration_g_increment_ms": 378.665,
+            "raw_line": "0.11.640.724 I spec common_specu: statistics     draft-dflash: #calls(b,g,a) =    2     70     70, #gen drafts =     70, #acc drafts =    56, #gen tokens =     70, #acc tokens =     56, #mean acc len = 1.80, #acc rate/pos = (0.800), dur(b,g,a) = 0.003, 761.097, 0.018 ms"
+          }
+        }
+      ],
+      "spec_common_specu_reconciliation": {"lines_per_request": [1, 1], "diagnostic_duration_g_increment_ms": 378.665, "diagnostic_duration_g_increment_matches_378_665_ms": true}
+    }
+  ],
+  "unknowns": ["target-only emits no speculative cycles or spec_common_specu statistics", "draft_vector_construction_ms remains unknown", "accepted_vector_commit_ms remains unknown", "scheduler_http_other_residual_ms remains unknown", "unattributed_request_residual remains unknown", "memory_to_next_batch_residual_ms is marker-bounded but not assigned to a named phase"]
+}

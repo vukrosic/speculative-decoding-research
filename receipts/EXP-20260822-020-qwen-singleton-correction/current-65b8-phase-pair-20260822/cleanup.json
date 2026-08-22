@@ -1,0 +1,18 @@
+{
+  "status": "clean",
+  "captured_utc": "2026-08-22T14:00:25Z",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3060",
+    "memory_used_mib": 1,
+    "utilization_percent": 0,
+    "temperature_c": 55,
+    "task_compute_processes": []
+  },
+  "task_processes": [],
+  "disk": {
+    "workspace_mount": {"bytes_total": 64424509440, "bytes_used": 62911115264, "bytes_available": 1513394176, "use_percent": 98},
+    "dev_shm": {"bytes_total": 7516192768, "bytes_used": 1375948800, "bytes_available": 6140243968, "use_percent": 19}
+  },
+  "raw_receipt": "raw/cleanup.txt",
+  "raw_receipt_sha256": "416a847bed2576eb686008fbb64ae134875d3fce9a5e5462378afe69c1b43cf4"
+}

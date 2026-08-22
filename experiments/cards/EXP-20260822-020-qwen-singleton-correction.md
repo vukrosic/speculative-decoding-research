@@ -229,3 +229,59 @@ and independent exactness contract.
 Historical PLAN-001 remains terminally blocked and is not being reconstructed
 as if its missing bytes existed. This card defines a new source-backed current-
 runtime experiment with a new identity.
+
+### Observed — completed current-65b8 phase pair (descriptive only)
+
+The earlier current-65b8 preflight blocker is superseded by the completed
+receipt directory
+`receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/`.
+Summary SHA-256 is `4e51b43710694f2895e4b783e01ee993e52f2cfb24d6195926161e1d57c7204b`,
+terminal `a6d2c9fe6227e852d04a7c9fdb56501f1ca30744eadc1e2378deac4e7f6fdfd0`,
+manifest `070950d2bca67fa7586b35e98029a5c1d589b346b44433a6508b488d3e61f9b2`,
+cleanup `92e16f04cf29c7bd0be4664efdb6c85bca4930b63e0b93a600fabdad151f79cb`.
+The matched runtime was server `fcbf4b9d…`, current common library
+`65b8a862…`, implementation `fd5a9bf6…`, runner `1adb22e4…`, parser
+`610f8466…`; workload identities were target `3895b6ea…`, drafter
+`18a380ef…`, client `477b271d…`, prompt `374eea10…`, and contracts
+`d8bf1e89…`/`710f4503…`. Both arms were cache-off, greedy seed 42,
+temperature 0, top-k 1, context 4096, cap 64, with low-margin/split-flash
+variables unset.
+
+Target-only reproduced oracle hash `0f76b6ae…`, 64 tokens, `length`; Q4 n=1
+produced `1d5020bf…`, 64/`length`, with 35 proposed, 28 accepted, `cache_n=0`,
+and `2823.176715 ms` diagnostic wall. Q4 marker totals 70 proposed, 56
+accepted, 14 rollback, and 126 accepted-vector rows include warmup; target
+has no speculative markers. Phase intervals are descriptive and contain
+unknown residuals. Cleanup: RTX 3060, 1 MiB, 0%, no task processes.
+
+Critic `QWEN-EXP020-CURRENT-65B8-PHASE-PAIR-POSTRUN-CRITIQUE-20260822.md`
+and literature handoff
+`literature/HANDOFF-20260822-EXP020-65B8-PHASE-PAIR-POSTRUN.md` classify this
+as descriptive diagnostic PASS but improvement-promotion TERMINAL. No speed,
+exactness, acceptance, verifier, losslessness, causal, or generalization claim
+is supported; do not patch or rerun from this receipt.
+
+### Observed — CPU-only request split and source-map closeout
+
+The amended parser `pq020_reconcile_requests.py` SHA is
+`d8a49d5a0ac2666d500d28836caad207db0cee6c8cf48ffd76b3b8c32659fd96`; compact
+summary SHA is `eb934236a9ae90e4929e38edf34d5d6574194a0897c664c1f762b7854b67ef38`,
+joined JSON SHA is `42f8ffa3e34101fea2d1960afc3fbfd8cfc1b74e5a6d14c181eda5095e5bbeaa`.
+Schema is `pq020.request_cycle_joined.v1`. It mechanically splits Q4 warmup task `1`
+and diagnostic task `42` (35 cycles each); target diagnostic task `70` has no
+speculative markers. Q4 diagnostic marker intervals are
+`1745.412/55.829/0.601 ms`; warmup `1853.610/58.786/0.605 ms`; draft
+generation increment is approximately `378.665 ms` over 35 calls. Per-request
+target prompt/eval/total are `505.00/2772.97/3277.97 ms`, Q4
+`633.09/2184.52/2817.61 ms`; raw `spec common_specu` durations are warmup
+`0.002/382.432/0.010 ms` and diagnostic `0.003/761.097/0.018 ms`.
+
+Source-map receipt
+`receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/source-map-audit-20260822.json`
+SHA `6d1aab16d3efbc1361542d5732163da9429e95b9d58489afb429da5debc3b4f8` and
+offline literature verdict
+`literature/VERDICT-20260822-EXP020-65B8-OFFLINE-RECONCILIATION.md` SHA
+`e99d1c676ff3028811495cf705e6c5dbeff28c1d5f7b875152964567ff9e40c3` classify
+the source-map candidate **NO_CANDIDATE / SOURCE GAP**. Only hash references
+for pinned `6a24e473…` and `c060c9f5…` exist; reopen requires both full source
+files and matching hashes. No patch, build, GPU, rerun, or causal claim.

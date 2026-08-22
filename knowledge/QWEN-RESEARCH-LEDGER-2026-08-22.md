@@ -544,3 +544,48 @@ and structured content idx0 premature `</think>` (2 vs 64; 1/0). Rust/math
 outputs are exact; math counters 32/31. Identity contracts, manifest, and
 cache_n align, but token/render/transaction state is UNKNOWN. Keep no
 speed/cache claim and do not rerun.
+
+## EXP020 current-65b8 matched phase pair — terminal descriptive result
+
+Completed receipt directory:
+`receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/`.
+The former preflight `BLOCKED_PENDING_FRESH_CURRENT_65B8_TARGET_INSTRUMENTED_ORACLE`
+is superseded for current state but retained historically. Compact receipt
+SHA-256s: summary `4e51b43710694f2895e4b783e01ee993e52f2cfb24d6195926161e1d57c7204b`,
+terminal `a6d2c9fe6227e852d04a7c9fdb56501f1ca30744eadc1e2378deac4e7f6fdfd0`,
+manifest `070950d2bca67fa7586b35e98029a5c1d589b346b44433a6508b488d3e61f9b2`,
+cleanup `92e16f04cf29c7bd0be4664efdb6c85bca4930b63e0b93a600fabdad151f79cb`.
+
+The matched runtime/workload binds server `fcbf4b9d…`, lib `65b8a862…`, impl
+`fd5a9bf6…`, target `3895b6ea…`, drafter `18a380ef…`, client `477b271d…`,
+prompt `374eea10…`, target/Q4 contracts `d8bf1e89…`/`710f4503…`, runner
+`1adb22e4…`, parser `610f8466…`, cache off, greedy seed 42, cap 64. Target
+oracle hash was `0f76b6ae…`; Q4 diagnostic hash was `1d5020bf…`, with 35/28
+proposed/accepted and `cache_n=0`. Marker totals 70/56/14/126 span warmup plus
+diagnostic; phase intervals include target prefill/decode and Q4 verify/
+rollback observations but unknown residuals. Cleanup was RTX 3060 1 MiB/0%,
+no task processes. Critic/literature disposition is descriptive diagnostic
+PASS, improvement promotion TERMINAL: no speed, exactness, acceptance,
+verifier, causal, or generalization claim.
+
+### EXP020 offline phase reconciliation and source gap
+
+CPU-only postrun parser `pq020_reconcile_requests.py` SHA
+`d8a49d5a0ac2666d500d28836caad207db0cee6c8cf48ffd76b3b8c32659fd96` emits
+`pq020.request_cycle_joined.v1`; compact summary SHA is
+`eb934236a9ae90e4929e38edf34d5d6574194a0897c664c1f762b7854b67ef38`, joined
+JSON SHA `42f8ffa3e34101fea2d1960afc3fbfd8cfc1b74e5a6d14c181eda5095e5bbeaa`.
+Q4 warmup task `1` and diagnostic task `42`
+each have 35 cycles; target diagnostic task `70` has no speculative markers.
+Diagnostic Q4 marker intervals are `1745.412`, `55.829`, and `0.601 ms`; warmup
+is `1853.610`, `58.786`, and `0.605 ms`; draft-generation increment is about
+`378.665 ms` over 35 calls. Target/Q4 server prompt/eval/total fields are
+`505.00/2772.97/3277.97` and `633.09/2184.52/2817.61 ms`, respectively.
+Raw `spec common_specu` log fields report warmup
+`dur(b,g,a)=0.002,382.432,0.010 ms` and diagnostic
+`0.003,761.097,0.018 ms`; none supports a speed claim.
+
+Source-map receipt `6d1aab16…` and literature verdict `e99d1c67…` return
+**NO_CANDIDATE / SOURCE GAP**. Exact pinned source bytes are absent; only
+hashes `6a24e473…` and `c060c9f5…` remain. Sole reopen is source-only intake
+of both full matching files. No patch, build, GPU, rerun, or causal claim.

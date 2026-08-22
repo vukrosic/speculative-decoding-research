@@ -75,6 +75,15 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) and
 public release. The curated file list is in
 [`PUBLIC-RELEASE-MANIFEST.md`](PUBLIC-RELEASE-MANIFEST.md).
 
+## Current phase diagnostic
+
+The current-65b8 EXP020 phase-pair receipt is a completed one-prompt,
+instrumented, descriptive diagnostic: target-only reproduced its current
+oracle, while Q4 n=1 diverged and exposed phase markers. The postrun critique
+and [handoff](literature/HANDOFF-20260822-EXP020-65B8-PHASE-PAIR-POSTRUN.md)
+classify it as diagnostic evidence only—no speed, exactness, acceptance,
+verifier, or generalization claim is promoted.
+
 ## Status
 
 This is a pre-1.0 research repository. APIs, scripts, and experiment formats

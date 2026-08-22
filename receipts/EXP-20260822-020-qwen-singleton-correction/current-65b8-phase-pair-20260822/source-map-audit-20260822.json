@@ -1,0 +1,59 @@
+{
+  "receipt_id": "EXP020-CURRENT-65B8-SOURCE-MAP-AUDIT-20260822",
+  "timestamp_utc": "2026-08-22T14:22:27Z",
+  "status": "NO_CANDIDATE_SOURCE_GAP",
+  "scope": "conditional rank-1 local-only source-map audit after the completed current-65b8 phase pair",
+  "execution": "read_only_local_search",
+  "remote_ssh": false,
+  "download": false,
+  "build": false,
+  "model_load": false,
+  "gpu": false,
+  "patch": false,
+  "rerun": false,
+  "required_sources": {
+    "common/speculative.cpp": {
+      "sha256": "6a24e473529b70367598f6718f33ecc6ab9a14701469469415afef90ed7869e0",
+      "bytes": 112689,
+      "snapshot_found_in_workspace": false,
+      "hash_reference_found": true
+    },
+    "tools/server/server-context.cpp": {
+      "sha256": "c060c9f5b5c9aa41cbb04204973c07c7ba6ba5fb518fc4ee38d62367ea0fb6a2",
+      "bytes": 223748,
+      "snapshot_found_in_workspace": false,
+      "hash_reference_found": true
+    }
+  },
+  "search_scope": {
+    "workspace": "/Users/vukrosic/my-life/open-discovery-workspace",
+    "repo": "/Users/vukrosic/my-life/open-discovery-workspace/llm-inference-optimization/speculative-decoding-research",
+    "methods": [
+      "rg --files for exact source basenames",
+      "find for speculative.cpp and server-context.cpp",
+      "rg for full and prefix SHA references, marker names, and source-like receipt artifacts"
+    ],
+    "result": "no source payload matching either required basename was present in the local workspace"
+  },
+  "preserved_evidence": {
+    "hash_only_references": [
+      "receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-preflight-20260822.json",
+      "receipts/EXP-20260822-020-qwen-singleton-correction/instrumented-build-complete/SHA256SUMS.txt"
+    ],
+    "marker_region_evidence": {
+      "raw_phase_json": "receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/raw/q4-phase.json",
+      "raw_phase_json_sha256": "fc0ceee99c85f0130fdf5cc50930a118e8c63f980422aa5b961b438a61bd8d7f",
+      "log_parser": "experiments/implementations/pq020_compare_token_traces.py",
+      "log_parser_sha256": "e6514b6ffd360b195a025ab49a7e5f607aca2192984dcf65cc62dd2c46975fb1",
+      "interpretation": "marker/log evidence is preserved, but it cannot bind a causal source operation without the exact source snapshots"
+    },
+    "prior_source_search": {
+      "path": "experiments/implementations/QWEN-CURRENT-RUNTIME-SOURCE-SEARCH-20260822.md",
+      "sha256": "66b14c0dd2bf1cc4c55d55cb2850be08c9abba7cb413d678ede1ae2aed06c4b5",
+      "disposition": "NO-CANDIDATE; trace instrumentation only"
+    }
+  },
+  "decision": "Do not draft or authorize a source-backed optimization. The rank-1 source-map candidate is blocked by absent exact source payloads, not by a failed runtime measurement.",
+  "smallest_reopen": "Obtain an authoritative local source snapshot or source-only receipt containing both pinned files, full bytes, and matching SHA-256 values; then rerun only this read-only map. No remote/GPU action is implied.",
+  "terminal_boundary": "Preserve the completed phase diagnostic as descriptive only; no speed, exactness, acceptance, verifier, or causal claim is promoted."
+}

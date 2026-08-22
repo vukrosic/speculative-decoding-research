@@ -893,3 +893,145 @@ model/drafter/server/argv/RNG/transaction/cache/rollback identities, and keeps
 31/31 acceptance separate from output exactness. Ranked actions: receipt audit,
 external Arm-B/rendering/evaluator intake if state is missing, then only a new
 reviewed one-variable packet. No cache-on/rerun/cap/template/GPU/timing.
+
+### New matched current-library phase diagnostic (planner packet; no run)
+
+[`RUNTIME-QWEN-EXP020-MATCHED-CURRENT-LIBRARY-PHASE-PAIR-20260822`](../planning/runtime-qwen-exp020-matched-current-library-phase-pair-20260822.md)
+is a distinct, descriptive packet for a sequential target-only then Q4 n=1
+comparison using the existing instrumented server
+`fcbf4b9d...` and **current** `libllama-common.so.0.1.2` `65b8a862...` in both
+arms. It preserves the d07 recovery terminal state and forbids any d07 swap,
+source edit, low-margin override, split-flash variable, cache/sampler/prompt
+drift, download, or concurrent GPU process. Both arms bind the frozen target
+`3895b6e...`, Q4 drafter `18a380e...`, client `477b271d...`, prompt
+`374eea10...`, source/server hashes, literal argv/env, and canonical log-only
+parser `e6514b6f...`; the historical launch/marker reference `7d2e0290...` is
+d07-bound and non-executable. Stale contract templates are mechanically
+derived in task-owned `/dev/shm` to current-library hashes `710f4503...` (Q4)
+and `d8bf1e89...`
+(target-only).
+
+Critic gates are explicit: a fresh target-only **current-65b8** oracle must
+match the preserved `0f76b6ae...`/64-token/length contract before Q4; then a
+fresh no-override Q4 **current-65b8** oracle must capture output, counters, and
+event schema. Existing d07-labeled Q4 and LOW_MARGIN receipts are unusable
+controls. `readelf`/`ldd` must prove the exact 65b8 loader, with
+`CUDA_VISIBLE_DEVICES=0 LLAMA_TRACE=1 PQ020_TRACE=1` and all low-margin/split
+variables absent. The canonical parser SHA `e6514b6f...` must be used
+byte-identically, while a current-library launcher derivative SHA and literal
+source must be recorded before launch, or the packet hard-stops. The
+authoritative preflight currently records no preserved current-65b8 instrumented
+target receipt; the six-prompt uninstrumented hash is partial evidence only.
+Preflight receipt `current-65b8-phase-preflight-20260822.json`
+(`a38a82b0...`) records the exact blocker
+`BLOCKED_PENDING_FRESH_CURRENT_65B8_TARGET_INSTRUMENTED_ORACLE`. Output is
+phase attribution (prompt, target decode, draft-vector, verify,
+correction/rollback, scheduler),
+never speed, acceptance, exactness, or promotion evidence. Status: planner
+PASS in principle but blocked before launch on fresh current-65b8 target/Q4
+receipts and the launcher identity; no execution is authorized by this queue
+entry.
+
+### EXP020 current-65b8 matched phase pair — completed reconciliation
+
+The earlier preflight entry is superseded by completed receipt directory
+[`current-65b8-phase-pair-20260822`](../../receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/)
+and remains historical evidence. Summary/terminal/manifest/cleanup hashes are
+`4e51b437…`/`a6d2c9fe…`/`070950d2…`/`92e16f04…`. The same current server
+`fcbf4b9d…` and `libllama-common` `65b8a862…` ran target-only then Q4 n=1 on
+target `3895b6ea…`, drafter `18a380ef…`, client `477b271d…`, prompt
+`374eea10…`, cache off, greedy seed 42, cap 64, and no overrides. Target
+reproduced `0f76b6ae…`; Q4 produced divergent `1d5020bf…`, 35/28 proposed/
+accepted, `cache_n=0`, 64/`length`, wall `2823.176715 ms`. Marker totals
+70/56/14/126 include warmup; intervals are descriptive with unknown phases.
+Critic/literature verdict: PASS for one-prompt descriptive phase evidence,
+TERMINAL for improvement promotion. No speed, exactness, acceptance, verifier,
+causal, or generalization claim; cleanup was RTX 3060 1 MiB/0%, no processes.
+
+### EXP020 offline parser/source-map closeout
+
+CPU-only parser `pq020_reconcile_requests.py` SHA
+`d8a49d5a0ac2666d500d28836caad207db0cee6c8cf48ffd76b3b8c32659fd96` (compact
+summary `eb934236a9ae90e4929e38edf34d5d6574194a0897c664c1f762b7854b67ef38`,
+joined JSON `42f8ffa3e34101fea2d1960afc3fbfd8cfc1b74e5a6d14c181eda5095e5bbeaa`)
+splits Q4
+warmup task `1` and diagnostic task `42` (35 cycles each); target diagnostic
+task `70` has no speculative markers. Q4 diagnostic intervals are
+`1745.412/55.829/0.601 ms`; warmup `1853.610/58.786/0.605 ms`; draft
+generation increment is about `378.665 ms` over 35 calls. Per-request
+prompt/eval/total are target `505.00/2772.97/3277.97 ms` and Q4
+`633.09/2184.52/2817.61 ms`. Raw `spec common_specu` durations are warmup
+`0.002/382.432/0.010 ms` and diagnostic `0.003/761.097/0.018 ms`; no speed
+interpretation.
+
+Source-map receipt `6d1aab16…` and literature verdict `e99d1c67…` close the
+rank-1 local candidate as **NO_CANDIDATE / SOURCE GAP**. Reopen only with
+source-only intake of full pinned files matching `6a24e473…` and `c060c9f5…`;
+no patch, build, GPU, rerun, or causal/performance claim.
+
+### EXP020 current-65b8 phase pair — post-run ranking (2026-08-22)
+
+The stale preflight blocker above is **superseded by the completed matched
+pair**. The current instrumented runtime was used for both sequential arms:
+server `fcbf4b9d...`, `libllama-common` `65b8a862...`, implementation
+`fd5a9bf6...`, target `3895b6e...`, Q4 drafter `18a380e...`, and the frozen
+contracts/prompt/client recorded in the post-run planner note. The authoritative
+post-run receipts are manifest `070950d2...`, summary `4e51b437...`, terminal
+`a6d2c9fe...`, and cleanup `92e16f04...` under
+`receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/`.
+Cleanup is clean and the RTX 3060 is idle.
+
+Target-only passed its fresh 64-token oracle (`0f76b6ae...`). Q4 produced a
+diagnostic record (`1d5020bf...`) with 35 proposed/28 accepted, but its output
+differs from target; this is not an exactness, losslessness, or general
+acceptance result. The current parser aggregated warmup task `1` and
+diagnostic task `42`; the immutable log contains a clean boundary. The next
+action is therefore a **CPU-only offline parser/task-boundary reconciliation**
+using the preserved logs and client JSON, retaining task IDs and emitting
+separate warmup/diagnostic phase objects. Hard-stop on missing/ambiguous task
+IDs, malformed timestamps, a failed 35/35 cycle split, or any zero-imputed
+interval. Do not rerun, patch source, relabel outputs, or use the GPU.
+
+Planner note:
+[`runtime-qwen-exp020-current-65b8-phase-pair-postrun-ranking-20260822`](../planning/runtime-qwen-exp020-current-65b8-phase-pair-postrun-ranking-20260822.md).
+
+Ranked follow-up after the parser split:
+
+1. If `VERIFY_BATCH_BEGIN→VERIFY_BEGIN` remains the largest stable subtotal,
+   perform a read-only source map of the current server-context/speculative
+   marker paths using only preserved local source snapshots/receipts. This is
+   not a new remote intake, build, model load, or GPU action; if pinned source
+   snapshots are absent or hashes disagree, record a source-only gap and stop.
+   The hypothesis is repeated batch/position/mask/transaction preparation or
+   graph scheduling, not a patch authorization.
+2. If the split confirms the draft-generation clue (about `378.665 ms` over
+   35 draft calls), inspect a single source-bound fixed-n graph/allocator
+   operation only after exactness/state controls are repaired.
+3. Do not target correction/rollback from this receipt (`0.601 ms` for the
+   diagnostic interval); it is a small measured subtotal and not the
+   correctness blocker.
+
+Any future causal intervention requires a new card with one bound source
+change, unchanged token ordering/positions/masks/KV/cache/rollback/sampler/
+serialization semantics, fresh target-only and Q4 output/transaction gates,
+repeated matched end-to-end timing, and fresh critic/literature review. The
+external Arm-B/rendering/evaluator bundle remains required for a
+faster-and-correct verifier claim. The phase pair remains diagnostic-only;
+there is no rerun, source patch, speed promotion, or split-flash revival.
+
+### EXP020 rank-1 source-map audit — NO-CANDIDATE / SOURCE GAP (2026-08-22)
+
+The conditional local source-map audit is terminal for this checkout. Exact
+source payloads for `common/speculative.cpp`
+(`6a24e473529b70367598f6718f33ecc6ab9a14701469469415afef90ed7869e0`) and
+`tools/server/server-context.cpp`
+(`c060c9f5b5c9aa41cbb04204973c07c7ba6ba5fb518fc4ee38d62367ea0fb6a2`) are not
+present anywhere in the preserved local workspace; only receipt/hash
+references and parsed marker logs exist. The compact receipt is
+`receipts/EXP-20260822-020-qwen-singleton-correction/current-65b8-phase-pair-20260822/source-map-audit-20260822.json`.
+
+No source-backed verify-batch, transaction-preparation, or graph/allocator
+candidate can be drafted from marker timing alone. The smallest reopen is a
+source-only intake of both exact files with full bytes and matching SHA-256,
+then the same read-only map. This audit used no SSH, download, build, model
+load, GPU, rerun, or source mutation; the phase pair remains descriptive-only.
