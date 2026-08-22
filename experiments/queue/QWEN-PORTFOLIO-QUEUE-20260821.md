@@ -380,3 +380,28 @@ only `code_python_debug` differs at character 194 and five prompts match.
 Historical 747 versus current 531 prompt tokens makes v22 6/6 stale; token
 index and seed/sampler/argv are UNKNOWN. Split-ON remains unrun/terminal; no
 rerun or retuning is queued.
+
+The docs-only rendering recovery packet is
+[`PQ-20260822-021-RENDERING-CONTRACT-RECOVERY`](../planning/PQ-20260822-021-RENDERING-CONTRACT-RECOVERY.md).
+It requires literal argv, chat-template/tokenizer identity, rendered prompt
+bytes/token IDs and counts, seed/sampler, API payloads, and token-level first
+divergence before EXP021 can reopen. No model, GPU, split-ON rerun, or retuning
+is authorized while the baseline contract mismatch remains terminal.
+
+Rendering reconciliation receipt `ef5ab675...` confirms a constant +36-token
+historical offset per prompt (747 vs 531) with raw messages stable but rendered
+bytes/token IDs/tokenizer/template/old argv absent. EXP021 is therefore
+terminal-blocked. Reopen only with an authoritative rendered-prompt,
+tokenizer/template, and literal-argv bundle explaining or superseding the
+offset, then a fresh exact target oracle; no GPU/rerun/split-ON/retuning before
+that gate.
+
+Final artifact lookup is terminal no-found (`f4bf8b4b…`): only one historical
+rendered hash `a83e3752…`; six rendered/token-ID artifacts, tokenizer/template,
+old argv, special-token policy, and exact +36 mapping are absent. Reopen only
+with an external authoritative bundle; no GPU/rerun/retuning is queued.
+
+Final scoped lookup receipt `f4bf8b4b...` found no authoritative rendering
+bundle (only one historical rendered hash). EXP021 is terminal no-found;
+reopen requires external bundle supply or separately authorized regeneration.
+No further local search, GPU run, split-ON launch, or rerun is queued.

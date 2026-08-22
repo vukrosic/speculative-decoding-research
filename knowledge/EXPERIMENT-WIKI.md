@@ -307,3 +307,15 @@ character 194 (`-1` backticks omitted), while five prompts match. Token index,
 seed/sampler/client argv are UNKNOWN. Historical v22 747 versus current 531
 prompt tokens proves rendering/runtime drift; its 6/6 is stale. Split-ON stays
 unrun and terminal; no rerun is authorized.
+
+Rendering reconciliation receipt `ef5ab675…` binds raw source `f911c7d3…`
+(5,246 bytes, 12 records/6 IDs), contracts, seed/greedy settings, and models.
+Current prompts total 531 tokens; historical v22 totals 747, exactly +36 each.
+Rendered bytes, token IDs, tokenizer/template artifact, and historical argv are
+UNKNOWN. Historical 6/6 is stale; no GPU/rerun/retuning.
+
+Artifact lookup receipt `f4bf8b4b…` is terminal no-found: only one historical
+rendered hash (`a83e3752…`, code_python_debug) exists. Six rendered bytes/token
+IDs, tokenizer/model-template artifacts, historical argv, special-token policy,
+and exact +36 mapping are absent. Runtime obtains the model chat template.
+Reopen only with an external authoritative bundle; no GPU/rerun.

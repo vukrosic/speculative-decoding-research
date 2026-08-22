@@ -165,3 +165,24 @@ Historical v22 6/6 is stale for this oracle: prompt-token total 747 versus
 current 531 (code-python 169 versus 133), indicating rendering/runtime drift;
 cause UNKNOWN. Split-ON remains unrun and terminal; no rerun or retuning is
 authorized.
+
+### Rendering artifact lookup — terminal no-found
+
+Scoped lookup receipt `rendering-artifact-lookup-20260822.json` (SHA
+`f4bf8b4b…`; note `8944239d…`) found only one historical rendered hash,
+`a83e3752…` for `code_python_debug`. No six-prompt rendered bytes/token IDs,
+tokenizer or model-template artifact, historical v22 argv, special-token policy,
+or exact +36 inserted-token mapping was found. Runtime obtains the model chat
+template dynamically. The +36-per-prompt offset remains rendering drift;
+reopen only with an external authoritative bundle. No GPU/rerun/retuning.
+
+### Rendering reconciliation boundary
+
+Read-only receipt `rendering-reconciliation-20260822.json` (SHA
+`ef5ab675…`) binds stable raw prompt source `f911c7d3…` (5,246 bytes, 12
+records/6 IDs), contracts, seed/greedy settings, and model identities. Current
+rendered prompts total 531 tokens; historical v22 totals 747, exactly +36 per
+prompt. Raw messages are preserved, but rendered bytes, token IDs, tokenizer/
+template artifact, and historical argv are absent. The constant offset is
+rendering/runtime drift, so historical 6/6 cannot be a current oracle. No GPU,
+rerun, or retuning is authorized.

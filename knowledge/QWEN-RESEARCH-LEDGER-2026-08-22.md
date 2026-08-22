@@ -338,3 +338,13 @@ block=8, n_extract=5, cache off. Only code_python_debug differs at character
 194; five prompts match. Historical 747 versus current 531 prompt tokens marks
 render/runtime drift; token index and seed/sampler/argv remain UNKNOWN. Split-ON
 stays terminal/unrun; no rerun.
+
+Rendering packet `ef5ab675…` confirms stable raw source/contract/model settings
+but exactly +36 historical tokens per prompt (747 vs 531). Rendered bytes,
+token IDs, tokenizer/template artifact, and historical argv are UNKNOWN;
+historical 6/6 is stale. No GPU/rerun/retuning.
+
+Rendering-artifact lookup `f4bf8b4b…` is terminal no-found: one historical hash
+`a83e3752…` only; six rendered/token-ID artifacts, tokenizer/template, argv,
+special-token policy, and exact +36 mapping remain UNKNOWN. External bundle is
+required to reopen; no rerun.

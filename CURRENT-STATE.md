@@ -304,3 +304,13 @@ character 194 in `code_python_debug`; five prompts match. Shared tuple fields
 are bound, but token index and seed/sampler/client argv remain UNKNOWN.
 Historical v22 prompt tokens 747 versus current 531 indicate rendering/runtime
 drift, so old 6/6 is stale. Split-ON remains unrun; no rerun.
+
+Rendering reconciliation binds raw prompt source and contracts but finds a
+constant +36-token historical offset per prompt (747 vs current 531). Rendered
+bytes, token IDs, tokenizer/template artifact, and old argv are absent, so old
+6/6 is stale. This remains read-only; no GPU or rerun.
+
+Artifact lookup is terminal no-found: only one historical rendered hash
+`a83e3752…`; all six rendered bytes/token IDs, tokenizer/template artifacts,
+historical argv, special-token policy, and exact +36 mapping are absent. Runtime
+gets the model chat template dynamically. Reopen only with an external bundle.
