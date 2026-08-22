@@ -328,3 +328,7 @@ Read-only recovery explains +36 historical tokens via the xhigh reasoning
 preamble in one preserved `code_python_debug` render. Inventory finds 12
 artifacts all for that prompt/hash; six-row/current rendered bytes, token IDs,
 argv, and template identity remain UNKNOWN. No GPU/rerun; external bundle only.
+
+Current client sends raw messages and does not render/save tokens; `/apply-template`
+exists only in the model-loading tracer. Six-row capture requires separate
+authorization, not no-model preflight. No endpoint/model/GPU/rerun.

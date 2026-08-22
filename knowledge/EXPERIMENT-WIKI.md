@@ -334,3 +334,8 @@ Current-state recovery explains +36 historical tokens via the xhigh reasoning
 preamble in one preserved `code_python_debug` render. Inventory `17d01aad…`
 finds 12 artifacts all for that prompt/hash `a83e3752…`; no six-row bundle,
 token IDs, argv, or current rendered bytes exist. External bundle only; no GPU.
+
+Current-client receipt `04481e84…` confirms raw-message POSTs without
+`reasoning_effort`, rendered prompt, or token IDs; only `trace_one_prompt_v22.py`
+calls `/apply-template` and requires a loaded model. Readiness `5c08e46…`
+requires separate authorization for six-row capture; no endpoint/model/GPU.

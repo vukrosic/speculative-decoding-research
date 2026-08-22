@@ -361,3 +361,7 @@ Current-state recovery receipt `67a6b5b3…` attributes +36 historical tokens to
 the xhigh reasoning preamble. Historical inventory `17d01aad…` contains 12
 rendered artifacts, all code_python_debug/hash `a83e3752…`; no six-row/token-ID/
 argv bundle. Current rendering stays UNKNOWN; no GPU/rerun.
+
+Receipt `04481e84…` confirms raw-message client behavior; only the model-loading
+tracer calls `/apply-template`. Readiness `5c08e46…` requires separate
+authorization for CPU-only six-row capture; no endpoint/model/GPU call now.

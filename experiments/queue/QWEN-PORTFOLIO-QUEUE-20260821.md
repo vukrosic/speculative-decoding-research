@@ -433,3 +433,23 @@ Read-only recovery explains the +36 offset via the xhigh reasoning preamble;
 inventory `17d01aad…` has 12 code_python_debug artifacts sharing `a83e3752…`,
 not a six-row bundle. Current render/token/argv identity remains UNKNOWN;
 external bundle required, with no GPU/rerun queued.
+
+Current-client/readiness receipts (`04481e84…`/`5c08e46…`) confirm raw-message
+client lacks rendered tokens; `/apply-template` requires model load. Any
+six-row capture needs separate authorization; no endpoint/model/GPU/rerun is
+queued.
+
+### 2026-08-22 — CEO-gated current rendering recovery packet
+
+Critic-backed packet
+[`PQ-20260822-021-READONLY-RENDER-CAPTURE`](../planning/PQ-20260822-021-READONLY-RENDER-CAPTURE.md)
+is the smallest source-backed recovery action. Planner disposition is
+`PASS-NEEDS-CEO-APPROVAL`: one CPU-only target model load and six read-only
+`/apply-template` requests to capture current rendered bytes, token IDs, and
+hashes. It explicitly forbids `/completion`, drafter/verifier execution,
+timing, GPU compute, source changes, downloads, and network access. The
+frozen target, script, wrapper, and six-row manifest identities plus literal
+argv, raw-payload, render/token, resource, and cleanup receipts are required.
+If the CPU model-load/resource gate fails, leave EXP021 terminal and require an
+external authoritative bundle; do not guess the rendering contract or rerun
+GPU work.
