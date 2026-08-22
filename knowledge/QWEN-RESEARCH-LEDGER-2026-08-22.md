@@ -395,3 +395,20 @@ clarify that capture-r2 is an old-`5c43…` six-row/747-token reference only.
 The EXP021 `b178…` candidate must pass Stage-0 equality for rendered bytes,
 token IDs/pieces/counts, argv/linkage, and source/build identities before any
 GPU arm. This remains no-run; no split-flash result is asserted.
+
+Stage-0 b178 candidate equivalence passed six-of-six. Candidate receipt
+`8f74cf64…`, metadata receipt `2e1d50b5…`, packet `1a9e3f78…`. All six rows
+matched r2 manifest/target/order, rendered bytes/SHA, token IDs/pieces/counts,
+and apply/tokenize payload hashes; rendered hashes in order are
+`a83e3752…`, `97aabb92…`, `a374606b…`, `27400339…`, `ab472707…`,
+`cc5d2c6d…`, with counts `169/122/115/111/96/134`. Flags are
+`false/true/true` (`add_special/parse_special/with_pieces`). Six apply and six
+tokenize calls, zero generation/timing; cleanup and GPU idle passed. This is
+not a serving result: target oracle and both split arms remain blocked pending
+final planner/critic/literature review.
+
+Final handoff packet `96820b66…` and queue reconciliation `080f9042…` leave
+EXP021 conditionally ready only. CEO approval/live preflight are pending. The
+frozen sequence is target-only oracle, Q4 split-OFF control, then split-ON only
+if both are six-of-six exact; one process at a time, no timing before gates.
+No GPU outcome or split-flash claim is recorded.

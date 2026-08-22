@@ -355,3 +355,21 @@ freeze the recovery boundary: r2's six rows/747 tokens are valid for old
 `5c43…` only. The `b178…` EXP021 candidate must first match all six bytes,
 IDs/pieces/counts and identity/argv linkage. Until that CPU-only equivalence
 gate passes, no target-only, split-OFF, split-ON, GPU, or timing run is allowed.
+
+Stage-0 b178 equivalence now passes six-of-six. Candidate receipt SHA
+`8f74cf64…`; metadata receipt SHA `2e1d50b5…`; packet SHA
+`1a9e3f78…`. All six r2 rows matched manifest/target/order, rendered bytes and
+SHA, token IDs/pieces/counts, and apply/tokenize payload hashes. Ordered render
+hashes are `a83e3752…`, `97aabb92…`, `a374606b…`, `27400339…`, `ab472707…`,
+`cc5d2c6d…`; counts are `169,122,115,111,96,134`. Flags are
+`add_special=false`, `parse_special=true`, `with_pieces=true`; six apply + six
+tokenize and zero generation/timing calls. Cleanup terminated the server and
+verified GPU idle. The receipt stops here: target oracle, split-OFF, split-ON,
+timing, and GPU remain unrun pending final planner/critic/literature gate.
+
+Final Stage-0 handoff packet `96820b66…` / queue `080f9042…` is ready but not
+approved: CEO approval plus live read-only preflight remain pending. Conditional
+sequence is target-only b178 oracle → same-build Q4 split-OFF → split-ON only
+after six-of-six exact controls, one process at a time. Any instability,
+mismatch, identity/argv drift, resource or cleanup failure stops the sequence.
+No GPU, split-flash, acceptance, or timing result is present.

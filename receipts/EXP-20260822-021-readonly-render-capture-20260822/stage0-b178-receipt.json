@@ -1,0 +1,81 @@
+{
+  "experiment_id": "PQ-20260822-021-EXACTNESS-REOPEN-R2-STAGE0",
+  "status": "pass_six_of_six_cpu_equivalence",
+  "packet_sha256": "1a9e3f78888b851e7c2a29d70aa190439da584a5ae95b351cdbe2bdee285152b",
+  "started_utc": "2026-08-22T11:15:23Z",
+  "ready_utc": "2026-08-22T11:15:48Z",
+  "finished_utc": "2026-08-22T11:17:21Z",
+  "scope": "Stage 0 CPU-only candidate equivalence; six /apply-template then six /tokenize calls; no target oracle or split-flash",
+  "reference": {
+    "path": "receipts/EXP-20260822-021-readonly-render-capture-20260822/capture-r2.json",
+    "sha256": "cdab75d710a9de052bb3b1a2c51f964032e6697115e7dd1611e7ffdc1cdc45d7",
+    "bytes": 38256
+  },
+  "candidate_capture": {
+    "path": "receipts/EXP-20260822-021-readonly-render-capture-20260822/stage0-b178-candidate.json",
+    "sha256": "8f74cf645ae0705cac55444de81f4d3cd75bf683f9ec914d576e3cb13d5580a5",
+    "bytes": 32013,
+    "status": "pass"
+  },
+  "identities": {
+    "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+    "manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+    "tracer_sha256": "6d2349a1e29512dcf946e365b0b14fd1093a77c9e5d8a34c900f1863cae11f8e",
+    "wrapper_sha256": "687ccf3698523f84640b44c3882add067e7d5967a6793a2a56f2f9ddfffe8fc5",
+    "candidate_server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "candidate_server_bytes": 17912,
+    "candidate_server_path": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin/llama-server",
+    "server_version": "0.1.2-dev (build 10498, commit 5ecbe1ac)",
+    "runpath": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin:"
+  },
+  "needed": ["libllama-server-impl.so", "libstdc++.so.6", "libgcc_s.so.1", "libc.so.6"],
+  "resolved_library_sha256": {
+    "libllama-server-impl.so": "605d798efb9931132a709bbc1ba4fe6ac939be677214094ab9e6f2dbe2342230",
+    "libllama-common.so.0": "19fdf005f12174498f7445858f8735bdd97369f55540e4204b7baa1cc9a67796",
+    "libmtmd.so.0": "cfd70115e4943e5fb919d0bfeb06272e35df0f20039db1a2aa20966f6e4a97eb",
+    "libllama.so.0": "fdb0bc83664b850ecb4db747aa5e1319dfa3d2c2d18697a1ab8395471b8b1420",
+    "libggml.so.0": "7a4d756093747c4a4c2817c1be36736bc3b0ace8321c9cf96f0b6509d7e4a20c",
+    "libggml-base.so.0": "7c366071dcb83d7a5f85a12bf7c9013b0f81b98b9fc5278f4cee6cdb99e5338c",
+    "libggml-cpu.so.0": "0ec7ce7f7d69adff99a08dccbde74a0f27ef7a3ddbaed9b38569dbb8ce63c7a1",
+    "libggml-cuda.so.0": "75d78338cb9759e24baf1664f74152383cc2ba9c9e0bb479f2333e20cb80cfe2"
+  },
+  "remote": {
+    "ssh": "ssh -p 35738 root@125.240.239.50",
+    "hostname": "9719ca4634c7",
+    "cwd": "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820",
+    "python": "/workspace/vllm-venv/bin/python",
+    "python_version": "Python 3.12.13",
+    "torch_version": "2.13.0+cu130",
+    "gpu_pre": "RTX 3060, 1 MiB, 0%; no compute apps",
+    "gpu_post": "RTX 3060, 1 MiB, 0%; no compute apps",
+    "memory_pre": "15890 MiB total, 2926 MiB used, 898 MiB free, 12963 MiB available",
+    "memory_post": "15890 MiB total, 2922 MiB used, 900 MiB free, 12967 MiB available",
+    "disk_pre_post": "overlay 60G total, 59G used, 1.5G available, 98%"
+  },
+  "server_argv": [
+    "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-diag-v22-20260820/runtime/llama-dflash2-diag-v22/build-v22-cuda-preseed-20260822T0925Z/bin/llama-server",
+    "-m", "/workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf",
+    "--host", "127.0.0.1", "--port", "8094", "--ctx-size", "4096", "--parallel", "1", "--n-gpu-layers", "0", "--no-context-shift", "--metrics", "--perf", "-lv", "3"
+  ],
+  "environment": {"CUDA_VISIBLE_DEVICES": ""},
+  "client_argv": ["/workspace/vllm-venv/bin/python", "-"],
+  "endpoint_calls": {"apply_template": 6, "tokenize": 6, "completion": 0, "generation": 0, "drafter": 0, "verifier": 0, "timing": 0},
+  "tokenize_flags": {"add_special": false, "parse_special": true, "with_pieces": true},
+  "equality": {
+    "manifest": "equal",
+    "target": "equal",
+    "six_ordered_rows": "equal",
+    "per_row_rendered_bytes": "equal_all_6",
+    "per_row_rendered_sha256": "equal_all_6",
+    "per_row_token_ids": "equal_all_6",
+    "per_row_token_pieces": "equal_all_6",
+    "per_row_token_counts": "equal_all_6",
+    "per_row_apply_payload_sha256": "equal_all_6",
+    "per_row_tokenize_payload_sha256": "equal_all_6",
+    "overall": "PASS_6_OF_6"
+  },
+  "rows": {"ids": ["code_python_debug", "code_rust_parser", "math_modular", "logic_schedule", "technical_explain", "structured_extract"], "rendered_bytes": [752, 589, 592, 572, 523, 640], "token_counts": [169, 122, 115, 111, 96, 134], "total_tokens": 747},
+  "server_log": {"path": "/tmp/pq021-stage0-20260822/server.log", "sha256": "5f41482c5e55ca8ca94915d4781cbae20198aea0ed34ef53cd98acefcf2780c7", "bytes": 1464},
+  "cleanup": {"server_pid": 268921, "server_terminated": true, "remaining_llama_server": false, "gpu_idle_verified": true, "temp_path": "/tmp/pq021-stage0-20260822"},
+  "disposition": "Stage 0 passed. Per CEO instruction, stop here. Do not launch target oracle, split-OFF, split-ON, timing, or GPU work from this receipt."
+}

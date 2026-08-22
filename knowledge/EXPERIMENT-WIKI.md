@@ -369,6 +369,19 @@ made zero completion/generation/drafter/verifier/timing requests; server
 termination, GPU idle, and cleanup were verified. No split-flash, acceptance,
 speed, or general-losslessness claim is authorized.
 
+## EXP021 final Stage-0 handoff (2026-08-22)
+
+Handoff packet `96820b66…` and queue reconciliation `080f9042…` retain the
+Stage-0 six-of-six CPU equivalence and define a strictly conditional GPU
+sequence. CEO approval and a live read-only preflight are still pending. If
+approved, run one process at a time: (1) target-only b178 oracle on six frozen
+prompts, (2) same-build Q4 split-OFF control, then (3) split-ON only after
+both controls are six-of-six exact. Freeze target/drafter/render manifest,
+cache/context/seed/settings and change only the split-flash flag. Any target
+instability, split-OFF mismatch, identity/argv drift, resource or cleanup
+failure hard-stops the sequence. No GPU result, timing, acceptance, or
+split-flash claim exists yet; timing is diagnostic only after exactness.
+
 The repaired Stage-0 packet (`PQ-20260822-021-EXACTNESS-REOPEN-R2`, SHA
 `1a9e3f78…`) and alignment receipt (`4a736a15…`) make the next boundary
 explicit: r2 validates six rows/747 tokens only on the old `5c43…` tracer.
@@ -376,3 +389,25 @@ Before any target-only, split-OFF, or split-ON GPU arm, the `b178…` EXP021
 candidate must reproduce all six rendered bytes, token IDs/pieces, counts,
 argv/linkage, and source/build identities. This is a no-run gate; a Stage-0
 mismatch terminalizes the packet. No split-flash result is implied.
+
+## EXP021 Stage-0 b178 candidate equivalence passed (2026-08-22)
+
+The repaired packet's Stage-0 CPU-only candidate check passed six-of-six.
+Receipts are `stage0-b178-candidate.json` SHA
+`8f74cf645ae0705cac55444de81f4d3cd75bf683f9ec914d576e3cb13d5580a5` and
+`stage0-b178-receipt.json` SHA
+`2e1d50b5b607bdfa2f77be42d57181a66d1bd57a01557d6e85975811ad63892a`.
+The b178 candidate exactly matched the r2 reference manifest, target, ordered
+rows, rendered bytes/SHA, token IDs/pieces/counts, and apply/tokenize payload
+hashes for all six rows. Render hashes (in order) are
+`a83e3752…`, `97aabb92…`, `a374606b…`, `27400339…`, `ab472707…`,
+`cc5d2c6d…`; token counts are `169,122,115,111,96,134` (747 total).
+Tokenizer flags remain `add_special=false`, `parse_special=true`,
+`with_pieces=true`; resolved library hashes and full IDs are preserved in the
+receipt. Six apply-template + six tokenize calls completed; completion,
+generation, drafter, verifier, and timing calls were zero. Server termination,
+no remaining server, GPU idle, and cleanup passed.
+
+This is provenance equivalence only. The receipt explicitly stops before
+target oracle, split-OFF, split-ON, timing, or GPU work; no split-flash or
+serving result is implied.

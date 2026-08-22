@@ -509,3 +509,35 @@ reconcile the next action. Capture-r2 is a six-row/747-token reference on old
 IDs/pieces/counts, argv/linkage, and source/build identities before any GPU
 arm. Keep the packet no-run until this CPU-only equivalence gate passes; no
 split-flash result is available or implied.
+
+### Stage-0 b178 equivalence gate: PASS (2026-08-22)
+
+Receipts `stage0-b178-candidate.json` (`8f74cf64…`) and
+`stage0-b178-receipt.json` (`2e1d50b5…`) show six-of-six equality against the
+r2 reference. All ordered rows match manifest/target/order, rendered
+bytes/SHA, token IDs/pieces/counts, and apply/tokenize payload hashes. Render
+hashes are `a83e3752…`, `97aabb92…`, `a374606b…`, `27400339…`, `ab472707…`,
+`cc5d2c6d…`; counts `169,122,115,111,96,134` (747 total). Flags are
+`add_special=false`, `parse_special=true`, `with_pieces=true`; six apply + six
+tokenize, zero completion/generation/drafter/verifier/timing. Cleanup and GPU
+idle passed. This advances only the CPU provenance gate. Per receipt, stop
+before target oracle, split-OFF, split-ON, timing, or any GPU work pending the
+final planner/critic/literature gate; no split-flash result is claimed.
+
+### Final Stage-0 handoff (2026-08-22)
+
+Packet `96820b66…` and queue reconciliation `080f9042…` are ready for CEO
+review, not execution. Live read-only preflight and CEO approval must precede
+the conditional sequence: target-only b178 oracle, same-build Q4 split-OFF,
+then split-ON only after six-of-six exactness in both controls. One process at
+a time; freeze all contracts and change only the split-flash flag. Any
+instability, mismatch, identity/argv/resource/cleanup failure stops the run.
+No GPU result or timing/acceptance/split-flash claim is available.
+
+Stage 0 b178 equivalence now PASS (receipt `8f74cf64...`, summary
+`2e1d50b5...`): all six rendered bytes/hashes, token IDs/pieces/counts,
+manifest/target identities, payload hashes, argv, and linkage equal r2. The
+next packet is ready for CEO handoff of the conditional sequence: target-only
+oracle → same-build split-OFF → split-ON, one GPU process at a time. Timing is
+gated on six-of-six exactness in target and split-OFF; any mismatch blocks
+split-ON. Stage 0 did not authorize a launch; no GPU run has started.
