@@ -486,6 +486,15 @@ repeated-prefix/cache diagnostic. Rendered/token-prefix exactness is UNKNOWN;
 the valid 747-token EXP021 split-OFF failure prevents a promoted/general speed
 claim or causal interpretation.
 
+### Authoritative PQ019 API reconciliation
+
+Receipt `03b7d370…` / note `40332940…`: four mismatches remain—code_python
+content idx0 (31/31), logic reasoning idx38 (33/30), technical reasoning idx10
+(37/26), and structured content idx0 premature `</think>` (2 vs target 64;
+1/0). Rust and math are exact; math counters 32/31. IDs/contracts/manifest/
+cache_n align, while token/render/transaction state is UNKNOWN. No speed/cache
+claim or rerun is authorized.
+
 ### CEO-cycle recovery audit (2026-08-22)
 
 Planner `bee058fe…`/`e12dba38…`, critic `d8e094f3…`, literature `f7d54622…`,

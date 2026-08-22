@@ -535,3 +535,12 @@ Q4 timed `19.4047/19.5082/19.6797 tok/s`, target `17.5969/17.6115/17.7689`.
 while reasoning/finish/token count and `31/31` acceptance matched; cache_n=0.
 Cache-on not launched. Retain as faster-but-not-correct control evidence;
 no promotion or exactness claim.
+
+### PQ019 authoritative API reconciliation
+
+`03b7d370…` / `40332940…` records mismatches in code_python content idx0
+(31/31), logic reasoning idx38 (33/30), technical reasoning idx10 (37/26),
+and structured content idx0 premature `</think>` (2 vs 64; 1/0). Rust/math
+outputs are exact; math counters 32/31. Identity contracts, manifest, and
+cache_n align, but token/render/transaction state is UNKNOWN. Keep no
+speed/cache claim and do not rerun.

@@ -568,6 +568,16 @@ speedup claim. Rendered/token-prefix exactness is UNKNOWN, and the later valid
 747-token EXP021 split-OFF failure blocks promotion; keep speed, acceptance,
 and exactness separate and do not rerun on this evidence alone.
 
+### Authoritative PQ019 API reconciliation
+
+Receipt `03b7d370…` / note `40332940…` finds four prompt-level mismatches:
+`code_python` content idx0 (31/31), `logic` reasoning idx38 (33/30),
+`technical` reasoning idx10 (37/26), and `structured` content idx0 with a
+premature `</think>` (2 tokens vs target 64; 1/0). Rust and math outputs are
+exact; math counters are 32/31. IDs, contracts, manifest, and cache_n align,
+but token/render/transaction state is UNKNOWN. Preserve no speed/cache claim
+and no rerun.
+
 ### CEO-cycle recovery audit — no new candidate (2026-08-22)
 
 Planner `bee058fe…`/`e12dba38…`, critic `d8e094f3…`, literature `f7d54622…`,

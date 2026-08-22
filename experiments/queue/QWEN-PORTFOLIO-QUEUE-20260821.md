@@ -858,6 +858,15 @@ though reasoning/finish/token count and `31/31` acceptance matched; cache_n=0.
 Cache-on unlaunched. Queue as faster-but-not-correct control; no speed or
 exactness promotion pending planner/critic/literature next-step receipts.
 
+### PQ019 authoritative reconciliation — retain no-claim boundary
+
+Receipt `03b7d370…` / note `40332940…` identifies four mismatches: code_python
+content idx0 (31/31), logic reasoning idx38 (33/30), technical reasoning idx10
+(37/26), and structured content idx0 premature `</think>` (2 vs 64; 1/0).
+Rust/math outputs are exact; math counters 32/31. IDs/contracts/manifest/cache_n
+align, but token/render/transaction state remains UNKNOWN. No speed/cache claim
+or rerun.
+
 Target-only API baseline subsequently passed: summary
 `4b71c5de26f933fb6616ec46de4d7b00b084db0be6fa388440f42a89530f1514`, terminal
 `938d75c19eddd738be085f2850d35b35a47b86c10d0fcf6cdde22edbe4b3e0c2`; 2
@@ -875,3 +884,12 @@ reps `19.4047/19.5082/19.6797 tok/s` vs target baseline
 31/31 accepted, cache_n=0. Raw speed/acceptance retained but non-promotable;
 cache-on/rerun/timing blocked. Rank source-backed divergence/recovery or
 external evaluator/Arm-B intake next; no blind cache retry.
+
+Docs-only packet
+[`PQ-20260822-019-DIVERGENCE-RECOVERY`](../planning/PQ-20260822-019-DIVERGENCE-RECOVERY.md)
+binds target receipts `4b71c5de/938d75c1` and Q4 cache-off
+`f6bd2e2e/28b273d8`. It requires per-row first divergence, rendering/contract/
+model/drafter/server/argv/RNG/transaction/cache/rollback identities, and keeps
+31/31 acceptance separate from output exactness. Ranked actions: receipt audit,
+external Arm-B/rendering/evaluator intake if state is missing, then only a new
+reviewed one-variable packet. No cache-on/rerun/cap/template/GPU/timing.
