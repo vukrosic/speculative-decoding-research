@@ -1,0 +1,52 @@
+{
+  "experiment": "EXP-20260822-021",
+  "packet": "PQ-20260822-021-B178-SOURCE-BINARY-MAPPING",
+  "date": "2026-08-22",
+  "scope": "read-only remote source/build/ELF mapping; no build/model/GPU/rerun/split-on/timing",
+  "remote": {"host": "root@125.240.239.50:35738", "cwd": "/root"},
+  "tools": {"binutils": "2.42", "gcc_cxx": "13.3.0", "cmake": "3.28.3"},
+  "identities": {
+    "server_sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "server_build_id": "22ecf3ead16a84cc758ca779e8ef1669d301112b",
+    "server_impl_sha256": "605d798efb9931132a709bbc1ba4fe6ac939be677214094ab9e6f2dbe2342230",
+    "common_sha256": "19fdf005f12174498f7445858f8735bdd97369f55540e4204b7baa1cc9a67796",
+    "llama_sha256": "fdb0bc83664b850ecb4db747aa5e1319dfa3d2c2d18697a1ab8395471b8b1420",
+    "cmake_cache_sha256": "f8886d493fab7ccec010f2ee9abc6e5b0cf9b9f9660c4eb59e205b18646d9e22",
+    "source_parent_commit": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+    "source_hashes": {
+      "src/llama-graph.cpp": "751c7ce41f8c3cad93dbb339ca33f631ee3c55ff201e29d806affd23a1c9b3aa",
+      "common/speculative.cpp": "e59a1058229ba65dcdc0d6cc056c915f1c071a921d18a9d731a142c4ff841f40",
+      "tools/server/server-context.cpp": "43551af086e46468150477ebf6adec6d3738894b22259d2af991052e41292178",
+      "tools/server/server.cpp": "1a34586ee203d2c69ec458c37d04fc589f5e0f5992678f5686660dd6b5be7093",
+      "common/chat.cpp": "c496276f42bb1ebae017ae67c58da9f045190b61b2bea852c46262bef9658675"
+    }
+  },
+  "symbols": {
+    "common_speculative_draft": "0x2fb670",
+    "dflash_process": "0x305a40",
+    "sample_and_accept_n_two_vector": "0x2ef870",
+    "sample_and_accept_n_dist_overloads": ["0x2f4640", "0x2f5430"],
+    "common_speculative_accept": "0x2fbf60",
+    "server_decode": "0x1b87a0",
+    "server_pre_decode": "0x1b6330",
+    "checkpoint_restore_lambda": "0x1c0230",
+    "output_format": "0x16e7e0",
+    "chat_delimiters_tokenize": "0x1e6e60",
+    "addr2line": "all tested addresses resolve function names but line is ??:?"
+  },
+  "source_lines": {
+    "draft_dispatch": "common/speculative.cpp:2674; tools/server/server-context.cpp:2958",
+    "verify_accept": "tools/server/server-context.cpp:3837-3843",
+    "rollback": "tools/server/server-context.cpp:3855-3880",
+    "speculative_accept": "tools/server/server-context.cpp:3889; common/speculative.cpp:2755",
+    "reasoning_control": "tools/server/server-context.cpp:2399-2408",
+    "tokenize": "tools/server/server-context.cpp:4941-4950",
+    "chat_reasoning_template": "common/chat.cpp:970-977,1073-1108",
+    "split_flash_hunks": "src/llama-graph.cpp:2558-2588; tools/server/server-context.cpp:3592-3608"
+  },
+  "failure_binding": {"q4_output_sha256": "6400f11885d9e71a331d1946f15b7218cfc1ee81948f0afc06f5db9476a9ee08", "target_output_sha256": "a382e0c0a624fe959b44c052f92a30de335240c5865499747f82b90e10775013", "first_divergence_token": 2, "description": "duplicate </think>", "draft_proposed": 31, "draft_accepted": 31, "cache_n": 0, "limit": 64},
+  "reachability": {"split_off_changed_hunks": "unreachable; env unset", "accepted_draft_path": "reachable; 31/31 aggregate only", "rollback_branch_taken": "UNKNOWN; n_rollback not emitted", "end_marker_origin": "UNKNOWN"},
+  "disposition": "partial_mapping_terminal_no_causal_repair",
+  "unknowns": ["b178 DWARF/line tables absent", "internal draft/target IDs and logits", "exact commit/rollback transaction and cache extents", "reasoning end-marker origin"],
+  "next_evidence": "same-build b178 debug/map artifacts plus token/logit/acceptance/transaction trace"
+}

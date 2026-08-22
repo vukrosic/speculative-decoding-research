@@ -441,3 +441,14 @@ Literature verdict `cc007b73…` terminalizes this candidate branch for the
 Reopen requires the immutable first-divergence/evaluator bundle, then fresh
 oracle plus six-of-six same-contract split-OFF exactness. Stale 531 data stays
 separate and invalid.
+
+Mapping execution `9d16cbcf…` / note `48920f0f…` binds exact symbols/offsets
+and source lines. DWARF is absent (`addr2line ??`), split-off hunks are
+unreachable, and duplicate marker origin/rollback branch are UNKNOWN. No
+repair/rerun/GPU; terminal boundary remains pending review.
+
+Postreview planner/queue `e10285cb…`/`a25db317…`, critic `40a8174b…`, and
+literature `d8cc9594…` mark partial provenance PASS, causal repair
+BLOCKED/terminal. No DWARF/debug map or token transaction trace; reopen
+requires exact BuildID-matched debug/linker map plus token/logit/commit/rollback
+evidence. No GPU, rerun, or patch.

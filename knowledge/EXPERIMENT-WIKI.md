@@ -514,3 +514,16 @@ token IDs/logits/decision/correction and rollback/cache state, literal
 argv/environment and BuildID/libraries, plus bound model/drafter/template/
 manifest/contract hashes; then fresh oracle and six-of-six split-OFF exactness.
 Preserve stale 531 receipts separately.
+
+Read-only b178 symbol mapping passed (`9d16cbcf…`, note `48920f0f…`). Exact
+symbols/offsets and source-line bindings are recorded for draft, verify,
+rollback, reasoning, tokenize, chat-template, and split-flash hunks.
+`addr2line` resolves function names but reports `??:??`; DWARF lines are
+absent. Split-off hunks are unreachable with env unset; duplicate `</think>`
+origin and rollback branch remain UNKNOWN. No repair, rerun, or GPU.
+
+Postreview planner/critic/literature (`e10285cb…`/`a25db317…`, `40a8174b…`,
+`d8cc9594…`) classify mapping as partial provenance PASS but causal repair
+BLOCKED/terminal. No DWARF/debug map or token transaction trace exists. Reopen
+only with exact BuildID-matched debug/linker map plus token/logit/commit/rollback
+evidence; no GPU, rerun, or patch.

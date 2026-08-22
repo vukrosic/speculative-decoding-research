@@ -696,6 +696,15 @@ is admissible now; preserve no-rerun/split-ON/timing boundary. Reopen only with
 a same-build v22 source diff binding the localized state path to the failing
 row and a fresh critic/literature-reviewed packet.
 
+Planner gate
+[`PQ-20260822-021-B178-SOURCE-BINARY-MAPPING`](../planning/PQ-20260822-021-B178-SOURCE-BINARY-MAPPING.md)
+defines read-only b178 provenance recovery: exact binary/library/source hashes,
+Build ID, RUNPATH/NEEDED, symbols, addresses, offsets, and `addr2line` source
+lines for verifier/rollback/sampler/split-flash paths. No build, source edit,
+model/GPU/rerun, split-ON, or timing. Mapping alone cannot reopen a repair;
+only an exact same-build one-variable source path plus fresh critic/lit review
+could create a new packet.
+
 ### Authoritative 747 Q4 reconciliation
 
 Receipt `50e7832c…` supersedes contaminated 531 `d119ff45…`. Valid Stage0 row
@@ -708,3 +717,20 @@ Literature verdict `cc007b73…` terminalizes this 747 candidate branch, not
 split-flash itself. Do not run/time split-ON. Reopen requires immutable
 first-divergence/evaluator bundle plus fresh target oracle and six-of-six
 same-contract split-OFF exactness; stale 531 receipts remain separate.
+
+Mapping `9d16cbcf…` / `48920f0f…` is read-only and partial: symbols/offsets
+bound, `addr2line` has no DWARF lines, split-off hunks unreachable, duplicate
+marker origin/rollback UNKNOWN. No repair/rerun/GPU queued pending review.
+
+Mapping receipt `9d16cbcf...` / note `48920f0f...` resolves symbols and
+textual source regions (verify/accept 3837–3889, rollback 3855–3880, draft
+2958/common 2674, reasoning 2399–2408, tokenize 4941–4950, split 2558–2588/
+gate 3592–3608), but DWARF is absent. No exact binary line proof or causal
+one-variable repair is admissible. Split-flash remains terminal: no patch,
+rerun, split-ON, or timing.
+
+Postreview planner/queue `e10285cb…`/`a25db317…`, critic `40a8174b…`, and
+literature `d8cc9594…` terminalize causal repair while retaining partial
+provenance PASS. No DWARF/debug map or token transaction trace; reopen only
+with exact BuildID-matched debug/linker map plus token/logit/commit/rollback.
+No GPU/rerun/patch queued.

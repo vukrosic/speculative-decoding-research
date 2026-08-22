@@ -473,3 +473,12 @@ not split-flash negative. No split-ON/timing. Reopen only with immutable
 token/logit/decision/rollback/cache, argv/build/library, and model/drafter/
 template/manifest/contract bundle, then fresh oracle + six-of-six split-OFF.
 Keep 531 receipts separate.
+
+Read-only mapping `9d16cbcf…` / `48920f0f…` records symbols/offsets and text
+line bindings; DWARF absent (`addr2line ??`), split-off hunks unreachable,
+duplicate marker/rollback UNKNOWN. No repair, rerun, or GPU; preserve terminal.
+
+Mapping postreview planner `e10285cb…`/queue `a25db317…`, critic `40a8174b…`,
+literature `d8cc9594…`: provenance partial PASS; causal repair BLOCKED/
+terminal. No DWARF/debug map or transaction trace. Reopen only with exact
+BuildID-matched debug/linker map and token/logit/commit/rollback evidence.

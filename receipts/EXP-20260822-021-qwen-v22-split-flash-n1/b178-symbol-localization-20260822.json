@@ -1,0 +1,53 @@
+{
+  "experiment": "EXP-20260822-021",
+  "arm": "q4_split_off_n1",
+  "audit": "b178 source-symbol localization",
+  "date": "2026-08-22",
+  "scope": "read-only preserved-artifact inspection; no SSH/model/GPU/build/patch/rerun",
+  "binary": {
+    "path": ".../build-v22-cuda-preseed-20260822T0925Z/bin/llama-server",
+    "sha256": "b17850bc59b9b38e003f166bffe66849db572fd5050c4fa4a36abafea6dd5e79",
+    "build_id": "22ecf3ead16a84cc758ca779e8ef1669d301112b",
+    "readelf_evidence": "preseed-terminal.txt: readelf -n and readelf -d preserved",
+    "needed": ["libllama-server-impl.so", "libstdc++.so.6", "libgcc_s.so.1", "libc.so.6"],
+    "runpath": ".../build-v22-cuda-preseed-20260822T0925Z/bin",
+    "debug_symbol_map": "NOT PRESERVED"
+  },
+  "linked_libraries": {
+    "libllama_server_impl_sha256": "605d798efb9931132a709bbc1ba4fe6ac939be677214094ab9e6f2dbe2342230",
+    "libllama_common_sha256": "19fdf005f12174498f7445858f8735bdd97369f55540e4204b7baa1cc9a67796",
+    "libllama_sha256": "fdb0bc83664b850ecb4db747aa5e1319dfa3d2c2d18697a1ab8395471b8b1420"
+  },
+  "candidate_sources": {
+    "src/llama-graph.cpp": "751c7ce41f8c3cad93dbb339ca33f631ee3c55ff201e29d806affd23a1c9b3aa",
+    "tools/server/server-context.cpp": "43551af086e46468150477ebf6adec6d3738894b22259d2af991052e41292178",
+    "graph_diff": "2c7d45d6e58cc0c5d6a99cd06aa0056428ffb8efa6be0ae5e7c0336efbe13c16",
+    "server_diff": "94d41382ce4afc8c8eb7c57974d1dabc58559eaf0084c914d6b33ab1897ef3a5"
+  },
+  "path_localization": {
+    "draft_acceptance_target_verification_correction": "common/speculative.cpp",
+    "decode_queue_commit_rollback_integration": "tools/server/server-context.cpp",
+    "template_special_tokens_reasoning": ["tools/server/server.cpp", "tools/server/server-context.cpp", "scripts/trace_one_prompt_v22.py", "scripts/benchmark_client_v21.py"],
+    "split_off_candidate_branch_reachable": false,
+    "exact_symbols_or_lines": "UNKNOWN"
+  },
+  "observed_failure_binding": {
+    "q4_output_sha256": "6400f11885d9e71a331d1946f15b7218cfc1ee81948f0afc06f5db9476a9ee08",
+    "target_output_sha256": "a382e0c0a624fe959b44c052f92a30de335240c5865499747f82b90e10775013",
+    "first_divergence_token": 2,
+    "description": "duplicate </think>",
+    "draft_proposed": 31,
+    "draft_accepted": 31,
+    "cache_n": 0,
+    "token_limit": 64
+  },
+  "unknowns": [
+    "b178 nm/objdump/readelf symbol addresses and DWARF line tables",
+    "linker map or separate debug file for b178 and linked libraries",
+    "internal draft/target candidate IDs and logits",
+    "commit/rollback transaction and cache/sequence extents",
+    "exact end-marker origin (sampler, accepted commit, rollback correction, or template policy)"
+  ],
+  "disposition": "blocked_missing_b178_symbol_debug_map",
+  "smallest_unblock": "capture nm -anC, readelf --syms --debug-dump, objdump -drwC, linker map/.debug files, and source commit/file hashes for exact b178 build"
+}
