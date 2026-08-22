@@ -365,3 +365,7 @@ argv bundle. Current rendering stays UNKNOWN; no GPU/rerun.
 Receipt `04481e84…` confirms raw-message client behavior; only the model-loading
 tracer calls `/apply-template`. Readiness `5c08e46…` requires separate
 authorization for CPU-only six-row capture; no endpoint/model/GPU call now.
+
+Preflight `8d0c8f0c…` verifies `/tokenize`; amended packet `21f4bc87…`
+authorizes only CPU six-row render+tokenize metadata capture. Generation/GPU/
+split-ON remain excluded; hard-stop `0ae0c510…` is retained.

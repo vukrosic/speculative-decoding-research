@@ -332,3 +332,7 @@ argv, and template identity remain UNKNOWN. No GPU/rerun; external bundle only.
 Current client sends raw messages and does not render/save tokens; `/apply-template`
 exists only in the model-loading tracer. Six-row capture requires separate
 authorization, not no-model preflight. No endpoint/model/GPU/rerun.
+
+`/tokenize` preflight `8d0c8f0c…` is verified; amended packet `21f4bc87…`
+permits one CPU-only six-row `/apply-template`→`/tokenize` capture. No
+completion/generation, GPU, drafter, or split-ON; retain hard-stop `0ae0c510…`.

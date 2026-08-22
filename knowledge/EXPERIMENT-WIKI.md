@@ -339,3 +339,8 @@ Current-client receipt `04481e84…` confirms raw-message POSTs without
 `reasoning_effort`, rendered prompt, or token IDs; only `trace_one_prompt_v22.py`
 calls `/apply-template` and requires a loaded model. Readiness `5c08e46…`
 requires separate authorization for six-row capture; no endpoint/model/GPU.
+
+Source-verified `/tokenize` preflight `8d0c8f0c…` confirms IDs can be recovered
+after `/apply-template` on a loaded target. Amended packet `21f4bc87…`
+authorizes one CPU-only six-row render+tokenize capture only: no generation,
+GPU, drafter, or split-ON. Preserve hard-stop `0ae0c510…`.

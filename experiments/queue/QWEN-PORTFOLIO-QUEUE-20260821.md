@@ -453,3 +453,19 @@ argv, raw-payload, render/token, resource, and cleanup receipts are required.
 If the CPU model-load/resource gate fails, leave EXP021 terminal and require an
 external authoritative bundle; do not guess the rendering contract or rerun
 GPU work.
+
+### Partial `/apply-template` capture stop (2026-08-22)
+
+The first read-only row returned 752 bytes and rendered hash `a83e3752...`,
+but only the prompt key was present; token IDs were absent. This invocation is
+terminal for the original client path. A source-backed preflight now proves
+`POST /tokenize` (receipt `8d0c8f0c...`): README 670–684, `server.cpp` 259–261,
+and `server-context.cpp` 5078–5102 define the route and payload fields.
+Reopen is limited to one CPU-only six-row continuation: `/apply-template`,
+then `/tokenize` on each rendered string with `add_special=false`,
+`parse_special=true`, `with_pieces=true`, recording IDs and pieces. No
+completion, generation, drafter/verifier, timing, or GPU. Preserve the first
+row and stop on schema, identity, resource, placement, or cleanup failure.
+
+Amended packet `21f4bc87…` authorizes this CPU-only six-row continuation only;
+hard-stop `0ae0c510…` remains preserved. No split-ON or generation is queued.
