@@ -1,0 +1,222 @@
+{
+  "contract_sha256": "df4d1251082d196cde229d215201dc18041cb6f42586cea272b541a9ba235140",
+  "created_utc": "2026-08-22T07:32:23.707879+00:00",
+  "experiment": "EXP-20260822-020-qwen-corrected-speed-gate-r1",
+  "metrics_delta": {
+    "llamacpp:n_busy_slots_per_decode": 0.0,
+    "llamacpp:n_decode_total": 239.0,
+    "llamacpp:n_tokens_max": 0.0,
+    "llamacpp:predicted_tokens_seconds": 22.8826,
+    "llamacpp:prompt_seconds_total": 2.5241999999999996,
+    "llamacpp:prompt_tokens_cached_total": 0.0,
+    "llamacpp:prompt_tokens_seconds": 210.365,
+    "llamacpp:prompt_tokens_total": 531.0,
+    "llamacpp:requests_deferred": 0.0,
+    "llamacpp:requests_processing": 0.0,
+    "llamacpp:spec_decode_num_accepted_tokens_total": 0.0,
+    "llamacpp:spec_decode_num_draft_tokens_total": 0.0,
+    "llamacpp:spec_decode_num_drafts_total": 0.0,
+    "llamacpp:tokens_predicted_seconds_total": 9.658000000000005,
+    "llamacpp:tokens_predicted_total": 227.0
+  },
+  "mode": "target",
+  "prompt_manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "repetition": 3,
+  "runs": [
+    {
+      "assistant_message": {
+        "content": "{\"owner\":\"Mina\",\"deadline\":\"2026-09-04\",\"risks\":[\"flaky integration tests\",\"undocumented legacy flags\"]}",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "9fbd13bad069245acc783e0fcca69b534ced18a30ab4c56e8e1546da52c6e699",
+      "category": "structured",
+      "completion_tokens": 33,
+      "content_sha256": "d3a3528541608baa0040af4d5ec72296945d2a23a37d5f83f726a92143ee78f0",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "target",
+      "prompt_id": "structured_extract",
+      "prompt_tokens": 98,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 3,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 1400.577,
+        "predicted_n": 33,
+        "predicted_per_second": 22.84772632993402,
+        "predicted_per_token_ms": 43.76803125,
+        "prompt_ms": 459.766,
+        "prompt_n": 98,
+        "prompt_per_second": 213.151907709574,
+        "prompt_per_token_ms": 4.6914897959183675
+      },
+      "wall_ms": 1867.635918
+    },
+    {
+      "assistant_message": {
+        "content": "",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "category": "explanation",
+      "completion_tokens": 1,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "target",
+      "prompt_id": "technical_explain",
+      "prompt_tokens": 60,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 3,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 0.001,
+        "predicted_n": 1,
+        "predicted_per_second": 0.0,
+        "predicted_per_token_ms": 0.0,
+        "prompt_ms": 392.138,
+        "prompt_n": 60,
+        "prompt_per_second": 153.00735965399937,
+        "prompt_per_token_ms": 6.535633333333333
+      },
+      "wall_ms": 689.898322
+    },
+    {
+      "assistant_message": {
+        "content": "Let's analyze the constraints:\n\n1.  **Ava, Bo, Chen, and Dia** are the four people.\n2.  **Ava is before Bo.**\n3.  **Chen is not first.**\n4.  **Dia is immediately after Ava.**\n\nLet's denote the",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "820f59857a44016e4d87c883bf94005743882576b0273087dbaf29a0d258b2b1",
+      "category": "reasoning",
+      "completion_tokens": 64,
+      "content_sha256": "1fd19d3c0657841331fedbd5b55083969e2b171f853248a7bb0e13b6f7a7d4fe",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "logic_schedule",
+      "prompt_tokens": 75,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 3,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2752.647,
+        "predicted_n": 64,
+        "predicted_per_second": 22.887061072487683,
+        "predicted_per_token_ms": 43.69280952380952,
+        "prompt_ms": 406.435,
+        "prompt_n": 75,
+        "prompt_per_second": 184.53135187668386,
+        "prompt_per_token_ms": 5.419133333333334
+      },
+      "wall_ms": 3459.567219
+    },
+    {
+      "assistant_message": {
+        "content": "",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "category": "reasoning",
+      "completion_tokens": 1,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "target",
+      "prompt_id": "math_modular",
+      "prompt_tokens": 79,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 3,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 0.001,
+        "predicted_n": 1,
+        "predicted_per_second": 0.0,
+        "predicted_per_token_ms": 0.0,
+        "prompt_ms": 420.116,
+        "prompt_n": 79,
+        "prompt_per_second": 188.04330232602425,
+        "prompt_per_token_ms": 5.317924050632911
+      },
+      "wall_ms": 723.725434
+    },
+    {
+      "assistant_message": {
+        "content": "```rust\nfn parse_pair(s: &str) -> Option<(i64, i64)> {\n    let mut parts = s.split(',');\n    let first = parts.next().unwrap();\n    let second = parts.next().unwrap();\n    let first_val = first.parse::<i6",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "fdfb48a6f578bdd44760d881c8d96817c3e7965aee0a9c897eea4d22e21ba16d",
+      "category": "coding",
+      "completion_tokens": 64,
+      "content_sha256": "597fa055c0d96e0d407e817de5c78604bd4d02cec8ae0a32f77dab66abf4edc4",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "code_rust_parser",
+      "prompt_tokens": 86,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 3,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2752.157,
+        "predicted_n": 64,
+        "predicted_per_second": 22.891135934468853,
+        "predicted_per_token_ms": 43.68503174603175,
+        "prompt_ms": 424.893,
+        "prompt_n": 86,
+        "prompt_per_second": 202.40389933465605,
+        "prompt_per_token_ms": 4.940616279069767
+      },
+      "wall_ms": 3480.715842
+    },
+    {
+      "assistant_message": {
+        "content": "The function is broken because it doesn't handle the case where `x` is not found. The current code returns `lo` even when the element isn't found, which is incorrect. The function should return `-1` if the element is not found.\n\nHere's the corrected function:\n\n```python\ndef",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+      "category": "coding",
+      "completion_tokens": 64,
+      "content_sha256": "048e3c0ac85c9dffeffd5965cb5df16902853da074a32332c3e6a3625ef6e8ca",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "length",
+      "mode": "target",
+      "prompt_id": "code_python_debug",
+      "prompt_tokens": 133,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 3,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 2752.614,
+        "predicted_n": 64,
+        "predicted_per_second": 22.887335456406163,
+        "predicted_per_token_ms": 43.69228571428572,
+        "prompt_ms": 502.106,
+        "prompt_n": 133,
+        "prompt_per_second": 264.88430729766225,
+        "prompt_per_token_ms": 3.775233082706767
+      },
+      "wall_ms": 3561.289032
+    }
+  ],
+  "summary": {
+    "accepted_per_position": {},
+    "accepted_tokens_per_verification": null,
+    "aggregate_request_tokens_per_second": 16.4697649828029,
+    "completion_tokens": 227,
+    "completion_tokens_per_verification": null,
+    "draft_acceptance_rate": null,
+    "draft_accepted_tokens": 0,
+    "draft_proposed_tokens": 0,
+    "draft_verification_steps": 0,
+    "median_request_ms": 2663.6015685,
+    "non_spec_target_decode_calls": 239,
+    "requests": 6,
+    "wall_ms": 13782.831767
+  }
+}

@@ -25,3 +25,13 @@
 - Reason: the bounded causal result rules out this single-variable explanation;
   investigate checkpoint contents, block-vs-singleton numerical state, or
   another verifier transition next.
+
+## D004 — freeze a narrow margin candidate, without generalizing it
+
+- Status: `active-local-candidate`
+- Decision: retain the default-off `PQ020_LOW_MARGIN_TOP2=0.08` candidate for
+  this exact public validation tuple because the smoke and matched speed gate
+  passed all six output-hash checks.
+- Guardrail: do not retune or broaden it on these same prompts; the `<0.1`
+  rule is falsified by correct `logic_schedule` at `0.0897636414`. Independent
+  calibration, token-ID evidence, and a fresh split are required for promotion.

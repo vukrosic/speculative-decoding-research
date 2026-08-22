@@ -1,5 +1,17 @@
 # Changelog
 
+## Research archive update — EXP-020 margin-gated correction — 2026-08-22
+
+- preserved the six-prompt raw-margin inventory and the negative finding that
+  a blanket `<0.1` runner-up rule would alter already-correct `logic_schedule`;
+- recorded the frozen default-off `0.08` smoke, which matched all six target
+  output hashes with one override;
+- recorded the matched corrected speed gate: `18.5307384154` versus
+  `16.4723525853` tok/s (`+12.4960039522%`), 227 tokens/run, `103/118`
+  acceptance, one override/run;
+- bounded the result to the exact six-public-prompt tuple and preserved the
+  non-general exactness/token-ID claim boundary.
+
 ## 0.1.0 — 2026-08-21
 
 Initial research-kit release surface:

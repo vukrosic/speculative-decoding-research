@@ -1,0 +1,11 @@
+49de56c5e4249962753507fd2568e01502fc88cf7fce5e5371ca3c4aeea27d6b  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/benchmark-contract-six-prompt-raw-margin-r1.json
+727646429ae7a381af64a1314a1d11b0aaba600f32410a00c1cd3df484b886d3  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/cleanup.txt
+b7d73dc1ad704a0c9c6f3c5e6a7d0577b69139ce5dfc06b378fd6a503d2b7599  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/pq020_run_sampler_margin_trace.sh
+47b4da1d2e89559984e700eead500221855586d349ed2032956f6bb0af1b6742  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/preflight-and-command.txt
+4f836bf9b42e1f17f12b29afc0cdf7b99bfe00c784a3b34112f02d0c6909d153  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/q4-client.json
+4b3481399b61b5edc3babebe01b7e04693cd2f32d921bbf10052d034ad35c7ad  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/q4-client.log
+37e8b2dbf124d335a70d37007576d3d340ccb0563146a8865a69b5d97bdfcad5  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/q4-server.log
+c433591c19b4429bff95ed549eb185e7a9dfa67fe54f611bc093b55871b89e97  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/raw-logits.log
+5d91173b0c215a958627fc0aac8bb7543bcf16d8783b55475fa98877c9b3dee1  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/sampler-margin.log
+77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/source-prompts-v20.jsonl
+48dd0e988807b18d2e9998e68f3655f023abf5a31d5d22a88026b053b6a33465  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/summary.json

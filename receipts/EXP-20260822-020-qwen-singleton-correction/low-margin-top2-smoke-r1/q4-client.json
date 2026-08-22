@@ -1,0 +1,233 @@
+{
+  "contract_sha256": "dc09ff7347db60d21652ce32bc5586f0682fe4f93d6213ed1f765368d66c8e48",
+  "created_utc": "2026-08-22T07:25:35.242893+00:00",
+  "experiment": "EXP-20260822-020-qwen-low-margin-top2-smoke-r1",
+  "metrics_delta": {
+    "llamacpp:n_busy_slots_per_decode": 1.0,
+    "llamacpp:n_decode_total": 137.0,
+    "llamacpp:n_tokens_max": 196.0,
+    "llamacpp:predicted_tokens_seconds": 29.2344,
+    "llamacpp:prompt_seconds_total": 3.61683,
+    "llamacpp:prompt_tokens_cached_total": 0.0,
+    "llamacpp:prompt_tokens_seconds": 146.814,
+    "llamacpp:prompt_tokens_total": 531.0,
+    "llamacpp:requests_deferred": 0.0,
+    "llamacpp:requests_processing": 0.0,
+    "llamacpp:spec_decode_num_accepted_tokens_per_pos_total{position=\"0\"}": 103.0,
+    "llamacpp:spec_decode_num_accepted_tokens_total": 103.0,
+    "llamacpp:spec_decode_num_draft_tokens_total": 118.0,
+    "llamacpp:spec_decode_num_drafts_total": 118.0,
+    "llamacpp:tokens_predicted_seconds_total": 7.5596,
+    "llamacpp:tokens_predicted_total": 227.0
+  },
+  "mode": "dflash2",
+  "prompt_manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "repetition": 1,
+  "runs": [
+    {
+      "assistant_message": {
+        "content": "{\"owner\":\"Mina\",\"deadline\":\"2026-09-04\",\"risks\":[\"flaky integration tests\",\"undocumented legacy flags\"]}",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "9fbd13bad069245acc783e0fcca69b534ced18a30ab4c56e8e1546da52c6e699",
+      "category": "structured",
+      "completion_tokens": 33,
+      "content_sha256": "d3a3528541608baa0040af4d5ec72296945d2a23a37d5f83f726a92143ee78f0",
+      "draft_n": 17,
+      "draft_n_accepted": 16,
+      "finish_reason": "stop",
+      "mode": "dflash2",
+      "prompt_id": "structured_extract",
+      "prompt_tokens": 98,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 17,
+        "draft_n_accepted": 16,
+        "predicted_ms": 1182.865,
+        "predicted_n": 33,
+        "predicted_per_second": 27.052960397002195,
+        "predicted_per_token_ms": 36.96453125,
+        "prompt_ms": 862.018,
+        "prompt_n": 98,
+        "prompt_per_second": 113.68672115895492,
+        "prompt_per_token_ms": 8.796102040816328
+      },
+      "wall_ms": 2052.830667
+    },
+    {
+      "assistant_message": {
+        "content": "",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "category": "explanation",
+      "completion_tokens": 1,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "dflash2",
+      "prompt_id": "technical_explain",
+      "prompt_tokens": 60,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 0.001,
+        "predicted_n": 1,
+        "predicted_per_second": 0.0,
+        "predicted_per_token_ms": 0.0,
+        "prompt_ms": 499.759,
+        "prompt_n": 60,
+        "prompt_per_second": 120.05786789232408,
+        "prompt_per_token_ms": 8.329316666666667
+      },
+      "wall_ms": 753.518349
+    },
+    {
+      "assistant_message": {
+        "content": "Let's analyze the constraints:\n\n1.  **Ava, Bo, Chen, and Dia** are the four people.\n2.  **Ava is before Bo.**\n3.  **Chen is not first.**\n4.  **Dia is immediately after Ava.**\n\nLet's denote the",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "820f59857a44016e4d87c883bf94005743882576b0273087dbaf29a0d258b2b1",
+      "category": "reasoning",
+      "completion_tokens": 64,
+      "content_sha256": "1fd19d3c0657841331fedbd5b55083969e2b171f853248a7bb0e13b6f7a7d4fe",
+      "draft_n": 34,
+      "draft_n_accepted": 29,
+      "finish_reason": "length",
+      "mode": "dflash2",
+      "prompt_id": "logic_schedule",
+      "prompt_tokens": 75,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 34,
+        "draft_n_accepted": 29,
+        "predicted_ms": 2128.161,
+        "predicted_n": 64,
+        "predicted_per_second": 29.60302345546225,
+        "predicted_per_token_ms": 33.78033333333333,
+        "prompt_ms": 528.002,
+        "prompt_n": 75,
+        "prompt_per_second": 142.04491649652843,
+        "prompt_per_token_ms": 7.040026666666666
+      },
+      "wall_ms": 2908.724616
+    },
+    {
+      "assistant_message": {
+        "content": "",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "category": "reasoning",
+      "completion_tokens": 1,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "draft_n": 0,
+      "draft_n_accepted": 0,
+      "finish_reason": "stop",
+      "mode": "dflash2",
+      "prompt_id": "math_modular",
+      "prompt_tokens": 79,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "predicted_ms": 0.001,
+        "predicted_n": 1,
+        "predicted_per_second": 0.0,
+        "predicted_per_token_ms": 0.0,
+        "prompt_ms": 549.033,
+        "prompt_n": 79,
+        "prompt_per_second": 143.8893472705648,
+        "prompt_per_token_ms": 6.949784810126583
+      },
+      "wall_ms": 805.028236
+    },
+    {
+      "assistant_message": {
+        "content": "```rust\nfn parse_pair(s: &str) -> Option<(i64, i64)> {\n    let mut parts = s.split(',');\n    let first = parts.next().unwrap();\n    let second = parts.next().unwrap();\n    let first_val = first.parse::<i6",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "fdfb48a6f578bdd44760d881c8d96817c3e7965aee0a9c897eea4d22e21ba16d",
+      "category": "coding",
+      "completion_tokens": 64,
+      "content_sha256": "597fa055c0d96e0d407e817de5c78604bd4d02cec8ae0a32f77dab66abf4edc4",
+      "draft_n": 32,
+      "draft_n_accepted": 31,
+      "finish_reason": "length",
+      "mode": "dflash2",
+      "prompt_id": "code_rust_parser",
+      "prompt_tokens": 86,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 32,
+        "draft_n_accepted": 31,
+        "predicted_ms": 2009.499,
+        "predicted_n": 64,
+        "predicted_per_second": 31.351097960237848,
+        "predicted_per_token_ms": 31.896809523809523,
+        "prompt_ms": 549.609,
+        "prompt_n": 86,
+        "prompt_per_second": 156.47487577532388,
+        "prompt_per_token_ms": 6.3908023255813955
+      },
+      "wall_ms": 2818.439631
+    },
+    {
+      "assistant_message": {
+        "content": "The function is broken because it doesn't handle the case where `x` is not found. The current code returns `lo` even when the element isn't found, which is incorrect. The function should return `-1` if the element is not found.\n\nHere's the corrected function:\n\n```python\ndef",
+        "role": "assistant"
+      },
+      "assistant_message_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+      "category": "coding",
+      "completion_tokens": 64,
+      "content_sha256": "048e3c0ac85c9dffeffd5965cb5df16902853da074a32332c3e6a3625ef6e8ca",
+      "draft_n": 35,
+      "draft_n_accepted": 27,
+      "finish_reason": "length",
+      "mode": "dflash2",
+      "prompt_id": "code_python_debug",
+      "prompt_tokens": 133,
+      "reasoning_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repetition": 1,
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 35,
+        "draft_n_accepted": 27,
+        "predicted_ms": 2239.073,
+        "predicted_n": 64,
+        "predicted_per_second": 28.136644048675503,
+        "predicted_per_token_ms": 35.540841269841266,
+        "prompt_ms": 709.878,
+        "prompt_n": 133,
+        "prompt_per_second": 187.3561372517531,
+        "prompt_per_token_ms": 5.337428571428572
+      },
+      "wall_ms": 3204.779061
+    }
+  ],
+  "summary": {
+    "accepted_per_position": {
+      "0": 103
+    },
+    "accepted_tokens_per_verification": 0.8728813559322034,
+    "aggregate_request_tokens_per_second": 18.097281251337165,
+    "completion_tokens": 227,
+    "completion_tokens_per_verification": 1.923728813559322,
+    "draft_acceptance_rate": 0.8728813559322034,
+    "draft_accepted_tokens": 103,
+    "draft_proposed_tokens": 118,
+    "draft_verification_steps": 118,
+    "median_request_ms": 2435.635149,
+    "non_spec_target_decode_calls": 137,
+    "requests": 6,
+    "wall_ms": 12543.32056
+  }
+}

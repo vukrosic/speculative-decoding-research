@@ -1,0 +1,49 @@
+{
+  "experiment": "EXP-20260822-020-qwen-six-prompt-raw-margin-r1",
+  "scope": "default Q4 DFlash n=1 raw target top-two logit trace on the six public v20 prompts; diagnostic only",
+  "parent_experiment": "EXP-20260822-020-qwen-sampler-margin-trace-r2",
+  "prompt_manifest": "source-prompts-v20.jsonl",
+  "prompt_manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "prompt_ids_in_source_order": [
+    "code_python_debug",
+    "code_rust_parser",
+    "math_modular",
+    "logic_schedule",
+    "technical_explain",
+    "structured_extract"
+  ],
+  "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+  "draft_sha256": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+  "llama_cpp_revision": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+  "runtime": {
+    "llama_server_sha256": "fcbf4b9d5847f19ad2391af0109b3d0d067de19d0448bb96acc1a1011af20d41",
+    "libllama_common_sha256": "1bbaf7b59c8572b490db0522684139eaf9c1e4722dcc5e3876cc44c350b34009",
+    "libllama_server_impl_sha256": "fd5a9bf6ac5237f0c8821bc66a75e81c7c1b1a24b4ac487a496d4fbe4386a066",
+    "source_sampling_raw_margin_sha256": "66b7975d081cbd561327d331b805dc47af39d6de5216c3aa0da2e985742e05fd",
+    "source_common_sha256": "05bc54a210601550730e024c3820fa89cd1f4382792ccf457faf3853f55f6c43",
+    "default_behavior_changed": false
+  },
+  "context_tokens": 4096,
+  "max_completion_tokens": 64,
+  "temperature": 0.0,
+  "top_k": 1,
+  "seed": 42,
+  "parallel_sequences": 1,
+  "gpu_layers": "all",
+  "draft_gpu_layers": "all",
+  "draft_tokens_max": 1,
+  "prompt_cache": false,
+  "repetitions": 1,
+  "warmups_per_server": 0,
+  "expected_completion_tokens": 227,
+  "expected_q4_outputs": {
+    "code_python_debug": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646",
+    "code_rust_parser": "fdfb48a6f578bdd44760d881c8d96817c3e7965aee0a9c897eea4d22e21ba16d",
+    "math_modular": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+    "logic_schedule": "820f59857a44016e4d87c883bf94005743882576b0273087dbaf29a0d258b2b1",
+    "technical_explain": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+    "structured_extract": "9fbd13bad069245acc783e0fcca69b534ced18a30ab4c56e8e1546da52c6e699"
+  },
+  "correctness_gate": "All six Q4 output hashes and 227 completion tokens must reproduce the preserved public-validation run.",
+  "stop_gate": "Stop on any identity, source, prompt, output, process, GPU, raw-logit marker, or cleanup mismatch. No correction is applied."
+}

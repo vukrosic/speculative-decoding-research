@@ -1,0 +1,65 @@
+{
+  "status": "completed_sampler_margin_trace",
+  "evidence_class": "six-public-prompt raw pre-chain sampler-margin diagnostic only",
+  "outputs": [
+    {
+      "prompt_id": "structured_extract",
+      "assistant_message_sha256": "9fbd13bad069245acc783e0fcca69b534ced18a30ab4c56e8e1546da52c6e699",
+      "completion_tokens": 33,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": "technical_explain",
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "completion_tokens": 1,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": "logic_schedule",
+      "assistant_message_sha256": "820f59857a44016e4d87c883bf94005743882576b0273087dbaf29a0d258b2b1",
+      "completion_tokens": 64,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_id": "math_modular",
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "completion_tokens": 1,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": "code_rust_parser",
+      "assistant_message_sha256": "fdfb48a6f578bdd44760d881c8d96817c3e7965aee0a9c897eea4d22e21ba16d",
+      "completion_tokens": 64,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_id": "code_python_debug",
+      "assistant_message_sha256": "1d5020bfedee4bbc2c878d7d3805bf76ccd2e85dfc90817c4b3422af75122646",
+      "completion_tokens": 64,
+      "finish_reason": "length"
+    }
+  ],
+  "summary": {
+    "accepted_per_position": {
+      "0": 104
+    },
+    "accepted_tokens_per_verification": 0.8813559322033898,
+    "aggregate_request_tokens_per_second": 18.12866718174885,
+    "completion_tokens": 227,
+    "completion_tokens_per_verification": 1.923728813559322,
+    "draft_acceptance_rate": 0.8813559322033898,
+    "draft_accepted_tokens": 104,
+    "draft_proposed_tokens": 118,
+    "draft_verification_steps": 118,
+    "median_request_ms": 2444.7166325,
+    "non_spec_target_decode_calls": 136,
+    "requests": 6,
+    "wall_ms": 12521.604469
+  },
+  "server_log_sha256": "37e8b2dbf124d335a70d37007576d3d340ccb0563146a8865a69b5d97bdfcad5",
+  "sampler_margin_log_sha256": "5d91173b0c215a958627fc0aac8bb7543bcf16d8783b55475fa98877c9b3dee1",
+  "sampler_margin_rows": 222,
+  "raw_logits_log_sha256": "c433591c19b4429bff95ed549eb185e7a9dfa67fe54f611bc093b55871b89e97",
+  "raw_logits_rows": 228,
+  "heldout_used": false
+}

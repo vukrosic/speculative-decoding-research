@@ -138,6 +138,29 @@ source-backed regeneration, with positions/sequence IDs, serialized
 mask/cache/anchor/rollback semantics, evaluator/logger/replay/dependency
 identities, resolved split, and the `[171,171]`/`[170,170]` conflict recorded.
 
+## EXP-020 margin-gated correction and speed gate (2026-08-22)
+
+The six-public-prompt raw-margin inventory found why a naive runner-up rule is
+unsafe. `logic_schedule` already matched its target with accepted margin
+`0.0897636414`, while divergent `code_python_debug` had margin `0.0684490204`
+and target runner-up `90563` versus accepted draft `471`. A threshold of
+`0.08` was frozen once from this inventory; it is not retuned or claimed as a
+general calibration.
+
+The one-shot low-margin smoke passed all six target output hashes with exactly
+one override. The matched cache-off gate then passed one warmup and three
+timed repetitions per arm, 227 completion tokens per run. Target-only mean
+was `16.4723525853` tok/s (SD `0.0027415161`); corrected Q4 n=1 mean was
+`18.5307384154` tok/s (SD `0.0352037718`), a `+12.4960039522%` local
+difference. Corrected acceptance was `103/118`, one override per run, and all
+warmup/timed runs matched all six target output hashes. Cleanup passed.
+
+Disposition: promising local exact-hash result for this exact target/drafter/
+runtime/workload tuple. It is not general losslessness, token-ID exactness,
+or serving-speed evidence; threshold calibration and evaluation used the same
+six public prompts. The earlier default Q4 lead (`+12.892486%` on 5/6 hashes)
+remains preserved separately.
+
 ## EXP-020 trace localization and `n_rs` causal result (2026-08-22)
 
 The instrumented target/Q4 traces share an exact 42-token prefix. The first

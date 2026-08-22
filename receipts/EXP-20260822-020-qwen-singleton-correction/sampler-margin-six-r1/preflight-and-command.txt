@@ -1,0 +1,16 @@
+2026-08-22T07:08:22Z
+9719ca4634c7
+NVIDIA GeForce RTX 3060, 12288 MiB, 1 MiB, 0 %, 55, 580.173.02
+Filesystem       1B-blocks        Used  Available Use% Mounted on
+overlay        64424509440 62651883520 1772625920  98% /
+shm             7516192768   810721280 6705471488  11% /dev/shm
+fcbf4b9d5847f19ad2391af0109b3d0d067de19d0448bb96acc1a1011af20d41  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/llama-server
+1bbaf7b59c8572b490db0522684139eaf9c1e4722dcc5e3876cc44c350b34009  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/libllama-common.so.0.1.2
+fd5a9bf6ac5237f0c8821bc66a75e81c7c1b1a24b4ac487a496d4fbe4386a066  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/libllama-server-impl.so
+66b7975d081cbd561327d331b805dc47af39d6de5216c3aa0da2e985742e05fd  /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/source/common/sampling.cpp
+3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf
+18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/models/Qwen3.8-27B-DFlash2-Q4_K_M.gguf
+477b271d3e34616282c3d4c85ea278d67441f1bf0be8dec5a366a7374f9a37a4  /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/scripts/benchmark_client_v21.py
+77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/source-prompts-v20.jsonl
+49de56c5e4249962753507fd2568e01502fc88cf7fce5e5371ca3c4aeea27d6b  /dev/shm/pq020-sampler-margin-six-r2-9c5Dij/benchmark-contract-six-prompt-raw-margin-r1.json
+env CUDA_VISIBLE_DEVICES=0 LLAMA_TRACE=1 PQ020_TRACE=1 LD_LIBRARY_PATH=/workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin /workspace/smollm-eagle3-prototype/experiments/pq020-instrumented-runtime-20260822T0546Z/build/bin/llama-server -m /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-spec-v20-20260820/models/unsloth-qwen38-27b-4ca72078/Qwen3.8-27B-UD-IQ1_S.gguf --host 127.0.0.1 --port 8104 --ctx-size 4096 --parallel 1 --n-gpu-layers all --no-context-shift --no-cache-prompt --reasoning off --metrics --perf --log-verbosity 5 --log-colors off --log-prefix --log-timestamps -md /workspace/smollm-eagle3-prototype/experiments/qwen38-27b-iq1s-dflash2-v21-20260820/models/Qwen3.8-27B-DFlash2-Q4_K_M.gguf --spec-type draft-dflash --spec-draft-n-max 1 --spec-draft-ngl all

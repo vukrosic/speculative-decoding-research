@@ -1,0 +1,69 @@
+{
+  "status": "completed_low_margin_top2_smoke",
+  "evidence_class": "public-validation calibrated low-margin correction smoke",
+  "outputs": [
+    {
+      "prompt_id": "structured_extract",
+      "assistant_message_sha256": "9fbd13bad069245acc783e0fcca69b534ced18a30ab4c56e8e1546da52c6e699",
+      "completion_tokens": 33,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": "technical_explain",
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "completion_tokens": 1,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": "logic_schedule",
+      "assistant_message_sha256": "820f59857a44016e4d87c883bf94005743882576b0273087dbaf29a0d258b2b1",
+      "completion_tokens": 64,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_id": "math_modular",
+      "assistant_message_sha256": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+      "completion_tokens": 1,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": "code_rust_parser",
+      "assistant_message_sha256": "fdfb48a6f578bdd44760d881c8d96817c3e7965aee0a9c897eea4d22e21ba16d",
+      "completion_tokens": 64,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_id": "code_python_debug",
+      "assistant_message_sha256": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+      "completion_tokens": 64,
+      "finish_reason": "length"
+    }
+  ],
+  "summary": {
+    "accepted_per_position": {
+      "0": 103
+    },
+    "accepted_tokens_per_verification": 0.8728813559322034,
+    "aggregate_request_tokens_per_second": 18.097281251337165,
+    "completion_tokens": 227,
+    "completion_tokens_per_verification": 1.923728813559322,
+    "draft_acceptance_rate": 0.8728813559322034,
+    "draft_accepted_tokens": 103,
+    "draft_proposed_tokens": 118,
+    "draft_verification_steps": 118,
+    "median_request_ms": 2435.635149,
+    "non_spec_target_decode_calls": 137,
+    "requests": 6,
+    "wall_ms": 12543.32056
+  },
+  "server_log_sha256": "4d7db515305282a9867857526dc6bd574a104110707d101072bac52dce5255d8",
+  "sampler_margin_log_sha256": "6a9f4da42d6a20f35b9b6e47411e511dfadc8ab73cdb36c65d9644abb1968f14",
+  "sampler_margin_rows": 221,
+  "raw_logits_log_sha256": "c3d524df64940d9a851564bd14f94165b715d0161827dd50c9c5c72730d8f950",
+  "raw_logits_rows": 228,
+  "override_log_sha256": "a2b3ac50bdc897e9061ad8410f04a6bc196e461919acdd36126cdb039fc918d3",
+  "override_rows": 1,
+  "all_six_target_hashes_match": true,
+  "heldout_used": false,
+  "claim_boundary": "local public-validation output-hash recovery only; not a general exactness guarantee"
+}

@@ -1,0 +1,12 @@
+dc09ff7347db60d21652ce32bc5586f0682fe4f93d6213ed1f765368d66c8e48  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/benchmark-contract-low-margin-top2-smoke-r1.json
+374da05210a19aac241e51b231bfc225dc129a14839c7eb845baf9f42178714f  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/cleanup.txt
+a2b3ac50bdc897e9061ad8410f04a6bc196e461919acdd36126cdb039fc918d3  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/override-events.log
+6f91b3f0244de762e234a758c8c5c5079f40226f9efb3f3ad9bb4e4e876bd060  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/pq020_run_low_margin_top2_smoke.sh
+413a82b3bec154bd00cffb28c2eb8f2cef92dec058de968369074fcb227e9cab  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/preflight-and-command.txt
+076ba067f57012eea481758f04ae9ca0e16c1818508fb1595b6d83fbc3420003  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/q4-client.json
+c70a546c109d7b51d3792325d65deb005f418c19519913c26d89b559ffb28767  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/q4-client.log
+4d7db515305282a9867857526dc6bd574a104110707d101072bac52dce5255d8  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/q4-server.log
+c3d524df64940d9a851564bd14f94165b715d0161827dd50c9c5c72730d8f950  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/raw-logits.log
+6a9f4da42d6a20f35b9b6e47411e511dfadc8ab73cdb36c65d9644abb1968f14  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/sampler-margin.log
+77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/source-prompts-v20.jsonl
+3169d57b7d942d020d086378c854d8b6e50c88fd062af8f4c414679d30024515  /dev/shm/pq020-low-margin-top2-smoke-r1-NHPurH/summary.json

@@ -38,7 +38,7 @@ logger/replay/dependency identity, explicit split, or the `[171,171]` versus
 | PQ-007 | +2,000 source-disjoint training windows | Validation CE `2.48420` vs parent `2.68951`; n=4 acceptance `0.176699` vs `0.20198` | Teacher-forced improvement, terminal-negative acceptance |
 | EXP-011 / PQ-009 | Q4 vs Q8 at fixed n=1 | Q4 `16.0923`, Q8 `16.0878`, target-only `17.4025` tok/s; both `98/508` accepted | Precision near-tie; retired as a speed lever |
 | PQ-019 | Repeated-prefix prompt cache | Target `16.0895→17.8801` (+11.13%); Q4 n=1 `18.1639→21.7631` (+19.82%); cache-on `1,014` cached prompt tokens/rep | Positive local cache/prompt-processing effect only |
-| EXP-020 | Rejection-only singleton correction (active diagnostic) | Q4 n=1 cache-off `18.1638816661` vs target `16.0895399687` tok/s (+12.892486%); `208/236` accepted; 5/6 unique prompt output hashes agree | Narrow lead; non-promotable until exact token IDs and trace result |
+| EXP-020 | Margin-gated singleton correction (active diagnostic) | Corrected Q4 `18.5307384154` vs target `16.4723525853` tok/s (+12.49600%); 227 tokens/run; all six public hashes match | Local tuple result; calibrated, not general losslessness/speed |
 | PQ-008 | Verifier/state localization | Exact deployment bundle not found; several contract fields remain UNKNOWN/CONFLICT | Terminal recovery blocker; no Arm A/B/D run |
 | PQ-012 | Runtime phase decomposition | Aggregate counters exist; per-phase draft/verify/cache/scheduler timers and exactness binding do not | Measurement-gap negative |
 | PQ-013 | Prompt-level gating/mixed mode | No source-backed dispatcher and no unbiased calibration/held-out policy split | Terminalized planning-only hypothesis |
@@ -148,6 +148,24 @@ count/layout axis is therefore falsified as the sole cause. Both arms emitted
 
 - [Token-divergence analysis](../receipts/EXP-20260822-020-qwen-singleton-correction/token-divergence-analysis.md)
 - [n_rs-axis receipt](../receipts/EXP-20260822-020-qwen-singleton-correction/n-rs-axis-r1/summary.json)
+
+The six-prompt raw-margin inventory ruled out a naive `<0.1` runner-up rule:
+`logic_schedule` already matches its target at margin `0.0897636414`, while the
+divergent `code_python_debug` decision has margin `0.0684490204` and target
+runner-up `90563` versus draft `471`. A predeclared `0.08` threshold produced
+exactly one override in the smoke and recovered all six target output hashes.
+
+The subsequent matched cache-off gate used one warmup and three timed runs per
+arm. Target-only averaged `16.4723525853` tok/s (SD `0.0027415161`); corrected
+Q4 averaged `18.5307384154` tok/s (SD `0.0352037718`), a `+12.4960039522%`
+local difference. Every run emitted 227 tokens and matched all six target
+output hashes; corrected acceptance was `103/118`, with one override per run.
+This is exact-hash evidence for the frozen six-public-prompt tuple only, not a
+general token-ID exactness, losslessness, or serving-speed guarantee.
+
+- [Six-prompt margin inventory](../receipts/EXP-20260822-020-qwen-singleton-correction/sampler-margin-six-r1/findings.md)
+- [Correctness smoke summary](../receipts/EXP-20260822-020-qwen-singleton-correction/low-margin-top2-smoke-r1/summary.json)
+- [Corrected speed-gate summary](../receipts/EXP-20260822-020-qwen-singleton-correction/corrected-speed-gate-r1/summary.json)
 
 ### PQ-008 — verifier/state recovery
 

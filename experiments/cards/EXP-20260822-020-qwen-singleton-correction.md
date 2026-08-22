@@ -150,13 +150,51 @@ cause. These timings are diagnostic, not promotion evidence.
 
 Receipt: `receipts/EXP-20260822-020-qwen-singleton-correction/n-rs-axis-r1/`.
 
+### Observed — six-prompt sampler-margin candidate
+
+The six-public-prompt raw-margin inventory recorded 118 draft checks, 104
+accepted drafts, and 227 completion tokens. A naive rule that overrides every
+accepted draft with raw top-two margin below `0.1` is unsafe: `logic_schedule`
+already matches its target while carrying margin `0.0897636414`. The divergent
+`code_python_debug` decision has margin `0.0684490204`, with target runner-up
+`90563` versus accepted draft `471`. No accepted draft in the inventory was
+below `0.05`.
+
+A frozen default-off threshold of `0.08` was declared once from the same
+six-prompt inventory. The one-shot smoke passed all six target output hashes
+with exactly one override. This is calibration on six public prompts, not a
+general exactness guarantee.
+
+### Observed — corrected six-prompt speed gate
+
+The matched cache-off gate used one warmup and three timed repetitions per arm,
+with 227 completion tokens per run. Target-only timed throughput was
+`[16.4752256729, 16.4720671003, 16.4697649828]`, mean
+`16.4723525853` tok/s (SD `0.0027415161`). Corrected Q4 n=1 was
+`[18.5225974928, 18.5692994491, 18.5003183044]`, mean
+`18.5307384154` tok/s (SD `0.0352037718`), a `+12.4960039522%` difference.
+Corrected acceptance was `103/118`, with one override per run, and every
+warmup/timed run matched all six target output hashes. The GPU/process cleanup
+gate passed.
+
+This is a local result for the exact target/drafter/runtime/workload tuple;
+it is not a general losslessness or serving-speed claim, and token-ID exactness
+was not independently established.
+
+Receipts: `receipts/EXP-20260822-020-qwen-singleton-correction/
+sampler-margin-six-r1/`, `low-margin-top2-smoke-r1/`, and
+`corrected-speed-gate-r1/`.
+
 ### Interpretation / hypotheses
 
 The first mismatch is now localized to an accepted draft after seven prior
 rejection cycles. The `n_rs` axis rejects snapshot count/layout as a sufficient
 single-variable fix; the remaining candidate mechanisms include rollback
 checkpoint contents, target block-vs-singleton numerical state, or another
-verifier state transition. No correction runtime has been promoted.
+verifier state transition. The margin-gated runner-up correction is a promising
+local candidate on this frozen six-prompt screen, but it is calibrated on the
+same validation set and must not be generalized or retuned without a new split
+and independent exactness contract.
 
 ## Artifacts and receipts
 

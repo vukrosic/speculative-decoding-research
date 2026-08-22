@@ -1,0 +1,49 @@
+{
+  "experiment": "EXP-20260822-020-qwen-low-margin-top2-smoke-r1",
+  "scope": "one six-public-prompt correctness smoke of a default-off validation-calibrated low-margin accepted-draft override",
+  "parent_analysis_sha256": "aa56895b06a69dd18c6bc9482e7bd4e1694f528efb951c5ca6d78f15fb1f00f1",
+  "prompt_manifest": "source-prompts-v20.jsonl",
+  "prompt_manifest_sha256": "77a9b5703756102bc088891419a6b85f45bd6a26118c4daded334dec91db8514",
+  "prompt_ids_in_source_order": [
+    "code_python_debug",
+    "code_rust_parser",
+    "math_modular",
+    "logic_schedule",
+    "technical_explain",
+    "structured_extract"
+  ],
+  "target_sha256": "3895b6eaa91e705c06ad1938d16c22e86f073c6a67df86260a1da79be3d1f887",
+  "draft_sha256": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+  "llama_cpp_revision": "5ecbe1ac17ec0484c5b44af0bd580cdc9c428ed4",
+  "derived_sampling_source_sha256": "c1b1f6f05561deb597c86a94a3464e4e5e003fd430e51094768873532fc48768",
+  "activation_env": {
+    "PQ020_LOW_MARGIN_TOP2": "0.08"
+  },
+  "activation_predicate": "greedy n=1 draft_check, selected token equals draft and raw top1, finite raw top2, raw top1-top2 margin < 0.08",
+  "threshold_selection": "predeclared once from the completed six-public-prompt inventory; no retuning after this smoke",
+  "context_tokens": 4096,
+  "max_completion_tokens": 64,
+  "temperature": 0.0,
+  "top_k": 1,
+  "seed": 42,
+  "parallel_sequences": 1,
+  "gpu_layers": "all",
+  "draft_gpu_layers": "all",
+  "draft_tokens_max": 1,
+  "prompt_cache": false,
+  "repetitions": 1,
+  "warmups_per_server": 0,
+  "expected_completion_tokens": 227,
+  "expected_target_outputs": {
+    "code_python_debug": "0f76b6ae57040714633aa638719e0c2a9b3c594cc2ff0ce4bafc75cabee56a6c",
+    "code_rust_parser": "fdfb48a6f578bdd44760d881c8d96817c3e7965aee0a9c897eea4d22e21ba16d",
+    "math_modular": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+    "logic_schedule": "820f59857a44016e4d87c883bf94005743882576b0273087dbaf29a0d258b2b1",
+    "technical_explain": "4798d4b5ad3fa59b7957a4f29e4358fae499eab7c3904109c8cc0734a9814190",
+    "structured_extract": "9fbd13bad069245acc783e0fcca69b534ced18a30ab4c56e8e1546da52c6e699"
+  },
+  "correctness_gate": "All six target output hashes, finish reasons, and 227 completion tokens must match; at least the calibrated code_python_debug event must log exactly once.",
+  "stop_gate": "Stop on any identity, source, build, workload, output, process, GPU, override-marker, or cleanup mismatch. Do not retune or retry with a different threshold.",
+  "claim_boundary": "A pass is local public-validation output-hash recovery evidence, not a general or token-ID exactness guarantee.",
+  "heldout_used": false
+}

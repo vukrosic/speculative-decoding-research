@@ -1,0 +1,65 @@
+{
+  "status": "completed_corrected_speed_gate",
+  "evidence_class": "matched six-public-prompt cache-off output-hash and timing gate",
+  "target_only": {
+    "warmup": {
+      "accepted_per_position": {},
+      "accepted_tokens_per_verification": null,
+      "aggregate_request_tokens_per_second": 16.63955933281733,
+      "completion_tokens": 227,
+      "completion_tokens_per_verification": null,
+      "draft_acceptance_rate": null,
+      "draft_accepted_tokens": 0,
+      "draft_proposed_tokens": 0,
+      "draft_verification_steps": 0,
+      "median_request_ms": 2739.869056,
+      "non_spec_target_decode_calls": 239,
+      "requests": 6,
+      "wall_ms": 13642.188200999999
+    },
+    "timed_tps": [
+      16.475225672936393,
+      16.47206710029558,
+      16.4697649828029
+    ],
+    "mean_tps": 16.472352585344957,
+    "sd_tps": 0.0027415160894239438
+  },
+  "corrected_q4_n1": {
+    "warmup": {
+      "accepted_per_position": {
+        "0": 103
+      },
+      "accepted_tokens_per_verification": 0.8728813559322034,
+      "aggregate_request_tokens_per_second": 18.239168810654043,
+      "completion_tokens": 227,
+      "completion_tokens_per_verification": 1.923728813559322,
+      "draft_acceptance_rate": 0.8728813559322034,
+      "draft_accepted_tokens": 103,
+      "draft_proposed_tokens": 118,
+      "draft_verification_steps": 118,
+      "median_request_ms": 2349.9382075,
+      "non_spec_target_decode_calls": 137,
+      "requests": 6,
+      "wall_ms": 12445.742586
+    },
+    "timed_tps": [
+      18.522597492770057,
+      18.569299449093002,
+      18.500318304414865
+    ],
+    "mean_tps": 18.530738415425972,
+    "sd_tps": 0.035203771765873915,
+    "accepted": 103,
+    "proposed": 118,
+    "override_events": 4
+  },
+  "speedup_percent": 12.496003952175649,
+  "all_runs_match_six_target_output_hashes": true,
+  "completion_tokens_per_run": 227,
+  "override_log_sha256": "61cc783e6b7004ac64b79c9444feadca89826955bb473ada621937d8c9224632",
+  "promotion_gate_percent": 5,
+  "promotion_gate_passed": true,
+  "heldout_used": false,
+  "claim_boundary": "local public-validation result for this exact tuple; not a general exactness or speed guarantee"
+}

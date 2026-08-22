@@ -37,3 +37,25 @@
   diagnostic tok/s; Q4 retained divergent hash `1d5020bf…` at
   `16.3178374758`; both emitted 64 tokens.
 - Limitation: one prompt and one repetition; timings are diagnostic only.
+
+## C004 — margin-gated correction recovers the frozen six-prompt hashes
+
+- Status: `observed-local-promising`
+- Claim: a default-off `0.08` raw top-two margin override recovered all six
+  target output hashes and retained a local throughput lead on the frozen
+  public tuple.
+- Evidence: one-shot smoke matched all six hashes with exactly one override;
+  matched speed gate mean was `18.5307384154` tok/s corrected Q4 versus
+  `16.4723525853` target-only (`+12.4960039522%`), 227 tokens/run, `103/118`
+  acceptance and one override/run.
+- Limitation: threshold was calibrated and evaluated on the same six public
+  prompts; token IDs and independent held-out exactness are not established.
+
+## C005 — blanket `<0.1` margin rule is unsafe
+
+- Status: `falsified`
+- Claim: override every accepted draft with raw margin below `0.1`.
+- Evidence: already-correct `logic_schedule` has margin `0.0897636414`, while
+  divergent `code_python_debug` has `0.0684490204`.
+- Disposition: use no broad threshold rule; preserve the negative and require
+  independent calibration before any generalization.

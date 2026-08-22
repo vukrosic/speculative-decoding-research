@@ -57,6 +57,22 @@ cause. This narrows the next hypothesis to checkpoint contents, block-vs-
 singleton numerical state, or another verifier transition; no correction or
 speed result is promoted.
 
+The next EXP-020 candidate was calibrated from a full six-public-prompt
+raw-margin inventory. A blanket `<0.1` runner-up rule is unsafe because the
+already-correct `logic_schedule` decision has margin `0.0897636414`; the
+divergent `code_python_debug` decision has margin `0.0684490204` with target
+runner-up `90563` versus accepted draft `471`. A frozen default-off threshold
+of `0.08` produced exactly one override in a six-prompt smoke, and all six
+target output hashes matched.
+
+The corrected matched cache-off speed gate then passed one warmup plus three
+timed repetitions per arm. Target-only mean was `16.4723525853` tok/s (SD
+`0.0027415161`); corrected Q4 n=1 mean was `18.5307384154` tok/s (SD
+`0.0352037718`), `+12.4960039522%`. Each run emitted 227 tokens; corrected
+acceptance was `103/118` with one override per run, and every warmup/timed run
+matched all six target output hashes. This is a local exact-hash result for
+the frozen tuple, not a general losslessness, token-ID, or speed guarantee.
+
 ## Best supported observations
 
 - SmolLM: the 10.13M two-layer block-3 DFlash2-style bridge remains the exact
